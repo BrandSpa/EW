@@ -2,7 +2,7 @@
 
 function create_project_type() {
 
-  register_post_type( 'proyect',
+  register_post_type( 'project',
     [
       'labels' => [
         'name' => 'Projects',
