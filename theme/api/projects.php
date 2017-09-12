@@ -1,4 +1,5 @@
 <?php
+
 function esw_get_projects() {
   $filters = $_POST['filters'];
   $search = $_POST['search'];

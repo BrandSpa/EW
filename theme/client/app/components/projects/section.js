@@ -34,12 +34,12 @@ class ProjectsSection extends Component {
   }
 
   handleFilters = (rawFilters) => {
-    let multiple = ['product', 'brand'];
+    let multiple = ['products', 'brands'];
 
     let metaFilters = Object.keys(rawFilters.meta)
       .map(key => {
         if(multiple.indexOf(key) !== -1) {
-          return this.getMetaQuery(rawFilters.meta, key, 'IN');
+          return this.getMetaQuery(rawFilters.meta, key, 'LIKE');
         } else {
           return this.getMetaQuery(rawFilters.meta, key, '=');
         }

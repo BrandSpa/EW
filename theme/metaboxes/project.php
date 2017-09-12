@@ -10,8 +10,8 @@ function esw_type_project_cb($post) {
   wp_nonce_field('aws_type_project_meta', 'esw_type_project_nonce');
 	$country = get_post_meta($post->ID, 'country_key', true);
 	$city = get_post_meta($post->ID, 'city_key', true);
-	$products = get_post_meta($post->ID, 'products_key', true);
-	$brands = get_post_meta($post->ID, 'brands_key', true);
+	$products = get_post_meta($post->ID, 'products_key');
+	$brands = get_post_meta($post->ID, 'brands_key');
 
 	$props = [
 		"countries" => countries(),

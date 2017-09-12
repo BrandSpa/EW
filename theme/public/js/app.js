@@ -1064,11 +1064,11 @@ var ProjectsSection = function (_Component) {
 
       return null;
     }, _this.handleFilters = function (rawFilters) {
-      var multiple = ['product', 'brand'];
+      var multiple = ['products', 'brands'];
 
       var metaFilters = Object.keys(rawFilters.meta).map(function (key) {
         if (multiple.indexOf(key) !== -1) {
-          return _this.getMetaQuery(rawFilters.meta, key, 'IN');
+          return _this.getMetaQuery(rawFilters.meta, key, 'LIKE');
         } else {
           return _this.getMetaQuery(rawFilters.meta, key, '=');
         }

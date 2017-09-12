@@ -77,8 +77,7 @@ class ProjectMB extends Component {
         <h3>Products</h3>
         {products.map((product, i) => {
           return (
-            <div >
-
+            <div>
               <select name="products[]" className="form-control" value={product} onChange={this.handleField.bind(null, 'products', i)}>
                 <option value="">Product</option>
                 {productsOptions.map(productOption =>
