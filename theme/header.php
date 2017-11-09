@@ -12,3 +12,8 @@
 
 </head>
 <body>
+<?php 
+  $props = ["menu" => menu_to_array('header')];
+?>
+
+<section class="header-container" data-props='<?php echo wp_json_encode($props) ?>'></section>
