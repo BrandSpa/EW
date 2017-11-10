@@ -1020,9 +1020,19 @@ var Header = function (_Component) {
 	_inherits(Header, _Component);
 
 	function Header() {
+		var _ref;
+
+		var _temp, _this, _ret;
+
 		_classCallCheck(this, Header);
 
-		return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
+
+		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Header.__proto__ || Object.getPrototypeOf(Header)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+			uri: window.templateUri
+		}, _temp), _possibleConstructorReturn(_this, _ret);
 	}
 
 	_createClass(Header, [{
@@ -1047,7 +1057,6 @@ var Header = function (_Component) {
 				return parseInt(item.menu_item_parent) === 0;
 			});
 
-			console.log(menu);
 			return _react2.default.createElement(
 				'section',
 				{ className: 'header', 'data-jsx': 2814109129
@@ -1056,7 +1065,8 @@ var Header = function (_Component) {
 					'div',
 					{ className: 'logo-container', 'data-jsx': 2814109129
 					},
-					'ESWINDOWS'
+					_react2.default.createElement('img', { src: this.state.uri + '/public/img/logo.png', alt: '', 'data-jsx': 2814109129
+					})
 				),
 				_react2.default.createElement(
 					'div',
@@ -1070,8 +1080,7 @@ var Header = function (_Component) {
 						newMenu.map(function (item) {
 							return _react2.default.createElement(
 								'li',
-								{
-									'data-jsx': 2814109129
+								{ key: item.ID, 'data-jsx': 2814109129
 								},
 								item.title,
 								_react2.default.createElement(
@@ -1082,8 +1091,7 @@ var Header = function (_Component) {
 									item.sub && item.sub.map(function (subItem) {
 										return _react2.default.createElement(
 											'li',
-											{
-												'data-jsx': 2814109129
+											{ key: subItem.ID, 'data-jsx': 2814109129
 											},
 											subItem.title
 										);

@@ -3,9 +3,14 @@ import { find } from 'lodash';
 
 class Header extends Component {
 
+	state = {
+		uri: window.templateUri
+	}
+
+
 	render() {
 		const { menu } = this.props;
-
+		
 		let newMenu = menu.map(item => {
 			const parentId = parseInt(item.menu_item_parent);
 
@@ -20,19 +25,19 @@ class Header extends Component {
 
 		newMenu = menu.filter(item => parseInt(item.menu_item_parent) === 0); 
 
-		console.log(menu);
 		return (
 			<section className="header">
 			<div className="logo-container">
-				ESWINDOWS
+			<img src={`${this.state.uri}/public/img/logo.png`} alt=""/>
+
 			</div>
 			<div className="menu-container">
 				<ul>
 					{newMenu.map(item =>
-							<li>
+							<li key={item.ID}>
 								{item.title}
 									<ul>
-									{item.sub && item.sub.map(subItem => <li>{subItem.title}</li>)}
+									{item.sub && item.sub.map(subItem => <li key={subItem.ID}>{subItem.title}</li>)}
 									</ul>
 							</li>
 					)}
