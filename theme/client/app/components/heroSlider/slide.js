@@ -30,6 +30,12 @@ class HeroSlide extends Component {
 						font-family: 'Yantramanav';
 					}
 
+					.line {
+						width: 60px;
+						height: 1px;
+						border: solid 1px #039ed8;
+					}
+
 					.content p {
 						font-size: 14px;
 					}

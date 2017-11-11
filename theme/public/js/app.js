@@ -20605,37 +20605,37 @@ var HeroSlide = function (_Component) {
 
 			return _react2.default.createElement(
 				"section",
-				{ className: "heroSlide", style: { background: "url(" + bg + ")" }, "data-jsx": 3255111564
+				{ className: "heroSlide", style: { background: "url(" + bg + ")" }, "data-jsx": 184390381
 				},
 				_react2.default.createElement(
 					"div",
-					{ className: "title", "data-jsx": 3255111564
+					{ className: "title", "data-jsx": 184390381
 					},
 					_react2.default.createElement(
 						"h2",
 						{
-							"data-jsx": 3255111564
+							"data-jsx": 184390381
 						},
 						title
 					)
 				),
-				_react2.default.createElement("div", { className: "line", "data-jsx": 3255111564
+				_react2.default.createElement("div", { className: "line", "data-jsx": 184390381
 				}),
 				_react2.default.createElement(
 					"div",
-					{ className: "content", "data-jsx": 3255111564
+					{ className: "content", "data-jsx": 184390381
 					},
 					_react2.default.createElement(
 						"p",
 						{
-							"data-jsx": 3255111564
+							"data-jsx": 184390381
 						},
 						content
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 3255111564,
-					css: ".heroSlide[data-jsx=\"3255111564\"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;min-height:100vh;background-size:cover;color:#fff;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.title[data-jsx=\"3255111564\"] h2[data-jsx=\"3255111564\"]{font-size:40px;font-family:'Yantramanav'}.content[data-jsx=\"3255111564\"] p[data-jsx=\"3255111564\"]{font-size:14px}@media (min-width:1024px){.title[data-jsx=\"3255111564\"] h2[data-jsx=\"3255111564\"]{font-size:100px}.content[data-jsx=\"3255111564\"] p[data-jsx=\"3255111564\"]{font-size:24px}}"
+					styleId: 184390381,
+					css: ".heroSlide[data-jsx=\"184390381\"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;min-height:100vh;background-size:cover;color:#fff;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.title[data-jsx=\"184390381\"] h2[data-jsx=\"184390381\"]{font-size:40px;font-family:'Yantramanav'}.line[data-jsx=\"184390381\"]{width:60px;height:1px;border:solid 1px #039ed8}.content[data-jsx=\"184390381\"] p[data-jsx=\"184390381\"]{font-size:14px}@media (min-width:1024px){.title[data-jsx=\"184390381\"] h2[data-jsx=\"184390381\"]{font-size:100px}.content[data-jsx=\"184390381\"] p[data-jsx=\"184390381\"]{font-size:24px}}"
 				})
 			);
 		}
