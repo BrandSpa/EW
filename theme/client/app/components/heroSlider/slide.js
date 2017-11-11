@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 class HeroSlide extends Component {
 
 	render() {
+		const { bg, title, content } = this.props;
+		
 		return (
 			<section className="heroSlide" style={{ background: `${bg}` }}>
 				<div className="title">
