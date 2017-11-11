@@ -8,7 +8,7 @@ function hero_slider_sc( $atts ){
 	ob_start();
 	?> 
 	 
-	<section class="heroSlider-container"></section>
+	<div class="heroSlider-container"></div>
 	
 	<?php
 
