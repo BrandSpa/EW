@@ -36,7 +36,10 @@ class Header extends Component {
 								<li key={item.ID}>
 									<a href="#">{item.title}</a> <img src={`${this.state.uri}/public/img/arrow.svg`}/>
 										<ul className="header__submenu">
-										{item.sub && item.sub.map(subItem => <li key={subItem.ID}>{subItem.title}</li>)}
+										{item.sub && item.sub.map(subItem => {
+											return <li key={subItem.ID}><a href="#">{subItem.title}</a></li>
+											})
+										}
 										</ul>
 								</li>
 						)}
