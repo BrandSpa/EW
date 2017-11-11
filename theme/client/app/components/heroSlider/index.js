@@ -25,6 +25,11 @@ class HeroSlider extends Component {
 				{slides.map((slide, i) => {
 					return <Slide key={i} {...slide} />
 				})}
+				<style jsx>{`
+					.heroSlider {
+						min-height: 100vh
+					}
+				`}</style>
 			</section>
 		)
 	}

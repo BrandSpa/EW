@@ -20484,6 +20484,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _style = __webpack_require__(113);
+
+var _style2 = _interopRequireDefault(_style);
+
 var _react = __webpack_require__(48);
 
 var _react2 = _interopRequireDefault(_react);
@@ -20541,9 +20545,14 @@ var HeroSlider = function (_Component) {
 
 			return _react2.default.createElement(
 				'section',
-				{ className: 'heroSlider' },
+				{ className: 'heroSlider', 'data-jsx': 2385170101
+				},
 				slides.map(function (slide, i) {
 					return _react2.default.createElement(_slide2.default, _extends({ key: i }, slide));
+				}),
+				_react2.default.createElement(_style2.default, {
+					styleId: 2385170101,
+					css: '.heroSlider[data-jsx="2385170101"]{min-height:100vh}'
 				})
 			);
 		}
