@@ -17,6 +17,12 @@ function hero_slider_vc() {
 					'value' => '',
 					'heading' => 'Enter title',
 					'param_name' => 'title',
+				],
+				[
+					'type' => 'textarea',
+					'value' => '',
+					'heading' => 'Enter content',
+					'param_name' => 'content',
 				]
 			]
 		]
