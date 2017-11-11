@@ -27,9 +27,9 @@ class HeroSlider extends Component {
 		const { slides } = this.props;
 		const slideNum = this.state.slide - 1;
 		const slide = slides[slideNum];
-		
+		const { bg } = slide; 
 		return (
-			<section className="heroSlider">
+			<section className="heroSlider" style={{ background: `url(${bg})` }}>
 				<Slide {...slide} />
 				<div className="heroSlider__nav">
 					{slides.map((s, i) => {
@@ -41,6 +41,8 @@ class HeroSlider extends Component {
 					.heroSlider {
 						display: flex;
 						width: 100%;
+						background-size: cover;
+						backgroundColor: '#333';
 					}
 
 					.heroSlider__nav {

@@ -6,7 +6,7 @@ class HeroSlide extends Component {
 		const { bg, title, content } = this.props;
 
 		return (
-			<section className="heroSlide" style={{ background: `url(${bg})` }}>
+			<section className="heroSlide" >
 				<div className="heroSlide__content">
 					<div className="title">
 						<h2>{title}</h2>
@@ -21,11 +21,9 @@ class HeroSlide extends Component {
 						display: flex;
 						width: 100%;
 						min-height: 100vh;
-						background-size: cover
 						color: #fff;
 						justify-content: center;
     				flex-direction: column;
-						backgroundColor: '#333'
 					}
 
 					.heroSlide__content {
