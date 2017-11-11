@@ -20600,7 +20600,7 @@ var HeroSlide = function (_Component) {
 
 			return _react2.default.createElement(
 				"section",
-				{ className: "heroSlide", style: { background: "" + bg } },
+				{ className: "heroSlide", style: { background: "url(" + bg + ")" } },
 				_react2.default.createElement(
 					"div",
 					{ className: "title" },

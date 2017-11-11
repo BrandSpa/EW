@@ -4,9 +4,9 @@ class HeroSlide extends Component {
 
 	render() {
 		const { bg, title, content } = this.props;
-		
+
 		return (
-			<section className="heroSlide" style={{ background: `${bg}` }}>
+			<section className="heroSlide" style={{ background: `url(${bg})` }}>
 				<div className="title">
 					<h2>{title}</h2>
 				</div>
