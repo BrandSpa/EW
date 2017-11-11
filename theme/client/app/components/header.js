@@ -7,7 +7,6 @@ class Header extends Component {
 		uri: window.templateUri
 	}
 
-
 	render() {
 		const { menu } = this.props;
 		
@@ -27,37 +26,47 @@ class Header extends Component {
 
 		return (
 			<section className="header">
-			<div className="logo-container">
-			<img src={`${this.state.uri}/public/img/logo.png`} alt=""/>
+				<div className="logo-container">
+				<img src={`${this.state.uri}/public/img/logo.png`} alt=""/>
 
-			</div>
-			<div className="menu-container">
-				<ul>
-					{newMenu.map(item =>
-							<li key={item.ID}>
-								{item.title}
-									<ul>
-									{item.sub && item.sub.map(subItem => <li key={subItem.ID}>{subItem.title}</li>)}
-									</ul>
-							</li>
-					)}
-				</ul>
-			</div>
-			<style jsx>{`
-          .header {
-						position: fixed;
-						display: flex;
-						width: 100%;
-						flex-direction: column;
-						z-index: 900;
-						padding: 60px 40px 0 40px;
-					}
+				</div>
+				<div className="header__menu">
+					<ul>
+						{newMenu.map(item =>
+								<li key={item.ID}>
+									<a href="#">{item.title}</a> <img src={`${this.state.uri}/public/img/arrow.svg`}/>
+										<ul>
+										{item.sub && item.sub.map(subItem => <li key={subItem.ID}>{subItem.title}</li>)}
+										</ul>
+								</li>
+						)}
+					</ul>
+				</div>
+				<style jsx>{`
+						.header {
+							position: fixed;
+							display: flex;
+							width: 100%;
+							flex-direction: column;
+							z-index: 900;
+							padding: 60px 40px 0 40px;
+						}
 
-					.menu-container {
-						align-self: flex-end;
-						margin-right: 60px
-					}
-        `}</style>
+						.header__menu {
+							align-self: flex-end;
+							margin-right: 60px
+						}
+
+						header__menu ul {
+							padding: 0;
+							display: flex;
+						}
+
+						header__menu ul li a {
+							color: #fff;
+							margin-right: 40px;
+						}
+					`}</style>
 		</section>
 		)
 	}

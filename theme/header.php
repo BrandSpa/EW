@@ -16,6 +16,10 @@
     body {
       font-family: 'Arimo', sans-serif;
     }
+    
+    li {
+      list-style: none;
+    }
   </style>
 </head>
 <body>
