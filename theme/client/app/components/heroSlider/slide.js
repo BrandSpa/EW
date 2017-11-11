@@ -25,6 +25,7 @@ class HeroSlide extends Component {
 						color: #fff;
 						justify-content: center;
     				flex-direction: column;
+						backgroundColor: '#333'
 					}
 
 					.heroSlide__content {

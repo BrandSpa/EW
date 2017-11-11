@@ -17,6 +17,12 @@ class HeroSlider extends Component {
 		}
 	}
 
+	changeSlide = (e, i) => {
+		console.log(i, e);
+		// e.preventDefault();
+
+	}
+
 	render() {
 		const { slides } = this.props;
 		const slideNum = this.state.slide - 1;
@@ -25,10 +31,35 @@ class HeroSlider extends Component {
 		return (
 			<section className="heroSlider">
 				<Slide {...slide} />
+				<div className="heroSlider__nav">
+					{slides.map((s, i) => {
+						return <button onClick={() => this.changeSlide(i)} />
+					})}
+					
+				</div>
 				<style jsx>{`
 					.heroSlider {
 						display: flex;
 						width: 100%;
+					}
+
+					.heroSlider__nav {
+						display: flex;
+					}
+
+					.heroSlider__nav button {
+						display: block;
+						background: transparent;
+						width: 30px;
+						height: 30px;
+						border: solid 1px #039ed8;
+					}
+
+					@media (min-width: 1024px) {
+						.heroSlider__nav button {
+							width: 40px;
+							height: 40px;
+						}
 					}
 				`}</style>
 			</section>
