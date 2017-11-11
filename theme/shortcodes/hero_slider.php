@@ -11,7 +11,10 @@ function hero_slider_sc( $atts ){
 		return $slide;
 	}, vc_param_group_parse_atts( $at['slides'] ));
 
-
+	$props = [
+		"slides" => $slides
+	];
+	
 	ob_start();
 	?> 
 	 
