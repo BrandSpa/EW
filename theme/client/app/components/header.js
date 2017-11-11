@@ -47,14 +47,12 @@ class Header extends Component {
 							position: fixed;
 							display: flex;
 							width: 100%;
-							flex-direction: column;
 							z-index: 900;
 							padding: 60px 40px 0 40px;
 						}
 
 						.header__menu {
 							align-self: flex-end;
-							margin-right: 60px
 						}
 
 						.header__menu ul {

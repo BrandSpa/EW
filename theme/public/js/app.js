@@ -1058,47 +1058,47 @@ var Header = function (_Component) {
 
 			return _react2.default.createElement(
 				'section',
-				{ className: 'header', 'data-jsx': 3075748245
+				{ className: 'header', 'data-jsx': 657119514
 				},
 				_react2.default.createElement(
 					'div',
-					{ className: 'logo-container', 'data-jsx': 3075748245
+					{ className: 'logo-container', 'data-jsx': 657119514
 					},
-					_react2.default.createElement('img', { src: this.state.uri + '/public/img/logo.png', alt: '', 'data-jsx': 3075748245
+					_react2.default.createElement('img', { src: this.state.uri + '/public/img/logo.png', alt: '', 'data-jsx': 657119514
 					})
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'header__menu', 'data-jsx': 3075748245
+					{ className: 'header__menu', 'data-jsx': 657119514
 					},
 					_react2.default.createElement(
 						'ul',
 						{
-							'data-jsx': 3075748245
+							'data-jsx': 657119514
 						},
 						newMenu.map(function (item) {
 							return _react2.default.createElement(
 								'li',
-								{ key: item.ID, 'data-jsx': 3075748245
+								{ key: item.ID, 'data-jsx': 657119514
 								},
 								_react2.default.createElement(
 									'a',
-									{ href: '#', 'data-jsx': 3075748245
+									{ href: '#', 'data-jsx': 657119514
 									},
 									item.title
 								),
 								' ',
-								_react2.default.createElement('img', { src: _this2.state.uri + '/public/img/arrow.svg', 'data-jsx': 3075748245
+								_react2.default.createElement('img', { src: _this2.state.uri + '/public/img/arrow.svg', 'data-jsx': 657119514
 								}),
 								_react2.default.createElement(
 									'ul',
 									{
-										'data-jsx': 3075748245
+										'data-jsx': 657119514
 									},
 									item.sub && item.sub.map(function (subItem) {
 										return _react2.default.createElement(
 											'li',
-											{ key: subItem.ID, 'data-jsx': 3075748245
+											{ key: subItem.ID, 'data-jsx': 657119514
 											},
 											subItem.title
 										);
@@ -1109,8 +1109,8 @@ var Header = function (_Component) {
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 3075748245,
-					css: '.header[data-jsx="3075748245"]{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;z-index:900;padding:60px 40px 0 40px}.header__menu[data-jsx="3075748245"]{-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end;margin-right:60px}.header__menu[data-jsx="3075748245"] ul[data-jsx="3075748245"]{padding:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.header__menu[data-jsx="3075748245"] ul[data-jsx="3075748245"]>li[data-jsx="3075748245"]{margin-right:40px}.header__menu[data-jsx="3075748245"] ul[data-jsx="3075748245"] li[data-jsx="3075748245"] a[data-jsx="3075748245"]{color:#fff}'
+					styleId: 657119514,
+					css: '.header[data-jsx="657119514"]{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:900;padding:60px 40px 0 40px}.header__menu[data-jsx="657119514"]{-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end}.header__menu[data-jsx="657119514"] ul[data-jsx="657119514"]{padding:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.header__menu[data-jsx="657119514"] ul[data-jsx="657119514"]>li[data-jsx="657119514"]{margin-right:40px}.header__menu[data-jsx="657119514"] ul[data-jsx="657119514"] li[data-jsx="657119514"] a[data-jsx="657119514"]{color:#fff}'
 				})
 			);
 		}
