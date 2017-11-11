@@ -46,6 +46,7 @@ class HeroSlider extends Component {
 						backgroundColor: '#333';
 						justify-content: center;
     				flex-direction: column;
+						transition: all .3s;
 					}
 
 					.heroSlider__nav {

@@ -22,6 +22,7 @@ class HeroSlide extends Component {
 						width: 100%;
 						color: #fff;
 						padding-left: 40px;
+						transition: all .3s;
 					}
 
 					.heroSlide__content {

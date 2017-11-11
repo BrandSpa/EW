@@ -50,8 +50,9 @@ class Header extends Component {
 						width: 100%;
 						flex-direction: column;
 						z-index: 900;
+						padding: 60px 40px 0 40px;
 					}
-					
+
 					.menu-container {
 						align-self: flex-end;
 						margin-right: 60px

@@ -1056,39 +1056,39 @@ var Header = function (_Component) {
 
 			return _react2.default.createElement(
 				'section',
-				{ className: 'header', 'data-jsx': 1445839726
+				{ className: 'header', 'data-jsx': 2697839907
 				},
 				_react2.default.createElement(
 					'div',
-					{ className: 'logo-container', 'data-jsx': 1445839726
+					{ className: 'logo-container', 'data-jsx': 2697839907
 					},
-					_react2.default.createElement('img', { src: this.state.uri + '/public/img/logo.png', alt: '', 'data-jsx': 1445839726
+					_react2.default.createElement('img', { src: this.state.uri + '/public/img/logo.png', alt: '', 'data-jsx': 2697839907
 					})
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'menu-container', 'data-jsx': 1445839726
+					{ className: 'menu-container', 'data-jsx': 2697839907
 					},
 					_react2.default.createElement(
 						'ul',
 						{
-							'data-jsx': 1445839726
+							'data-jsx': 2697839907
 						},
 						newMenu.map(function (item) {
 							return _react2.default.createElement(
 								'li',
-								{ key: item.ID, 'data-jsx': 1445839726
+								{ key: item.ID, 'data-jsx': 2697839907
 								},
 								item.title,
 								_react2.default.createElement(
 									'ul',
 									{
-										'data-jsx': 1445839726
+										'data-jsx': 2697839907
 									},
 									item.sub && item.sub.map(function (subItem) {
 										return _react2.default.createElement(
 											'li',
-											{ key: subItem.ID, 'data-jsx': 1445839726
+											{ key: subItem.ID, 'data-jsx': 2697839907
 											},
 											subItem.title
 										);
@@ -1099,8 +1099,8 @@ var Header = function (_Component) {
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 1445839726,
-					css: '.header[data-jsx="1445839726"]{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;z-index:900}.menu-container[data-jsx="1445839726"]{-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end;margin-right:60px}'
+					styleId: 2697839907,
+					css: '.header[data-jsx="2697839907"]{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;z-index:900;padding:60px 40px 0 40px}.menu-container[data-jsx="2697839907"]{-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end;margin-right:60px}'
 				})
 			);
 		}
@@ -20544,23 +20544,23 @@ var HeroSlider = function (_Component) {
 
 			return _react2.default.createElement(
 				'section',
-				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 1037731668
+				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 4194188575
 				},
 				_react2.default.createElement(_slide2.default, slide),
 				_react2.default.createElement(
 					'div',
-					{ className: 'heroSlider__nav', 'data-jsx': 1037731668
+					{ className: 'heroSlider__nav', 'data-jsx': 4194188575
 					},
 					slides.map(function (s, i) {
 						return _react2.default.createElement('button', { onClick: function onClick(e) {
 								return _this3.changeSlide(e, i);
-							}, 'data-jsx': 1037731668
+							}, 'data-jsx': 4194188575
 						});
 					})
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 1037731668,
-					css: '.heroSlider[data-jsx="1037731668"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;min-height:100vh;background-size:cover;backgroundColor:\'#333\';-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.heroSlider__nav[data-jsx="1037731668"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:40px;margin-left:40px}.heroSlider__nav[data-jsx="1037731668"] button[data-jsx="1037731668"]{display:block;background:transparent;width:30px;height:30px;border:solid 1px #039ed8;border-radius:0;outline:none;margin-right:10px}@media (min-width:1024px){.heroSlider__nav[data-jsx="1037731668"] button[data-jsx="1037731668"]{width:40px;height:40px}}'
+					styleId: 4194188575,
+					css: '.heroSlider[data-jsx="4194188575"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;min-height:100vh;background-size:cover;backgroundColor:\'#333\';-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-transition:all .3s;transition:all .3s}.heroSlider__nav[data-jsx="4194188575"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:40px;margin-left:40px}.heroSlider__nav[data-jsx="4194188575"] button[data-jsx="4194188575"]{display:block;background:transparent;width:30px;height:30px;border:solid 1px #039ed8;border-radius:0;outline:none;margin-right:10px}@media (min-width:1024px){.heroSlider__nav[data-jsx="4194188575"] button[data-jsx="4194188575"]{width:40px;height:40px}}'
 				})
 			);
 		}
@@ -20621,42 +20621,42 @@ var HeroSlide = function (_Component) {
 
 			return _react2.default.createElement(
 				"section",
-				{ className: "heroSlide", "data-jsx": 3636709807
+				{ className: "heroSlide", "data-jsx": 1531238852
 				},
 				_react2.default.createElement(
 					"div",
-					{ className: "heroSlide__content", "data-jsx": 3636709807
+					{ className: "heroSlide__content", "data-jsx": 1531238852
 					},
 					_react2.default.createElement(
 						"div",
-						{ className: "title", "data-jsx": 3636709807
+						{ className: "title", "data-jsx": 1531238852
 						},
 						_react2.default.createElement(
 							"h2",
 							{
-								"data-jsx": 3636709807
+								"data-jsx": 1531238852
 							},
 							title
 						)
 					),
-					_react2.default.createElement("div", { className: "line", "data-jsx": 3636709807
+					_react2.default.createElement("div", { className: "line", "data-jsx": 1531238852
 					}),
 					_react2.default.createElement(
 						"div",
-						{ className: "body", "data-jsx": 3636709807
+						{ className: "body", "data-jsx": 1531238852
 						},
 						_react2.default.createElement(
 							"p",
 							{
-								"data-jsx": 3636709807
+								"data-jsx": 1531238852
 							},
 							content
 						)
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 3636709807,
-					css: ".heroSlide[data-jsx=\"3636709807\"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;color:#fff;padding-left:40px}.heroSlide__content[data-jsx=\"3636709807\"]{width:80%}.title[data-jsx=\"3636709807\"] h2[data-jsx=\"3636709807\"]{font-size:40px;font-family:'Yantramanav'}.line[data-jsx=\"3636709807\"]{width:60px;height:1px;border:solid 1px #039ed8}.body[data-jsx=\"3636709807\"] p[data-jsx=\"3636709807\"]{font-size:14px}@media (min-width:1024px){.heroSlide__content[data-jsx=\"3636709807\"]{width:60%}.title[data-jsx=\"3636709807\"] h2[data-jsx=\"3636709807\"]{font-size:100px}.body[data-jsx=\"3636709807\"] p[data-jsx=\"3636709807\"]{font-size:24px}}"
+					styleId: 1531238852,
+					css: ".heroSlide[data-jsx=\"1531238852\"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;color:#fff;padding-left:40px;-webkit-transition:all .3s;transition:all .3s}.heroSlide__content[data-jsx=\"1531238852\"]{width:80%}.title[data-jsx=\"1531238852\"] h2[data-jsx=\"1531238852\"]{font-size:40px;font-family:'Yantramanav'}.line[data-jsx=\"1531238852\"]{width:60px;height:1px;border:solid 1px #039ed8}.body[data-jsx=\"1531238852\"] p[data-jsx=\"1531238852\"]{font-size:14px}@media (min-width:1024px){.heroSlide__content[data-jsx=\"1531238852\"]{width:60%}.title[data-jsx=\"1531238852\"] h2[data-jsx=\"1531238852\"]{font-size:100px}.body[data-jsx=\"1531238852\"] p[data-jsx=\"1531238852\"]{font-size:24px}}"
 				})
 			);
 		}
