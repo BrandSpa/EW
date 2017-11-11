@@ -45,11 +45,13 @@ class Header extends Component {
 			</div>
 			<style jsx>{`
           .header {
+						position: fixed;
 						display: flex;
 						width: 100%;
 						flex-direction: column;
 						z-index: 900;
 					}
+					
 					.menu-container {
 						align-self: flex-end;
 						margin-right: 60px

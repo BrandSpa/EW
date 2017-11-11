@@ -51,6 +51,7 @@ class HeroSlider extends Component {
 					.heroSlider__nav {
 						display: flex;
 						margin-top: 40px;
+						margin-left: 40px;
 					}
 
 					.heroSlider__nav button {
