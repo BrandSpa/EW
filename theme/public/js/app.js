@@ -20543,23 +20543,23 @@ var HeroSlider = function (_Component) {
 
 			return _react2.default.createElement(
 				'section',
-				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 131262850
+				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 2062483990
 				},
 				_react2.default.createElement(_slide2.default, slide),
 				_react2.default.createElement(
 					'div',
-					{ className: 'heroSlider__nav', 'data-jsx': 131262850
+					{ className: 'heroSlider__nav', 'data-jsx': 2062483990
 					},
 					slides.map(function (s, i) {
 						return _react2.default.createElement('button', { onClick: function onClick() {
 								return _this3.changeSlide(i);
-							}, 'data-jsx': 131262850
+							}, 'data-jsx': 2062483990
 						});
 					})
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 131262850,
-					css: '.heroSlider[data-jsx="131262850"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;background-size:cover;backgroundColor:\'#333\'}.heroSlider__nav[data-jsx="131262850"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.heroSlider__nav[data-jsx="131262850"] button[data-jsx="131262850"]{display:block;background:transparent;width:30px;height:30px;border:solid 1px #039ed8}@media (min-width:1024px){.heroSlider__nav[data-jsx="131262850"] button[data-jsx="131262850"]{width:40px;height:40px}}'
+					styleId: 2062483990,
+					css: '.heroSlider[data-jsx="2062483990"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;min-height:100vh;background-size:cover;backgroundColor:\'#333\';-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.heroSlider__nav[data-jsx="2062483990"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.heroSlider__nav[data-jsx="2062483990"] button[data-jsx="2062483990"]{display:block;background:transparent;width:30px;height:30px;border:solid 1px #039ed8}@media (min-width:1024px){.heroSlider__nav[data-jsx="2062483990"] button[data-jsx="2062483990"]{width:40px;height:40px}}'
 				})
 			);
 		}
@@ -20620,42 +20620,42 @@ var HeroSlide = function (_Component) {
 
 			return _react2.default.createElement(
 				"section",
-				{ className: "heroSlide", "data-jsx": 2826255611
+				{ className: "heroSlide", "data-jsx": 2057836751
 				},
 				_react2.default.createElement(
 					"div",
-					{ className: "heroSlide__content", "data-jsx": 2826255611
+					{ className: "heroSlide__content", "data-jsx": 2057836751
 					},
 					_react2.default.createElement(
 						"div",
-						{ className: "title", "data-jsx": 2826255611
+						{ className: "title", "data-jsx": 2057836751
 						},
 						_react2.default.createElement(
 							"h2",
 							{
-								"data-jsx": 2826255611
+								"data-jsx": 2057836751
 							},
 							title
 						)
 					),
-					_react2.default.createElement("div", { className: "line", "data-jsx": 2826255611
+					_react2.default.createElement("div", { className: "line", "data-jsx": 2057836751
 					}),
 					_react2.default.createElement(
 						"div",
-						{ className: "body", "data-jsx": 2826255611
+						{ className: "body", "data-jsx": 2057836751
 						},
 						_react2.default.createElement(
 							"p",
 							{
-								"data-jsx": 2826255611
+								"data-jsx": 2057836751
 							},
 							content
 						)
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 2826255611,
-					css: ".heroSlide[data-jsx=\"2826255611\"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;min-height:100vh;color:#fff;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.heroSlide__content[data-jsx=\"2826255611\"]{width:80%}.title[data-jsx=\"2826255611\"] h2[data-jsx=\"2826255611\"]{font-size:40px;font-family:'Yantramanav'}.line[data-jsx=\"2826255611\"]{width:60px;height:1px;border:solid 1px #039ed8}.body[data-jsx=\"2826255611\"] p[data-jsx=\"2826255611\"]{font-size:14px}@media (min-width:1024px){.heroSlide__content[data-jsx=\"2826255611\"]{width:60%}.title[data-jsx=\"2826255611\"] h2[data-jsx=\"2826255611\"]{font-size:100px}.body[data-jsx=\"2826255611\"] p[data-jsx=\"2826255611\"]{font-size:24px}}"
+					styleId: 2057836751,
+					css: ".heroSlide[data-jsx=\"2057836751\"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;color:#fff}.heroSlide__content[data-jsx=\"2057836751\"]{width:80%}.title[data-jsx=\"2057836751\"] h2[data-jsx=\"2057836751\"]{font-size:40px;font-family:'Yantramanav'}.line[data-jsx=\"2057836751\"]{width:60px;height:1px;border:solid 1px #039ed8}.body[data-jsx=\"2057836751\"] p[data-jsx=\"2057836751\"]{font-size:14px}@media (min-width:1024px){.heroSlide__content[data-jsx=\"2057836751\"]{width:60%}.title[data-jsx=\"2057836751\"] h2[data-jsx=\"2057836751\"]{font-size:100px}.body[data-jsx=\"2057836751\"] p[data-jsx=\"2057836751\"]{font-size:24px}}"
 				})
 			);
 		}

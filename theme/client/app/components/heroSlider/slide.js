@@ -20,10 +20,7 @@ class HeroSlide extends Component {
 					.heroSlide {
 						display: flex;
 						width: 100%;
-						min-height: 100vh;
 						color: #fff;
-						justify-content: center;
-    				flex-direction: column;
 					}
 
 					.heroSlide__content {

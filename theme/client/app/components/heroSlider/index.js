@@ -41,8 +41,11 @@ class HeroSlider extends Component {
 					.heroSlider {
 						display: flex;
 						width: 100%;
+						min-height: 100vh;
 						background-size: cover;
 						backgroundColor: '#333';
+						justify-content: center;
+    				flex-direction: column;
 					}
 
 					.heroSlider__nav {
