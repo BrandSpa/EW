@@ -28,7 +28,7 @@ class HeroSlide extends Component {
 					}
 
 					.heroSlide__content {
-						width: 60%;
+						width: 80%;
 					}
 					
 					.title h2 {
@@ -47,11 +47,16 @@ class HeroSlide extends Component {
 					}
 
 					@media (min-width: 1024px) {
+
+						.heroSlide__content {
+							width: 60%;
+						}
+
 						.title h2 {
 							font-size: 100px;
 						}
 
-						.content p {
+						.body p {
 							font-size: 24px;
 						}
 					}
