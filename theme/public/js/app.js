@@ -20472,8 +20472,6 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _style = __webpack_require__(79);
@@ -20534,14 +20532,14 @@ var HeroSlider = function (_Component) {
 		value: function render() {
 			var slides = this.props.slides;
 
+			var slideNum = this.state.slide - 1;
+			var slide = slides[slideNum];
 
 			return _react2.default.createElement(
 				'section',
 				{ className: 'heroSlider', 'data-jsx': 1679789933
 				},
-				slides.map(function (slide, i) {
-					return _react2.default.createElement(_slide2.default, _extends({ key: i }, slide));
-				}),
+				_react2.default.createElement(_slide2.default, slide),
 				_react2.default.createElement(_style2.default, {
 					styleId: 1679789933,
 					css: '.heroSlider[data-jsx="1679789933"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%}'

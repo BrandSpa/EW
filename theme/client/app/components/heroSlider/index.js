@@ -19,12 +19,12 @@ class HeroSlider extends Component {
 
 	render() {
 		const { slides } = this.props;
-
+		const slideNum = this.state.slide - 1;
+		const slide = slides[slideNum];
+		
 		return (
 			<section className="heroSlider">
-				{slides.map((slide, i) => {
-					return <Slide key={i} {...slide} />
-				})}
+				<Slide {...slide} />
 				<style jsx>{`
 					.heroSlider {
 						display: flex;
