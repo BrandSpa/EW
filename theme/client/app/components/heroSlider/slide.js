@@ -7,12 +7,14 @@ class HeroSlide extends Component {
 
 		return (
 			<section className="heroSlide" style={{ background: `url(${bg})` }}>
-				<div className="title">
-					<h2>{title}</h2>
-				</div>
-				<div className="line"></div>
-				<div className="content">
-					<p>{content}</p>
+				<div className="heroSlide__content">
+					<div className="title">
+						<h2>{title}</h2>
+					</div>
+					<div className="line"></div>
+					<div className="body">
+						<p>{content}</p>
+					</div>
 				</div>
 				<style jsx>{`
 					.heroSlide {
@@ -23,6 +25,10 @@ class HeroSlide extends Component {
 						color: #fff;
 						justify-content: center;
     				flex-direction: column;
+					}
+
+					.heroSlide__content {
+						width: 60%;
 					}
 					
 					.title h2 {
@@ -36,7 +42,7 @@ class HeroSlide extends Component {
 						border: solid 1px #039ed8;
 					}
 
-					.content p {
+					.body p {
 						font-size: 14px;
 					}
 
