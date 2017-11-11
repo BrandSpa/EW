@@ -20544,23 +20544,23 @@ var HeroSlider = function (_Component) {
 
 			return _react2.default.createElement(
 				'section',
-				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 2062483990
+				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 1351887067
 				},
 				_react2.default.createElement(_slide2.default, slide),
 				_react2.default.createElement(
 					'div',
-					{ className: 'heroSlider__nav', 'data-jsx': 2062483990
+					{ className: 'heroSlider__nav', 'data-jsx': 1351887067
 					},
 					slides.map(function (s, i) {
 						return _react2.default.createElement('button', { onClick: function onClick(e) {
 								return _this3.changeSlide(e, i);
-							}, 'data-jsx': 2062483990
+							}, 'data-jsx': 1351887067
 						});
 					})
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 2062483990,
-					css: '.heroSlider[data-jsx="2062483990"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;min-height:100vh;background-size:cover;backgroundColor:\'#333\';-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.heroSlider__nav[data-jsx="2062483990"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.heroSlider__nav[data-jsx="2062483990"] button[data-jsx="2062483990"]{display:block;background:transparent;width:30px;height:30px;border:solid 1px #039ed8}@media (min-width:1024px){.heroSlider__nav[data-jsx="2062483990"] button[data-jsx="2062483990"]{width:40px;height:40px}}'
+					styleId: 1351887067,
+					css: '.heroSlider[data-jsx="1351887067"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;min-height:100vh;background-size:cover;backgroundColor:\'#333\';-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.heroSlider__nav[data-jsx="1351887067"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:40px}.heroSlider__nav[data-jsx="1351887067"] button[data-jsx="1351887067"]{display:block;background:transparent;width:30px;height:30px;border:solid 1px #039ed8;border-radius:0;outline:none;margin-right:10px}@media (min-width:1024px){.heroSlider__nav[data-jsx="1351887067"] button[data-jsx="1351887067"]{width:40px;height:40px}}'
 				})
 			);
 		}
