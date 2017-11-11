@@ -57,12 +57,12 @@ class Header extends Component {
 							margin-right: 60px
 						}
 
-						header__menu ul {
+						.header__menu ul {
 							padding: 0;
 							display: flex;
 						}
 
-						header__menu ul li a {
+						.header__menu ul li a {
 							color: #fff;
 							margin-right: 40px;
 						}
