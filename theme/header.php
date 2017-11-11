@@ -15,13 +15,14 @@
   <style>
     body {
       font-family: 'Arimo', sans-serif;
+      font-size: 14px;
     }
 
     li {
       list-style: none;
     }
 
-    a {
+    a:hover {
       text-decoration: none;
     }
   </style>

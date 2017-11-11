@@ -35,7 +35,7 @@ class Header extends Component {
 						{newMenu.map(item =>
 								<li key={item.ID}>
 									<a href="#">{item.title}</a> <img src={`${this.state.uri}/public/img/arrow.svg`}/>
-										<ul>
+										<ul className="header__submenu">
 										{item.sub && item.sub.map(subItem => <li key={subItem.ID}>{subItem.title}</li>)}
 										</ul>
 								</li>
@@ -63,12 +63,25 @@ class Header extends Component {
 						
 						.header__menu ul > li {
 							margin-right: 40px;
+							position: relative;
 						}
 
 						.header__menu ul li a {
 							color: #fff;
 							padding-right: 15px;
 						}
+
+						.header__submenu {
+							background: #fff;
+							padding: 15px;
+							position: absolute;
+						}
+
+						.header__submenu li a {
+							color: #039ed8;
+						}
+
+						
 					`}</style>
 		</section>
 		)
