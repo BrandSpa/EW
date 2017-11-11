@@ -20577,6 +20577,10 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _style = __webpack_require__(113);
+
+var _style2 = _interopRequireDefault(_style);
+
 var _react = __webpack_require__(48);
 
 var _react2 = _interopRequireDefault(_react);
@@ -20609,26 +20613,38 @@ var HeroSlide = function (_Component) {
 
 			return _react2.default.createElement(
 				"section",
-				{ className: "heroSlide", style: { background: "url(" + bg + ")" } },
+				{ className: "heroSlide", style: { background: "url(" + bg + ")" }, "data-jsx": 1536510982
+				},
 				_react2.default.createElement(
 					"div",
-					{ className: "title" },
+					{ className: "title", "data-jsx": 1536510982
+					},
 					_react2.default.createElement(
 						"h2",
-						null,
+						{
+							"data-jsx": 1536510982
+						},
 						title
 					)
 				),
-				_react2.default.createElement("div", { className: "line" }),
+				_react2.default.createElement("div", { className: "line", "data-jsx": 1536510982
+				}),
 				_react2.default.createElement(
 					"div",
-					{ className: "content" },
+					{ className: "content", "data-jsx": 1536510982
+					},
 					_react2.default.createElement(
 						"p",
-						null,
+						{
+							"data-jsx": 1536510982
+						},
 						content
 					)
-				)
+				),
+				_react2.default.createElement(_style2.default, {
+					styleId: 1536510982,
+					css: ".heroSlider[data-jsx=\"1536510982\"]{min-height:100vh;background-size:cover;color:#fff}"
+				})
 			);
 		}
 	}]);

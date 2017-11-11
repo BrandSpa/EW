@@ -14,6 +14,13 @@ class HeroSlide extends Component {
 				<div className="content">
 					<p>{content}</p>
 				</div>
+				<style jsx>{`
+					.heroSlider {
+						min-height: 100vh;
+						background-size: cover
+						color: #fff;
+					}
+				`}</style>
 			</section>
 		)
 	}
