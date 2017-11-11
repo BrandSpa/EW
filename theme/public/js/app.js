@@ -20511,8 +20511,9 @@ var HeroSlider = function (_Component) {
 		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = HeroSlider.__proto__ || Object.getPrototypeOf(HeroSlider)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
 			slide: 1
 		}, _this.changeSlide = function (e, i) {
-			console.log(i, e);
-			// e.preventDefault();
+			e.preventDefault();
+			clearInterval(_this.interval);
+			_this.setState({ slide: i + 1 });
 		}, _temp), _possibleConstructorReturn(_this, _ret);
 	}
 
@@ -20551,8 +20552,8 @@ var HeroSlider = function (_Component) {
 					{ className: 'heroSlider__nav', 'data-jsx': 2062483990
 					},
 					slides.map(function (s, i) {
-						return _react2.default.createElement('button', { onClick: function onClick() {
-								return _this3.changeSlide(i);
+						return _react2.default.createElement('button', { onClick: function onClick(e) {
+								return _this3.changeSlide(e, i);
 							}, 'data-jsx': 2062483990
 						});
 					})

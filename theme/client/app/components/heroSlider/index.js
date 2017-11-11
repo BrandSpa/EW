@@ -18,9 +18,9 @@ class HeroSlider extends Component {
 	}
 
 	changeSlide = (e, i) => {
-		console.log(i, e);
-		// e.preventDefault();
-
+		e.preventDefault();
+		clearInterval(this.interval);
+		this.setState({slide: i + 1});
 	}
 
 	render() {
@@ -33,7 +33,7 @@ class HeroSlider extends Component {
 				<Slide {...slide} />
 				<div className="heroSlider__nav">
 					{slides.map((s, i) => {
-						return <button onClick={() => this.changeSlide(i)} />
+						return <button onClick={(e) => this.changeSlide(e, i)} />
 					})}
 					
 				</div>
