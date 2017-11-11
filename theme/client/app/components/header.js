@@ -49,6 +49,7 @@ class Header extends Component {
 							width: 100%;
 							z-index: 900;
 							padding: 60px 40px 0 40px;
+							justify-content: space-between;
 						}
 
 						.header__menu {
