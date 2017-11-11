@@ -61,10 +61,13 @@ class Header extends Component {
 							padding: 0;
 							display: flex;
 						}
+						
+						.header__menu ul > li {
+							margin-right: 40px;
+						}
 
 						.header__menu ul li a {
 							color: #fff;
-							margin-right: 40px;
 						}
 					`}</style>
 		</section>
