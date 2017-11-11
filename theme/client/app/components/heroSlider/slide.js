@@ -32,6 +32,7 @@ class HeroSlide extends Component {
 					.title h2 {
 						font-size: 40px;
 						font-family: 'Yantramanav';
+						line-height: 0.9;
 					}
 
 					.line {
@@ -42,6 +43,7 @@ class HeroSlide extends Component {
 
 					.body p {
 						font-size: 14px;
+						line-height: 1.54;
 					}
 
 					@media (min-width: 1024px) {
