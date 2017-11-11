@@ -15,7 +15,7 @@ function hero_slider_sc( $atts ){
 	ob_start();
 	?> 
 	 
-	<div class="heroSlider-container" data-props='<?php wp_json_encode($props); ?>'></div>
+	<div class="heroSlider-container" data-props='<?php echo wp_json_encode($props); ?>'></div>
 	
 	<?php
 
