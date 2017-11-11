@@ -20596,37 +20596,37 @@ var HeroSlide = function (_Component) {
 
 			return _react2.default.createElement(
 				"section",
-				{ className: "heroSlide", style: { background: "url(" + bg + ")" }, "data-jsx": 1536510982
+				{ className: "heroSlide", style: { background: "url(" + bg + ")" }, "data-jsx": 662946228
 				},
 				_react2.default.createElement(
 					"div",
-					{ className: "title", "data-jsx": 1536510982
+					{ className: "title", "data-jsx": 662946228
 					},
 					_react2.default.createElement(
 						"h2",
 						{
-							"data-jsx": 1536510982
+							"data-jsx": 662946228
 						},
 						title
 					)
 				),
-				_react2.default.createElement("div", { className: "line", "data-jsx": 1536510982
+				_react2.default.createElement("div", { className: "line", "data-jsx": 662946228
 				}),
 				_react2.default.createElement(
 					"div",
-					{ className: "content", "data-jsx": 1536510982
+					{ className: "content", "data-jsx": 662946228
 					},
 					_react2.default.createElement(
 						"p",
 						{
-							"data-jsx": 1536510982
+							"data-jsx": 662946228
 						},
 						content
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 1536510982,
-					css: ".heroSlider[data-jsx=\"1536510982\"]{min-height:100vh;background-size:cover;color:#fff}"
+					styleId: 662946228,
+					css: ".heroSlide[data-jsx=\"662946228\"]{min-height:100vh;background-size:cover;color:#fff}"
 				})
 			);
 		}
