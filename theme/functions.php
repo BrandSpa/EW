@@ -17,4 +17,4 @@ require 'types/index.php';
 require 'api/index.php';
 require 'lib/index.php';
 require 'metaboxes/index.php';
-
+require 'shortcodes/index.php';
