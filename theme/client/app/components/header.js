@@ -67,6 +67,7 @@ class Header extends Component {
 
 						.header__menu ul li a {
 							color: #fff;
+							padding-right: 15px;
 						}
 					`}</style>
 		</section>
