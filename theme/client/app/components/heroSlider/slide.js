@@ -38,6 +38,7 @@ class HeroSlide extends Component {
 					.line {
 						width: 60px;
 						height: 1px;
+						margin: 30px 0;
 						border: solid 1px #039ed8;
 					}
 
