@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Slide from './slide';
 
 class HeroSlider extends Component {
 
