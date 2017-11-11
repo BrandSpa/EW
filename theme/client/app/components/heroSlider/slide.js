@@ -16,13 +16,18 @@ class HeroSlide extends Component {
 				</div>
 				<style jsx>{`
 					.heroSlide {
+						display: flex;
+						width: 100%;
 						min-height: 100vh;
 						background-size: cover
 						color: #fff;
+						justify-content: center;
+    				flex-direction: column;
 					}
 					
 					.title h2 {
 						font-size: 40px;
+						font-family: 'Yantramanav';
 					}
 
 					.content p {

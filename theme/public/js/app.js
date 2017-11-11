@@ -20476,6 +20476,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _style = __webpack_require__(79);
+
+var _style2 = _interopRequireDefault(_style);
+
 var _react = __webpack_require__(48);
 
 var _react2 = _interopRequireDefault(_react);
@@ -20533,9 +20537,14 @@ var HeroSlider = function (_Component) {
 
 			return _react2.default.createElement(
 				'section',
-				{ className: 'heroSlider' },
+				{ className: 'heroSlider', 'data-jsx': 1679789933
+				},
 				slides.map(function (slide, i) {
 					return _react2.default.createElement(_slide2.default, _extends({ key: i }, slide));
+				}),
+				_react2.default.createElement(_style2.default, {
+					styleId: 1679789933,
+					css: '.heroSlider[data-jsx="1679789933"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%}'
 				})
 			);
 		}
@@ -20596,37 +20605,37 @@ var HeroSlide = function (_Component) {
 
 			return _react2.default.createElement(
 				"section",
-				{ className: "heroSlide", style: { background: "url(" + bg + ")" }, "data-jsx": 2480394364
+				{ className: "heroSlide", style: { background: "url(" + bg + ")" }, "data-jsx": 3255111564
 				},
 				_react2.default.createElement(
 					"div",
-					{ className: "title", "data-jsx": 2480394364
+					{ className: "title", "data-jsx": 3255111564
 					},
 					_react2.default.createElement(
 						"h2",
 						{
-							"data-jsx": 2480394364
+							"data-jsx": 3255111564
 						},
 						title
 					)
 				),
-				_react2.default.createElement("div", { className: "line", "data-jsx": 2480394364
+				_react2.default.createElement("div", { className: "line", "data-jsx": 3255111564
 				}),
 				_react2.default.createElement(
 					"div",
-					{ className: "content", "data-jsx": 2480394364
+					{ className: "content", "data-jsx": 3255111564
 					},
 					_react2.default.createElement(
 						"p",
 						{
-							"data-jsx": 2480394364
+							"data-jsx": 3255111564
 						},
 						content
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 2480394364,
-					css: ".heroSlide[data-jsx=\"2480394364\"]{min-height:100vh;background-size:cover;color:#fff}.title[data-jsx=\"2480394364\"] h2[data-jsx=\"2480394364\"]{font-size:40px}.content[data-jsx=\"2480394364\"] p[data-jsx=\"2480394364\"]{font-size:14px}@media (min-width:1024px){.title[data-jsx=\"2480394364\"] h2[data-jsx=\"2480394364\"]{font-size:100px}.content[data-jsx=\"2480394364\"] p[data-jsx=\"2480394364\"]{font-size:24px}}"
+					styleId: 3255111564,
+					css: ".heroSlide[data-jsx=\"3255111564\"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;min-height:100vh;background-size:cover;color:#fff;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.title[data-jsx=\"3255111564\"] h2[data-jsx=\"3255111564\"]{font-size:40px;font-family:'Yantramanav'}.content[data-jsx=\"3255111564\"] p[data-jsx=\"3255111564\"]{font-size:14px}@media (min-width:1024px){.title[data-jsx=\"3255111564\"] h2[data-jsx=\"3255111564\"]{font-size:100px}.content[data-jsx=\"3255111564\"] p[data-jsx=\"3255111564\"]{font-size:24px}}"
 				})
 			);
 		}
