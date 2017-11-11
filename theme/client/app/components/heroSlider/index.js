@@ -9,9 +9,9 @@ class HeroSlider extends Component {
 	
 	componentDidMount() {
 		const total = this.props.slides.length;
-		const { slide } = this.state;
 		if(total > 0) {
 			this.interval = setInterval(() => {
+				const { slide } = this.state;
 				this.setState({slide: slide < total ? slide + 1 : 1});
 			}, 5000);
 		}

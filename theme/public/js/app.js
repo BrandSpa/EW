@@ -20519,10 +20519,10 @@ var HeroSlider = function (_Component) {
 			var _this2 = this;
 
 			var total = this.props.slides.length;
-			var slide = this.state.slide;
-
 			if (total > 0) {
 				this.interval = setInterval(function () {
+					var slide = _this2.state.slide;
+
 					_this2.setState({ slide: slide < total ? slide + 1 : 1 });
 				}, 5000);
 			}
