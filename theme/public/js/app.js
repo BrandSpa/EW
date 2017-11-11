@@ -20549,93 +20549,10 @@ exports.default = HeroSlider;
 /***/ }),
 
 /***/ 674:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _style = __webpack_require__(79);
-
-var _style2 = _interopRequireDefault(_style);
-
-var _react = __webpack_require__(48);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var HeroSlide = function (_Component) {
-	_inherits(HeroSlide, _Component);
-
-	function HeroSlide() {
-		_classCallCheck(this, HeroSlide);
-
-		return _possibleConstructorReturn(this, (HeroSlide.__proto__ || Object.getPrototypeOf(HeroSlide)).apply(this, arguments));
-	}
-
-	_createClass(HeroSlide, [{
-		key: "render",
-		value: function render() {
-			var _props = this.props,
-			    bg = _props.bg,
-			    title = _props.title,
-			    content = _props.content;
-
-
-			return _react2.default.createElement(
-				"section",
-				{ className: "heroSlide", style: { background: "url(" + bg + ")" }, "data-jsx": 662946228
-				},
-				_react2.default.createElement(
-					"div",
-					{ className: "title", "data-jsx": 662946228
-					},
-					_react2.default.createElement(
-						"h2",
-						{
-							"data-jsx": 662946228
-						},
-						title
-					)
-				),
-				_react2.default.createElement("div", { className: "line", "data-jsx": 662946228
-				}),
-				_react2.default.createElement(
-					"div",
-					{ className: "content", "data-jsx": 662946228
-					},
-					_react2.default.createElement(
-						"p",
-						{
-							"data-jsx": 662946228
-						},
-						content
-					)
-				),
-				_react2.default.createElement(_style2.default, {
-					styleId: 662946228,
-					css: ".heroSlide[data-jsx=\"662946228\"]{min-height:100vh;background-size:cover;color:#fff}"
-				})
-			);
-		}
-	}]);
-
-	return HeroSlide;
-}(_react.Component);
-
-exports.default = HeroSlide;
+throw new Error("Module build failed: Error: /Users/paulacuervo/ale/EW/theme/client/app/components/heroSlider/slide.js: Nesting detected at 67:7. Unfortunately nesting is not supported by styled-jsx.\n    at Function.disableNestingPlugin (/Users/paulacuervo/ale/EW/theme/node_modules/styled-jsx/dist/lib/style-transform.js:21:13)\n    at proxy (/Users/paulacuervo/ale/EW/theme/node_modules/stylis/stylis.js:1284:30)\n    at compile (/Users/paulacuervo/ale/EW/theme/node_modules/stylis/stylis.js:793:14)\n    at compile (/Users/paulacuervo/ale/EW/theme/node_modules/stylis/stylis.js:310:17)\n    at compile (/Users/paulacuervo/ale/EW/theme/node_modules/stylis/stylis.js:358:17)\n    at stylis (/Users/paulacuervo/ale/EW/theme/node_modules/stylis/stylis.js:1431:16)\n    at transform (/Users/paulacuervo/ale/EW/theme/node_modules/styled-jsx/dist/lib/style-transform.js:102:10)\n    at PluginPass.exit (/Users/paulacuervo/ale/EW/theme/node_modules/styled-jsx/dist/babel.js:273:59)\n    at newFn (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/visitors.js:276:21)\n    at NodePath._call (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/path/context.js:76:18)\n    at NodePath.call (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/path/context.js:48:17)\n    at NodePath.visit (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/path/context.js:117:8)\n    at TraversalContext.visitQueue (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/context.js:150:16)\n    at TraversalContext.visitMultiple (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/context.js:103:17)\n    at TraversalContext.visit (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/context.js:190:19)\n    at Function.traverse.node (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/index.js:114:17)\n    at NodePath.visit (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/path/context.js:115:19)\n    at TraversalContext.visitQueue (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/context.js:150:16)\n    at TraversalContext.visitSingle (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/context.js:108:19)\n    at TraversalContext.visit (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/context.js:192:19)\n    at Function.traverse.node (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/index.js:114:17)\n    at NodePath.visit (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/path/context.js:115:19)\n    at TraversalContext.visitQueue (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/context.js:150:16)\n    at TraversalContext.visitMultiple (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/context.js:103:17)\n    at TraversalContext.visit (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/context.js:190:19)\n    at Function.traverse.node (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/index.js:114:17)\n    at NodePath.visit (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/path/context.js:115:19)\n    at TraversalContext.visitQueue (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/context.js:150:16)\n    at TraversalContext.visitSingle (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/context.js:108:19)\n    at TraversalContext.visit (/Users/paulacuervo/ale/EW/theme/node_modules/babel-traverse/lib/context.js:192:19)");
 
 /***/ }),
 
