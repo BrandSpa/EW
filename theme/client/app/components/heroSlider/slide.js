@@ -21,16 +21,20 @@ class HeroSlide extends Component {
 						color: #fff;
 					}
 					
-					h2 {
+					.title h2 {
 						font-size: 40px;
-						@media (min-width: 1024px) {
-							font-size: 100px;
-						}
 					}
 
 					.content p {
 						font-size: 14px;
-						@media (min-width: 1024px) {
+					}
+
+					@media (min-width: 1024px) {
+						.title h2 {
+							font-size: 100px;
+						}
+
+						.content p {
 							font-size: 24px;
 						}
 					}
