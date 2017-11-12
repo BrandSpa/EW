@@ -41,7 +41,9 @@ class HeroSlider extends Component {
 						)
 					})}
 				</div>
-				<Menu links={this.props.links} />
+				{this.props.links && 
+					<Menu links={this.props.links} />
+				}
 				<style jsx>{`
 					.heroSlider {
 						display: flex;
