@@ -44,8 +44,12 @@ class HeaderLink extends Component {
 
 					.header__menu-link > a {
 						color: #fff;
-						padding-right: 15px;
+						
 						padding-bottom: 20px;
+					}
+
+					.header__menu-link > a img {
+						padding-left: 15px;
 					}
 
 					.header__submenu {
