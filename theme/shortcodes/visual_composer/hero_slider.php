@@ -6,6 +6,7 @@ function hero_slider_vc() {
 			'type' => 'param_group',
 			'value' => '',
 			'param_name' => 'slides',
+			'heading' => 'slides',
 			'params' => [
 				[
 					'type' => 'attach_image',
@@ -23,6 +24,26 @@ function hero_slider_vc() {
 					'value' => '',
 					'heading' => 'Enter content',
 					'param_name' => 'content',
+				]
+			]
+		],
+		[
+			'type' => 'param_group',
+			'value' => '',
+			'param_name' => 'links',
+			'heading' => 'menu',
+			'params' => [
+				[
+					'type' => 'textfield',
+					'value' => '',
+					'heading' => 'Enter title',
+					'param_name' => 'title',
+				],
+				[
+					'type' => 'textfield',
+					'value' => '',
+					'heading' => 'Enter url',
+					'param_name' => 'url',
 				]
 			]
 		]

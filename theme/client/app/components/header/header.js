@@ -28,8 +28,9 @@ class Header extends Component {
 		return (
 			<section className="header">
 				<div className="logo-container">
-				<img src={`${this.state.uri}/public/img/logo.png`} alt=""/>
-
+					<a href="/">
+						<img src={`${this.state.uri}/public/img/logo.png`} alt=""/>
+					</a>
 				</div>
 				<div className="header__menu">
 					<ul>
@@ -44,17 +45,31 @@ class Header extends Component {
 							display: flex;
 							width: 100%;
 							z-index: 900;
-							padding: 60px 40px 0 40px;
+							padding: 30px 40px 0 40px;
 							justify-content: space-between;
 						}
 
 						.header__menu {
+							display: none;
 							align-self: flex-end;
 						}
 
 						.header__menu > ul {
 							padding: 0;
 							display: flex;
+						}
+
+						.logo-container {
+							margin-left: 100px;
+						}
+
+						@media (min-width: 1024px) {
+							.header {
+								padding-top: 60px;
+							}
+							.header__menu  {
+								display: flex;
+							}
 						}
 						
 					`}</style>

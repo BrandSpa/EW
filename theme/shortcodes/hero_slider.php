@@ -3,6 +3,7 @@
 function hero_slider_sc( $atts ){
 	$at = shortcode_atts([
 		'slides' => '',
+		'links' => '',
 	], $atts);
 
 
@@ -12,7 +13,8 @@ function hero_slider_sc( $atts ){
 	}, vc_param_group_parse_atts( $at['slides'] ));
 
 	$props = [
-		"slides" => $slides
+		"slides" => $slides,
+		"links" => vc_param_group_parse_atts( $at['links'] )
 	];
 	
 	ob_start();

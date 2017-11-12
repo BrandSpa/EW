@@ -21,7 +21,8 @@ class HeroSlide extends Component {
 						display: flex;
 						width: 100%;
 						color: #fff;
-						padding-left: 40px;
+						padding-left: 140px;
+						margin-top: 20%;
 						transition: all .3s;
 					}
 
@@ -48,9 +49,12 @@ class HeroSlide extends Component {
 					}
 
 					@media (min-width: 1024px) {
+						.heroSlide {
+							margin-top: 0;
+						}
 
 						.heroSlide__content {
-							width: 60%;
+							width: 50%;
 						}
 
 						.title h2 {

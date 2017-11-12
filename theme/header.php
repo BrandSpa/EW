@@ -16,6 +16,7 @@
     body {
       font-family: 'Arimo', sans-serif;
       font-size: 14px;
+      color: #5D5D5D;
     }
 
     li {
@@ -25,6 +26,20 @@
     a:hover {
       text-decoration: none;
     }
+
+    p {
+      font-family: 'Arimo', sans-serif;
+    }
+
+    .verticalLine {
+			left: 80px;
+			position: fixed;
+			height: 100vh;
+			width: 1px;
+			border: solid 1px #039ed8;
+      z-index: 99;
+		}
+
   </style>
 </head>
 <body>
@@ -33,3 +48,5 @@
 ?>
 
 <section class="header-container" data-props='<?php echo wp_json_encode($props) ?>'></section>
+
+<div class="verticalLine"></div>

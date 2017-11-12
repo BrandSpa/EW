@@ -20356,6 +20356,10 @@ var _slide = __webpack_require__(674);
 
 var _slide2 = _interopRequireDefault(_slide);
 
+var _menu = __webpack_require__(678);
+
+var _menu2 = _interopRequireDefault(_menu);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20414,29 +20418,30 @@ var HeroSlider = function (_Component) {
 
 			return _react2.default.createElement(
 				'section',
-				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 4178675992
+				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 4076595680
 				},
 				_react2.default.createElement(_slide2.default, slide),
 				_react2.default.createElement(
 					'div',
-					{ className: 'heroSlider__nav', 'data-jsx': 4178675992
+					{ className: 'heroSlider__nav', 'data-jsx': 4076595680
 					},
 					slides.map(function (s, i) {
 						return _react2.default.createElement(
 							'button',
 							{ onClick: function onClick(e) {
 									return _this3.changeSlide(e, i);
-								}, 'data-jsx': 4178675992
+								}, 'data-jsx': 4076595680
 							},
 							slideNum === i && _react2.default.createElement('span', {
-								'data-jsx': 4178675992
+								'data-jsx': 4076595680
 							})
 						);
 					})
 				),
+				_react2.default.createElement(_menu2.default, { links: this.props.links }),
 				_react2.default.createElement(_style2.default, {
-					styleId: 4178675992,
-					css: '.heroSlider[data-jsx="4178675992"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;min-height:100vh;background-size:cover;backgroundColor:\'#333\';-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-transition:all .3s;transition:all .3s}.heroSlider__nav[data-jsx="4178675992"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:40px;margin-left:40px}.heroSlider__nav[data-jsx="4178675992"] button[data-jsx="4178675992"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:transparent;width:30px;height:30px;border:solid 1px #039ed8;border-radius:0;outline:none;margin-right:10px}.heroSlider__nav[data-jsx="4178675992"] button[data-jsx="4178675992"] span[data-jsx="4178675992"]{display:block;width:10px;height:10px;background:#fff}@media (min-width:1024px){.heroSlider__nav[data-jsx="4178675992"] button[data-jsx="4178675992"]{width:40px;height:40px}}'
+					styleId: 4076595680,
+					css: '.heroSlider[data-jsx="4076595680"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;width:100%;min-height:100vh;background-size:cover;backgroundColor:\'#333\';-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-transition:all .3s;transition:all .3s}.heroSlider__nav[data-jsx="4076595680"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:40px;margin-left:140px}.heroSlider__nav[data-jsx="4076595680"] button[data-jsx="4076595680"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:transparent;width:30px;height:30px;border:solid 1px #039ed8;border-radius:0;outline:none;margin-right:10px}.heroSlider__nav[data-jsx="4076595680"] button[data-jsx="4076595680"] span[data-jsx="4076595680"]{display:block;width:10px;height:10px;background:#fff}@media (min-width:1024px){.heroSlider[data-jsx="4076595680"]{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}.heroSlider__nav[data-jsx="4076595680"] button[data-jsx="4076595680"]{width:40px;height:40px}}'
 				})
 			);
 		}
@@ -20497,42 +20502,42 @@ var HeroSlide = function (_Component) {
 
 			return _react2.default.createElement(
 				"section",
-				{ className: "heroSlide", "data-jsx": 1594189075
+				{ className: "heroSlide", "data-jsx": 2792328688
 				},
 				_react2.default.createElement(
 					"div",
-					{ className: "heroSlide__content", "data-jsx": 1594189075
+					{ className: "heroSlide__content", "data-jsx": 2792328688
 					},
 					_react2.default.createElement(
 						"div",
-						{ className: "title", "data-jsx": 1594189075
+						{ className: "title", "data-jsx": 2792328688
 						},
 						_react2.default.createElement(
 							"h2",
 							{
-								"data-jsx": 1594189075
+								"data-jsx": 2792328688
 							},
 							title
 						)
 					),
-					_react2.default.createElement("div", { className: "line", "data-jsx": 1594189075
+					_react2.default.createElement("div", { className: "line", "data-jsx": 2792328688
 					}),
 					_react2.default.createElement(
 						"div",
-						{ className: "body", "data-jsx": 1594189075
+						{ className: "body", "data-jsx": 2792328688
 						},
 						_react2.default.createElement(
 							"p",
 							{
-								"data-jsx": 1594189075
+								"data-jsx": 2792328688
 							},
 							content
 						)
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 1594189075,
-					css: ".heroSlide[data-jsx=\"1594189075\"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;color:#fff;padding-left:40px;-webkit-transition:all .3s;transition:all .3s}.heroSlide__content[data-jsx=\"1594189075\"]{width:80%}.title[data-jsx=\"1594189075\"] h2[data-jsx=\"1594189075\"]{font-size:40px;font-family:'Yantramanav';line-height:0.9}.line[data-jsx=\"1594189075\"]{width:60px;height:1px;margin:30px 0;border:solid 1px #039ed8}.body[data-jsx=\"1594189075\"] p[data-jsx=\"1594189075\"]{font-size:14px;line-height:1.54}@media (min-width:1024px){.heroSlide__content[data-jsx=\"1594189075\"]{width:60%}.title[data-jsx=\"1594189075\"] h2[data-jsx=\"1594189075\"]{font-size:100px}.body[data-jsx=\"1594189075\"] p[data-jsx=\"1594189075\"]{font-size:24px}}"
+					styleId: 2792328688,
+					css: ".heroSlide[data-jsx=\"2792328688\"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;color:#fff;padding-left:140px;margin-top:20%;-webkit-transition:all .3s;transition:all .3s}.heroSlide__content[data-jsx=\"2792328688\"]{width:80%}.title[data-jsx=\"2792328688\"] h2[data-jsx=\"2792328688\"]{font-size:40px;font-family:'Yantramanav';line-height:0.9}.line[data-jsx=\"2792328688\"]{width:60px;height:1px;margin:30px 0;border:solid 1px #039ed8}.body[data-jsx=\"2792328688\"] p[data-jsx=\"2792328688\"]{font-size:14px;line-height:1.54}@media (min-width:1024px){.heroSlide[data-jsx=\"2792328688\"]{margin-top:0}.heroSlide__content[data-jsx=\"2792328688\"]{width:50%}.title[data-jsx=\"2792328688\"] h2[data-jsx=\"2792328688\"]{font-size:100px}.body[data-jsx=\"2792328688\"] p[data-jsx=\"2792328688\"]{font-size:24px}}"
 				})
 			);
 		}
@@ -20680,23 +20685,28 @@ var Header = function (_Component) {
 
 			return _react2.default.createElement(
 				'section',
-				{ className: 'header', 'data-jsx': 2206121245
+				{ className: 'header', 'data-jsx': 2981396480
 				},
 				_react2.default.createElement(
 					'div',
-					{ className: 'logo-container', 'data-jsx': 2206121245
+					{ className: 'logo-container', 'data-jsx': 2981396480
 					},
-					_react2.default.createElement('img', { src: this.state.uri + '/public/img/logo.png', alt: '', 'data-jsx': 2206121245
-					})
+					_react2.default.createElement(
+						'a',
+						{ href: '/', 'data-jsx': 2981396480
+						},
+						_react2.default.createElement('img', { src: this.state.uri + '/public/img/logo.png', alt: '', 'data-jsx': 2981396480
+						})
+					)
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'header__menu', 'data-jsx': 2206121245
+					{ className: 'header__menu', 'data-jsx': 2981396480
 					},
 					_react2.default.createElement(
 						'ul',
 						{
-							'data-jsx': 2206121245
+							'data-jsx': 2981396480
 						},
 						newMenu.map(function (item) {
 							return _react2.default.createElement(_link2.default, { item: item, uri: _this2.props.uri });
@@ -20704,8 +20714,8 @@ var Header = function (_Component) {
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 2206121245,
-					css: '.header[data-jsx="2206121245"]{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:900;padding:60px 40px 0 40px;-webkit-box-pack:space-between;-webkit-justify-content:space-between;-ms-flex-pack:space-between;justify-content:space-between}.header__menu[data-jsx="2206121245"]{-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end}.header__menu[data-jsx="2206121245"]>ul[data-jsx="2206121245"]{padding:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}'
+					styleId: 2981396480,
+					css: '.header[data-jsx="2981396480"]{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:900;padding:30px 40px 0 40px;-webkit-box-pack:space-between;-webkit-justify-content:space-between;-ms-flex-pack:space-between;justify-content:space-between}.header__menu[data-jsx="2981396480"]{display:none;-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end}.header__menu[data-jsx="2981396480"]>ul[data-jsx="2981396480"]{padding:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.logo-container[data-jsx="2981396480"]{margin-left:100px}@media (min-width:1024px){.header[data-jsx="2981396480"]{padding-top:60px}.header__menu[data-jsx="2981396480"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}}'
 				})
 			);
 		}
@@ -20829,6 +20839,59 @@ var HeaderLink = function (_Component) {
 }(_react.Component);
 
 exports.default = HeaderLink;
+
+/***/ }),
+
+/***/ 678:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _style = __webpack_require__(79);
+
+var _style2 = _interopRequireDefault(_style);
+
+var _react = __webpack_require__(48);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var HeroSliderMenu = function HeroSliderMenu(_ref) {
+	var links = _ref.links;
+
+	return _react2.default.createElement(
+		'ul',
+		{
+			'data-jsx': 1461394859
+		},
+		links.map(function (link) {
+			return _react2.default.createElement(
+				'li',
+				{
+					'data-jsx': 1461394859
+				},
+				_react2.default.createElement(
+					'a',
+					{ href: link.url, 'data-jsx': 1461394859
+					},
+					link.title
+				)
+			);
+		}),
+		_react2.default.createElement(_style2.default, {
+			styleId: 1461394859,
+			css: 'ul[data-jsx="1461394859"]{position:absolute;right:0;bottom:40px}li[data-jsx="1461394859"] a[data-jsx="1461394859"]{display:block;border:solid 1px #039ed8;padding:20px 40px;font-size:20px;border-right:none;border-bottom:none;color:#fff}li[data-jsx="1461394859"] a[data-jsx="1461394859"]:last-child{border-bottom:solid 1px #039ed8}@media (min-width:1024px){ul[data-jsx="1461394859"]{bottom:auto}li[data-jsx="1461394859"] a[data-jsx="1461394859"]{font-size:30px}}'
+		})
+	);
+};
+
+exports.default = HeroSliderMenu;
 
 /***/ }),
 

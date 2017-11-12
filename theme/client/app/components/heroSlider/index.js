@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slide from './slide';
+import Menu from './menu';
 
 class HeroSlider extends Component {
 
@@ -33,18 +34,23 @@ class HeroSlider extends Component {
 				<Slide {...slide} />
 				<div className="heroSlider__nav">
 					{slides.map((s, i) => {
-						return <button onClick={(e) => this.changeSlide(e, i)}>{ slideNum === i && <span/>}</button>
+						return (
+							<button onClick={(e) => this.changeSlide(e, i)}>
+								{ slideNum === i && <span/>}
+							</button>
+						)
 					})}
-					
 				</div>
+				<Menu links={this.props.links} />
 				<style jsx>{`
 					.heroSlider {
 						display: flex;
+						position: relative;
 						width: 100%;
 						min-height: 100vh;
 						background-size: cover;
 						backgroundColor: '#333';
-						justify-content: center;
+						justify-content: flex-start;
     				flex-direction: column;
 						transition: all .3s;
 					}
@@ -52,7 +58,7 @@ class HeroSlider extends Component {
 					.heroSlider__nav {
 						display: flex;
 						margin-top: 40px;
-						margin-left: 40px;
+						margin-left: 140px;
 					}
 
 					.heroSlider__nav button {
@@ -76,6 +82,11 @@ class HeroSlider extends Component {
 					}
 
 					@media (min-width: 1024px) {
+
+						.heroSlider {
+							justify-content: center;
+						}
+
 						.heroSlider__nav button {
 							width: 40px;
 							height: 40px;
