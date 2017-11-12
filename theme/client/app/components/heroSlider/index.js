@@ -33,7 +33,7 @@ class HeroSlider extends Component {
 				<Slide {...slide} />
 				<div className="heroSlider__nav">
 					{slides.map((s, i) => {
-						return <button onClick={(e) => this.changeSlide(e, i)} />
+						return <button onClick={(e) => this.changeSlide(e, i)}>{ slideNum === i && <span/>}</button>
 					})}
 					
 				</div>
@@ -56,7 +56,9 @@ class HeroSlider extends Component {
 					}
 
 					.heroSlider__nav button {
-						display: block;
+						display: flex;
+						align-items: center;
+						justify-content: center;
 						background: transparent;
 						width: 30px;
 						height: 30px;
@@ -64,6 +66,13 @@ class HeroSlider extends Component {
 						border-radius: 0;
 						outline: none;
 						margin-right: 10px;
+					}
+
+					.heroSlider__nav button span {
+						display: block;
+						width: 10px;
+						height: 10px;
+						background: #fff;
 					}
 
 					@media (min-width: 1024px) {

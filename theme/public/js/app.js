@@ -20414,23 +20414,29 @@ var HeroSlider = function (_Component) {
 
 			return _react2.default.createElement(
 				'section',
-				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 4194188575
+				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 4178675992
 				},
 				_react2.default.createElement(_slide2.default, slide),
 				_react2.default.createElement(
 					'div',
-					{ className: 'heroSlider__nav', 'data-jsx': 4194188575
+					{ className: 'heroSlider__nav', 'data-jsx': 4178675992
 					},
 					slides.map(function (s, i) {
-						return _react2.default.createElement('button', { onClick: function onClick(e) {
-								return _this3.changeSlide(e, i);
-							}, 'data-jsx': 4194188575
-						});
+						return _react2.default.createElement(
+							'button',
+							{ onClick: function onClick(e) {
+									return _this3.changeSlide(e, i);
+								}, 'data-jsx': 4178675992
+							},
+							slideNum === i && _react2.default.createElement('span', {
+								'data-jsx': 4178675992
+							})
+						);
 					})
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 4194188575,
-					css: '.heroSlider[data-jsx="4194188575"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;min-height:100vh;background-size:cover;backgroundColor:\'#333\';-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-transition:all .3s;transition:all .3s}.heroSlider__nav[data-jsx="4194188575"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:40px;margin-left:40px}.heroSlider__nav[data-jsx="4194188575"] button[data-jsx="4194188575"]{display:block;background:transparent;width:30px;height:30px;border:solid 1px #039ed8;border-radius:0;outline:none;margin-right:10px}@media (min-width:1024px){.heroSlider__nav[data-jsx="4194188575"] button[data-jsx="4194188575"]{width:40px;height:40px}}'
+					styleId: 4178675992,
+					css: '.heroSlider[data-jsx="4178675992"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;min-height:100vh;background-size:cover;backgroundColor:\'#333\';-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-transition:all .3s;transition:all .3s}.heroSlider__nav[data-jsx="4178675992"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:40px;margin-left:40px}.heroSlider__nav[data-jsx="4178675992"] button[data-jsx="4178675992"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:transparent;width:30px;height:30px;border:solid 1px #039ed8;border-radius:0;outline:none;margin-right:10px}.heroSlider__nav[data-jsx="4178675992"] button[data-jsx="4178675992"] span[data-jsx="4178675992"]{display:block;width:10px;height:10px;background:#fff}@media (min-width:1024px){.heroSlider__nav[data-jsx="4178675992"] button[data-jsx="4178675992"]{width:40px;height:40px}}'
 				})
 			);
 		}
