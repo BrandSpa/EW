@@ -1,5 +1,5 @@
 import multipleRender from "react-multiple-render";
-import Header from './components/header';
+import Header from './components/header/header';
 import Projects from './components/projects/section';
 import HeroSlider from './components/heroSlider';
 

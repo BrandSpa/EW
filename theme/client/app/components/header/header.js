@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { find } from 'lodash';
+import Link from './link';
 
 class Header extends Component {
 
 	state = {
-		uri: window.templateUri
+		uri: window.templateUri,
 	}
 
 	render() {
@@ -33,15 +34,7 @@ class Header extends Component {
 				<div className="header__menu">
 					<ul>
 						{newMenu.map(item =>
-								<li key={item.ID}>
-									<a href="#">{item.title}</a> <img src={`${this.state.uri}/public/img/arrow.svg`}/>
-										<ul className="header__submenu">
-										{item.sub && item.sub.map(subItem => {
-											return <li key={subItem.ID}><a href="#">{subItem.title}</a></li>
-											})
-										}
-										</ul>
-								</li>
+							<Link item={item} uri={this.props.uri} />	
 						)}
 					</ul>
 				</div>
@@ -59,31 +52,10 @@ class Header extends Component {
 							align-self: flex-end;
 						}
 
-						.header__menu ul {
+						.header__menu > ul {
 							padding: 0;
 							display: flex;
 						}
-						
-						.header__menu ul > li {
-							margin-right: 40px;
-							position: relative;
-						}
-
-						.header__menu ul li a {
-							color: #fff;
-							padding-right: 15px;
-						}
-
-						.header__submenu {
-							background: #fff;
-							padding: 15px;
-							position: absolute;
-						}
-
-						.header__submenu li a {
-							color: #039ed8;
-						}
-
 						
 					`}</style>
 		</section>

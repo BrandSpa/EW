@@ -963,7 +963,7 @@ var _reactMultipleRender = __webpack_require__(259);
 
 var _reactMultipleRender2 = _interopRequireDefault(_reactMultipleRender);
 
-var _header = __webpack_require__(604);
+var _header = __webpack_require__(676);
 
 var _header2 = _interopRequireDefault(_header);
 
@@ -980,150 +980,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _reactMultipleRender2.default)(_header2.default, '.header-container');
 (0, _reactMultipleRender2.default)(_section2.default, '.projects-container');
 (0, _reactMultipleRender2.default)(_heroSlider2.default, '.heroSlider-container');
-
-/***/ }),
-
-/***/ 604:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _style = __webpack_require__(79);
-
-var _style2 = _interopRequireDefault(_style);
-
-var _react = __webpack_require__(48);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _lodash = __webpack_require__(668);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Header = function (_Component) {
-	_inherits(Header, _Component);
-
-	function Header() {
-		var _ref;
-
-		var _temp, _this, _ret;
-
-		_classCallCheck(this, Header);
-
-		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-			args[_key] = arguments[_key];
-		}
-
-		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Header.__proto__ || Object.getPrototypeOf(Header)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-			uri: window.templateUri
-		}, _temp), _possibleConstructorReturn(_this, _ret);
-	}
-
-	_createClass(Header, [{
-		key: 'render',
-		value: function render() {
-			var _this2 = this;
-
-			var menu = this.props.menu;
-
-
-			var newMenu = menu.map(function (item) {
-				var parentId = parseInt(item.menu_item_parent);
-
-				if (parentId > 0) {
-					var parent = (0, _lodash.find)(menu, { ID: parentId });
-					parent['sub'] = parent.sub ? parent.sub.concat([item]) : [].concat([item]);
-					return item;
-				} else {
-					return item;
-				}
-			});
-
-			newMenu = menu.filter(function (item) {
-				return parseInt(item.menu_item_parent) === 0;
-			});
-
-			return _react2.default.createElement(
-				'section',
-				{ className: 'header', 'data-jsx': 2708882509
-				},
-				_react2.default.createElement(
-					'div',
-					{ className: 'logo-container', 'data-jsx': 2708882509
-					},
-					_react2.default.createElement('img', { src: this.state.uri + '/public/img/logo.png', alt: '', 'data-jsx': 2708882509
-					})
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'header__menu', 'data-jsx': 2708882509
-					},
-					_react2.default.createElement(
-						'ul',
-						{
-							'data-jsx': 2708882509
-						},
-						newMenu.map(function (item) {
-							return _react2.default.createElement(
-								'li',
-								{ key: item.ID, 'data-jsx': 2708882509
-								},
-								_react2.default.createElement(
-									'a',
-									{ href: '#', 'data-jsx': 2708882509
-									},
-									item.title
-								),
-								' ',
-								_react2.default.createElement('img', { src: _this2.state.uri + '/public/img/arrow.svg', 'data-jsx': 2708882509
-								}),
-								_react2.default.createElement(
-									'ul',
-									{ className: 'header__submenu', 'data-jsx': 2708882509
-									},
-									item.sub && item.sub.map(function (subItem) {
-										return _react2.default.createElement(
-											'li',
-											{ key: subItem.ID, 'data-jsx': 2708882509
-											},
-											_react2.default.createElement(
-												'a',
-												{ href: '#', 'data-jsx': 2708882509
-												},
-												subItem.title
-											)
-										);
-									})
-								)
-							);
-						})
-					)
-				),
-				_react2.default.createElement(_style2.default, {
-					styleId: 2708882509,
-					css: '.header[data-jsx="2708882509"]{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:900;padding:60px 40px 0 40px;-webkit-box-pack:space-between;-webkit-justify-content:space-between;-ms-flex-pack:space-between;justify-content:space-between}.header__menu[data-jsx="2708882509"]{-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end}.header__menu[data-jsx="2708882509"] ul[data-jsx="2708882509"]{padding:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.header__menu[data-jsx="2708882509"] ul[data-jsx="2708882509"]>li[data-jsx="2708882509"]{margin-right:40px;position:relative}.header__menu[data-jsx="2708882509"] ul[data-jsx="2708882509"] li[data-jsx="2708882509"] a[data-jsx="2708882509"]{color:#fff;padding-right:15px}.header__submenu[data-jsx="2708882509"]{background:#fff;padding:15px;position:absolute}.header__submenu[data-jsx="2708882509"] li[data-jsx="2708882509"] a[data-jsx="2708882509"]{color:#039ed8}'
-				})
-			);
-		}
-	}]);
-
-	return Header;
-}(_react.Component);
-
-exports.default = Header;
 
 /***/ }),
 
@@ -20680,6 +20536,293 @@ var HeroSlide = function (_Component) {
 }(_react.Component);
 
 exports.default = HeroSlide;
+
+/***/ }),
+
+/***/ 675:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+  Copyright (c) 2016 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				classes.push(classNames.apply(null, arg));
+			} else if (argType === 'object') {
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = classNames;
+	} else if (true) {
+		// register as 'classnames', consistent with npm package name
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+			return classNames;
+		}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {
+		window.classNames = classNames;
+	}
+}());
+
+
+/***/ }),
+
+/***/ 676:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _style = __webpack_require__(79);
+
+var _style2 = _interopRequireDefault(_style);
+
+var _react = __webpack_require__(48);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _lodash = __webpack_require__(668);
+
+var _link = __webpack_require__(677);
+
+var _link2 = _interopRequireDefault(_link);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Header = function (_Component) {
+	_inherits(Header, _Component);
+
+	function Header() {
+		var _ref;
+
+		var _temp, _this, _ret;
+
+		_classCallCheck(this, Header);
+
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
+
+		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Header.__proto__ || Object.getPrototypeOf(Header)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+			uri: window.templateUri
+		}, _temp), _possibleConstructorReturn(_this, _ret);
+	}
+
+	_createClass(Header, [{
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			var menu = this.props.menu;
+
+
+			var newMenu = menu.map(function (item) {
+				var parentId = parseInt(item.menu_item_parent);
+
+				if (parentId > 0) {
+					var parent = (0, _lodash.find)(menu, { ID: parentId });
+					parent['sub'] = parent.sub ? parent.sub.concat([item]) : [].concat([item]);
+					return item;
+				} else {
+					return item;
+				}
+			});
+
+			newMenu = menu.filter(function (item) {
+				return parseInt(item.menu_item_parent) === 0;
+			});
+
+			return _react2.default.createElement(
+				'section',
+				{ className: 'header', 'data-jsx': 2206121245
+				},
+				_react2.default.createElement(
+					'div',
+					{ className: 'logo-container', 'data-jsx': 2206121245
+					},
+					_react2.default.createElement('img', { src: this.state.uri + '/public/img/logo.png', alt: '', 'data-jsx': 2206121245
+					})
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'header__menu', 'data-jsx': 2206121245
+					},
+					_react2.default.createElement(
+						'ul',
+						{
+							'data-jsx': 2206121245
+						},
+						newMenu.map(function (item) {
+							return _react2.default.createElement(_link2.default, { item: item, uri: _this2.props.uri });
+						})
+					)
+				),
+				_react2.default.createElement(_style2.default, {
+					styleId: 2206121245,
+					css: '.header[data-jsx="2206121245"]{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:900;padding:60px 40px 0 40px;-webkit-box-pack:space-between;-webkit-justify-content:space-between;-ms-flex-pack:space-between;justify-content:space-between}.header__menu[data-jsx="2206121245"]{-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end}.header__menu[data-jsx="2206121245"]>ul[data-jsx="2206121245"]{padding:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}'
+				})
+			);
+		}
+	}]);
+
+	return Header;
+}(_react.Component);
+
+exports.default = Header;
+
+/***/ }),
+
+/***/ 677:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _style = __webpack_require__(79);
+
+var _style2 = _interopRequireDefault(_style);
+
+var _react = __webpack_require__(48);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _classnames = __webpack_require__(675);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var HeaderLink = function (_Component) {
+	_inherits(HeaderLink, _Component);
+
+	function HeaderLink() {
+		var _ref;
+
+		var _temp, _this, _ret;
+
+		_classCallCheck(this, HeaderLink);
+
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
+
+		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = HeaderLink.__proto__ || Object.getPrototypeOf(HeaderLink)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+			hover: false
+		}, _this.handleHover = function () {
+			_this.setState({ hover: true });
+		}, _this.handleOut = function () {
+			_this.setState({ hover: false });
+		}, _temp), _possibleConstructorReturn(_this, _ret);
+	}
+
+	_createClass(HeaderLink, [{
+		key: 'render',
+		value: function render() {
+			var item = this.props.item;
+
+			var submenuClass = (0, _classnames2.default)('header__submenu', {
+				'header__submenu--show': this.state.hover
+			});
+
+			return _react2.default.createElement(
+				'li',
+				{
+					className: 'header__menu-link', key: item.ID,
+					onMouseEnter: this.handleHover,
+					onMouseLeave: this.handleOut,
+					'data-jsx': 3164276528
+				},
+				_react2.default.createElement(
+					'a',
+					{ href: '#', 'data-jsx': 3164276528
+					},
+					item.title,
+					' ',
+					_react2.default.createElement('img', { src: this.props.uri + '/public/img/arrow.svg', 'data-jsx': 3164276528
+					})
+				),
+				item.sub && _react2.default.createElement(
+					'ul',
+					{ className: submenuClass, 'data-jsx': 3164276528
+					},
+					item.sub.map(function (subItem) {
+						return _react2.default.createElement(
+							'li',
+							{ key: subItem.ID, 'data-jsx': 3164276528
+							},
+							_react2.default.createElement(
+								'a',
+								{ href: '#', 'data-jsx': 3164276528
+								},
+								subItem.title
+							)
+						);
+					})
+				),
+				_react2.default.createElement(_style2.default, {
+					styleId: 3164276528,
+					css: '.header__menu-link[data-jsx="3164276528"]{margin-right:40px;position:relative;padding-bottom:20px}.header__menu-link[data-jsx="3164276528"]>a[data-jsx="3164276528"]{color:#fff;padding-right:15px;padding-bottom:20px}.header__submenu[data-jsx="3164276528"]{background:#fff;padding:15px;position:absolute;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-width:150px;-webkit-transition:all .3s;transition:all .3s;top:40px;opacity:0;visibility:hidden;-webkit-transform:translateY(-10px);-ms-transform:translateY(-10px);transform:translateY(-10px)}.header__submenu--show[data-jsx="3164276528"]{display:block;opacity:1;visibility:visible;-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}.header__submenu[data-jsx="3164276528"] li[data-jsx="3164276528"] a[data-jsx="3164276528"]{display:block;color:#039ed8;width:100%;font-size:15px;padding-bottom:5px;border-bottom:1px solid #039ed8}.header__submenu[data-jsx="3164276528"] li[data-jsx="3164276528"]:last-child a[data-jsx="3164276528"]{border:none}'
+				})
+			);
+		}
+	}]);
+
+	return HeaderLink;
+}(_react.Component);
+
+exports.default = HeaderLink;
 
 /***/ }),
 
