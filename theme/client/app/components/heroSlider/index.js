@@ -28,7 +28,8 @@ class HeroSlider extends Component {
 		const { slides } = this.props;
 		const slideNum = this.state.slide - 1;
 		const slide = slides[slideNum];
-		const { bg } = slide; 
+		const { bg } = slide;
+		
 		return (
 			<section className="heroSlider" style={{ background: `url(${bg})` }}>
 				<Slide {...slide} />

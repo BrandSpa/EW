@@ -1,4 +1,10 @@
 
+<?php 
+  $props = ["menu" => menu_to_array('footer')];
+?>
+
+<div class="footer-container" data-props='<?php echo wp_json_encode($props) ?>'></div>
+
 <script>
   window.templateUri = '<?php echo get_template_directory_uri() ?>';
 </script>

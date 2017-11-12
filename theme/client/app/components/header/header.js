@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
-import { find } from 'lodash';
+import { find, throttle } from 'lodash';
+import  classNames from 'classnames';
 import Link from './link';
 
 class Header extends Component {
 
 	state = {
 		uri: window.templateUri,
+		onTop: true
+	}
+
+	componentDidMount() {
+		window.addEventListener('scroll', throttle((e) => {
+				this.setState({ onTop: window.scrollY === 0 });
+		},100));
 	}
 
 	render() {
@@ -23,10 +31,14 @@ class Header extends Component {
 			}
 		});
 
-		newMenu = menu.filter(item => parseInt(item.menu_item_parent) === 0); 
+		newMenu = menu.filter(item => parseInt(item.menu_item_parent) === 0);
+
+		const headerClass = classNames('header', {
+			'header--scroll': !this.state.onTop
+		});
 
 		return (
-			<section className="header">
+			<section className={headerClass} ref={ref => this.header = ref}>
 				<div className="logo-container">
 					<a href="/">
 						<img src={`${this.state.uri}/public/img/logo.png`} alt=""/>
@@ -35,7 +47,7 @@ class Header extends Component {
 				<div className="header__menu">
 					<ul>
 						{newMenu.map(item =>
-							<Link item={item} uri={this.props.uri} />	
+							<Link item={item} uri={this.state.uri} />	
 						)}
 					</ul>
 				</div>
@@ -47,6 +59,11 @@ class Header extends Component {
 							z-index: 900;
 							padding: 30px 40px 0 40px;
 							justify-content: space-between;
+							transition: all .3s;
+						}
+
+						.header--scroll {
+							background: rgba(0,0,0,.9)
 						}
 
 						.header__menu {

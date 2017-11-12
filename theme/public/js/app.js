@@ -967,6 +967,10 @@ var _header = __webpack_require__(676);
 
 var _header2 = _interopRequireDefault(_header);
 
+var _footer = __webpack_require__(679);
+
+var _footer2 = _interopRequireDefault(_footer);
+
 var _section = __webpack_require__(670);
 
 var _section2 = _interopRequireDefault(_section);
@@ -978,6 +982,7 @@ var _heroSlider2 = _interopRequireDefault(_heroSlider);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _reactMultipleRender2.default)(_header2.default, '.header-container');
+(0, _reactMultipleRender2.default)(_footer2.default, '.footer-container');
 (0, _reactMultipleRender2.default)(_section2.default, '.projects-container');
 (0, _reactMultipleRender2.default)(_heroSlider2.default, '.heroSlider-container');
 
@@ -20416,6 +20421,7 @@ var HeroSlider = function (_Component) {
 			var slide = slides[slideNum];
 			var bg = slide.bg;
 
+
 			return _react2.default.createElement(
 				'section',
 				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 4076595680
@@ -20628,6 +20634,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _lodash = __webpack_require__(668);
 
+var _classnames = __webpack_require__(675);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 var _link = __webpack_require__(677);
 
 var _link2 = _interopRequireDefault(_link);
@@ -20655,14 +20665,24 @@ var Header = function (_Component) {
 		}
 
 		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Header.__proto__ || Object.getPrototypeOf(Header)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-			uri: window.templateUri
+			uri: window.templateUri,
+			onTop: true
 		}, _temp), _possibleConstructorReturn(_this, _ret);
 	}
 
 	_createClass(Header, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			var _this2 = this;
+
+			window.addEventListener('scroll', (0, _lodash.throttle)(function (e) {
+				_this2.setState({ onTop: window.scrollY === 0 });
+			}, 100));
+		}
+	}, {
 		key: 'render',
 		value: function render() {
-			var _this2 = this;
+			var _this3 = this;
 
 			var menu = this.props.menu;
 
@@ -20683,39 +20703,45 @@ var Header = function (_Component) {
 				return parseInt(item.menu_item_parent) === 0;
 			});
 
+			var headerClass = (0, _classnames2.default)('header', {
+				'header--scroll': !this.state.onTop
+			});
+
 			return _react2.default.createElement(
 				'section',
-				{ className: 'header', 'data-jsx': 2981396480
+				{ className: headerClass, ref: function ref(_ref2) {
+						return _this3.header = _ref2;
+					}, 'data-jsx': 1040468281
 				},
 				_react2.default.createElement(
 					'div',
-					{ className: 'logo-container', 'data-jsx': 2981396480
+					{ className: 'logo-container', 'data-jsx': 1040468281
 					},
 					_react2.default.createElement(
 						'a',
-						{ href: '/', 'data-jsx': 2981396480
+						{ href: '/', 'data-jsx': 1040468281
 						},
-						_react2.default.createElement('img', { src: this.state.uri + '/public/img/logo.png', alt: '', 'data-jsx': 2981396480
+						_react2.default.createElement('img', { src: this.state.uri + '/public/img/logo.png', alt: '', 'data-jsx': 1040468281
 						})
 					)
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'header__menu', 'data-jsx': 2981396480
+					{ className: 'header__menu', 'data-jsx': 1040468281
 					},
 					_react2.default.createElement(
 						'ul',
 						{
-							'data-jsx': 2981396480
+							'data-jsx': 1040468281
 						},
 						newMenu.map(function (item) {
-							return _react2.default.createElement(_link2.default, { item: item, uri: _this2.props.uri });
+							return _react2.default.createElement(_link2.default, { item: item, uri: _this3.state.uri });
 						})
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 2981396480,
-					css: '.header[data-jsx="2981396480"]{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:900;padding:30px 40px 0 40px;-webkit-box-pack:space-between;-webkit-justify-content:space-between;-ms-flex-pack:space-between;justify-content:space-between}.header__menu[data-jsx="2981396480"]{display:none;-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end}.header__menu[data-jsx="2981396480"]>ul[data-jsx="2981396480"]{padding:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.logo-container[data-jsx="2981396480"]{margin-left:100px}@media (min-width:1024px){.header[data-jsx="2981396480"]{padding-top:60px}.header__menu[data-jsx="2981396480"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}}'
+					styleId: 1040468281,
+					css: '.header[data-jsx="1040468281"]{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:900;padding:30px 40px 0 40px;-webkit-box-pack:space-between;-webkit-justify-content:space-between;-ms-flex-pack:space-between;justify-content:space-between;-webkit-transition:all .3s;transition:all .3s}.header--scroll[data-jsx="1040468281"]{background:rgba(0,0,0,.9)}.header__menu[data-jsx="1040468281"]{display:none;-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end}.header__menu[data-jsx="1040468281"]>ul[data-jsx="1040468281"]{padding:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.logo-container[data-jsx="1040468281"]{margin-left:100px}@media (min-width:1024px){.header[data-jsx="1040468281"]{padding-top:60px}.header__menu[data-jsx="1040468281"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}}'
 				})
 			);
 		}
@@ -20892,6 +20918,105 @@ var HeroSliderMenu = function HeroSliderMenu(_ref) {
 };
 
 exports.default = HeroSliderMenu;
+
+/***/ }),
+
+/***/ 679:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _style = __webpack_require__(79);
+
+var _style2 = _interopRequireDefault(_style);
+
+var _react = __webpack_require__(48);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Footer = function (_Component) {
+	_inherits(Footer, _Component);
+
+	function Footer() {
+		_classCallCheck(this, Footer);
+
+		return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+	}
+
+	_createClass(Footer, [{
+		key: 'render',
+		value: function render() {
+			var menu = this.props.menu;
+
+
+			var newMenu = menu.map(function (item) {
+				var parentId = parseInt(item.menu_item_parent);
+
+				if (parentId > 0) {
+					var parent = find(menu, { ID: parentId });
+					parent['sub'] = parent.sub ? parent.sub.concat([item]) : [].concat([item]);
+					return item;
+				} else {
+					return item;
+				}
+			});
+
+			newMenu = menu.filter(function (item) {
+				return parseInt(item.menu_item_parent) === 0;
+			});
+
+			return _react2.default.createElement(
+				'section',
+				{
+					'data-jsx': 2014126897
+				},
+				_react2.default.createElement(
+					'div',
+					{ className: 'footer__menu', 'data-jsx': 2014126897
+					},
+					_react2.default.createElement(
+						'ul',
+						{
+							'data-jsx': 2014126897
+						},
+						newMenu.map(function (item) {
+							return _react2.default.createElement(
+								'li',
+								{
+									'data-jsx': 2014126897
+								},
+								item.title
+							);
+						})
+					)
+				),
+				_react2.default.createElement(_style2.default, {
+					styleId: 2014126897,
+					css: 'section[data-jsx="2014126897"]{position:relative;z-index:100;height:700px;width:100%;background:#000}'
+				})
+			);
+		}
+	}]);
+
+	return Footer;
+}(_react.Component);
+
+exports.default = Footer;
 
 /***/ }),
 
