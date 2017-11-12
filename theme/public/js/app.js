@@ -20961,7 +20961,8 @@ var Footer = function (_Component) {
 	_createClass(Footer, [{
 		key: 'render',
 		value: function render() {
-			var menu = this.props.menu;
+			var _props$menu = this.props.menu,
+			    menu = _props$menu === undefined ? [] : _props$menu;
 
 
 			var newMenu = menu.map(function (item) {

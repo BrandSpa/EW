@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Footer extends Component {
 	render() {
-		const { menu } = this.props;
+		const { menu = [] } = this.props;
 		
 		let newMenu = menu.map(item => {
 			const parentId = parseInt(item.menu_item_parent);
