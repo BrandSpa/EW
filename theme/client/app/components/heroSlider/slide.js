@@ -27,12 +27,14 @@ class HeroSlide extends Component {
 						color: #fff;
 						padding-left: 60px;
 						margin-top: 20%;
-						transition: all .3s;
+						transition: opacity .3s;
+						position: absolute;
 						visibility: hidden;
 						opacity: 0;
 					}
 
 					.heroSlide--show{
+						position: relative;
 						visibility: visible;
 						opacity: 1;
 					}
