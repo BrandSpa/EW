@@ -22,14 +22,14 @@ class HeaderLink extends Component {
 
 		return (
 			<li 
-				className="header__menu-link" key={item.ID} 
+				className="header__menu-link"
 				onMouseEnter={this.handleHover} 
 				onMouseLeave={this.handleOut}
 			>
-				<a href="#">{item.title} <img src={`${this.props.uri}/public/img/arrow.svg`}/></a>
+				<a href="#">{item.title} {item.sub && item.sub.length > 0 && <img src={`${this.props.uri}/public/img/arrow.svg`}/>}</a>
 					{item.sub &&
 						<ul className={submenuClass}>
-							{item.sub.map(subItem => {
+							{item.sub.map((subItem, i) => {
 								return <li key={subItem.ID}><a href="#">{subItem.title}</a></li>
 								})
 							}

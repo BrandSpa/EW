@@ -7,16 +7,22 @@ class Header extends Component {
 
 	state = {
 		uri: window.templateUri,
-		onTop: true
+		onTop: true,
+		menu: []
 	}
 
 	componentDidMount() {
+		this.getMenu();
+		this.handleScroll();
+	}
+
+	handleScroll = () => {
 		window.addEventListener('scroll', throttle((e) => {
-				this.setState({ onTop: window.scrollY === 0 });
+			this.setState({ onTop: window.scrollY === 0 });
 		},100));
 	}
 
-	render() {
+	getMenu = () => {
 		const { menu } = this.props;
 		
 		let newMenu = menu.map(item => {
@@ -33,6 +39,10 @@ class Header extends Component {
 
 		newMenu = menu.filter(item => parseInt(item.menu_item_parent) === 0);
 
+		this.setState({ menu: newMenu });
+	} 
+
+	render() {
 		const headerClass = classNames('header', {
 			'header--scroll': !this.state.onTop
 		});
@@ -46,8 +56,8 @@ class Header extends Component {
 				</div>
 				<div className="header__menu">
 					<ul>
-						{newMenu.map(item =>
-							<Link item={item} uri={this.state.uri} />	
+						{this.state.menu.map(item =>
+							<Link key={item.ID} item={item} uri={this.state.uri} />	
 						)}
 					</ul>
 				</div>

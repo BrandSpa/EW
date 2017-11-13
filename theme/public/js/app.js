@@ -20347,6 +20347,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _style = __webpack_require__(79);
@@ -20426,7 +20428,9 @@ var HeroSlider = function (_Component) {
 				'section',
 				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 3545699466
 				},
-				_react2.default.createElement(_slide2.default, slide),
+				slides.map(function (slide, i) {
+					return _react2.default.createElement(_slide2.default, _extends({}, slide, { index: i, current: slideNum }));
+				}),
 				_react2.default.createElement(
 					'div',
 					{ className: 'heroSlider__nav', 'data-jsx': 3545699466
@@ -20434,7 +20438,7 @@ var HeroSlider = function (_Component) {
 					slides.map(function (s, i) {
 						return _react2.default.createElement(
 							'button',
-							{ onClick: function onClick(e) {
+							{ key: i, onClick: function onClick(e) {
 									return _this3.changeSlide(e, i);
 								}, 'data-jsx': 3545699466
 							},
@@ -20480,6 +20484,10 @@ var _react = __webpack_require__(48);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames = __webpack_require__(675);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20498,52 +20506,57 @@ var HeroSlide = function (_Component) {
 	}
 
 	_createClass(HeroSlide, [{
-		key: "render",
+		key: 'render',
 		value: function render() {
 			var _props = this.props,
 			    bg = _props.bg,
 			    title = _props.title,
-			    content = _props.content;
+			    content = _props.content,
+			    index = _props.index,
+			    current = _props.current;
 
+			var heroSlideClass = (0, _classnames2.default)('heroSlide', {
+				'heroSlide--show': index === current
+			});
 
 			return _react2.default.createElement(
-				"section",
-				{ className: "heroSlide", "data-jsx": 962947130
+				'section',
+				{ className: heroSlideClass, 'data-jsx': 2939013529
 				},
 				_react2.default.createElement(
-					"div",
-					{ className: "heroSlide__content", "data-jsx": 962947130
+					'div',
+					{ className: 'heroSlide__content', 'data-jsx': 2939013529
 					},
 					_react2.default.createElement(
-						"div",
-						{ className: "title", "data-jsx": 962947130
+						'div',
+						{ className: 'title', 'data-jsx': 2939013529
 						},
 						_react2.default.createElement(
-							"h2",
+							'h2',
 							{
-								"data-jsx": 962947130
+								'data-jsx': 2939013529
 							},
 							title
 						)
 					),
-					_react2.default.createElement("div", { className: "line", "data-jsx": 962947130
+					_react2.default.createElement('div', { className: 'line', 'data-jsx': 2939013529
 					}),
 					_react2.default.createElement(
-						"div",
-						{ className: "body", "data-jsx": 962947130
+						'div',
+						{ className: 'body', 'data-jsx': 2939013529
 						},
 						_react2.default.createElement(
-							"p",
+							'p',
 							{
-								"data-jsx": 962947130
+								'data-jsx': 2939013529
 							},
 							content
 						)
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 962947130,
-					css: ".heroSlide[data-jsx=\"962947130\"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;color:#fff;padding-left:60px;margin-top:20%;-webkit-transition:all .3s;transition:all .3s}.heroSlide__content[data-jsx=\"962947130\"]{width:90%}.title[data-jsx=\"962947130\"] h2[data-jsx=\"962947130\"]{font-size:40px;font-family:'Yantramanav';line-height:0.9}.line[data-jsx=\"962947130\"]{width:60px;height:1px;margin:30px 0;border:solid 1px #039ed8}.body[data-jsx=\"962947130\"] p[data-jsx=\"962947130\"]{font-size:14px;line-height:1.54}@media (min-width:1024px){.heroSlide[data-jsx=\"962947130\"]{margin-top:0;padding-left:140px}.heroSlide__content[data-jsx=\"962947130\"]{width:50%}.title[data-jsx=\"962947130\"] h2[data-jsx=\"962947130\"]{font-size:100px}.body[data-jsx=\"962947130\"] p[data-jsx=\"962947130\"]{font-size:24px}}"
+					styleId: 2939013529,
+					css: '.heroSlide[data-jsx="2939013529"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;color:#fff;padding-left:60px;margin-top:20%;-webkit-transition:all .3s;transition:all .3s;visibility:hidden;opacity:0}.heroSlide--show[data-jsx="2939013529"]{visibility:visible;opacity:1}.heroSlide__content[data-jsx="2939013529"]{width:90%}.title[data-jsx="2939013529"] h2[data-jsx="2939013529"]{font-size:40px;font-family:\'Yantramanav\';line-height:0.9}.line[data-jsx="2939013529"]{width:60px;height:1px;margin:30px 0;border:solid 1px #039ed8}.body[data-jsx="2939013529"] p[data-jsx="2939013529"]{font-size:14px;line-height:1.54}@media (min-width:1024px){.heroSlide[data-jsx="2939013529"]{margin-top:0;padding-left:140px}.heroSlide__content[data-jsx="2939013529"]{width:50%}.title[data-jsx="2939013529"] h2[data-jsx="2939013529"]{font-size:100px}.body[data-jsx="2939013529"] p[data-jsx="2939013529"]{font-size:24px}}'
 				})
 			);
 		}
@@ -20666,25 +20679,14 @@ var Header = function (_Component) {
 
 		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Header.__proto__ || Object.getPrototypeOf(Header)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
 			uri: window.templateUri,
-			onTop: true
-		}, _temp), _possibleConstructorReturn(_this, _ret);
-	}
-
-	_createClass(Header, [{
-		key: 'componentDidMount',
-		value: function componentDidMount() {
-			var _this2 = this;
-
+			onTop: true,
+			menu: []
+		}, _this.handleScroll = function () {
 			window.addEventListener('scroll', (0, _lodash.throttle)(function (e) {
-				_this2.setState({ onTop: window.scrollY === 0 });
+				_this.setState({ onTop: window.scrollY === 0 });
 			}, 100));
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			var _this3 = this;
-
-			var menu = this.props.menu;
+		}, _this.getMenu = function () {
+			var menu = _this.props.menu;
 
 
 			var newMenu = menu.map(function (item) {
@@ -20703,6 +20705,21 @@ var Header = function (_Component) {
 				return parseInt(item.menu_item_parent) === 0;
 			});
 
+			_this.setState({ menu: newMenu });
+		}, _temp), _possibleConstructorReturn(_this, _ret);
+	}
+
+	_createClass(Header, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			this.getMenu();
+			this.handleScroll();
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
 			var headerClass = (0, _classnames2.default)('header', {
 				'header--scroll': !this.state.onTop
 			});
@@ -20710,7 +20727,7 @@ var Header = function (_Component) {
 			return _react2.default.createElement(
 				'section',
 				{ className: headerClass, ref: function ref(_ref2) {
-						return _this3.header = _ref2;
+						return _this2.header = _ref2;
 					}, 'data-jsx': 2942069711
 				},
 				_react2.default.createElement(
@@ -20734,8 +20751,8 @@ var Header = function (_Component) {
 						{
 							'data-jsx': 2942069711
 						},
-						newMenu.map(function (item) {
-							return _react2.default.createElement(_link2.default, { item: item, uri: _this3.state.uri });
+						this.state.menu.map(function (item) {
+							return _react2.default.createElement(_link2.default, { key: item.ID, item: item, uri: _this2.state.uri });
 						})
 					)
 				),
@@ -20821,7 +20838,7 @@ var HeaderLink = function (_Component) {
 			return _react2.default.createElement(
 				'li',
 				{
-					className: 'header__menu-link', key: item.ID,
+					className: 'header__menu-link',
 					onMouseEnter: this.handleHover,
 					onMouseLeave: this.handleOut,
 					'data-jsx': 2002609182
@@ -20832,14 +20849,14 @@ var HeaderLink = function (_Component) {
 					},
 					item.title,
 					' ',
-					_react2.default.createElement('img', { src: this.props.uri + '/public/img/arrow.svg', 'data-jsx': 2002609182
+					item.sub && item.sub.length > 0 && _react2.default.createElement('img', { src: this.props.uri + '/public/img/arrow.svg', 'data-jsx': 2002609182
 					})
 				),
 				item.sub && _react2.default.createElement(
 					'ul',
 					{ className: submenuClass, 'data-jsx': 2002609182
 					},
-					item.sub.map(function (subItem) {
+					item.sub.map(function (subItem, i) {
 						return _react2.default.createElement(
 							'li',
 							{ key: subItem.ID, 'data-jsx': 2002609182

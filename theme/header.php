@@ -40,10 +40,19 @@
       z-index: 99;
 		}
 
+    .line-responsive {
+      margin-left: 40px;
+    }
+
     @media (min-width: 1024px) {
       .verticalLine {
         left: 80px;
       }
+
+      .line-responsive {
+      margin-left: 120px;
+      }
+
     }
 
   </style>

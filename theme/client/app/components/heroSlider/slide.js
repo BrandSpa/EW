@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 
 class HeroSlide extends Component {
 
 	render() {
-		const { bg, title, content } = this.props;
+		const { bg, title, content, index, current } = this.props;
+		const heroSlideClass = classNames('heroSlide', {
+			'heroSlide--show': index === current
+		});
 
 		return (
-			<section className="heroSlide" >
+			<section className={heroSlideClass} >
 				<div className="heroSlide__content">
 					<div className="title">
 						<h2>{title}</h2>
@@ -24,6 +28,13 @@ class HeroSlide extends Component {
 						padding-left: 60px;
 						margin-top: 20%;
 						transition: all .3s;
+						visibility: hidden;
+						opacity: 0;
+					}
+
+					.heroSlide--show{
+						visibility: visible;
+						opacity: 1;
 					}
 
 					.heroSlide__content {

@@ -32,11 +32,12 @@ class HeroSlider extends Component {
 		
 		return (
 			<section className="heroSlider" style={{ background: `url(${bg})` }}>
-				<Slide {...slide} />
+			{slides.map((slide, i) => <Slide {...slide} index={i} current={slideNum} />)}
+				
 				<div className="heroSlider__nav">
 					{slides.map((s, i) => {
 						return (
-							<button onClick={(e) => this.changeSlide(e, i)}>
+							<button key={i} onClick={(e) => this.changeSlide(e, i)}>
 								{ slideNum === i && <span/>}
 							</button>
 						)
