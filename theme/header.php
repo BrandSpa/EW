@@ -32,13 +32,19 @@
     }
 
     .verticalLine {
-			left: 80px;
+      left: 20px;
 			position: fixed;
 			height: 100vh;
 			width: 1px;
 			border: solid 1px #039ed8;
       z-index: 99;
 		}
+
+    @media (min-width: 1024px) {
+      .verticalLine {
+        left: 80px;
+      }
+    }
 
   </style>
 </head>

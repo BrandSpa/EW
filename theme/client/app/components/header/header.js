@@ -57,13 +57,17 @@ class Header extends Component {
 							display: flex;
 							width: 100%;
 							z-index: 900;
-							padding: 30px 40px 0 40px;
+							padding: 30px 0;
 							justify-content: space-between;
 							transition: all .3s;
 						}
 
 						.header--scroll {
 							background: rgba(0,0,0,.9)
+						}
+
+						.logo-container {
+							margin-left: 60px;
 						}
 
 						.header__menu {
@@ -76,14 +80,16 @@ class Header extends Component {
 							display: flex;
 						}
 
-						.logo-container {
-							margin-left: 100px;
-						}
-
 						@media (min-width: 1024px) {
 							.header {
-								padding-top: 60px;
+								padding-top: 50px;
+								padding-bottom: 10px;
 							}
+
+							.logo-container {
+								margin-left: 100px;
+							}
+
 							.header__menu  {
 								display: flex;
 							}

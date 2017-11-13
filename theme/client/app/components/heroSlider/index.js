@@ -61,7 +61,7 @@ class HeroSlider extends Component {
 					.heroSlider__nav {
 						display: flex;
 						margin-top: 40px;
-						margin-left: 140px;
+						margin-left: 60px;
 					}
 
 					.heroSlider__nav button {
@@ -88,6 +88,10 @@ class HeroSlider extends Component {
 
 						.heroSlider {
 							justify-content: center;
+						}
+
+						.heroSlider__nav {
+							margin-left: 140px;
 						}
 
 						.heroSlider__nav button {

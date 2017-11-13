@@ -20424,30 +20424,30 @@ var HeroSlider = function (_Component) {
 
 			return _react2.default.createElement(
 				'section',
-				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 4076595680
+				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 3545699466
 				},
 				_react2.default.createElement(_slide2.default, slide),
 				_react2.default.createElement(
 					'div',
-					{ className: 'heroSlider__nav', 'data-jsx': 4076595680
+					{ className: 'heroSlider__nav', 'data-jsx': 3545699466
 					},
 					slides.map(function (s, i) {
 						return _react2.default.createElement(
 							'button',
 							{ onClick: function onClick(e) {
 									return _this3.changeSlide(e, i);
-								}, 'data-jsx': 4076595680
+								}, 'data-jsx': 3545699466
 							},
 							slideNum === i && _react2.default.createElement('span', {
-								'data-jsx': 4076595680
+								'data-jsx': 3545699466
 							})
 						);
 					})
 				),
 				this.props.links && _react2.default.createElement(_menu2.default, { links: this.props.links }),
 				_react2.default.createElement(_style2.default, {
-					styleId: 4076595680,
-					css: '.heroSlider[data-jsx="4076595680"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;width:100%;min-height:100vh;background-size:cover;backgroundColor:\'#333\';-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-transition:all .3s;transition:all .3s}.heroSlider__nav[data-jsx="4076595680"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:40px;margin-left:140px}.heroSlider__nav[data-jsx="4076595680"] button[data-jsx="4076595680"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:transparent;width:30px;height:30px;border:solid 1px #039ed8;border-radius:0;outline:none;margin-right:10px}.heroSlider__nav[data-jsx="4076595680"] button[data-jsx="4076595680"] span[data-jsx="4076595680"]{display:block;width:10px;height:10px;background:#fff}@media (min-width:1024px){.heroSlider[data-jsx="4076595680"]{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}.heroSlider__nav[data-jsx="4076595680"] button[data-jsx="4076595680"]{width:40px;height:40px}}'
+					styleId: 3545699466,
+					css: '.heroSlider[data-jsx="3545699466"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;width:100%;min-height:100vh;background-size:cover;backgroundColor:\'#333\';-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-transition:all .3s;transition:all .3s}.heroSlider__nav[data-jsx="3545699466"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:40px;margin-left:60px}.heroSlider__nav[data-jsx="3545699466"] button[data-jsx="3545699466"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:transparent;width:30px;height:30px;border:solid 1px #039ed8;border-radius:0;outline:none;margin-right:10px}.heroSlider__nav[data-jsx="3545699466"] button[data-jsx="3545699466"] span[data-jsx="3545699466"]{display:block;width:10px;height:10px;background:#fff}@media (min-width:1024px){.heroSlider[data-jsx="3545699466"]{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}.heroSlider__nav[data-jsx="3545699466"]{margin-left:140px}.heroSlider__nav[data-jsx="3545699466"] button[data-jsx="3545699466"]{width:40px;height:40px}}'
 				})
 			);
 		}
@@ -20508,42 +20508,42 @@ var HeroSlide = function (_Component) {
 
 			return _react2.default.createElement(
 				"section",
-				{ className: "heroSlide", "data-jsx": 2792328688
+				{ className: "heroSlide", "data-jsx": 962947130
 				},
 				_react2.default.createElement(
 					"div",
-					{ className: "heroSlide__content", "data-jsx": 2792328688
+					{ className: "heroSlide__content", "data-jsx": 962947130
 					},
 					_react2.default.createElement(
 						"div",
-						{ className: "title", "data-jsx": 2792328688
+						{ className: "title", "data-jsx": 962947130
 						},
 						_react2.default.createElement(
 							"h2",
 							{
-								"data-jsx": 2792328688
+								"data-jsx": 962947130
 							},
 							title
 						)
 					),
-					_react2.default.createElement("div", { className: "line", "data-jsx": 2792328688
+					_react2.default.createElement("div", { className: "line", "data-jsx": 962947130
 					}),
 					_react2.default.createElement(
 						"div",
-						{ className: "body", "data-jsx": 2792328688
+						{ className: "body", "data-jsx": 962947130
 						},
 						_react2.default.createElement(
 							"p",
 							{
-								"data-jsx": 2792328688
+								"data-jsx": 962947130
 							},
 							content
 						)
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 2792328688,
-					css: ".heroSlide[data-jsx=\"2792328688\"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;color:#fff;padding-left:140px;margin-top:20%;-webkit-transition:all .3s;transition:all .3s}.heroSlide__content[data-jsx=\"2792328688\"]{width:80%}.title[data-jsx=\"2792328688\"] h2[data-jsx=\"2792328688\"]{font-size:40px;font-family:'Yantramanav';line-height:0.9}.line[data-jsx=\"2792328688\"]{width:60px;height:1px;margin:30px 0;border:solid 1px #039ed8}.body[data-jsx=\"2792328688\"] p[data-jsx=\"2792328688\"]{font-size:14px;line-height:1.54}@media (min-width:1024px){.heroSlide[data-jsx=\"2792328688\"]{margin-top:0}.heroSlide__content[data-jsx=\"2792328688\"]{width:50%}.title[data-jsx=\"2792328688\"] h2[data-jsx=\"2792328688\"]{font-size:100px}.body[data-jsx=\"2792328688\"] p[data-jsx=\"2792328688\"]{font-size:24px}}"
+					styleId: 962947130,
+					css: ".heroSlide[data-jsx=\"962947130\"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;color:#fff;padding-left:60px;margin-top:20%;-webkit-transition:all .3s;transition:all .3s}.heroSlide__content[data-jsx=\"962947130\"]{width:90%}.title[data-jsx=\"962947130\"] h2[data-jsx=\"962947130\"]{font-size:40px;font-family:'Yantramanav';line-height:0.9}.line[data-jsx=\"962947130\"]{width:60px;height:1px;margin:30px 0;border:solid 1px #039ed8}.body[data-jsx=\"962947130\"] p[data-jsx=\"962947130\"]{font-size:14px;line-height:1.54}@media (min-width:1024px){.heroSlide[data-jsx=\"962947130\"]{margin-top:0;padding-left:140px}.heroSlide__content[data-jsx=\"962947130\"]{width:50%}.title[data-jsx=\"962947130\"] h2[data-jsx=\"962947130\"]{font-size:100px}.body[data-jsx=\"962947130\"] p[data-jsx=\"962947130\"]{font-size:24px}}"
 				})
 			);
 		}
@@ -20711,28 +20711,28 @@ var Header = function (_Component) {
 				'section',
 				{ className: headerClass, ref: function ref(_ref2) {
 						return _this3.header = _ref2;
-					}, 'data-jsx': 1040468281
+					}, 'data-jsx': 2942069711
 				},
 				_react2.default.createElement(
 					'div',
-					{ className: 'logo-container', 'data-jsx': 1040468281
+					{ className: 'logo-container', 'data-jsx': 2942069711
 					},
 					_react2.default.createElement(
 						'a',
-						{ href: '/', 'data-jsx': 1040468281
+						{ href: '/', 'data-jsx': 2942069711
 						},
-						_react2.default.createElement('img', { src: this.state.uri + '/public/img/logo.png', alt: '', 'data-jsx': 1040468281
+						_react2.default.createElement('img', { src: this.state.uri + '/public/img/logo.png', alt: '', 'data-jsx': 2942069711
 						})
 					)
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'header__menu', 'data-jsx': 1040468281
+					{ className: 'header__menu', 'data-jsx': 2942069711
 					},
 					_react2.default.createElement(
 						'ul',
 						{
-							'data-jsx': 1040468281
+							'data-jsx': 2942069711
 						},
 						newMenu.map(function (item) {
 							return _react2.default.createElement(_link2.default, { item: item, uri: _this3.state.uri });
@@ -20740,8 +20740,8 @@ var Header = function (_Component) {
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 1040468281,
-					css: '.header[data-jsx="1040468281"]{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:900;padding:30px 40px 0 40px;-webkit-box-pack:space-between;-webkit-justify-content:space-between;-ms-flex-pack:space-between;justify-content:space-between;-webkit-transition:all .3s;transition:all .3s}.header--scroll[data-jsx="1040468281"]{background:rgba(0,0,0,.9)}.header__menu[data-jsx="1040468281"]{display:none;-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end}.header__menu[data-jsx="1040468281"]>ul[data-jsx="1040468281"]{padding:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.logo-container[data-jsx="1040468281"]{margin-left:100px}@media (min-width:1024px){.header[data-jsx="1040468281"]{padding-top:60px}.header__menu[data-jsx="1040468281"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}}'
+					styleId: 2942069711,
+					css: '.header[data-jsx="2942069711"]{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:900;padding:30px 0;-webkit-box-pack:space-between;-webkit-justify-content:space-between;-ms-flex-pack:space-between;justify-content:space-between;-webkit-transition:all .3s;transition:all .3s}.header--scroll[data-jsx="2942069711"]{background:rgba(0,0,0,.9)}.logo-container[data-jsx="2942069711"]{margin-left:60px}.header__menu[data-jsx="2942069711"]{display:none;-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end}.header__menu[data-jsx="2942069711"]>ul[data-jsx="2942069711"]{padding:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}@media (min-width:1024px){.header[data-jsx="2942069711"]{padding-top:50px;padding-bottom:10px}.logo-container[data-jsx="2942069711"]{margin-left:100px}.header__menu[data-jsx="2942069711"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}}'
 				})
 			);
 		}

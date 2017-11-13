@@ -21,13 +21,13 @@ class HeroSlide extends Component {
 						display: flex;
 						width: 100%;
 						color: #fff;
-						padding-left: 140px;
+						padding-left: 60px;
 						margin-top: 20%;
 						transition: all .3s;
 					}
 
 					.heroSlide__content {
-						width: 80%;
+						width: 90%;
 					}
 					
 					.title h2 {
@@ -51,6 +51,7 @@ class HeroSlide extends Component {
 					@media (min-width: 1024px) {
 						.heroSlide {
 							margin-top: 0;
+							padding-left: 140px;
 						}
 
 						.heroSlide__content {
