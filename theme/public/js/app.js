@@ -20749,28 +20749,28 @@ var Header = function (_Component) {
 				'section',
 				{ className: headerClass, ref: function ref(_ref2) {
 						return _this2.header = _ref2;
-					}, 'data-jsx': 2942069711
+					}, 'data-jsx': 1625030219
 				},
 				_react2.default.createElement(
 					'div',
-					{ className: 'logo-container', 'data-jsx': 2942069711
+					{ className: 'logo-container', 'data-jsx': 1625030219
 					},
 					_react2.default.createElement(
 						'a',
-						{ href: '/', 'data-jsx': 2942069711
+						{ href: '/', 'data-jsx': 1625030219
 						},
-						_react2.default.createElement('img', { src: this.state.uri + '/public/img/logo.png', alt: '', 'data-jsx': 2942069711
+						_react2.default.createElement('img', { src: this.state.uri + '/public/img/logo.png', alt: '', 'data-jsx': 1625030219
 						})
 					)
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'header__menu', 'data-jsx': 2942069711
+					{ className: 'header__menu', 'data-jsx': 1625030219
 					},
 					_react2.default.createElement(
 						'ul',
 						{
-							'data-jsx': 2942069711
+							'data-jsx': 1625030219
 						},
 						this.state.menu.map(function (item) {
 							return _react2.default.createElement(_link2.default, { key: item.ID, item: item, uri: _this2.state.uri });
@@ -20778,8 +20778,8 @@ var Header = function (_Component) {
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 2942069711,
-					css: '.header[data-jsx="2942069711"]{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:900;padding:30px 0;-webkit-box-pack:space-between;-webkit-justify-content:space-between;-ms-flex-pack:space-between;justify-content:space-between;-webkit-transition:all .3s;transition:all .3s}.header--scroll[data-jsx="2942069711"]{background:rgba(0,0,0,.9)}.logo-container[data-jsx="2942069711"]{margin-left:60px}.header__menu[data-jsx="2942069711"]{display:none;-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end}.header__menu[data-jsx="2942069711"]>ul[data-jsx="2942069711"]{padding:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}@media (min-width:1024px){.header[data-jsx="2942069711"]{padding-top:50px;padding-bottom:10px}.logo-container[data-jsx="2942069711"]{margin-left:100px}.header__menu[data-jsx="2942069711"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}}'
+					styleId: 1625030219,
+					css: '.header[data-jsx="1625030219"]{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:900;padding:30px 0;-webkit-box-pack:space-between;-webkit-justify-content:space-between;-ms-flex-pack:space-between;justify-content:space-between;-webkit-transition:all .3s;transition:all .3s}.header--scroll[data-jsx="1625030219"]{background:rgba(0,0,0,.9)}.logo-container[data-jsx="1625030219"]{margin-left:60px}.header__menu[data-jsx="1625030219"]{display:none;-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end}.header__menu[data-jsx="1625030219"]>ul[data-jsx="1625030219"]{padding:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}@media (min-width:1024px){.header[data-jsx="1625030219"]{padding-top:50px;padding-bottom:10px}.logo-container[data-jsx="1625030219"]{margin-left:140px}.header__menu[data-jsx="1625030219"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}}'
 				})
 			);
 		}
