@@ -20367,6 +20367,10 @@ var _menu = __webpack_require__(678);
 
 var _menu2 = _interopRequireDefault(_menu);
 
+var _icon = __webpack_require__(680);
+
+var _icon2 = _interopRequireDefault(_icon);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20426,32 +20430,49 @@ var HeroSlider = function (_Component) {
 
 			return _react2.default.createElement(
 				'section',
-				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 3545699466
+				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 24972425
 				},
 				slides.map(function (slide, i) {
 					return _react2.default.createElement(_slide2.default, _extends({}, slide, { index: i, current: slideNum }));
 				}),
 				_react2.default.createElement(
 					'div',
-					{ className: 'heroSlider__nav', 'data-jsx': 3545699466
+					{ className: 'heroSlider__nav', 'data-jsx': 24972425
 					},
 					slides.map(function (s, i) {
 						return _react2.default.createElement(
 							'button',
 							{ key: i, onClick: function onClick(e) {
 									return _this3.changeSlide(e, i);
-								}, 'data-jsx': 3545699466
+								}, 'data-jsx': 24972425
 							},
 							slideNum === i && _react2.default.createElement('span', {
-								'data-jsx': 3545699466
+								'data-jsx': 24972425
 							})
 						);
 					})
 				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'social', 'data-jsx': 24972425
+					},
+					_react2.default.createElement(
+						'div',
+						{ className: 'social__icon', 'data-jsx': 24972425
+						},
+						_react2.default.createElement(_icon2.default, { iconClass: 'ion-social-twitter' })
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'social__icon', 'data-jsx': 24972425
+						},
+						_react2.default.createElement(_icon2.default, { iconClass: 'ion-social-instagram-outline' })
+					)
+				),
 				this.props.links && _react2.default.createElement(_menu2.default, { links: this.props.links }),
 				_react2.default.createElement(_style2.default, {
-					styleId: 3545699466,
-					css: '.heroSlider[data-jsx="3545699466"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;width:100%;min-height:100vh;background-size:cover;backgroundColor:\'#333\';-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-transition:all .3s;transition:all .3s}.heroSlider__nav[data-jsx="3545699466"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:40px;margin-left:60px}.heroSlider__nav[data-jsx="3545699466"] button[data-jsx="3545699466"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:transparent;width:30px;height:30px;border:solid 1px #039ed8;border-radius:0;outline:none;margin-right:10px}.heroSlider__nav[data-jsx="3545699466"] button[data-jsx="3545699466"] span[data-jsx="3545699466"]{display:block;width:10px;height:10px;background:#fff}@media (min-width:1024px){.heroSlider[data-jsx="3545699466"]{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}.heroSlider__nav[data-jsx="3545699466"]{margin-left:140px}.heroSlider__nav[data-jsx="3545699466"] button[data-jsx="3545699466"]{width:40px;height:40px}}'
+					styleId: 24972425,
+					css: '.heroSlider[data-jsx="24972425"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;width:100%;min-height:100vh;background-size:cover;backgroundColor:\'#333\';-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-transition:all .3s;transition:all .3s}.heroSlider__nav[data-jsx="24972425"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:40px;margin-left:60px}.heroSlider__nav[data-jsx="24972425"] button[data-jsx="24972425"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:transparent;width:30px;height:30px;border:solid 1px #039ed8;border-radius:0;outline:none;margin-right:10px}.heroSlider__nav[data-jsx="24972425"] button[data-jsx="24972425"] span[data-jsx="24972425"]{display:block;width:10px;height:10px;background:#fff}.social[data-jsx="24972425"]{position:absolute;bottom:60px;left:20px}.social__icon[data-jsx="24972425"]{margin-bottom:20px}@media (min-width:1024px){.heroSlider[data-jsx="24972425"]{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}.heroSlider__nav[data-jsx="24972425"]{margin-left:140px}.heroSlider__nav[data-jsx="24972425"] button[data-jsx="24972425"]{width:40px;height:40px}}'
 				})
 			);
 		}
@@ -20841,29 +20862,29 @@ var HeaderLink = function (_Component) {
 					className: 'header__menu-link',
 					onMouseEnter: this.handleHover,
 					onMouseLeave: this.handleOut,
-					'data-jsx': 2002609182
+					'data-jsx': 677090429
 				},
 				_react2.default.createElement(
 					'a',
-					{ href: '#', 'data-jsx': 2002609182
+					{ href: '#', 'data-jsx': 677090429
 					},
 					item.title,
 					' ',
-					item.sub && item.sub.length > 0 && _react2.default.createElement('img', { src: this.props.uri + '/public/img/arrow.svg', 'data-jsx': 2002609182
+					item.sub && item.sub.length > 0 && _react2.default.createElement('img', { src: this.props.uri + '/public/img/arrow.svg', 'data-jsx': 677090429
 					})
 				),
 				item.sub && _react2.default.createElement(
 					'ul',
-					{ className: submenuClass, 'data-jsx': 2002609182
+					{ className: submenuClass, 'data-jsx': 677090429
 					},
 					item.sub.map(function (subItem, i) {
 						return _react2.default.createElement(
 							'li',
-							{ key: subItem.ID, 'data-jsx': 2002609182
+							{ key: subItem.ID, 'data-jsx': 677090429
 							},
 							_react2.default.createElement(
 								'a',
-								{ href: '#', 'data-jsx': 2002609182
+								{ href: '#', 'data-jsx': 677090429
 								},
 								subItem.title
 							)
@@ -20871,8 +20892,8 @@ var HeaderLink = function (_Component) {
 					})
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 2002609182,
-					css: '.header__menu-link[data-jsx="2002609182"]{margin-right:40px;position:relative;padding-bottom:20px}.header__menu-link[data-jsx="2002609182"]>a[data-jsx="2002609182"]{color:#fff;padding-bottom:20px}.header__menu-link[data-jsx="2002609182"]>a[data-jsx="2002609182"] img[data-jsx="2002609182"]{padding-left:15px}.header__submenu[data-jsx="2002609182"]{background:#fff;padding:15px;position:absolute;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-width:150px;-webkit-transition:all .3s;transition:all .3s;top:40px;opacity:0;visibility:hidden;-webkit-transform:translateY(-10px);-ms-transform:translateY(-10px);transform:translateY(-10px)}.header__submenu--show[data-jsx="2002609182"]{display:block;opacity:1;visibility:visible;-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}.header__submenu[data-jsx="2002609182"] li[data-jsx="2002609182"] a[data-jsx="2002609182"]{display:block;color:#039ed8;width:100%;font-size:15px;padding-bottom:5px;border-bottom:1px solid #039ed8}.header__submenu[data-jsx="2002609182"] li[data-jsx="2002609182"]:last-child a[data-jsx="2002609182"]{border:none}'
+					styleId: 677090429,
+					css: '.header__menu-link[data-jsx="677090429"]{margin-right:40px;position:relative;padding-bottom:20px}.header__menu-link[data-jsx="677090429"]>a[data-jsx="677090429"]{color:#fff;padding-bottom:20px}.header__menu-link[data-jsx="677090429"]>a[data-jsx="677090429"] img[data-jsx="677090429"]{padding-left:15px}.header__submenu[data-jsx="677090429"]{background:#fff;padding:15px;position:absolute;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-width:150px;-webkit-transition:all .3s;transition:all .3s;top:40px;opacity:0;visibility:hidden;-webkit-transform:translateY(-10px);-ms-transform:translateY(-10px);transform:translateY(-10px)}.header__submenu--show[data-jsx="677090429"]{display:block;opacity:1;visibility:visible;-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0)}.header__submenu[data-jsx="677090429"] li[data-jsx="677090429"] a[data-jsx="677090429"]{display:block;color:#039ed8;width:100%;font-size:15px;padding-bottom:5px;margin-bottom:5px;border-bottom:1px solid #039ed8}.header__submenu[data-jsx="677090429"] li[data-jsx="677090429"]:last-child a[data-jsx="677090429"]{border:none}'
 				})
 			);
 		}
@@ -21035,6 +21056,46 @@ var Footer = function (_Component) {
 }(_react.Component);
 
 exports.default = Footer;
+
+/***/ }),
+
+/***/ 680:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _style = __webpack_require__(79);
+
+var _style2 = _interopRequireDefault(_style);
+
+var _react = __webpack_require__(48);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var TwitterIcon = function TwitterIcon(_ref) {
+	var iconClass = _ref.iconClass;
+
+	return _react2.default.createElement(
+		"a",
+		{ href: "#", "data-jsx": 292478232
+		},
+		_react2.default.createElement("i", { className: iconClass, "data-jsx": 292478232
+		}),
+		_react2.default.createElement(_style2.default, {
+			styleId: 292478232,
+			css: "a[data-jsx=\"292478232\"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;width:40px;height:40px;border-radius:40px;background:#fff}a[data-jsx=\"292478232\"] i[data-jsx=\"292478232\"]{font-size:27px;color:#5D5D5D}"
+		})
+	);
+};
+
+exports.default = TwitterIcon;
 
 /***/ }),
 

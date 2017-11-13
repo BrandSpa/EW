@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Slide from './slide';
 import Menu from './menu';
+import SocialIcon from '../social/icon';
 
 class HeroSlider extends Component {
 
@@ -43,6 +44,15 @@ class HeroSlider extends Component {
 						)
 					})}
 				</div>
+				<div className="social">
+					<div className="social__icon">
+						<SocialIcon iconClass="ion-social-twitter" />
+					</div>
+					<div className="social__icon">
+						<SocialIcon iconClass="ion-social-instagram-outline" />
+					</div>
+				</div>
+
 				{this.props.links && 
 					<Menu links={this.props.links} />
 				}
@@ -83,6 +93,16 @@ class HeroSlider extends Component {
 						width: 10px;
 						height: 10px;
 						background: #fff;
+					}
+
+					.social {
+						position: absolute;
+						bottom: 60px;
+						left: 20px;
+					}
+
+					.social__icon {
+						margin-bottom: 20px;
 					}
 
 					@media (min-width: 1024px) {

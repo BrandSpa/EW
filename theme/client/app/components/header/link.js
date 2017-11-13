@@ -79,6 +79,7 @@ class HeaderLink extends Component {
 							width: 100%;
 							font-size: 15px;
 							padding-bottom: 5px;
+							margin-bottom: 5px;
 							border-bottom: 1px solid #039ed8;
 						}
 

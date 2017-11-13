@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><?php echo get_bloginfo('name'); ?></title>
+  
   <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
   <!--wordpress files-->
     <?php wp_head() ?>
   <!-- /wordpress files-->
