@@ -3,3 +3,4 @@ plugins
 mysql
 theme/vendor
 theme/node_modules
+theme/composer.lock
