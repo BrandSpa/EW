@@ -1,24 +1,37 @@
 <?php
 use GraphQL\Type\Definition\ObjectType;
+use GraphQL\Type\Definition\InputObjectType;
 use GraphQL\Type\Definition\Type;
 require str_replace('queries' , '', __DIR__) . '/types/projectType.php';
 
-$projectsQuery = new ObjectType([
-	'name' => 'projects',
+$metaFilter = new InputObjectType([
+	'name' => 'metaQueryCountry',
 	'fields' => [
-		'entities' => [
-			'type' => $projectType,
-			'args' => [
-				'limit' => [
-					'type' => Type::int(),
-					'defaultValue' => 1
-				]
-			],
-			'resolve' => function($root, $args) {
-				$query = new WP_Query( $args );
-				return $query->get_posts();
-			}
+		'key' => [
+			'type' => Type::string()
+		],
+		'value' => [
+			'type' => Type::listOf(Type::string())
+		],
+		'compare' => [
+			'type' => Type::string()
 		]
 	]
 ]);
 
+$projectsQuery = [
+	'type' => Type::listOf($projectType),
+	'args' => [
+		'posts_per_page' => [
+			'type' => Type::int()
+		],
+		'meta_query' => [
+			'type' => Type::listOf($metaFilter)
+		]
+	],
+	'resolve' => function($root, $args) {
+		$options = array_merge([ 'post_type'  => 'project' ], $args);
+		$query = new WP_Query($options);
+		return $query->get_posts();
+	}
+];
