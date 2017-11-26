@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import uploader from '../../lib/uploader';
+import GalleryUploader from './gallery_uploader';
 
 class ProjectMB extends Component {
   state = {
@@ -27,6 +29,7 @@ class ProjectMB extends Component {
     };
 
     this.setState(state);
+    uploader();
   }
 
   addField = (type, e) => {
@@ -56,8 +59,9 @@ class ProjectMB extends Component {
     const { countries, states, cities, brandsOptions, productsOptions } = this.props;
 
    return (
-    <div>
-      <h3>Location</h3>
+    <section>
+      <h4>Location</h4>
+      <hr/>
       <div className="form-group">
         <p>
         <select 
@@ -99,20 +103,29 @@ class ProjectMB extends Component {
         </select>
       </div>
       <div>
-        <h3>Products</h3>
+        <h4>Products</h4>
+        <hr/>
         {products.map((product, i) => {
           return (
             <div>
-              <select name="products[]" className="form-control" value={product} onChange={this.handleField.bind(null, 'products', i)}>
+              <select 
+                name="products[]" 
+                className="form-control" 
+                value={product} 
+                onChange={this.handleField.bind(null, 'products', i)}
+              >
                 <option value="">Product</option>
                 {productsOptions.map(productOption =>
                   <option value={productOption}>{productOption}</option>
                 )}
               </select>
 
-              <button className="button" onClick={this.removeField.bind(null, 'products', i)}>Remove</button>
+              <button 
+                className="button" 
+                onClick={this.removeField.bind(null, 'products', i)}
+              >Remove</button>
               <p></p>
-              <hr/>
+              
               <p></p>
             </div>
 
@@ -125,7 +138,8 @@ class ProjectMB extends Component {
       </div>
 
       <div>
-        <h3>Brands</h3>
+        <h4>Brands</h4>
+        <hr/>
         {brands.map((brand, i) => {
           return (
             <div className="form-group">
@@ -135,20 +149,31 @@ class ProjectMB extends Component {
                     <option value={brandOption}>{brandOption}</option>
                   )}
                 </select>
-                <button className="button" onClick={this.removeField.bind(null, 'brands', i)}>Remove</button>
+                <button 
+                  className="button" 
+                  onClick={this.removeField.bind(null, 'brands', i)}
+                >Remove</button>
                 <p></p>
-                <hr/>
-                <p></p>
+               
             </div>
           )
         })}
         <p>
-          <button className="button" onClick={this.addField.bind(null, 'brands')}>Add Brand</button>
+          <button 
+            className="button" 
+            onClick={this.addField.bind(null, 'brands')}
+          >Add Brand</button>
         </p>
       </div>
 
+      <h4>Gallery</h4>
+      <hr/>
+        <div className="form-group">
+          <GalleryUploader />
+        </div>
 
-    </div>
+
+    </section>
    )
   }
 }
