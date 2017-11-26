@@ -14,6 +14,7 @@
     "build:admin:dev": "webpack  --config=webpack.admin.js --watch"
   },
   "dependencies": {
+    "apollo-fetch": "^0.6.0",
     "axios": "^0.16.2",
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.5",
