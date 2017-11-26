@@ -3,51 +3,42 @@ import qs from 'qs';
 import request from 'axios';
 import Project from './item';
 import Filters from './filters';
+import { createApolloFetch } from 'apollo-fetch';
+const uri = '/wp-content/themes/theme/graphql/index.php';
+const apolloFetch = createApolloFetch({ uri });
+
+const projectsQuery = `
+query($metaQuery: [metaQuery]){
+  projects(posts_per_page: 2, meta_query: $metaQuery) {
+    name
+    country
+    state
+    city
+    brands
+  }
+}
+`;
 
 class ProjectsSection extends Component {
   state = {
     projects: [],
-    filters: []
+    metaQuery: []
   }
 
   componentDidMount = () => {
     this.getProjects();
   }
 
-  getProjects = (filters = [], search = null) => {
-    const data = { action: 'get_projects', filters, search };
+  getProjects = (metaQuery = [], search = null) => {
+    const variables = {
+      metaQuery
+    };
 
-    request
-      .post('/wp-admin/admin-ajax.php', qs.stringify(data))
-      .then(res => {
-        this.setState({ projects: Array.isArray(res.data.projects) ? res.data.projects : [] })
-      })
-      .catch(err => console.log('get projects', err));
+    apolloFetch({projectsQuery, variables})
   }
 
-  getMetaQuery = (state, field, compare) => {
-    if(state[field].length > 0) {
-      return { key: `${field}_key`, value: state[field], compare };
-    }
-
-    return null;
-  }
-
-  handleFilters = (rawFilters) => {
-    let multiple = ['products', 'brands'];
-
-    let metaFilters = Object.keys(rawFilters.meta)
-      .map(key => {
-        if(multiple.indexOf(key) !== -1) {
-          return this.getMetaQuery(rawFilters.meta, key, 'LIKE');
-        } else {
-          return this.getMetaQuery(rawFilters.meta, key, '=');
-        }
-      })
-      .filter(q => q !== null);
-
-    let searchFilters = rawFilters.query;
-    this.getProjects(metaFilters, searchFilters);
+  handleFilters = (filters) => {
+    console.log(filters);
   }
 
   render() {

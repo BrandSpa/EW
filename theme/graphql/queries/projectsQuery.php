@@ -5,7 +5,7 @@ use GraphQL\Type\Definition\Type;
 require str_replace('queries' , '', __DIR__) . '/types/projectType.php';
 
 $metaFilter = new InputObjectType([
-	'name' => 'metaQueryCountry',
+	'name' => 'metaQuery',
 	'fields' => [
 		'key' => [
 			'type' => Type::string()
