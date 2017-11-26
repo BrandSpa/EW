@@ -22488,6 +22488,7 @@ var ProjectMB = function (_Component) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProjectMB.__proto__ || Object.getPrototypeOf(ProjectMB)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       country: '',
+      state: '',
       city: '',
       products: [''],
       brands: ['']
@@ -22522,7 +22523,11 @@ var ProjectMB = function (_Component) {
         state = _extends({}, state, { brands: this.props.brands });
       }
 
-      state = _extends({}, state, { country: this.props.country, city: this.props.city });
+      state = _extends({}, state, {
+        country: this.props.country,
+        state: this.props.state,
+        city: this.props.city
+      });
 
       this.setState(state);
     }
@@ -22533,11 +22538,14 @@ var ProjectMB = function (_Component) {
 
       var _state = this.state,
           country = _state.country,
+          state = _state.state,
           city = _state.city,
           products = _state.products,
           brands = _state.brands;
       var _props = this.props,
           countries = _props.countries,
+          states = _props.states,
+          cities = _props.cities,
           brandsOptions = _props.brandsOptions,
           productsOptions = _props.productsOptions;
 
@@ -22558,17 +22566,51 @@ var ProjectMB = function (_Component) {
             null,
             _react2.default.createElement(
               'select',
-              { name: 'country', className: 'form-control', onChange: this.handleChange, value: country },
+              {
+                name: 'country',
+                className: 'form-control',
+                onChange: this.handleChange,
+                value: country
+              },
               _react2.default.createElement(
                 'option',
                 { value: '' },
                 'Select country'
               ),
-              countries.map(function (countr) {
+              countries.map(function (countryOption) {
                 return _react2.default.createElement(
                   'option',
-                  { name: countr, id: '' },
-                  countr
+                  { name: countryOption, id: '' },
+                  countryOption
+                );
+              })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'form-group' },
+          _react2.default.createElement(
+            'p',
+            null,
+            _react2.default.createElement(
+              'select',
+              {
+                name: 'state',
+                className: 'form-control',
+                onChange: this.handleChange,
+                value: state
+              },
+              _react2.default.createElement(
+                'option',
+                { value: '' },
+                'Select state'
+              ),
+              states.map(function (stateOption) {
+                return _react2.default.createElement(
+                  'option',
+                  { name: stateOption, id: '' },
+                  stateOption
                 );
               })
             )
@@ -22583,33 +22625,15 @@ var ProjectMB = function (_Component) {
             _react2.default.createElement(
               'option',
               { value: '' },
-              'Select City'
+              'Select city'
             ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Bogot\xE1' },
-              'Bogot\xE1'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Buenos aires' },
-              'Buenos aires'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Miami' },
-              'Miami'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'New york' },
-              'New york'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Lima' },
-              'Lima'
-            )
+            cities.map(function (cityOption) {
+              return _react2.default.createElement(
+                'option',
+                { value: cityOption },
+                cityOption
+              );
+            })
           )
         ),
         _react2.default.createElement(

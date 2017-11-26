@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class ProjectMB extends Component {
   state = {
     country: '',
+    state: '',
     city: '',
     products: [''],
     brands: [''],
@@ -18,7 +19,12 @@ class ProjectMB extends Component {
       state = {...state, brands: this.props.brands};
     }
 
-    state = {...state, country: this.props.country, city: this.props.city};
+    state = {
+      ...state, 
+      country: this.props.country, 
+      state: this.props.state, 
+      city: this.props.city
+    };
 
     this.setState(state);
   }
@@ -46,18 +52,39 @@ class ProjectMB extends Component {
   }
 
   render() {
-    const { country, city, products, brands } = this.state;
-    const { countries, brandsOptions, productsOptions } = this.props;
+    const { country, state, city, products, brands } = this.state;
+    const { countries, states, cities, brandsOptions, productsOptions } = this.props;
 
    return (
     <div>
       <h3>Location</h3>
       <div className="form-group">
         <p>
-        <select name="country" className="form-control" onChange={this.handleChange} value={country}>
+        <select 
+          name="country" 
+          className="form-control" 
+          onChange={this.handleChange} 
+          value={country}
+        >
           <option value="">Select country</option>
-          {countries.map(countr =>
-            <option name={countr} id="">{countr}</option>
+          {countries.map(countryOption =>
+            <option name={countryOption} id="">{countryOption}</option>
+          )}
+        </select>
+        </p>
+      </div>
+
+      <div className="form-group">
+        <p>
+        <select 
+          name="state" 
+          className="form-control" 
+          onChange={this.handleChange} 
+          value={state}
+        >
+          <option value="">Select state</option>
+          {states.map(stateOption =>
+            <option name={stateOption} id="">{stateOption}</option>
           )}
         </select>
         </p>
@@ -65,12 +92,10 @@ class ProjectMB extends Component {
 
       <div className="form-group">
         <select name="city" className="form-control" onChange={this.handleChange} value={city}>
-          <option value="">Select City</option>
-          <option value="Bogotá">Bogotá</option>
-          <option value="Buenos aires">Buenos aires</option>
-          <option value="Miami">Miami</option>
-          <option value="New york">New york</option>
-          <option value="Lima">Lima</option>
+          <option value="">Select city</option>
+          {cities.map(cityOption => 
+            <option value={cityOption}>{cityOption}</option>
+          )}
         </select>
       </div>
       <div>

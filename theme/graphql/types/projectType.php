@@ -14,7 +14,13 @@ $projectType = new ObjectType([
 		'country' => [
 			'type' => Type::string(),
 			'resolve' => function($root) {
-				return get_post_meta($root->ID, 'country_key', true) . ' nea';
+				return get_post_meta($root->ID, 'country_key', true);
+			} 
+		],
+		'state' => [
+			'type' => Type::string(),
+			'resolve' => function($root) {
+				return get_post_meta($root->ID, 'state_key', true);
 			} 
 		],
 		'city' => [
