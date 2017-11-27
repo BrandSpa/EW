@@ -1,5 +1,4 @@
 <?php
-require str_replace('metaboxes', '', __DIR__) . 'lib/location_data.php';
 
 function esw_type_project_metabox() {
 	add_meta_box('esw_project', 'ESW Project', 'esw_type_project_cb', 'project', 'normal', 'high', null);
@@ -13,7 +12,7 @@ function esw_type_project_cb($post) {
 	$state = get_post_meta($post->ID, 'state_key', true);
 	$city = get_post_meta($post->ID, 'city_key', true);
 	$products = get_post_meta($post->ID, 'products_key');
-	$brands = get_post_meta($post->ID, 'brands_key');
+	$brands = get_post_meta($post->ID, 'brands_key', true);
 
 	$props = array_merge(locationData(), [
 		"country" => $country,
@@ -27,15 +26,7 @@ function esw_type_project_cb($post) {
 			"alessia",
 			"eli"
 		],
-		"productsOptions" => [
-			"windows",
-			"window walls",
-			"doors",
-			"curtain wall",
-			"store front",
-			"railings",
-			"interiors"
-		]
+		"productsOptions" => projectData()['products']
 	]);
 ?>
 

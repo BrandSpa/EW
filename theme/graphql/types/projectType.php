@@ -11,6 +11,12 @@ $projectType = new ObjectType([
 				return $root->post_title;
 			}
 		],
+		'thumb' => [
+			'type' => Type::string(),
+			'resolve' => function($root) {
+				return get_the_post_thumbnail_url($root->ID);
+			}
+		],
 		'country' => [
 			'type' => Type::string(),
 			'resolve' => function($root) {
@@ -27,6 +33,12 @@ $projectType = new ObjectType([
 			'type' => Type::string(),
 			'resolve' => function($root) {
 				return get_post_meta($root->ID, 'city_key', true);
+			}
+		],
+		'products' => [
+			'type' => Type::listOf(Type::string()),
+			'resolve' => function($root) {
+				return get_post_meta($root->ID, 'products_key', true);
 			}
 		],
 		'brands' => [

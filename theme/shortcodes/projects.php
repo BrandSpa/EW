@@ -5,28 +5,20 @@ function projects_sc( $atts ){
 	 
 	], $atts);
 
-	$props = [
+	$props = array_merge(locationData(),[
 		"brandsOptions" => [
 			"prestige",
 			"elite",
 			"alessia",
 			"eli"
 		],
-		"productsOptions" => [
-			"windows",
-			"window walls",
-			"doors",
-			"curtain wall",
-			"store front",
-			"railings",
-			"interiors"
-		]
-	];
+		"productsOptions" => projectData()['products']
+	]);
 
 	ob_start();
 	?> 
 	
-  <div class="projects-container" data-props='<?php echo json_encode($props) ?>'></div>
+  <section class="projects-container" data-props='<?php echo json_encode($props) ?>'></section>
 	
 	<?php
 

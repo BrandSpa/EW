@@ -7,35 +7,29 @@ class ProjectItem extends Component {
 
     return (
       <div className="project">
-        <div className="project__header" style={{backgroundImage: `url(${project.thumb})`}}>
-          <ul className="project__header__brands">
-            {project.brands.map((brand, i) =>
-              <li key={i}>{brand}</li>
-            )}
-          </ul>
-
-          <ul className="project__header__products">
-            {project.products.map((product, i) =>
-              <li key={i}>{product}</li>
-            )}
-          </ul>
+        <div 
+          className="project__header" 
+          style={{backgroundImage: `url(${project.thumb})`}}
+        >
         </div>
 
         <div className="project__content">
-          <h3>{project.post_title}</h3>
-          <h4>{project.country} - {project.city}</h4>
+          <span className="title">{project.name}</span>
+          <span className="country">{project.country}</span>
+          <span className="state-city">{project.state} · {project.city}</span>
         </div>
 
         <style jsx>{`
 
           .project {
-            transition: all .2s ease-in-out;
+            transition: transform .1s ease-in-out;
             position: relative;
             background: #fff;
+            width: 100%;
           }
 
           .project:hover {
-            transform: scale(1.050);
+            transform: scale(1.150);
             z-index: 2;
             box-shadow: 0 0 20px rgba(0,0,0,.1)
           }
@@ -48,10 +42,25 @@ class ProjectItem extends Component {
           }
 
           .project__content {
-            padding: 40px;
-            text-align: center;
+            padding: 20px;
             color: #1E9CC0;
           }
+          .project__content span {
+            display: block;
+          }
+
+          .title {
+            font-size: 19px;
+            color: #5D5D5D;
+            margin-bottom: 30px;
+          }
+
+          .country, .state-city {
+            font-size: 15px;
+            color: #039ED8;
+          }
+
+         
         `}</style>
       </div>
     )

@@ -109,7 +109,7 @@ class ProjectMB extends Component {
           return (
             <div>
               <select 
-                name="products[]" 
+                name={`products[${i}]`} 
                 className="form-control" 
                 value={product} 
                 onChange={this.handleField.bind(null, 'products', i)}

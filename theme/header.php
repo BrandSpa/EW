@@ -18,6 +18,7 @@
       font-family: 'Arimo', sans-serif;
       font-size: 14px;
       color: #5D5D5D;
+      overflow-x: hidden;
     }
 
     li {

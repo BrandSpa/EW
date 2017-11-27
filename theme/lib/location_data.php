@@ -69,7 +69,9 @@ function locationData() {
 		'Buenaventura',
 		'Panamá Pacífico'
 	];
-	
+	sort($countries);
+	sort($states);
+	sort($cities);
 	return [
 		'countries' => $countries,
 		'states' => $states,

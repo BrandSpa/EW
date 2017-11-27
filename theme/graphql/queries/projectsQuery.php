@@ -26,7 +26,10 @@ $projectsQuery = [
 			'type' => Type::int()
 		],
 		'meta_query' => [
-			'type' => Type::listOf($metaFilter)
+			'type' => Type::listOf($metaFilter),
+			'resolve' => function($root) {
+				var_dump($root);
+			}
 		]
 	],
 	'resolve' => function($root, $args) {
