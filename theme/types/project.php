@@ -11,14 +11,14 @@ function create_project_type() {
 			'supports' => [
           'title',
           'editor',
-          'excerpt',
+          // 'excerpt',
           'thumbnail',
           'revisions',
           'page_image_square'
         ],
-			'taxonomies' => [ 'category'],
+			// 'taxonomies' => [ 'category'],
       'public' => true,
-      'has_archive' => true
+      // 'has_archive' => true
 		]
   );
 

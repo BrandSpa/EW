@@ -7,20 +7,11 @@ class ProjectMB extends Component {
     country: '',
     state: '',
     city: '',
-    products: [''],
-    brands: [''],
   }
 
   componentDidMount() {
     let state = this.state;
-    if(Array.isArray(this.props.products) && this.props.products.length > 0) {
-      state = {...state, products: this.props.products};
-    }
-
-    if(Array.isArray(this.props.brands) && this.props.brands.length > 0) {
-      state = {...state, brands: this.props.brands};
-    }
-
+    
     state = {
       ...state, 
       country: this.props.country, 
@@ -55,8 +46,8 @@ class ProjectMB extends Component {
   }
 
   render() {
-    const { country, state, city, products, brands } = this.state;
-    const { countries, states, cities, brandsOptions, productsOptions } = this.props;
+    const { country, state, city } = this.state;
+    const { countries, states, cities } = this.props;
 
    return (
     <section>
@@ -102,77 +93,12 @@ class ProjectMB extends Component {
           )}
         </select>
       </div>
-      <div>
-        <h4>Products</h4>
-        <hr/>
-        {products.map((product, i) => {
-          return (
-            <div>
-              <select 
-                name={`products[${i}]`} 
-                className="form-control" 
-                value={product} 
-                onChange={this.handleField.bind(null, 'products', i)}
-              >
-                <option value="">Product</option>
-                {productsOptions.map(productOption =>
-                  <option value={productOption}>{productOption}</option>
-                )}
-              </select>
-
-              <button 
-                className="button" 
-                onClick={this.removeField.bind(null, 'products', i)}
-              >Remove</button>
-              <p></p>
-              
-              <p></p>
-            </div>
-
-          )
-        })}
-        <p>
-          <button className="button" onClick={this.addField.bind(null, 'products')}>Add Product</button>
-        </p>
-
-      </div>
-
-      <div>
-        <h4>Brands</h4>
-        <hr/>
-        {brands.map((brand, i) => {
-          return (
-            <div className="form-group">
-                <select name="brands[]" className="form-control" value={brand} onChange={this.handleField.bind(null, 'brands', i)}>
-                  <option value="">Brand</option>
-                  {brandsOptions.map(brandOption =>
-                    <option value={brandOption}>{brandOption}</option>
-                  )}
-                </select>
-                <button 
-                  className="button" 
-                  onClick={this.removeField.bind(null, 'brands', i)}
-                >Remove</button>
-                <p></p>
-               
-            </div>
-          )
-        })}
-        <p>
-          <button 
-            className="button" 
-            onClick={this.addField.bind(null, 'brands')}
-          >Add Brand</button>
-        </p>
-      </div>
-
+    
       <h4>Gallery</h4>
       <hr/>
         <div className="form-group">
           <GalleryUploader />
         </div>
-
-
     </section>
    )
   }

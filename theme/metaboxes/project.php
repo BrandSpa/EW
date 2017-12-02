@@ -11,22 +11,11 @@ function esw_type_project_cb($post) {
 	$country = get_post_meta($post->ID, 'country_key', true);
 	$state = get_post_meta($post->ID, 'state_key', true);
 	$city = get_post_meta($post->ID, 'city_key', true);
-	$products = get_post_meta($post->ID, 'products_key');
-	$brands = get_post_meta($post->ID, 'brands_key', true);
-
+	
 	$props = array_merge(locationData(), [
 		"country" => $country,
 		"state" => $state,
-		"city" => $city,
-		"products" => $products,
-		"brands" => $brands,
-		"brandsOptions" => [
-			"prestige",
-			"elite",
-			"alessia",
-			"eli"
-		],
-		"productsOptions" => projectData()['products']
+		"city" => $city
 	]);
 ?>
 
@@ -56,17 +45,6 @@ function ews_project_save($post_id) {
     'post_id' => $post_id
   ));
 
-	update_field(array(
-    'field_key' => 'products_key',
-    'field_name' => 'products',
-    'post_id' => $post_id
-  ));
-
-	update_field(array(
-    'field_key' => 'brands_key',
-    'field_name' => 'brands',
-    'post_id' => $post_id
-  ));
 }
 
 add_action( 'save_post', 'ews_project_save');

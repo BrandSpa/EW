@@ -9,8 +9,9 @@
   "author": "Alejandro Sanabria <alejandro@brandspa.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack --watch",
+    "build:dev": "webpack --watch",
     "build": "webpack --p",
+    "build:admin": "webpack --config=webpack.admin.js --p",
     "build:admin:dev": "webpack  --config=webpack.admin.js --watch"
   },
   "dependencies": {

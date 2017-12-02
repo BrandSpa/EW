@@ -23503,9 +23503,7 @@ var ProjectMB = function (_Component) {
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProjectMB.__proto__ || Object.getPrototypeOf(ProjectMB)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       country: '',
       state: '',
-      city: '',
-      products: [''],
-      brands: ['']
+      city: ''
     }, _this.addField = function (type, e) {
       e.preventDefault();
       var fields = [].concat(_toConsumableArray(_this.state[type]), ['']);
@@ -23529,13 +23527,6 @@ var ProjectMB = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var state = this.state;
-      if (Array.isArray(this.props.products) && this.props.products.length > 0) {
-        state = _extends({}, state, { products: this.props.products });
-      }
-
-      if (Array.isArray(this.props.brands) && this.props.brands.length > 0) {
-        state = _extends({}, state, { brands: this.props.brands });
-      }
 
       state = _extends({}, state, {
         country: this.props.country,
@@ -23549,20 +23540,14 @@ var ProjectMB = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       var _state = this.state,
           country = _state.country,
           state = _state.state,
-          city = _state.city,
-          products = _state.products,
-          brands = _state.brands;
+          city = _state.city;
       var _props = this.props,
           countries = _props.countries,
           states = _props.states,
-          cities = _props.cities,
-          brandsOptions = _props.brandsOptions,
-          productsOptions = _props.productsOptions;
+          cities = _props.cities;
 
 
       return _react2.default.createElement(
@@ -23650,115 +23635,6 @@ var ProjectMB = function (_Component) {
                 cityOption
               );
             })
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'h4',
-            null,
-            'Products'
-          ),
-          _react2.default.createElement('hr', null),
-          products.map(function (product, i) {
-            return _react2.default.createElement(
-              'div',
-              null,
-              _react2.default.createElement(
-                'select',
-                {
-                  name: 'products[' + i + ']',
-                  className: 'form-control',
-                  value: product,
-                  onChange: _this2.handleField.bind(null, 'products', i)
-                },
-                _react2.default.createElement(
-                  'option',
-                  { value: '' },
-                  'Product'
-                ),
-                productsOptions.map(function (productOption) {
-                  return _react2.default.createElement(
-                    'option',
-                    { value: productOption },
-                    productOption
-                  );
-                })
-              ),
-              _react2.default.createElement(
-                'button',
-                {
-                  className: 'button',
-                  onClick: _this2.removeField.bind(null, 'products', i)
-                },
-                'Remove'
-              ),
-              _react2.default.createElement('p', null),
-              _react2.default.createElement('p', null)
-            );
-          }),
-          _react2.default.createElement(
-            'p',
-            null,
-            _react2.default.createElement(
-              'button',
-              { className: 'button', onClick: this.addField.bind(null, 'products') },
-              'Add Product'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'h4',
-            null,
-            'Brands'
-          ),
-          _react2.default.createElement('hr', null),
-          brands.map(function (brand, i) {
-            return _react2.default.createElement(
-              'div',
-              { className: 'form-group' },
-              _react2.default.createElement(
-                'select',
-                { name: 'brands[]', className: 'form-control', value: brand, onChange: _this2.handleField.bind(null, 'brands', i) },
-                _react2.default.createElement(
-                  'option',
-                  { value: '' },
-                  'Brand'
-                ),
-                brandsOptions.map(function (brandOption) {
-                  return _react2.default.createElement(
-                    'option',
-                    { value: brandOption },
-                    brandOption
-                  );
-                })
-              ),
-              _react2.default.createElement(
-                'button',
-                {
-                  className: 'button',
-                  onClick: _this2.removeField.bind(null, 'brands', i)
-                },
-                'Remove'
-              ),
-              _react2.default.createElement('p', null)
-            );
-          }),
-          _react2.default.createElement(
-            'p',
-            null,
-            _react2.default.createElement(
-              'button',
-              {
-                className: 'button',
-                onClick: this.addField.bind(null, 'brands')
-              },
-              'Add Brand'
-            )
           )
         ),
         _react2.default.createElement(
