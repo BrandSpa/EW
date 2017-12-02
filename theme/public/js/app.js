@@ -20381,6 +20381,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -20390,13 +20392,14 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var uri = '/wp-content/themes/theme/graphql/index.php';
 var apolloFetch = (0, _apolloFetch.createApolloFetch)({ uri: uri });
 
-var projectsQuery = '\nquery($metaQuery: [metaQuery]){\n  projects(posts_per_page: 9, meta_query: $metaQuery) {\n    thumb\n    name\n    country\n    state\n    city\n    brands\n  }\n}\n';
+var projectsQuery = '\nquery($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery]){\n  projects(posts_per_page: 9, meta_query: $metaQuery, tax_query: $taxQuery) {\n    thumb\n    name\n    country\n    state\n    city\n    brands\n  }\n}\n';
 
 var ProjectsSection = function (_Component) {
   _inherits(ProjectsSection, _Component);
 
   function ProjectsSection() {
-    var _ref;
+    var _ref,
+        _this2 = this;
 
     var _temp, _this, _ret;
 
@@ -20408,46 +20411,79 @@ var ProjectsSection = function (_Component) {
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProjectsSection.__proto__ || Object.getPrototypeOf(ProjectsSection)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       projects: [],
-      metaQuery: []
+      metaQuery: [],
+      taxQuery: []
     }, _this.componentDidMount = function () {
       _this.getProjects();
     }, _this.getProjects = function () {
-      var metaQuery = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-      var search = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        var variables = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+        var res;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return apolloFetch({ query: projectsQuery, variables: variables });
 
-      var variables = {
-        metaQuery: metaQuery
+              case 3:
+                res = _context.sent;
+
+                _this.setState({
+                  projects: res.data.projects
+                });
+                _context.next = 10;
+                break;
+
+              case 7:
+                _context.prev = 7;
+                _context.t0 = _context['catch'](0);
+
+                console.log('get projects err: ', _context.t0);
+
+              case 10:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee, _this2, [[0, 7]]);
+      }));
+
+      return function () {
+        return _ref2.apply(this, arguments);
       };
-
-      apolloFetch({ query: projectsQuery, variables: variables }).then(function (res) {
-        return _this.setState({ projects: res.data.projects });
-      });
-    }, _this.handleFilters = function (filters) {
+    }(), _this.handleFilters = function (filters) {
 
       var metaQuery = _this.state.metaQuery;
 
       if (filters.country.length > 0) {
-        var country = { key: 'country_key', value: filters.country, compare: 'IN' };
+        var country = { key: 'country_key', value: filters.country };
         metaQuery = [].concat(_toConsumableArray(metaQuery), [country]);
       }
 
       if (filters.city.length > 0) {
-        var _country = { key: 'city_key', value: filters.city, compare: 'IN' };
-        metaQuery = [].concat(_toConsumableArray(metaQuery), [_country]);
+        var city = { key: 'city_key', value: filters.city };
+        metaQuery = [].concat(_toConsumableArray(metaQuery), [city]);
       }
 
-      _this.getProjects(metaQuery);
+      _this.setState({
+        metaQuery: metaQuery
+      });
+
+      _this.getProjects({ metaQuery: metaQuery, taxQuery: _this.state.taxQuery });
     }, _this.handleFiltersProducts = function (products) {
-      var metaQuery = _this.state.metaQuery;
+      var taxQuery = [];
 
       if (products.length > 0) {
-        var country = { key: 'products_key', value: products, compare: 'LIKE' };
-        metaQuery = [].concat(_toConsumableArray(metaQuery), [country]);
+        var tax = { taxonomy: 'product', terms: products };
+        taxQuery = [tax];
       }
 
-      console.log(metaQuery);
-
-      _this.getProjects(metaQuery);
+      _this.setState({
+        taxQuery: taxQuery
+      });
+      _this.getProjects({ taxQuery: taxQuery, metaQuery: _this.state.metaQuery });
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -20834,7 +20870,7 @@ var FiltersProducts = function (_Component) {
 			return _react2.default.createElement(
 				"section",
 				null,
-				productsOptions.map(function (product) {
+				Object.keys(productsOptions).map(function (key) {
 					return _react2.default.createElement(
 						"div",
 						{ className: "checkbox" },
@@ -20844,9 +20880,9 @@ var FiltersProducts = function (_Component) {
 							_react2.default.createElement("input", {
 								type: "checkbox",
 								onChange: _this2.handleChange,
-								value: product }),
+								value: productsOptions[key].term_id }),
 							" ",
-							product
+							productsOptions[key].name
 						)
 					);
 				})

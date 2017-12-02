@@ -20,13 +20,13 @@ class FiltersProducts extends Component {
 		const { productsOptions } = this.props;
 		return (
 			<section>
-				{productsOptions.map(product => 
+				{Object.keys(productsOptions).map((key) =>
 					<div className="checkbox">
 						<label>
 							<input 
 								type="checkbox" 
 								onChange={this.handleChange} 
-								value={product} /> {product}
+								value={productsOptions[key].term_id} /> {productsOptions[key].name}
 						</label>
 					</div>
 				)}

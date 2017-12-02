@@ -37,14 +37,14 @@ $projectType = new ObjectType([
 		],
 		'products' => [
 			'type' => Type::listOf(Type::string()),
-			'resolve' => function($root) {
-				return get_post_meta($root->ID, 'products_key', true);
+			'resolve' => function($project) {
+				return wp_get_post_terms( $project->ID, 'product', array("fields" => "names"));
 			}
 		],
 		'brands' => [
 			'type' => Type::listOf(Type::string()),
 			'resolve' => function($root) {
-				return get_post_meta($root->ID, 'brands_key', true);
+				return [];
 			}
 		]
 	]

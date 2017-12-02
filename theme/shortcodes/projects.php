@@ -12,7 +12,7 @@ function projects_sc( $atts ){
 			"alessia",
 			"eli"
 		],
-		"productsOptions" => projectData()['products']
+		"productsOptions" => get_terms('product', [ 'hide_empty' => 0 ])
 	]);
 
 	ob_start();

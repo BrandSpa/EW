@@ -10,8 +10,8 @@ const uri = '/wp-content/themes/theme/graphql/index.php';
 const apolloFetch = createApolloFetch({ uri });
 
 const projectsQuery = `
-query($metaQuery: [metaQuery]){
-  projects(posts_per_page: 9, meta_query: $metaQuery) {
+query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery]){
+  projects(posts_per_page: 9, meta_query: $metaQuery, tax_query: $taxQuery) {
     thumb
     name
     country
@@ -25,20 +25,23 @@ query($metaQuery: [metaQuery]){
 class ProjectsSection extends Component {
   state = {
     projects: [],
-    metaQuery: []
+    metaQuery: [],
+    taxQuery: []
   }
 
   componentDidMount = () => {
     this.getProjects();
   }
 
-  getProjects = (metaQuery = [], search = null) => {
-    const variables = {
-      metaQuery
-    };
-
-    apolloFetch({query: projectsQuery, variables})
-      .then(res => this.setState({ projects: res.data.projects }));
+  getProjects = async (variables = {}) => {
+    try {
+      const res = await apolloFetch({query: projectsQuery, variables});
+      this.setState({ 
+        projects: res.data.projects
+      });
+    } catch(err) {
+      console.log('get projects err: ', err);
+    } 
   }
 
   handleFilters = (filters) => {
@@ -46,29 +49,34 @@ class ProjectsSection extends Component {
     let metaQuery = this.state.metaQuery;
 
     if(filters.country.length > 0) {
-      const country = {key: 'country_key', value: filters.country, compare: 'IN'};
+      const country = {key: 'country_key', value: filters.country};
       metaQuery = [...metaQuery, country];
     }
 
     if(filters.city.length > 0) {
-      const country = {key: 'city_key', value: filters.city, compare: 'IN'};
-      metaQuery = [...metaQuery, country];
+      const city = {key: 'city_key', value: filters.city};
+      metaQuery = [...metaQuery, city];
     }
 
-    this.getProjects(metaQuery);
+    this.setState({ 
+      metaQuery
+    });
+
+    this.getProjects({ metaQuery, taxQuery: this.state.taxQuery });
   }
 
   handleFiltersProducts = (products) => {
-    let metaQuery = this.state.metaQuery;
+    let taxQuery = [];
 
     if(products.length > 0) {
-      const country = {key: 'products_key', value: products, compare: 'LIKE'};
-      metaQuery = [...metaQuery, country];
+      const tax = {taxonomy: 'product', terms: products};
+      taxQuery = [tax];
     }
 
-    console.log(metaQuery);
-    
-    this.getProjects(metaQuery);
+    this.setState({ 
+      taxQuery
+    });
+    this.getProjects({taxQuery, metaQuery: this.state.metaQuery});
   }
 
   render() {
