@@ -1,6 +1,8 @@
 {
     "require": {
-        "webonyx/graphql-php": "^0.11.2",
-        "kherge/json": "^2.0"
+        "webonyx/graphql-php": "0.11.2",
+        "kherge/json": "2.0",
+        "illuminate/database": "5.4.36",
+        "illuminate/pagination": "5.4.36"
     }
 }

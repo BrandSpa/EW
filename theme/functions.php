@@ -13,8 +13,10 @@ register_nav_menus(
     )
   );
 
-require 'types/index.php';
-require 'api/index.php';
-require 'lib/index.php';
-require 'metaboxes/index.php';
-require 'shortcodes/index.php';
+require_once 'config/db.php';
+require_once 'types/index.php';
+require_once 'api/index.php';
+require_once 'lib/index.php';
+require_once 'metaboxes/index.php';
+require_once 'shortcodes/index.php';
+require_once 'models/index.php';

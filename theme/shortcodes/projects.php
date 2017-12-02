@@ -25,4 +25,4 @@ function projects_sc( $atts ){
 	return ob_get_clean();
 }
 
-add_shortcode( 'projects', 'projects_sc' );
+add_shortcode( 'ew_projects', 'projects_sc' );
