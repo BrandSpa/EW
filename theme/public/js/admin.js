@@ -10760,13 +10760,13 @@ var _reactMultipleRender = __webpack_require__(143);
 
 var _reactMultipleRender2 = _interopRequireDefault(_reactMultipleRender);
 
-var _project_mb = __webpack_require__(245);
+var _project = __webpack_require__(314);
 
-var _project_mb2 = _interopRequireDefault(_project_mb);
+var _project2 = _interopRequireDefault(_project);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _reactMultipleRender2.default)(_project_mb2.default, '.project-metabox-container');
+(0, _reactMultipleRender2.default)(_project2.default, '.project-metabox-container');
 
 /***/ }),
 /* 143 */
@@ -23448,408 +23448,9 @@ module.exports = ReactDOMInvalidARIAHook;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 245 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(40);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _uploader = __webpack_require__(246);
-
-var _uploader2 = _interopRequireDefault(_uploader);
-
-var _gallery_uploader = __webpack_require__(247);
-
-var _gallery_uploader2 = _interopRequireDefault(_gallery_uploader);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ProjectMB = function (_Component) {
-  _inherits(ProjectMB, _Component);
-
-  function ProjectMB() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
-    _classCallCheck(this, ProjectMB);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProjectMB.__proto__ || Object.getPrototypeOf(ProjectMB)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      country: '',
-      state: '',
-      city: ''
-    }, _this.addField = function (type, e) {
-      e.preventDefault();
-      var fields = [].concat(_toConsumableArray(_this.state[type]), ['']);
-      _this.setState(_defineProperty({}, type, fields));
-    }, _this.removeField = function (type, index, e) {
-      e.preventDefault();
-      var fields = _this.state[type].filter(function (con, i) {
-        return i != index;
-      });
-      _this.setState(_defineProperty({}, type, fields));
-    }, _this.handleField = function (type, index, e) {
-      var fields = _this.state[type];
-      fields[index] = e.target.value;
-      _this.setState(_defineProperty({}, type, fields));
-    }, _this.handleChange = function (e) {
-      _this.setState(_defineProperty({}, e.target.name, e.target.value));
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
-
-  _createClass(ProjectMB, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var state = this.state;
-
-      state = _extends({}, state, {
-        country: this.props.country,
-        state: this.props.state,
-        city: this.props.city
-      });
-
-      this.setState(state);
-      (0, _uploader2.default)();
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _state = this.state,
-          country = _state.country,
-          state = _state.state,
-          city = _state.city;
-      var _props = this.props,
-          countries = _props.countries,
-          states = _props.states,
-          cities = _props.cities;
-
-
-      return _react2.default.createElement(
-        'section',
-        null,
-        _react2.default.createElement(
-          'h4',
-          null,
-          'Location'
-        ),
-        _react2.default.createElement('hr', null),
-        _react2.default.createElement(
-          'div',
-          { className: 'form-group' },
-          _react2.default.createElement(
-            'p',
-            null,
-            _react2.default.createElement(
-              'select',
-              {
-                name: 'country',
-                className: 'form-control',
-                onChange: this.handleChange,
-                value: country
-              },
-              _react2.default.createElement(
-                'option',
-                { value: '' },
-                'Select country'
-              ),
-              countries.map(function (countryOption) {
-                return _react2.default.createElement(
-                  'option',
-                  { name: countryOption, id: '' },
-                  countryOption
-                );
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'form-group' },
-          _react2.default.createElement(
-            'p',
-            null,
-            _react2.default.createElement(
-              'select',
-              {
-                name: 'state',
-                className: 'form-control',
-                onChange: this.handleChange,
-                value: state
-              },
-              _react2.default.createElement(
-                'option',
-                { value: '' },
-                'Select state'
-              ),
-              states.map(function (stateOption) {
-                return _react2.default.createElement(
-                  'option',
-                  { name: stateOption, id: '' },
-                  stateOption
-                );
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'form-group' },
-          _react2.default.createElement(
-            'select',
-            { name: 'city', className: 'form-control', onChange: this.handleChange, value: city },
-            _react2.default.createElement(
-              'option',
-              { value: '' },
-              'Select city'
-            ),
-            cities.map(function (cityOption) {
-              return _react2.default.createElement(
-                'option',
-                { value: cityOption },
-                cityOption
-              );
-            })
-          )
-        ),
-        _react2.default.createElement(
-          'h4',
-          null,
-          'Gallery'
-        ),
-        _react2.default.createElement('hr', null),
-        _react2.default.createElement(
-          'div',
-          { className: 'form-group' },
-          _react2.default.createElement(_gallery_uploader2.default, null)
-        )
-      );
-    }
-  }]);
-
-  return ProjectMB;
-}(_react.Component);
-
-exports.default = ProjectMB;
-
-/***/ }),
-/* 246 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var openMediaUploader = function openMediaUploader() {
-  var media_uploader = wp.media({
-    frame: 'select',
-    // state: 'insert',
-    multiple: true,
-    type: 'image'
-  });
-
-  var promise = new Promise(function (resolve) {
-    media_uploader.on('insert', function () {
-      var json = media_uploader.state().get('selection').toJSON();
-      return resolve(json);
-    });
-  });
-
-  media_uploader.open();
-
-  return promise;
-};
-
-var uploader = function uploader() {
-  jQuery('.uploader').on('click', function (e) {
-    openMediaUploader().then(function (res) {
-      res.map(function (img) {
-        return;
-      });
-      jQuery(e.currentTarget).val(res.url);
-    });
-  });
-};
-
-exports.default = uploader;
-
-/***/ }),
-/* 247 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _style = __webpack_require__(248);
-
-var _style2 = _interopRequireDefault(_style);
-
-var _react = __webpack_require__(40);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var GalleryUploader = function (_Component) {
-	_inherits(GalleryUploader, _Component);
-
-	function GalleryUploader() {
-		var _ref;
-
-		var _temp, _this, _ret;
-
-		_classCallCheck(this, GalleryUploader);
-
-		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-			args[_key] = arguments[_key];
-		}
-
-		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = GalleryUploader.__proto__ || Object.getPrototypeOf(GalleryUploader)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-			thumbs: [],
-			ids: []
-		}, _temp), _possibleConstructorReturn(_this, _ret);
-	}
-
-	_createClass(GalleryUploader, [{
-		key: 'componentDidMount',
-		value: function componentDidMount() {
-			var _this2 = this;
-
-			var openMediaUploader = function openMediaUploader() {
-				var ids = _this2.state.ids;
-				var media_uploader = wp.media({
-					// frame: 'select',
-					multiple: true
-				});
-
-				var promise = new Promise(function (resolve) {
-					media_uploader.on('select', function () {
-						var json = media_uploader.state().get('selection').toJSON();
-						return resolve(json);
-					});
-				});
-
-				media_uploader.on('open', function () {
-					var selection = media_uploader.state().get('selection');
-					ids.map(function (id) {
-						selection.add(wp.media.attachment(id));
-					});
-				});
-
-				media_uploader.open();
-
-				return promise;
-			};
-
-			this.btn.addEventListener('click', function (e) {
-				e.preventDefault();
-				openMediaUploader().then(function (res) {
-					console.log(res);
-					var ids = res.map(function (img) {
-						return img.id;
-					});
-
-					var thumbs = res.map(function (img) {
-						return { url: img.sizes.thumbnail.url };
-					});
-
-					_this2.setState({ ids: ids, thumbs: thumbs });
-				});
-			});
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			var _this3 = this;
-
-			var _state = this.state,
-			    ids = _state.ids,
-			    thumbs = _state.thumbs;
-
-			return _react2.default.createElement(
-				'section',
-				{
-					'data-jsx': 1215206373
-				},
-				_react2.default.createElement(
-					'p',
-					{
-						'data-jsx': 1215206373
-					},
-					_react2.default.createElement(
-						'button',
-						{ className: 'button', ref: function ref(_ref2) {
-								return _this3.btn = _ref2;
-							}, 'data-jsx': 1215206373
-						},
-						'Add gallery images'
-					)
-				),
-				_react2.default.createElement('input', { type: 'hidden', name: 'gallery', value: ids, 'data-jsx': 1215206373
-				}),
-				_react2.default.createElement(
-					'div',
-					{ className: 'gallery', 'data-jsx': 1215206373
-					},
-					thumbs.map(function (thumb) {
-						return _react2.default.createElement('img', { src: thumb.url, alt: '', width: '150', 'data-jsx': 1215206373
-						});
-					})
-				),
-				_react2.default.createElement(_style2.default, {
-					styleId: 1215206373,
-					css: '.gallery[data-jsx="1215206373"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}.gallery[data-jsx="1215206373"] img[data-jsx="1215206373"]{margin-left:15px;margin-bottom:15px}'
-				})
-			);
-		}
-	}]);
-
-	return GalleryUploader;
-}(_react.Component);
-
-exports.default = GalleryUploader;
-
-/***/ }),
+/* 245 */,
+/* 246 */,
+/* 247 */,
 /* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -25587,6 +25188,665 @@ module.exports = function (exec, skipClosing) {
   return safe;
 };
 
+
+/***/ }),
+/* 312 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _style = __webpack_require__(248);
+
+var _style2 = _interopRequireDefault(_style);
+
+var _react = __webpack_require__(40);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var GalleryUploader = function (_Component) {
+	_inherits(GalleryUploader, _Component);
+
+	function GalleryUploader() {
+		var _ref;
+
+		var _temp, _this, _ret;
+
+		_classCallCheck(this, GalleryUploader);
+
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
+
+		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = GalleryUploader.__proto__ || Object.getPrototypeOf(GalleryUploader)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+			thumbs: [],
+			ids: []
+		}, _temp), _possibleConstructorReturn(_this, _ret);
+	}
+
+	_createClass(GalleryUploader, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			var _this2 = this;
+
+			var openMediaUploader = function openMediaUploader() {
+				var ids = _this2.state.ids;
+
+				var media_uploader = wp.media({
+					// frame: 'select',
+					multiple: true
+				});
+
+				var promise = new Promise(function (resolve) {
+					media_uploader.on('select', function () {
+						var json = media_uploader.state().get('selection').toJSON();
+						return resolve(json);
+					});
+				});
+
+				media_uploader.on('open', function () {
+					var selection = media_uploader.state().get('selection');
+					ids.map(function (id) {
+						selection.add(wp.media.attachment(id));
+					});
+				});
+
+				media_uploader.on('activate', function () {
+					console.log('active');
+				});
+
+				console.log();
+
+				media_uploader.open();
+
+				return promise;
+			};
+
+			this.btn.addEventListener('click', function (e) {
+				e.preventDefault();
+				openMediaUploader().then(function (res) {
+					var ids = res.map(function (img) {
+						return img.id;
+					});
+
+					var thumbs = res.map(function (img) {
+						return { url: img.sizes.thumbnail ? img.sizes.thumbnail.url : img.url };
+					});
+
+					_this2.setState({ ids: ids, thumbs: thumbs });
+				});
+			});
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this3 = this;
+
+			var _state = this.state,
+			    ids = _state.ids,
+			    thumbs = _state.thumbs;
+			var name = this.props.name;
+
+
+			return _react2.default.createElement(
+				'section',
+				{
+					'data-jsx': 1215206373
+				},
+				_react2.default.createElement(
+					'p',
+					{
+						'data-jsx': 1215206373
+					},
+					_react2.default.createElement(
+						'button',
+						{ className: 'button', ref: function ref(_ref2) {
+								return _this3.btn = _ref2;
+							}, 'data-jsx': 1215206373
+						},
+						'Add images'
+					)
+				),
+				_react2.default.createElement('input', { type: 'hidden', name: name, value: ids, 'data-jsx': 1215206373
+				}),
+				_react2.default.createElement(
+					'div',
+					{ className: 'gallery', 'data-jsx': 1215206373
+					},
+					thumbs.map(function (thumb) {
+						return _react2.default.createElement('img', { src: thumb.url, alt: '', width: '150', 'data-jsx': 1215206373
+						});
+					})
+				),
+				_react2.default.createElement(_style2.default, {
+					styleId: 1215206373,
+					css: '.gallery[data-jsx="1215206373"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}.gallery[data-jsx="1215206373"] img[data-jsx="1215206373"]{margin-left:15px;margin-bottom:15px}'
+				})
+			);
+		}
+	}]);
+
+	return GalleryUploader;
+}(_react.Component);
+
+exports.default = GalleryUploader;
+
+/***/ }),
+/* 313 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _style = __webpack_require__(248);
+
+var _style2 = _interopRequireDefault(_style);
+
+var _react = __webpack_require__(40);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var GalleryUploader = function (_Component) {
+	_inherits(GalleryUploader, _Component);
+
+	function GalleryUploader() {
+		var _ref;
+
+		var _temp, _this, _ret;
+
+		_classCallCheck(this, GalleryUploader);
+
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
+
+		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = GalleryUploader.__proto__ || Object.getPrototypeOf(GalleryUploader)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+			thumb: '',
+			id: ''
+		}, _temp), _possibleConstructorReturn(_this, _ret);
+	}
+
+	_createClass(GalleryUploader, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			var _this2 = this;
+
+			var openMediaUploader = function openMediaUploader() {
+				var id = _this2.state.id;
+
+				var media_uploader = wp.media({
+					// frame: 'select',
+					multiple: false
+				});
+
+				var promise = new Promise(function (resolve) {
+					media_uploader.on('select', function () {
+						var json = media_uploader.state().get('selection').first().toJSON();
+						return resolve(json);
+					});
+				});
+
+				media_uploader.on('open', function () {
+					var selection = media_uploader.state().get('selection');
+					wp.media.attachment(id);
+				});
+
+				media_uploader.open();
+
+				return promise;
+			};
+
+			this.btn.addEventListener('click', function (e) {
+				e.preventDefault();
+				openMediaUploader().then(function (img) {
+					var id = img.id;
+					var thumb = img.sizes.thumbnail ? img.sizes.thumbnail.url : img.url;
+
+					_this2.setState({ id: id, thumb: thumb });
+				});
+			});
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this3 = this;
+
+			var _state = this.state,
+			    id = _state.id,
+			    thumb = _state.thumb;
+			var name = this.props.name;
+
+
+			return _react2.default.createElement(
+				'section',
+				{
+					'data-jsx': 1215206373
+				},
+				_react2.default.createElement(
+					'p',
+					{
+						'data-jsx': 1215206373
+					},
+					_react2.default.createElement(
+						'button',
+						{ className: 'button', ref: function ref(_ref2) {
+								return _this3.btn = _ref2;
+							}, 'data-jsx': 1215206373
+						},
+						'Add image'
+					)
+				),
+				_react2.default.createElement('input', { type: 'hidden', name: name, value: id, 'data-jsx': 1215206373
+				}),
+				thumb && _react2.default.createElement('img', { src: thumb, alt: '', width: '150', 'data-jsx': 1215206373
+				}),
+				_react2.default.createElement(_style2.default, {
+					styleId: 1215206373,
+					css: '.gallery[data-jsx="1215206373"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}.gallery[data-jsx="1215206373"] img[data-jsx="1215206373"]{margin-left:15px;margin-bottom:15px}'
+				})
+			);
+		}
+	}]);
+
+	return GalleryUploader;
+}(_react.Component);
+
+exports.default = GalleryUploader;
+
+/***/ }),
+/* 314 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _style = __webpack_require__(248);
+
+var _style2 = _interopRequireDefault(_style);
+
+var _react = __webpack_require__(40);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _galleryUploader = __webpack_require__(312);
+
+var _galleryUploader2 = _interopRequireDefault(_galleryUploader);
+
+var _singleUploader = __webpack_require__(313);
+
+var _singleUploader2 = _interopRequireDefault(_singleUploader);
+
+var _location = __webpack_require__(315);
+
+var _location2 = _interopRequireDefault(_location);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ProjectMetabox = function (_Component) {
+  _inherits(ProjectMetabox, _Component);
+
+  function ProjectMetabox() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, ProjectMetabox);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProjectMetabox.__proto__ || Object.getPrototypeOf(ProjectMetabox)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      country: '',
+      state: '',
+      city: '',
+      architect: []
+    }, _this.addField = function (type, e) {
+      e.preventDefault();
+      var fields = [].concat(_toConsumableArray(_this.state[type]), ['']);
+      _this.setState(_defineProperty({}, type, fields));
+    }, _this.removeField = function (type, index, e) {
+      e.preventDefault();
+      var fields = _this.state[type].filter(function (con, i) {
+        return i != index;
+      });
+      _this.setState(_defineProperty({}, type, fields));
+    }, _this.handleField = function (type, index, e) {
+      var fields = _this.state[type];
+      fields[index] = e.target.value;
+      _this.setState(_defineProperty({}, type, fields));
+    }, _this.handleChange = function (e) {
+      console.log('handle change', e.target.name);
+      _this.setState(_defineProperty({}, e.target.name, e.target.value));
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(ProjectMetabox, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var state = this.state;
+
+      state = _extends({}, state, {
+        country: this.props.country,
+        state: this.props.state,
+        city: this.props.city,
+        architect: this.props.architect
+      });
+
+      this.setState(state);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _state = this.state,
+          country = _state.country,
+          state = _state.state,
+          city = _state.city,
+          architect = _state.architect;
+      var _props = this.props,
+          countries = _props.countries,
+          states = _props.states,
+          cities = _props.cities;
+
+
+      return _react2.default.createElement(
+        'section',
+        {
+          'data-jsx': 4263008532
+        },
+        _react2.default.createElement(
+          'h4',
+          {
+            'data-jsx': 4263008532
+          },
+          'Location'
+        ),
+        _react2.default.createElement('hr', {
+          'data-jsx': 4263008532
+        }),
+        _react2.default.createElement(_location2.default, _extends({}, this.state, {
+          countries: countries,
+          cities: cities,
+          states: states,
+          handleChange: this.handleChange
+        })),
+        _react2.default.createElement(
+          'h4',
+          {
+            'data-jsx': 4263008532
+          },
+          'Header'
+        ),
+        _react2.default.createElement('hr', {
+          'data-jsx': 4263008532
+        }),
+        _react2.default.createElement(
+          'div',
+          { className: 'form-group', 'data-jsx': 4263008532
+          },
+          _react2.default.createElement(_singleUploader2.default, { name: 'header' })
+        ),
+        _react2.default.createElement(
+          'h4',
+          {
+            'data-jsx': 4263008532
+          },
+          'Slider'
+        ),
+        _react2.default.createElement('hr', {
+          'data-jsx': 4263008532
+        }),
+        _react2.default.createElement(
+          'div',
+          { className: 'form-group', 'data-jsx': 4263008532
+          },
+          _react2.default.createElement(_galleryUploader2.default, { name: 'slider' })
+        ),
+        _react2.default.createElement(
+          'h4',
+          {
+            'data-jsx': 4263008532
+          },
+          'Arquitect'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'form-group', 'data-jsx': 4263008532
+          },
+          architect.map(function (architectItem, i) {
+            return _react2.default.createElement(
+              'section',
+              { className: 'field', 'data-jsx': 4263008532
+              },
+              _react2.default.createElement('input', {
+                type: 'text',
+                name: 'architect[]',
+                onChange: function onChange(e) {
+                  return _this2.handleField('architect', i, e);
+                },
+                value: architectItem,
+                'data-jsx': 4263008532
+              }),
+              _react2.default.createElement(
+                'button',
+                {
+                  className: 'button btn-remove',
+                  onClick: function onClick(e) {
+                    return _this2.removeField('architect', i, e);
+                  },
+                  'data-jsx': 4263008532
+                },
+                'remove Arquitect'
+              )
+            );
+          })
+        ),
+        _react2.default.createElement(
+          'button',
+          { className: 'button', onClick: function onClick(e) {
+              return _this2.addField('architect', e);
+            }, 'data-jsx': 4263008532
+          },
+          'Add Arquitect'
+        ),
+        _react2.default.createElement(_style2.default, {
+          styleId: 4263008532,
+          css: 'input[data-jsx="4263008532"],select[data-jsx="4263008532"]{display:block;width:100%;height:35px;margin-bottom:15px}.field[data-jsx="4263008532"]{margin-bottom:30px;float:left;width:100%}.btn-remove[data-jsx="4263008532"]{float:right}'
+        })
+      );
+    }
+  }]);
+
+  return ProjectMetabox;
+}(_react.Component);
+
+exports.default = ProjectMetabox;
+
+/***/ }),
+/* 315 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _style = __webpack_require__(248);
+
+var _style2 = _interopRequireDefault(_style);
+
+var _react = __webpack_require__(40);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Location = function Location(props) {
+	return _react2.default.createElement(
+		"section",
+		{
+			"data-jsx": 824005275
+		},
+		_react2.default.createElement(
+			"div",
+			{ className: "form-group", "data-jsx": 824005275
+			},
+			_react2.default.createElement(
+				"p",
+				{
+					"data-jsx": 824005275
+				},
+				_react2.default.createElement(
+					"select",
+					{
+						name: "country",
+						className: "form-control",
+						onChange: function onChange(e) {
+							return props.handleChange(e);
+						},
+						value: props.country,
+						"data-jsx": 824005275
+					},
+					_react2.default.createElement(
+						"option",
+						{ value: "", "data-jsx": 824005275
+						},
+						"Select country"
+					),
+					props.countries.map(function (countryOption) {
+						return _react2.default.createElement(
+							"option",
+							{ name: countryOption, id: "", "data-jsx": 824005275
+							},
+							countryOption
+						);
+					})
+				)
+			)
+		),
+		_react2.default.createElement(
+			"div",
+			{ className: "form-group", "data-jsx": 824005275
+			},
+			_react2.default.createElement(
+				"p",
+				{
+					"data-jsx": 824005275
+				},
+				_react2.default.createElement(
+					"select",
+					{
+						name: "state",
+						className: "form-control",
+						onChange: props.handleChange,
+						value: props.state,
+						"data-jsx": 824005275
+					},
+					_react2.default.createElement(
+						"option",
+						{
+							"data-jsx": 824005275
+						},
+						"Select state"
+					),
+					props.states.map(function (stateOption) {
+						return _react2.default.createElement(
+							"option",
+							{ name: stateOption, id: "", "data-jsx": 824005275
+							},
+							stateOption
+						);
+					})
+				)
+			)
+		),
+		_react2.default.createElement(
+			"div",
+			{ className: "form-group", "data-jsx": 824005275
+			},
+			_react2.default.createElement(
+				"select",
+				{
+					name: "city",
+					className: "form-control",
+					onChange: props.handleChange,
+					value: props.city,
+					"data-jsx": 824005275
+				},
+				_react2.default.createElement(
+					"option",
+					{ value: "", "data-jsx": 824005275
+					},
+					"Select city"
+				),
+				props.cities.map(function (cityOption) {
+					return _react2.default.createElement(
+						"option",
+						{ value: cityOption, "data-jsx": 824005275
+						},
+						cityOption
+					);
+				})
+			)
+		),
+		_react2.default.createElement(_style2.default, {
+			styleId: 824005275,
+			css: "input[data-jsx=\"824005275\"],select[data-jsx=\"824005275\"]{display:block;width:100%;height:35px;margin-bottom:15px}"
+		})
+	);
+};
+
+exports.default = Location;
 
 /***/ })
 /******/ ]);

@@ -32,7 +32,7 @@ class HeroSlider extends Component {
 		const { bg } = slide;
 		
 		return (
-			<section className="heroSlider" style={{ background: `url(${bg})` }}>
+			<section className="heroSlider" style={{ background: `url(${bg}) no-repeat` }}>
 			{slides.map((slide, i) => <Slide {...slide} index={i} current={slideNum} />)}
 				
 				<div className="heroSlider__nav">
@@ -62,7 +62,7 @@ class HeroSlider extends Component {
 						position: relative;
 						width: 100%;
 						min-height: 100vh;
-						background-size: cover;
+						background-size: cover !important;
 						backgroundColor: '#333';
 						justify-content: flex-start;
     				flex-direction: column;

@@ -21717,49 +21717,49 @@ var HeroSlider = function (_Component) {
 
 			return _react2.default.createElement(
 				'section',
-				{ className: 'heroSlider', style: { background: 'url(' + bg + ')' }, 'data-jsx': 24972425
+				{ className: 'heroSlider', style: { background: 'url(' + bg + ') no-repeat' }, 'data-jsx': 1905452014
 				},
 				slides.map(function (slide, i) {
 					return _react2.default.createElement(_slide2.default, _extends({}, slide, { index: i, current: slideNum }));
 				}),
 				_react2.default.createElement(
 					'div',
-					{ className: 'heroSlider__nav', 'data-jsx': 24972425
+					{ className: 'heroSlider__nav', 'data-jsx': 1905452014
 					},
 					slides.map(function (s, i) {
 						return _react2.default.createElement(
 							'button',
 							{ key: i, onClick: function onClick(e) {
 									return _this3.changeSlide(e, i);
-								}, 'data-jsx': 24972425
+								}, 'data-jsx': 1905452014
 							},
 							slideNum === i && _react2.default.createElement('span', {
-								'data-jsx': 24972425
+								'data-jsx': 1905452014
 							})
 						);
 					})
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'social', 'data-jsx': 24972425
+					{ className: 'social', 'data-jsx': 1905452014
 					},
 					_react2.default.createElement(
 						'div',
-						{ className: 'social__icon', 'data-jsx': 24972425
+						{ className: 'social__icon', 'data-jsx': 1905452014
 						},
 						_react2.default.createElement(_icon2.default, { iconClass: 'ion-social-twitter' })
 					),
 					_react2.default.createElement(
 						'div',
-						{ className: 'social__icon', 'data-jsx': 24972425
+						{ className: 'social__icon', 'data-jsx': 1905452014
 						},
 						_react2.default.createElement(_icon2.default, { iconClass: 'ion-social-instagram-outline' })
 					)
 				),
 				this.props.links && _react2.default.createElement(_menu2.default, { links: this.props.links }),
 				_react2.default.createElement(_style2.default, {
-					styleId: 24972425,
-					css: '.heroSlider[data-jsx="24972425"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;width:100%;min-height:100vh;background-size:cover;backgroundColor:\'#333\';-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-transition:all .3s;transition:all .3s}.heroSlider__nav[data-jsx="24972425"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:40px;margin-left:60px}.heroSlider__nav[data-jsx="24972425"] button[data-jsx="24972425"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:transparent;width:30px;height:30px;border:solid 1px #039ed8;border-radius:0;outline:none;margin-right:10px}.heroSlider__nav[data-jsx="24972425"] button[data-jsx="24972425"] span[data-jsx="24972425"]{display:block;width:10px;height:10px;background:#fff}.social[data-jsx="24972425"]{position:absolute;bottom:60px;left:20px}.social__icon[data-jsx="24972425"]{margin-bottom:20px}@media (min-width:1024px){.heroSlider[data-jsx="24972425"]{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}.heroSlider__nav[data-jsx="24972425"]{margin-left:140px}.heroSlider__nav[data-jsx="24972425"] button[data-jsx="24972425"]{width:40px;height:40px}}'
+					styleId: 1905452014,
+					css: '.heroSlider[data-jsx="1905452014"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;width:100%;min-height:100vh;background-size:cover !important;backgroundColor:\'#333\';-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-transition:all .3s;transition:all .3s}.heroSlider__nav[data-jsx="1905452014"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:40px;margin-left:60px}.heroSlider__nav[data-jsx="1905452014"] button[data-jsx="1905452014"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:transparent;width:30px;height:30px;border:solid 1px #039ed8;border-radius:0;outline:none;margin-right:10px}.heroSlider__nav[data-jsx="1905452014"] button[data-jsx="1905452014"] span[data-jsx="1905452014"]{display:block;width:10px;height:10px;background:#fff}.social[data-jsx="1905452014"]{position:absolute;bottom:60px;left:20px}.social__icon[data-jsx="1905452014"]{margin-bottom:20px}@media (min-width:1024px){.heroSlider[data-jsx="1905452014"]{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}.heroSlider__nav[data-jsx="1905452014"]{margin-left:140px}.heroSlider__nav[data-jsx="1905452014"] button[data-jsx="1905452014"]{width:40px;height:40px}}'
 				})
 			);
 		}

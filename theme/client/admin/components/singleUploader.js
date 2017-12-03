@@ -2,71 +2,62 @@ import React, { Component } from 'react';
 
 class GalleryUploader extends Component {
 	state = {
-		thumbs: [],
-		ids: []
+		thumb: '',
+		id: '' 
 	}
 
 	componentDidMount() {
 
 		const openMediaUploader = () => {
-			const ids = this.state.ids;
+			const id = this.state.id;
+
 			const media_uploader = wp.media({
 				// frame: 'select',
-				multiple: true,
+				multiple: false,
 			});
 
 		const promise = new Promise((resolve) => {
 				media_uploader.on('select', () => {
-					const json = media_uploader.state().get('selection').toJSON();
+					const json = media_uploader.state().get('selection').first().toJSON();
 					return resolve(json);
 				});
 			});
 
 		media_uploader.on('open', () => {
 			const selection = media_uploader.state().get('selection');
-			ids.map(id => {
-				selection.add(wp.media.attachment(id));
-			})
-			
+			wp.media.attachment(id)
+
 		});
 
 		media_uploader.open();
 	
-
 		return promise;
 	};
 
 	this.btn.addEventListener('click', (e) => {
 		e.preventDefault();
 		openMediaUploader()
-		.then(res => {
-			console.log(res);
-			const ids = res.map(img => {
-				return img.id;
-			});
+		.then(img => {
+			const id = img.id;
+			const thumb = img.sizes.thumbnail ? img.sizes.thumbnail.url : img.url
 
-			const thumbs = res.map(img => {
-				return { url: img.sizes.thumbnail.url };
-			})
-
-			this.setState({ ids, thumbs });
+			this.setState({ id, thumb });
 		});
 	})
 	}
 
 	render() {
-		const { ids , thumbs } = this.state;
+		const { id, thumb } = this.state;
+		const { name } = this.props;
+
 		return (
 			<section>
 				<p>
-					<button className="button" ref={ref => this.btn = ref}>Add gallery images</button>
+					<button className="button" ref={ref => this.btn = ref}>Add image</button>
 				</p>
-				<input type="hidden" name="gallery" value={ids} />
-				<div className="gallery">
-				{thumbs.map(thumb => 
-					<img src={thumb.url} alt="" width="150"/>
-				)}
-				</div>
+				<input type="hidden" name={name} value={id} />
+				{thumb && <img src={thumb} alt="" width="150"/>}
+				
 				<style jsx>{`
 					.gallery {
 						display: flex;

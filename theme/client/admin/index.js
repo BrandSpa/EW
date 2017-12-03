@@ -1,4 +1,4 @@
 import multipleRender from "react-multiple-render";
-import ProjectMB from './components/project_mb';
+import ProjectMetabox from './components/project';
 
-multipleRender(ProjectMB, '.project-metabox-container');
+multipleRender(ProjectMetabox, '.project-metabox-container');

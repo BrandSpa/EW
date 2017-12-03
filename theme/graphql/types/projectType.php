@@ -44,7 +44,7 @@ $projectType = new ObjectType([
 		'brands' => [
 			'type' => Type::listOf(Type::string()),
 			'resolve' => function($root) {
-				return [];
+				return wp_get_post_terms( $project->ID, 'brand', array("fields" => "names"));
 			}
 		]
 	]

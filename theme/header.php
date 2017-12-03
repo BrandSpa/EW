@@ -34,7 +34,7 @@
     }
 
     .verticalLine {
-      left: 20px;
+      left: 15px;
 			position: fixed;
 			height: 100vh;
 			width: 1px;
@@ -48,7 +48,7 @@
 
     @media (min-width: 1024px) {
       .verticalLine {
-        left: 80px;
+        left: 70px;
       }
 
       .line-responsive {

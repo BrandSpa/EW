@@ -1,8 +1,7 @@
 <?php
 
 function projects_taxononies() {
-	$labels = ['products'];
-	$args = [
+	$productArgs = [
 		'hierarchical' => true,
 		'label' => 'Products',
 		'show_ui' => true,
@@ -11,7 +10,17 @@ function projects_taxononies() {
 		'rewrite' => ['slug' => 'product']
 	];
 
-	register_taxonomy( 'product', ['project'], $args );
+	$brandArgs = [
+		'hierarchical' => true,
+		'label' => 'Brands',
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'query_var' => true,
+		'rewrite' => ['slug' => 'brand']
+	];
+
+	register_taxonomy( 'product', ['project'], $productArgs );
+	register_taxonomy( 'brand', ['project'], $brandArgs );
 }
 
 add_action('init', 'projects_taxononies');
