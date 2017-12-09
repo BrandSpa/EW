@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><?php echo get_bloginfo('name'); ?></title>
-  
+
   <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
   <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" />
@@ -14,6 +14,10 @@
     <?php wp_head() ?>
   <!-- /wordpress files-->
   <style>
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
     body {
       font-family: 'Arimo', sans-serif;
       font-size: 14px;
@@ -60,7 +64,7 @@
   </style>
 </head>
 <body>
-<?php 
+<?php
   $props = ["menu" => menu_to_array('header')];
 ?>
 

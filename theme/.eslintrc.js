@@ -14,7 +14,9 @@ module.exports = {
         "react/jsx-filename-extension": 0,
         "react/prop-types": 0,
         "no-tabs": 0,
-        "indent": [2, "tab"]
+        "indent": [2, "tab"],
+        "react/jsx-indent": 0,
+        "react/jsx-indent-props": 0
     },
     "env": {
         "browser": true,

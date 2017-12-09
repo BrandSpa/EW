@@ -1,10 +1,31 @@
 
-<?php 
-  $props = ["menu" => menu_to_array('footer')];
-?>
+<section class="footer">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6"></div>
+    <div class="col-lg-6">
+    <h4>CONTACT US</h4>
+    <?php echo do_shortcode('[ew_contact_us]') ?>
+    </div>
+  </div>
+</div>
 
-<div class="footer-container" data-props='<?php echo wp_json_encode($props) ?>'></div>
+</section>
 
+<style>
+.footer {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  background: #000;
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+
+.footer h4 {
+  color: #fff;
+}
+</style>
 <script>
   window.templateUri = '<?php echo get_template_directory_uri() ?>';
 </script>
@@ -18,8 +39,5 @@
   <?php wp_footer() ?>
 <!-- /wordpress files-->
 
-<script>
-    document.write('<script src="http://' + (location.host || '${1:localhost}').split(':')[0] + ':8080/livereload.js?snipver=1"></' + 'script>')
-</script>
 </body>
 </html>
