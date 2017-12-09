@@ -18,6 +18,8 @@
   <?php wp_footer() ?>
 <!-- /wordpress files-->
 
-
+<script>
+    document.write('<script src="http://' + (location.host || '${1:localhost}').split(':')[0] + ':8080/livereload.js?snipver=1"></' + 'script>')
+</script>
 </body>
 </html>
