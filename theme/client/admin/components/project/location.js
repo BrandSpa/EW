@@ -1,18 +1,18 @@
 import React from 'react';
 
-const Location = (props) => (
+const Location = ({ handleChange, countries, states, cities, city, country, state }) => (
 <section>
 		<div className="form-group">
 		<p>
 		<select 
 			name="country" 
 			className="form-control" 
-			onChange={(e) => props.handleChange(e)} 
-			value={props.country}
+			onChange={(e) => handleChange(e)} 
+			value={country}
 		>
 			<option value="">Select country</option>
-			{props.countries.map(countryOption =>
-				<option name={countryOption} id="">{countryOption}</option>
+			{countries.map(countryOption =>
+				<option key={countryOption} name={countryOption} id="">{countryOption}</option>
 			)}
 		</select>
 		</p>
@@ -23,12 +23,12 @@ const Location = (props) => (
 		<select 
 			name="state" 
 			className="form-control" 
-			onChange={props.handleChange} 
-			value={props.state}
+			onChange={handleChange} 
+			value={state}
 		>
 			<option>Select state</option>
-			{props.states.map(stateOption =>
-				<option name={stateOption} id="">{stateOption}</option>
+			{states.map(stateOption =>
+				<option key={stateOption} name={stateOption} id="">{stateOption}</option>
 			)}
 		</select>
 		</p>
@@ -37,12 +37,12 @@ const Location = (props) => (
 		<select 
 			name="city" 
 			className="form-control" 
-			onChange={props.handleChange} 
-			value={props.city}
+			onChange={handleChange} 
+			value={city}
 		>
 			<option value="">Select city</option>
-			{props.cities.map(cityOption => 
-				<option value={cityOption}>{cityOption}</option>
+			{cities.map(cityOption => 
+				<option key={cityOption} value={cityOption}>{cityOption}</option>
 			)}
 		</select>
 	</div>

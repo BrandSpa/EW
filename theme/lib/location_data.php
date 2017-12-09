@@ -35,7 +35,6 @@ function locationData() {
 		'Baltimore',
 		'Bay harbor Islands',
 		'Boyton Beach',
-		'Buenaventura',
 		'Ciudad de panamá',
 		'Cleveland',
 		'Columbus',
@@ -65,7 +64,6 @@ function locationData() {
 		'Montería',
 		'Cali',
 		'Ciudad de Panamá',
-		'Arraijan',
 		'Buenaventura',
 		'Panamá Pacífico'
 	];

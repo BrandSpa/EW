@@ -3,61 +3,46 @@ import React, { Component } from 'react';
 class GalleryUploader extends Component {
 	state = {
 		thumbs: [],
-		ids: []
+		ids: [],
 	}
 
 	componentDidMount() {
-
 		const openMediaUploader = () => {
-			const ids = this.state.ids;
-		
-
-			const media_uploader = wp.media({
+			const { ids } = this.state;
+			const mediaUploader = wp.media({
 				// frame: 'select',
 				multiple: true,
 			});
 
-		const promise = new Promise((resolve) => {
-				media_uploader.on('select', () => {
-					const json = media_uploader.state().get('selection').toJSON();
+			const promise = new Promise((resolve) => {
+				mediaUploader.on('select', () => {
+					const json = mediaUploader.state().get('selection').toJSON();
 					return resolve(json);
 				});
 			});
 
-		media_uploader.on('open', () => {
-			const selection = media_uploader.state().get('selection');
-			ids.map(id => {
-				selection.add(wp.media.attachment(id));
-			})
-			
-		});
-
-		media_uploader.on( 'activate', function() {
-			console.log('active');
-		} );
-
-		console.log();
-
-		media_uploader.open();
-	
-		return promise;
-	};
-
-	this.btn.addEventListener('click', (e) => {
-		e.preventDefault();
-		openMediaUploader()
-		.then(res => {
-			const ids = res.map(img => {
-				return img.id;
+			mediaUploader.on('open', () => {
+				const selection = mediaUploader.state().get('selection');
+				ids.map(id => selection.add(wp.media.attachment(id)));
 			});
 
-			const thumbs = res.map(img => {
-				return { url: img.sizes.thumbnail ? img.sizes.thumbnail.url : img.url };
-			})
+			mediaUploader.open();
+			return promise;
+		};
 
-			this.setState({ ids, thumbs });
+		this.btn.addEventListener('click', (e) => {
+			e.preventDefault();
+			openMediaUploader()
+				.then((res) => {
+					const ids = res.map(img => img.id);
+
+					const thumbs = res.map((img) => {
+						return { url: img.sizes.thumbnail ? img.sizes.thumbnail.url : img.url };
+					});
+
+					this.setState({ ids, thumbs });
+				});
 		});
-	})
 	}
 
 	render() {

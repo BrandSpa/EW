@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GalleryUploader from '../galleryUploader';
 import SingleUploader from '../singleUploader';
 import Location from './location';
+import Architects from './architect';
 
 class ProjectMetabox extends Component {
   state = {
@@ -74,23 +75,12 @@ class ProjectMetabox extends Component {
         <GalleryUploader name="slider" />
       </div>
       <h4>Arquitect</h4>
-      <div className="form-group">
-        {architect.map((architectItem, i) => 
-          <section className="field">
-            <input 
-              type="text" 
-              name="architect[]" 
-              onChange={(e) => this.handleField('architect', i, e)} 
-              value={architectItem}
-            />
-            <button 
-              className="button btn-remove" 
-              onClick={(e) => this.removeField('architect', i, e)}
-            >remove Arquitect</button>
-          </section>
-        )}
-      </div>
-      <button className="button" onClick={(e) => this.addField('architect', e)}>Add Arquitect</button>
+      <Architects 
+        handleField={this.handleField}
+        removeField={this.removeField}
+        addField={this.addField}
+        architect={architect}
+       />
       <style jsx>{`
         input, select {
           display: block;
