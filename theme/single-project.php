@@ -15,11 +15,19 @@
   </div>
 
   <div class="project__content">
-    <div class="container">
+
       <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-lg-5">
-
+          <section class="project-slider">
+            <?php $slider = get_post_meta($post->ID, 'slider_key', tue)
+              ? explode(',', get_post_meta($post->ID, 'slider_key', tue))
+              : [];
+            ?>
+            <?php foreach($slider as $imageId): ?>
+              <img src="<?php echo wp_get_attachment_url($imageId) ?>" alt="">
+            <?php endforeach; ?>
+          </section>
         </div>
         <div class="col-lg-5">
           <?php $products = wp_get_post_terms( $post->ID, 'product', array("fields" => "names")) ?>
@@ -37,9 +45,6 @@
         <div class="col-lg-1"></div>
       </div>
     </div>
-
-  </div>
-
 </div>
 
 <style>
@@ -64,9 +69,42 @@
   .project__header span {
     display: block;
   }
+
+  .slick-prev {
+    left: 30px;
+    z-index: 1;
+  }
+
+  .slick-next {
+    right: 30px;
+    z-index: 1;
+  }
+
+  .slick-next::before {
+    content: "\f125"
+  }
+
+  .slick-prev::before {
+    content: "\f124"
+  }
+
+  .slick-next::before, .slick-prev::before {
+    font-family: "Ionicons";
+    font-size: 30px;
+    color: #fff;
+
+  }
+
 </style>
 <?php endwhile; else : ?>
   <p><?php _e( '401' ); ?></p>
 <?php endif; ?>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+  $('.project-slider').slick({
+    slidesToShow: 1,
+    adaptiveHeight: true
+  });
+</script>
 <?php get_footer(); ?>
