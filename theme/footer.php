@@ -25,7 +25,6 @@
     padding-top: 150px;
     padding-bottom: 50px;
     display: flex;
-    align-items: center;
     flex-direction: column;
   }
 
