@@ -11,6 +11,8 @@ function esw_type_project_cb($post) {
     "country",
     "state",
     "city",
+    "header",
+    "slider",
     "architect",
     "constructor",
     "developer",
@@ -22,13 +24,11 @@ function esw_type_project_cb($post) {
 
   foreach($fields as $field) {
     ${$field} = get_post_meta($post->ID, $field . '_key', true);
-    $props[$field] = ${$field}; 
+    $props[$field] = ${$field};
   }
-	
+
 	$props = array_merge(locationData(), $props);
 ?>
-
-<?php var_dump($props); ?>>
 <div class="project-metabox-container" data-props='<?php echo json_encode($props) ?>'></div>
 
 <script src="<?php echo get_template_directory_uri() ?>/public/js/admin.js"></script>
@@ -41,6 +41,8 @@ function ews_project_save($post_id) {
     "country",
     "state",
     "city",
+    "header",
+    "slider",
     "architect",
     "constructor",
     "developer",

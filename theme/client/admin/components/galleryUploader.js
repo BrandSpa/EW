@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import fetchwp from '../../lib/fetchwp';
 
 class GalleryUploader extends Component {
 	state = {
@@ -35,19 +36,25 @@ class GalleryUploader extends Component {
 			openMediaUploader()
 				.then((res) => {
 					const ids = res.map(img => img.id);
-
-					const thumbs = res.map((img) => {
-						return { url: img.sizes.thumbnail ? img.sizes.thumbnail.url : img.url };
-					});
-
+					const thumbs = res.map(img => ({ url: img.sizes.thumbnail ? img.sizes.thumbnail.url : img.url }));
 					this.setState({ ids, thumbs });
 				});
 		});
 	}
 
+	componentWillReceiveProps(props) {
+		if (props.galleryIds) {
+			const ids = props.galleryIds.split(',');
+			fetchwp('get_images_url', { ids: props.galleryIds })
+				.then(res => this.setState({ thumbs: res.data }));
+
+			this.setState({ ids });
+		}
+	}
+
 	render() {
-		const { ids , thumbs } = this.state;
-		const { name } = this.props;
+		const { ids, thumbs } = this.state;
+		const { name, galleryIds } = this.props;
 
 		return (
 			<section>
@@ -56,9 +63,8 @@ class GalleryUploader extends Component {
 				</p>
 				<input type="hidden" name={name} value={ids} />
 				<div className="gallery">
-				{thumbs.map(thumb => 
-					<img src={thumb.url} alt="" width="150"/>
-				)}
+					{thumbs.map(thumb =>
+						<img key={thumb.url} src={thumb.url} alt="" width="150" />)}
 				</div>
 				<style jsx>{`
 					.gallery {
@@ -67,12 +73,13 @@ class GalleryUploader extends Component {
 					}
 
 					.gallery img {
-						margin-left: 15px;
+						margin-right: 15px;
 						margin-bottom: 15px;
 					}
-				`}</style>
+				`}
+				</style>
 			</section>
-		)
+		);
 	}
 }
 
