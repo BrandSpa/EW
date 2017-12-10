@@ -62,6 +62,8 @@
 
   .footer h4 {
     color: #fff;
+    margin: 0;
+    margin-bottom: 40px;
   }
 
   .border-top {
