@@ -60,8 +60,6 @@
     border-bottom: 1px solid  #039ED8;
   }
 
-
-
   .footer h4 {
     color: #fff;
   }
