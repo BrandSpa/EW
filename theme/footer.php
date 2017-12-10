@@ -61,8 +61,7 @@
 
   .footer h4 {
     color: #fff;
-    margin: 0;
-    margin-bottom: 40px;
+    margin: 5px 0 40px 0;
     font-size: 15px;
   }
 
