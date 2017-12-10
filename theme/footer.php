@@ -1,23 +1,25 @@
 
 <section class="footer">
-
-      <div class="col-xs-1 col-sm-1"></div>
-      <div class="col-lg-5 col-xs-10">
-      <h4>CONTACT US</h4>
-        <?php echo do_shortcode('[ew_contact_us]') ?>
-      </div>
-      <div class="col-lg-5 col-xs-10">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-5 col-xs-10">
+    <?php wp_nav_menu(['name' => 'header']); ?>
+  </div>
+  <div class="col-lg-5 col-xs-10">
         <h4>CONTACT US</h4>
         <?php echo do_shortcode('[ew_contact_us]') ?>
-      </div>
-      <div class="col-xs-1 col-sm-1"></div>
+  </div>
+  <div class="col-xs-1 col-sm-1"></div>
+</section>
 
+<section class="footer-bottom">
+
+<div class="col-lg-10 border-top"></div>
+<div class="col-lg-1"></div>
 </section>
 
 <style>
   .footer {
     position: relative;
-    z-index: 100;
     width: 100%;
     background: #000;
     padding-top: 150px;
@@ -31,7 +33,7 @@
     color: #fff;
   }
 
-  .footer-bottom {
+  .border-top {
     border-top: 1px solid blue;
   }
 

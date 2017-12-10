@@ -21903,11 +21903,11 @@ var ProjectsFilters = function (_Component) {
 
       return _react2.default.createElement(
         'section',
-        { className: 'filters', 'data-jsx': 3027035067
+        { className: 'filters', 'data-jsx': 3632850897
         },
         _react2.default.createElement(
           'div',
-          { className: 'select-container', 'data-jsx': 3027035067
+          { className: 'select-container', 'data-jsx': 3632850897
           },
           _react2.default.createElement(
             'select',
@@ -21916,18 +21916,18 @@ var ProjectsFilters = function (_Component) {
               name: 'country',
               onChange: this.handleMetaChange,
               value: country,
-              'data-jsx': 3027035067
+              'data-jsx': 3632850897
             },
             _react2.default.createElement(
               'option',
-              { value: '', 'data-jsx': 3027035067
+              { value: '', 'data-jsx': 3632850897
               },
               'Country'
             ),
             countries.map(function (country) {
               return _react2.default.createElement(
                 'option',
-                { key: country, value: country, 'data-jsx': 3027035067
+                { key: country, value: country, 'data-jsx': 3632850897
                 },
                 country
               );
@@ -21937,7 +21937,7 @@ var ProjectsFilters = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'select-container', 'data-jsx': 3027035067
+          { className: 'select-container', 'data-jsx': 3632850897
           },
           _react2.default.createElement(
             'select',
@@ -21946,18 +21946,18 @@ var ProjectsFilters = function (_Component) {
               name: 'city',
               onChange: this.handleMetaChange,
               value: city,
-              'data-jsx': 3027035067
+              'data-jsx': 3632850897
             },
             _react2.default.createElement(
               'option',
-              { value: '', 'data-jsx': 3027035067
+              { value: '', 'data-jsx': 3632850897
               },
               'City '
             ),
             cities.map(function (city) {
               return _react2.default.createElement(
                 'option',
-                { key: city, value: city, 'data-jsx': 3027035067
+                { key: city, value: city, 'data-jsx': 3632850897
                 },
                 city
               );
@@ -21967,7 +21967,7 @@ var ProjectsFilters = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'select-container', 'data-jsx': 3027035067
+          { className: 'select-container', 'data-jsx': 3632850897
           },
           _react2.default.createElement(
             'select',
@@ -21976,18 +21976,18 @@ var ProjectsFilters = function (_Component) {
               name: 'state',
               onChange: this.handleMetaChange,
               value: state,
-              'data-jsx': 3027035067
+              'data-jsx': 3632850897
             },
             _react2.default.createElement(
               'option',
-              { value: '', 'data-jsx': 3027035067
+              { value: '', 'data-jsx': 3632850897
               },
               'State'
             ),
             states.map(function (state) {
               return _react2.default.createElement(
                 'option',
-                { key: state, value: state, 'data-jsx': 3027035067
+                { key: state, value: state, 'data-jsx': 3632850897
                 },
                 state
               );
@@ -21996,8 +21996,8 @@ var ProjectsFilters = function (_Component) {
           _react2.default.createElement(_selectArrow2.default, { style: { position: 'absolute', right: 0 } })
         ),
         _react2.default.createElement(_style2.default, {
-          styleId: 3027035067,
-          css: '.filters[data-jsx="3027035067"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.select-container[data-jsx="3027035067"]{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100px;margin-right:20px}select[data-jsx="3027035067"]{border:none;box-shadow:none;outline:none;-webkit-appearance:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:transparent}select[data-jsx="3027035067"]:focus{box-shadow:none;outline:none}@media (min-width:1024px){.filters[data-jsx="3027035067"]{margin-bottom:40px}}'
+          styleId: 3632850897,
+          css: '.filters[data-jsx="3632850897"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.select-container[data-jsx="3632850897"]{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100px;margin-right:20px}select[data-jsx="3632850897"]{border:none;box-shadow:none;outline:none;-webkit-appearance:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:transparent}select[data-jsx="3632850897"]:focus{box-shadow:none;outline:none}@media (min-width:1024px){.filters[data-jsx="3632850897"]{margin-bottom:40px}}'
         })
       );
     }

@@ -70,7 +70,6 @@ class ProjectsFilters extends Component {
   				</div>
   			<style jsx>{`
           .filters {
-
 						display: flex;
 					}
 
