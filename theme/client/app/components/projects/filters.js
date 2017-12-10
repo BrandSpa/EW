@@ -1,77 +1,69 @@
 import React, { Component } from 'react';
 
 class ProjectsFilters extends Component {
-
   state = {
-    country: '',
-    city: '',
-    state: '',
-    products: '',
+  	country: '',
+  	city: '',
+  	state: '',
+  	products: '',
   }
 
   handleMetaChange = (e) => {
-    const state = { ...this.state, [e.target.name]: e.target.value  };
-    this.setState(state);
-    this.props.onChange(state);
-  }
-
-  handleSearchChange = (e) => {
-    const state = {...this.state, query: e.target.value};
-    this.setState(state);
-    this.props.onChange(state);
+  	const state = { ...this.state, [e.target.name]: e.target.value };
+  	this.setState(state, () => {
+  		this.props.onChange(state);
+  	});
   }
 
   render() {
-    const {
-      country,
-      state,
-      city,
-      product,
-      brand,
-      query
-    } = this.state;
+  	const {
+  		country,
+  		state,
+  		city,
+  	} = this.state;
 
-    const { countries, cities, states } = this.props;
+  	const { countries, cities, states } = this.props;
 
-    return (
-      <div className="filters">
-        <form className="form-inline">
-          <select 
-            className="form-control" 
-            name="country" 
-            onChange={this.handleMetaChange} 
-            value={country} 
-          >
-            <option value="">Country</option>
-            {countries.map((country) => 
-              <option value={country}>{country}</option>
-            )}
-          </select>
+  	return (
+  		<section className="filters">
+  			<form className="form-inline">
+  				<select
+  					className="form-control"
+  					name="country"
+  					onChange={this.handleMetaChange}
+  					value={country}
+  				>
+  					<option value="">Country</option>
+  					{countries.map(country =>
+  						<option key={country} value={country}>{country}</option>)}
+  				</select>
 
-          <select 
-            className="form-control" 
-            name="city" 
-            onChange={this.handleMetaChange} 
-            value={city} 
-          >
-            <option value="">City</option>
-            {cities.map((city) => 
-              <option value={city}>{city}</option>
-            )}
-          </select>
+  				<select
+  					className="form-control"
+  					name="city"
+  					onChange={this.handleMetaChange}
+  					value={city}
+  				>
+  					<option value="">City</option>
+  					{cities.map(city =>
+  						<option key={city} value={city}>{city}</option>)}
+  				</select>
 
-          <select 
-            className="form-control" 
-            name="state" 
-            onChange={this.handleMetaChange} 
-            value={state} 
-          >
-            <option value="">State</option>
-            <option value="Cundinamarca">Cundinamarca</option>
-          </select>
-    
-        </form>
-        <style jsx>{`
+  				<select
+  					className="form-control"
+  					name="state"
+  					onChange={this.handleMetaChange}
+  					value={state}
+  				>
+  					<option value="">State</option>
+  					{states.map(state => (
+  						<option key={state} value={state}>{state}</option>
+  					))}
+
+  				</select>
+
+  			</form>
+  			<style jsx>{`
           .filters {
             margin-bottom: 40px;
           }
@@ -80,17 +72,19 @@ class ProjectsFilters extends Component {
             border: none;
             box-shadow: none;
             outline: none;
-            -webkit-appearance: none; 
-            appearance: none
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
           }
 
           select:focus {
             box-shadow: none;
             outline: none;
           }
-        `}</style>
-      </div>
-   )
+        `}
+  			</style>
+  		</section>
+  	);
   }
 }
 

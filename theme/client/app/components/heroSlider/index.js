@@ -4,17 +4,16 @@ import Menu from './menu';
 import SocialIcon from '../social/icon';
 
 class HeroSlider extends Component {
-
 	state = {
-		slide: 1
+		slide: 1,
 	}
-	
+
 	componentDidMount() {
 		const total = this.props.slides.length;
-		if(total > 0) {
+		if (total > 0) {
 			this.interval = setInterval(() => {
 				const { slide } = this.state;
-				this.setState({slide: slide < total ? slide + 1 : 1});
+				this.setState({ slide: slide < total ? slide + 1 : 1 });
 			}, 5000);
 		}
 	}
@@ -22,7 +21,7 @@ class HeroSlider extends Component {
 	changeSlide = (e, i) => {
 		e.preventDefault();
 		clearInterval(this.interval);
-		this.setState({slide: i + 1});
+		this.setState({ slide: i + 1 });
 	}
 
 	render() {
@@ -30,19 +29,17 @@ class HeroSlider extends Component {
 		const slideNum = this.state.slide - 1;
 		const slide = slides[slideNum];
 		const { bg } = slide;
-		
+
 		return (
 			<section className="heroSlider" style={{ background: `url(${bg}) no-repeat` }}>
-			{slides.map((slide, i) => <Slide {...slide} index={i} current={slideNum} />)}
-				
+				{slides.map((slide, i) => <Slide {...slide} key={i} index={i} current={slideNum} />)}
+
 				<div className="heroSlider__nav">
-					{slides.map((s, i) => {
-						return (
-							<button key={i} onClick={(e) => this.changeSlide(e, i)}>
-								{ slideNum === i && <span/>}
-							</button>
-						)
-					})}
+					{slides.map((s, i) => (
+						<button key={i} onClick={e => this.changeSlide(e, i)}>
+							{ slideNum === i && <span />}
+						</button>
+					))}
 				</div>
 				<div className="social">
 					<div className="social__icon">
@@ -53,7 +50,7 @@ class HeroSlider extends Component {
 					</div>
 				</div>
 
-				{this.props.links && 
+				{this.props.links &&
 					<Menu links={this.props.links} />
 				}
 				<style jsx>{`
@@ -120,9 +117,10 @@ class HeroSlider extends Component {
 							height: 40px;
 						}
 					}
-				`}</style>
+				`}
+				</style>
 			</section>
-		)
+		);
 	}
 }
 

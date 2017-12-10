@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
-class HeroSlide extends Component {
+const HeroSlide = ({
+	title, content, index, current,
+}) => {
+	const heroSlideClass = classNames('heroSlide', {
+		'heroSlide--show': index === current,
+	});
 
-	render() {
-		const { bg, title, content, index, current } = this.props;
-		const heroSlideClass = classNames('heroSlide', {
-			'heroSlide--show': index === current
-		});
-
-		return (
-			<section className={heroSlideClass} >
-				<div className="heroSlide__content">
-					<div className="title">
-						<h2>{title}</h2>
-					</div>
-					<div className="line"></div>
-					<div className="body">
-						<p>{content}</p>
-					</div>
+	return (
+		<section className={heroSlideClass} >
+			<div className="heroSlide__content">
+				<div className="title">
+					<h2>{title}</h2>
 				</div>
-				<style jsx>{`
+				<div className="line" />
+				<div className="body">
+					<p>{content}</p>
+				</div>
+			</div>
+			<style jsx>{`
 					.heroSlide {
 						display: flex;
 						width: 100%;
@@ -42,7 +41,7 @@ class HeroSlide extends Component {
 					.heroSlide__content {
 						width: 90%;
 					}
-					
+
 					.title h2 {
 						font-size: 40px;
 						font-family: 'Yantramanav';
@@ -79,10 +78,10 @@ class HeroSlide extends Component {
 							font-size: 24px;
 						}
 					}
-				`}</style>
-			</section>
-		)
-	}
-}
+				`}
+			</style>
+		</section>
+	);
+};
 
 export default HeroSlide;

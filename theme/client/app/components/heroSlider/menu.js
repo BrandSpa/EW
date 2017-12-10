@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 
-const HeroSliderMenu = ({ links }) => {
-	return (
-		<ul>
-			{links.map((link) => {
-				return <li><a href={link.url}>{link.title}</a></li>
-			})}
-			<style jsx>{`
+const HeroSliderMenu = ({ links }) => (
+	<ul>
+		{links.map((link, i) => <li key={i}><a href={link.url}>{link.title}</a></li>)}
+		<style jsx>{`
 				ul {
 					position: absolute;
 					right: 0;
@@ -36,9 +33,9 @@ const HeroSliderMenu = ({ links }) => {
 						font-size: 30px;
 					}
 				}
-			`}</style>
-		</ul>
-	)
-}
+			`}
+		</style>
+	</ul>
+);
 
 export default HeroSliderMenu;

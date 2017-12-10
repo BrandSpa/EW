@@ -16,7 +16,8 @@ module.exports = {
         "no-tabs": 0,
         "indent": [2, "tab"],
         "react/jsx-indent": 0,
-        "react/jsx-indent-props": 0
+        "react/jsx-indent-props": 0,
+        "no-mixed-spaces-and-tabs": 0
     },
     "env": {
         "browser": true,

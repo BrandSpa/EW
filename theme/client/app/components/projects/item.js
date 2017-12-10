@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
 
-class ProjectItem extends Component {
+const ProjectItem = ({ project }) => (
 
-  render() {
-    const { project } = this.props;
+	<div className="project">
+		<div
+			className="project__header"
+			style={{ backgroundImage: `url(${project.thumb})` }}
+		/>
 
-    return (
-      <div className="project">
-        <div 
-          className="project__header" 
-          style={{backgroundImage: `url(${project.thumb})`}}
-        >
-        </div>
+		<div className="project__content">
+			<span className="title">{project.name}</span>
+			<span className="country">{project.country}</span>
+			<span className="state-city">{project.state} · {project.city}</span>
+		</div>
 
-        <div className="project__content">
-          <span className="title">{project.name}</span>
-          <span className="country">{project.country}</span>
-          <span className="state-city">{project.state} · {project.city}</span>
-        </div>
-
-        <style jsx>{`
+		<style jsx>{`
 
           .project {
             transition: transform .1s ease-in-out;
@@ -60,11 +55,10 @@ class ProjectItem extends Component {
             color: #039ED8;
           }
 
-         
-        `}</style>
-      </div>
-    )
-  }
-}
+
+        `}
+		</style>
+	</div>
+);
 
 export default ProjectItem;

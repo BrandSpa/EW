@@ -34,17 +34,17 @@ $exports.store = store;
 /* 28 */,
 /* 29 */,
 /* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(606)
 
 
 /***/ }),
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */,
 /* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1641,11 +1641,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _style = __webpack_require__(35);
+var _style = __webpack_require__(31);
 
 var _style2 = _interopRequireDefault(_style);
 
-var _react = __webpack_require__(18);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -1814,7 +1814,7 @@ var _inherits3 = _interopRequireDefault(_inherits2);
 
 exports.flush = flush;
 
-var _react = __webpack_require__(18);
+var _react = __webpack_require__(17);
 
 var _render = __webpack_require__(659);
 
@@ -20638,11 +20638,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _style = __webpack_require__(35);
+var _style = __webpack_require__(31);
 
 var _style2 = _interopRequireDefault(_style);
 
-var _react = __webpack_require__(18);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -20751,11 +20751,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _style = __webpack_require__(35);
+var _style = __webpack_require__(31);
 
 var _style2 = _interopRequireDefault(_style);
 
-var _react = __webpack_require__(18);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -20852,11 +20852,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _style = __webpack_require__(35);
+var _style = __webpack_require__(31);
 
 var _style2 = _interopRequireDefault(_style);
 
-var _react = __webpack_require__(18);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -20885,6 +20885,8 @@ var _apolloFetch = __webpack_require__(677);
 var _loading = __webpack_require__(681);
 
 var _loading2 = _interopRequireDefault(_loading);
+
+var _lodash = __webpack_require__(669);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20962,25 +20964,52 @@ var ProjectsSection = function (_Component) {
       return function () {
         return _ref2.apply(this, arguments);
       };
-    }(), _this.handleFilters = function (filters) {
+    }(), _this.updateOrAdd = function (filter, metaQuery) {
+      var q = [];
+      console.log(filter);
+      if ((0, _lodash.findIndex)(metaQuery, { key: filter.key }) !== -1) {
+        q = metaQuery.map(function (query) {
+          if (query.key !== filter.key) return query;
+          return _extends({}, query, filter);
+        });
+      } else {
+        q = [].concat(_toConsumableArray(metaQuery), [filter]);
+      }
 
+      return q;
+    }, _this.removeFilter = function (key, metaQuery) {
+      var q = metaQuery.filter(function (query) {
+        return query.key !== key;
+      });
+      return q;
+    }, _this.handleFilters = function (filters) {
       var metaQuery = _this.state.metaQuery;
+
 
       if (filters.country.length > 0) {
         var country = { key: 'country_key', value: filters.country };
-        metaQuery = [].concat(_toConsumableArray(metaQuery), [country]);
+        metaQuery = _this.updateOrAdd(country, metaQuery);
+      } else {
+        metaQuery = _this.removeFilter('country_key', metaQuery);
       }
 
       if (filters.city.length > 0) {
         var city = { key: 'city_key', value: filters.city };
-        metaQuery = [].concat(_toConsumableArray(metaQuery), [city]);
+        metaQuery = _this.updateOrAdd(city, metaQuery);
+      } else {
+        metaQuery = _this.removeFilter('city_key', metaQuery);
       }
 
-      _this.setState({
-        metaQuery: metaQuery
-      });
+      if (filters.state.length > 0) {
+        var state = { key: 'state_key', value: filters.state };
+        metaQuery = _this.updateOrAdd(state, metaQuery);
+      } else {
+        metaQuery = _this.removeFilter('state_key', metaQuery);
+      }
 
-      _this.getProjects({ metaQuery: metaQuery, taxQuery: _this.state.taxQuery });
+      _this.setState({ metaQuery: metaQuery }, function () {
+        _this.getProjects({ metaQuery: metaQuery, taxQuery: _this.state.taxQuery });
+      });
     }, _this.handleFiltersProducts = function (products) {
       var taxQuery = [];
 
@@ -21004,14 +21033,14 @@ var ProjectsSection = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: 'row', 'data-jsx': 4257180493
+        { className: 'row', 'data-jsx': 1331015501
         },
         _react2.default.createElement(_filters2.default, _extends({
           onChange: this.handleFilters
         }, this.props)),
         _react2.default.createElement(
           'div',
-          { className: 'col-lg-3', 'data-jsx': 4257180493
+          { className: 'col-lg-3', 'data-jsx': 1331015501
           },
           _react2.default.createElement(_filtersProducts2.default, {
             onChange: this.handleFiltersProducts,
@@ -21020,16 +21049,16 @@ var ProjectsSection = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'col-lg-9', 'data-jsx': 4257180493
+          { className: 'col-lg-9', 'data-jsx': 1331015501
           },
           _react2.default.createElement(
             'div',
-            { className: 'projects', 'data-jsx': 4257180493
+            { className: 'projects', 'data-jsx': 1331015501
             },
             projects.map(function (project) {
               return _react2.default.createElement(
                 'div',
-                { className: 'col-lg-4 col-md-6 project-item', 'data-jsx': 4257180493
+                { className: 'col-lg-4 col-md-6 project-item', 'data-jsx': 1331015501
                 },
                 _react2.default.createElement(_item2.default, { key: project.ID, project: project })
               );
@@ -21037,8 +21066,8 @@ var ProjectsSection = function (_Component) {
           )
         ),
         _react2.default.createElement(_style2.default, {
-          styleId: 4257180493,
-          css: '.projects[data-jsx="4257180493"]{padding:40px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.project-item[data-jsx="4257180493"]{padding:5px}@media (min-width:1024px){.projects[data-jsx="4257180493"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}'
+          styleId: 1331015501,
+          css: '.projects[data-jsx="1331015501"]{padding:40px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.project-item[data-jsx="1331015501"]{padding:5px}@media (min-width:1024px){.projects[data-jsx="1331015501"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}'
         })
       );
     }
@@ -21060,83 +21089,58 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _style = __webpack_require__(35);
+var _style = __webpack_require__(31);
 
 var _style2 = _interopRequireDefault(_style);
 
-var _react = __webpack_require__(18);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ProjectItem = function (_Component) {
-  _inherits(ProjectItem, _Component);
-
-  function ProjectItem() {
-    _classCallCheck(this, ProjectItem);
-
-    return _possibleConstructorReturn(this, (ProjectItem.__proto__ || Object.getPrototypeOf(ProjectItem)).apply(this, arguments));
-  }
-
-  _createClass(ProjectItem, [{
-    key: "render",
-    value: function render() {
-      var project = this.props.project;
-
-
-      return _react2.default.createElement(
-        "div",
-        { className: "project", "data-jsx": 3778472976
+var ProjectItem = function ProjectItem(_ref) {
+  var project = _ref.project;
+  return _react2.default.createElement(
+    "div",
+    { className: "project", "data-jsx": 1441875472
+    },
+    _react2.default.createElement("div", {
+      className: "project__header",
+      style: { backgroundImage: "url(" + project.thumb + ")" },
+      "data-jsx": 1441875472
+    }),
+    _react2.default.createElement(
+      "div",
+      { className: "project__content", "data-jsx": 1441875472
+      },
+      _react2.default.createElement(
+        "span",
+        { className: "title", "data-jsx": 1441875472
         },
-        _react2.default.createElement("div", {
-          className: "project__header",
-          style: { backgroundImage: "url(" + project.thumb + ")" },
-          "data-jsx": 3778472976
-        }),
-        _react2.default.createElement(
-          "div",
-          { className: "project__content", "data-jsx": 3778472976
-          },
-          _react2.default.createElement(
-            "span",
-            { className: "title", "data-jsx": 3778472976
-            },
-            project.name
-          ),
-          _react2.default.createElement(
-            "span",
-            { className: "country", "data-jsx": 3778472976
-            },
-            project.country
-          ),
-          _react2.default.createElement(
-            "span",
-            { className: "state-city", "data-jsx": 3778472976
-            },
-            project.state,
-            " \xB7 ",
-            project.city
-          )
-        ),
-        _react2.default.createElement(_style2.default, {
-          styleId: 3778472976,
-          css: ".project[data-jsx=\"3778472976\"]{-webkit-transition:-webkit-transform .1s ease-in-out;-webkit-transition:transform .1s ease-in-out;transition:transform .1s ease-in-out;position:relative;background:#fff;width:100%}.project[data-jsx=\"3778472976\"]:hover{-webkit-transform:scale(1.150);-ms-transform:scale(1.150);transform:scale(1.150);z-index:2;box-shadow:0 0 20px rgba(0,0,0,.1)}.project__header[data-jsx=\"3778472976\"]{width:100%;height:200px;background-position:center;background-size:cover}.project__content[data-jsx=\"3778472976\"]{padding:20px;color:#1E9CC0}.project__content[data-jsx=\"3778472976\"] span[data-jsx=\"3778472976\"]{display:block}.title[data-jsx=\"3778472976\"]{font-size:19px;color:#5D5D5D;margin-bottom:30px}.country[data-jsx=\"3778472976\"],.state-city[data-jsx=\"3778472976\"]{font-size:15px;color:#039ED8}"
-        })
-      );
-    }
-  }]);
-
-  return ProjectItem;
-}(_react.Component);
+        project.name
+      ),
+      _react2.default.createElement(
+        "span",
+        { className: "country", "data-jsx": 1441875472
+        },
+        project.country
+      ),
+      _react2.default.createElement(
+        "span",
+        { className: "state-city", "data-jsx": 1441875472
+        },
+        project.state,
+        " \xB7 ",
+        project.city
+      )
+    ),
+    _react2.default.createElement(_style2.default, {
+      styleId: 1441875472,
+      css: ".project[data-jsx=\"1441875472\"]{-webkit-transition:-webkit-transform .1s ease-in-out;-webkit-transition:transform .1s ease-in-out;transition:transform .1s ease-in-out;position:relative;background:#fff;width:100%}.project[data-jsx=\"1441875472\"]:hover{-webkit-transform:scale(1.150);-ms-transform:scale(1.150);transform:scale(1.150);z-index:2;box-shadow:0 0 20px rgba(0,0,0,.1)}.project__header[data-jsx=\"1441875472\"]{width:100%;height:200px;background-position:center;background-size:cover}.project__content[data-jsx=\"1441875472\"]{padding:20px;color:#1E9CC0}.project__content[data-jsx=\"1441875472\"] span[data-jsx=\"1441875472\"]{display:block}.title[data-jsx=\"1441875472\"]{font-size:19px;color:#5D5D5D;margin-bottom:30px}.country[data-jsx=\"1441875472\"],.state-city[data-jsx=\"1441875472\"]{font-size:15px;color:#039ED8}"
+    })
+  );
+};
 
 exports.default = ProjectItem;
 
@@ -21155,11 +21159,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _style = __webpack_require__(35);
+var _style = __webpack_require__(31);
 
 var _style2 = _interopRequireDefault(_style);
 
-var _react = __webpack_require__(18);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -21194,12 +21198,9 @@ var ProjectsFilters = function (_Component) {
       products: ''
     }, _this.handleMetaChange = function (e) {
       var state = _extends({}, _this.state, _defineProperty({}, e.target.name, e.target.value));
-      _this.setState(state);
-      _this.props.onChange(state);
-    }, _this.handleSearchChange = function (e) {
-      var state = _extends({}, _this.state, { query: e.target.value });
-      _this.setState(state);
-      _this.props.onChange(state);
+      _this.setState(state, function () {
+        _this.props.onChange(state);
+      });
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -21209,10 +21210,7 @@ var ProjectsFilters = function (_Component) {
       var _state = this.state,
           country = _state.country,
           state = _state.state,
-          city = _state.city,
-          product = _state.product,
-          brand = _state.brand,
-          query = _state.query;
+          city = _state.city;
       var _props = this.props,
           countries = _props.countries,
           cities = _props.cities,
@@ -21220,12 +21218,12 @@ var ProjectsFilters = function (_Component) {
 
 
       return _react2.default.createElement(
-        'div',
-        { className: 'filters', 'data-jsx': 936821705
+        'section',
+        { className: 'filters', 'data-jsx': 1287414929
         },
         _react2.default.createElement(
           'form',
-          { className: 'form-inline', 'data-jsx': 936821705
+          { className: 'form-inline', 'data-jsx': 1287414929
           },
           _react2.default.createElement(
             'select',
@@ -21234,18 +21232,18 @@ var ProjectsFilters = function (_Component) {
               name: 'country',
               onChange: this.handleMetaChange,
               value: country,
-              'data-jsx': 936821705
+              'data-jsx': 1287414929
             },
             _react2.default.createElement(
               'option',
-              { value: '', 'data-jsx': 936821705
+              { value: '', 'data-jsx': 1287414929
               },
               'Country'
             ),
             countries.map(function (country) {
               return _react2.default.createElement(
                 'option',
-                { value: country, 'data-jsx': 936821705
+                { key: country, value: country, 'data-jsx': 1287414929
                 },
                 country
               );
@@ -21258,18 +21256,18 @@ var ProjectsFilters = function (_Component) {
               name: 'city',
               onChange: this.handleMetaChange,
               value: city,
-              'data-jsx': 936821705
+              'data-jsx': 1287414929
             },
             _react2.default.createElement(
               'option',
-              { value: '', 'data-jsx': 936821705
+              { value: '', 'data-jsx': 1287414929
               },
               'City'
             ),
             cities.map(function (city) {
               return _react2.default.createElement(
                 'option',
-                { value: city, 'data-jsx': 936821705
+                { key: city, value: city, 'data-jsx': 1287414929
                 },
                 city
               );
@@ -21282,25 +21280,27 @@ var ProjectsFilters = function (_Component) {
               name: 'state',
               onChange: this.handleMetaChange,
               value: state,
-              'data-jsx': 936821705
+              'data-jsx': 1287414929
             },
             _react2.default.createElement(
               'option',
-              { value: '', 'data-jsx': 936821705
+              { value: '', 'data-jsx': 1287414929
               },
               'State'
             ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Cundinamarca', 'data-jsx': 936821705
-              },
-              'Cundinamarca'
-            )
+            states.map(function (state) {
+              return _react2.default.createElement(
+                'option',
+                { key: state, value: state, 'data-jsx': 1287414929
+                },
+                state
+              );
+            })
           )
         ),
         _react2.default.createElement(_style2.default, {
-          styleId: 936821705,
-          css: '.filters[data-jsx="936821705"]{margin-bottom:40px}select[data-jsx="936821705"]{border:none;box-shadow:none;outline:none;-webkit-appearance:none;-webkit-appearance:none;-moz-appearance:none;appearance:none}select[data-jsx="936821705"]:focus{box-shadow:none;outline:none}'
+          styleId: 1287414929,
+          css: '.filters[data-jsx="1287414929"]{margin-bottom:40px}select[data-jsx="1287414929"]{border:none;box-shadow:none;outline:none;-webkit-appearance:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:transparent}select[data-jsx="1287414929"]:focus{box-shadow:none;outline:none}'
         })
       );
     }
@@ -21324,7 +21324,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(18);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -21379,14 +21379,15 @@ var FiltersProducts = function (_Component) {
 				Object.keys(productsOptions).map(function (key) {
 					return _react2.default.createElement(
 						"div",
-						{ className: "checkbox" },
+						{ className: "checkbox", key: key },
 						_react2.default.createElement(
 							"label",
 							null,
 							_react2.default.createElement("input", {
 								type: "checkbox",
 								onChange: _this2.handleChange,
-								value: productsOptions[key].term_id }),
+								value: productsOptions[key].term_id
+							}),
 							" ",
 							productsOptions[key].name
 						)
@@ -22096,11 +22097,11 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _style = __webpack_require__(35);
+var _style = __webpack_require__(31);
 
 var _style2 = _interopRequireDefault(_style);
 
-var _react = __webpack_require__(18);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -22138,11 +22139,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _style = __webpack_require__(35);
+var _style = __webpack_require__(31);
 
 var _style2 = _interopRequireDefault(_style);
 
-var _react = __webpack_require__(18);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -22220,7 +22221,7 @@ var HeroSlider = function (_Component) {
 				{ className: 'heroSlider', style: { background: 'url(' + bg + ') no-repeat' }, 'data-jsx': 1905452014
 				},
 				slides.map(function (slide, i) {
-					return _react2.default.createElement(_slide2.default, _extends({}, slide, { index: i, current: slideNum }));
+					return _react2.default.createElement(_slide2.default, _extends({}, slide, { key: i, index: i, current: slideNum }));
 				}),
 				_react2.default.createElement(
 					'div',
@@ -22281,13 +22282,11 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _style = __webpack_require__(35);
+var _style = __webpack_require__(31);
 
 var _style2 = _interopRequireDefault(_style);
 
-var _react = __webpack_require__(18);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -22297,80 +22296,57 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var HeroSlide = function HeroSlide(_ref) {
+	var title = _ref.title,
+	    content = _ref.content,
+	    index = _ref.index,
+	    current = _ref.current;
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	var heroSlideClass = (0, _classnames2.default)('heroSlide', {
+		'heroSlide--show': index === current
+	});
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var HeroSlide = function (_Component) {
-	_inherits(HeroSlide, _Component);
-
-	function HeroSlide() {
-		_classCallCheck(this, HeroSlide);
-
-		return _possibleConstructorReturn(this, (HeroSlide.__proto__ || Object.getPrototypeOf(HeroSlide)).apply(this, arguments));
-	}
-
-	_createClass(HeroSlide, [{
-		key: 'render',
-		value: function render() {
-			var _props = this.props,
-			    bg = _props.bg,
-			    title = _props.title,
-			    content = _props.content,
-			    index = _props.index,
-			    current = _props.current;
-
-			var heroSlideClass = (0, _classnames2.default)('heroSlide', {
-				'heroSlide--show': index === current
-			});
-
-			return _react2.default.createElement(
-				'section',
-				{ className: heroSlideClass, 'data-jsx': 772775106
+	return _react2.default.createElement(
+		'section',
+		{ className: heroSlideClass, 'data-jsx': 4079347979
+		},
+		_react2.default.createElement(
+			'div',
+			{ className: 'heroSlide__content', 'data-jsx': 4079347979
+			},
+			_react2.default.createElement(
+				'div',
+				{ className: 'title', 'data-jsx': 4079347979
 				},
 				_react2.default.createElement(
-					'div',
-					{ className: 'heroSlide__content', 'data-jsx': 772775106
+					'h2',
+					{
+						'data-jsx': 4079347979
 					},
-					_react2.default.createElement(
-						'div',
-						{ className: 'title', 'data-jsx': 772775106
-						},
-						_react2.default.createElement(
-							'h2',
-							{
-								'data-jsx': 772775106
-							},
-							title
-						)
-					),
-					_react2.default.createElement('div', { className: 'line', 'data-jsx': 772775106
-					}),
-					_react2.default.createElement(
-						'div',
-						{ className: 'body', 'data-jsx': 772775106
-						},
-						_react2.default.createElement(
-							'p',
-							{
-								'data-jsx': 772775106
-							},
-							content
-						)
-					)
-				),
-				_react2.default.createElement(_style2.default, {
-					styleId: 772775106,
-					css: '.heroSlide[data-jsx="772775106"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;color:#fff;padding-left:60px;margin-top:20%;-webkit-transition:opacity .3s;transition:opacity .3s;position:absolute;visibility:hidden;opacity:0}.heroSlide--show[data-jsx="772775106"]{position:relative;visibility:visible;opacity:1}.heroSlide__content[data-jsx="772775106"]{width:90%}.title[data-jsx="772775106"] h2[data-jsx="772775106"]{font-size:40px;font-family:\'Yantramanav\';line-height:0.9}.line[data-jsx="772775106"]{width:60px;height:1px;margin:30px 0;border:solid 1px #039ed8}.body[data-jsx="772775106"] p[data-jsx="772775106"]{font-size:14px;line-height:1.54}@media (min-width:1024px){.heroSlide[data-jsx="772775106"]{margin-top:0;padding-left:140px}.heroSlide__content[data-jsx="772775106"]{width:50%}.title[data-jsx="772775106"] h2[data-jsx="772775106"]{font-size:100px}.body[data-jsx="772775106"] p[data-jsx="772775106"]{font-size:24px}}'
-				})
-			);
-		}
-	}]);
-
-	return HeroSlide;
-}(_react.Component);
+					title
+				)
+			),
+			_react2.default.createElement('div', { className: 'line', 'data-jsx': 4079347979
+			}),
+			_react2.default.createElement(
+				'div',
+				{ className: 'body', 'data-jsx': 4079347979
+				},
+				_react2.default.createElement(
+					'p',
+					{
+						'data-jsx': 4079347979
+					},
+					content
+				)
+			)
+		),
+		_react2.default.createElement(_style2.default, {
+			styleId: 4079347979,
+			css: '.heroSlide[data-jsx="4079347979"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;color:#fff;padding-left:60px;margin-top:20%;-webkit-transition:opacity .3s;transition:opacity .3s;position:absolute;visibility:hidden;opacity:0}.heroSlide--show[data-jsx="4079347979"]{position:relative;visibility:visible;opacity:1}.heroSlide__content[data-jsx="4079347979"]{width:90%}.title[data-jsx="4079347979"] h2[data-jsx="4079347979"]{font-size:40px;font-family:\'Yantramanav\';line-height:0.9}.line[data-jsx="4079347979"]{width:60px;height:1px;margin:30px 0;border:solid 1px #039ed8}.body[data-jsx="4079347979"] p[data-jsx="4079347979"]{font-size:14px;line-height:1.54}@media (min-width:1024px){.heroSlide[data-jsx="4079347979"]{margin-top:0;padding-left:140px}.heroSlide__content[data-jsx="4079347979"]{width:50%}.title[data-jsx="4079347979"] h2[data-jsx="4079347979"]{font-size:100px}.body[data-jsx="4079347979"] p[data-jsx="4079347979"]{font-size:24px}}'
+		})
+	);
+};
 
 exports.default = HeroSlide;
 
@@ -22385,11 +22361,11 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _style = __webpack_require__(35);
+var _style = __webpack_require__(31);
 
 var _style2 = _interopRequireDefault(_style);
 
-var _react = __webpack_require__(18);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -22397,17 +22373,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var HeroSliderMenu = function HeroSliderMenu(_ref) {
 	var links = _ref.links;
-
 	return _react2.default.createElement(
 		'ul',
 		{
 			'data-jsx': 1461394859
 		},
-		links.map(function (link) {
+		links.map(function (link, i) {
 			return _react2.default.createElement(
 				'li',
-				{
-					'data-jsx': 1461394859
+				{ key: i, 'data-jsx': 1461394859
 				},
 				_react2.default.createElement(
 					'a',
@@ -22437,11 +22411,11 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _style = __webpack_require__(35);
+var _style = __webpack_require__(31);
 
 var _style2 = _interopRequireDefault(_style);
 
-var _react = __webpack_require__(18);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -22478,11 +22452,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _style = __webpack_require__(35);
+var _style = __webpack_require__(31);
 
 var _style2 = _interopRequireDefault(_style);
 
-var _react = __webpack_require__(18);
+var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
