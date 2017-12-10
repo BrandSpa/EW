@@ -63,6 +63,7 @@
     color: #fff;
     margin: 0;
     margin-bottom: 40px;
+    font-size: 15px;
   }
 
   .border-top {
