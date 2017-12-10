@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="">
+  <!-- facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/page.html">
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="<?php echo get_bloginfo('name'); ?>">\
+
+  <!-- twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@site_account">
+  <meta name="twitter:creator" content="@individual_account">
+  <meta name="twitter:url" content="https://example.com/page.html">
+  <meta name="twitter:title" content="<?php echo get_bloginfo('name'); ?>">
+  <meta name="twitter:description" content="Content description less than 200 characters">
+
   <title><?php echo get_bloginfo('name'); ?></title>
 
   <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,700" rel="stylesheet">
@@ -38,7 +55,7 @@
     }
 
     .verticalLine {
-      left: 20px;
+      left: 15px;
 			position: fixed;
 			height: 100vh;
 			width: 1px;

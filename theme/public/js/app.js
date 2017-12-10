@@ -22490,11 +22490,11 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var TwitterIcon = function TwitterIcon(_ref) {
-	var iconClass = _ref.iconClass;
-
+	var iconClass = _ref.iconClass,
+	    url = _ref.url;
 	return _react2.default.createElement(
 		"a",
-		{ href: "#", "data-jsx": 292478232
+		{ href: url, target: "_blank", rel: "noopener", "data-jsx": 292478232
 		},
 		_react2.default.createElement("i", { className: iconClass, "data-jsx": 292478232
 		}),

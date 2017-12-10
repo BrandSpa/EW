@@ -1,10 +1,9 @@
 import React from 'react';
 
-const TwitterIcon = ({ iconClass }) => {
-	return (
-		<a href="#">
-			<i className={iconClass}></i>
-			<style jsx>{`
+const TwitterIcon = ({ iconClass, url }) => (
+	<a href={url} target="_blank" rel="noopener">
+		<i className={iconClass} />
+		<style jsx>{`
 				a {
 					display: flex;
 					align-items: center;
@@ -19,9 +18,9 @@ const TwitterIcon = ({ iconClass }) => {
 					font-size: 27px;
 					color: #5D5D5D;
 				}
-			`}</style>
-		</a>
-	)
-}
+			`}
+		</style>
+	</a>
+);
 
 export default TwitterIcon;

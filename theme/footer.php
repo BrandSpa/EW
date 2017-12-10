@@ -2,9 +2,9 @@
 <section class="footer">
   <div class="col-lg-1"></div>
   <div class="col-lg-5 col-xs-10">
-    <?php wp_nav_menu(['name' => 'header']); ?>
+    <?php wp_nav_menu(['name' => 'header', 'menu_id' => 'menu-footer']); ?>
   </div>
-  <div class="col-lg-5 col-xs-10">
+  <div class="col-lg-5 col-xs-10 footer-contact">
         <h4>CONTACT US</h4>
         <?php echo do_shortcode('[ew_contact_us]') ?>
   </div>
@@ -12,9 +12,24 @@
 </section>
 
 <section class="footer-bottom">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-10">
+    <div class="footer-bottom__content">
+      <div class="footer-bottom__content-left">
 
-<div class="col-lg-10 border-top"></div>
-<div class="col-lg-1"></div>
+        <section>
+          <img src="<?php echo get_template_directory_uri() ?>/public/img/logo.png" />
+          <span>The Power of Quality</span>
+        </section>
+      </div>
+      <div class="footer-bottom__content-right">
+        <img src="<?php echo get_template_directory_uri() ?>/public/img/alutions.png" alt="">
+        <img src="<?php echo get_template_directory_uri() ?>/public/img/technoglass.png" alt="">
+
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-1"></div>
 </section>
 
 <style>
@@ -28,29 +43,33 @@
     flex-direction: column;
   }
 
-  #menu-main {
+  .footer-contact {
+    margin: 0 auto;
+  }
+
+  #menu-footer {
     display: flex;
     flex-wrap: wrap;
   }
 
-  #menu-main > li {
+  #menu-footer > li {
     margin: 0 80px 40px 0;
   }
 
-  #menu-main > li > a {
+  #menu-footer > li > a {
     display: block;
     font-size: 15px;
     color: #fff;
     margin-bottom: 40px;
   }
 
-  #menu-main > li ul {
+  #menu-footer > li ul {
     padding: 0;
     display: flex;
     flex-direction: column;
   }
 
-  #menu-main > li ul li a {
+  #menu-footer > li ul li a {
     display: block;
     font-size: 15px;
     color:  #039ED8;
@@ -61,12 +80,44 @@
 
   .footer h4 {
     color: #fff;
-    margin: 5px 0 40px 0;
+    margin: 2px 0 40px 0;
     font-size: 15px;
   }
 
-  .border-top {
-    border-top: 1px solid blue;
+  .footer-bottom__content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid #039ED8;
+    padding: 60px 0;
+    background: #000;
+  }
+
+  .footer-bottom__content-left {
+    display: flex;
+  }
+
+  .footer-bottom__content-left span {
+    font-size: 15px;
+    color: #039ED8;
+  }
+
+  .footer-bottom__content-left img {
+    margin: 0 10px;
+  }
+
+  .footer-bottom__content-right {
+    display: flex;
+  }
+
+  .footer-bottom__content-right img {
+    margin-right: 40px;
+  }
+
+  .footer-bottom {
+    float: left;
+    width: 100%;
+    background: #000;
   }
 
   @media (min-width: 1024px) {
