@@ -34,7 +34,7 @@
   }
 
   #menu-main > li {
-    margin: 0 40px 40px 0;
+    margin: 0 80px 40px 0;
   }
 
   #menu-main > li > a {
