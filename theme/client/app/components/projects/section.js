@@ -110,7 +110,7 @@ class ProjectsSection extends Component {
   	const { projects } = this.state;
 
   	return (
-  		<div className="row">
+  		<section>
   			<Filters
   				onChange={this.handleFilters}
   				{...this.props}
@@ -152,7 +152,7 @@ class ProjectsSection extends Component {
           }
         `}
   			</style>
-  		</div>
+  		</section>
   	);
   }
 }

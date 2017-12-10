@@ -70,7 +70,7 @@ class ProjectsFilters extends Component {
   				</div>
   			<style jsx>{`
           .filters {
-						margin-bottom: 40px;
+
 						display: flex;
 					}
 
@@ -94,7 +94,13 @@ class ProjectsFilters extends Component {
           select:focus {
             box-shadow: none;
             outline: none;
-          }
+					}
+
+					@media (min-width: 1024px) {
+						.filters {
+							margin-bottom: 40px;
+						}
+					}
         `}
   			</style>
   		</section>

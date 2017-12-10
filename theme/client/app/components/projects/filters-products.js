@@ -31,6 +31,14 @@ class FiltersProducts extends Component {
 						</label>
 					</div>
 				))}
+				<style jsx>{`
+					section {
+						display: flex;
+						flex-direction: column;
+						align-self: center;
+					}
+				`}
+				</style>
 			</section>
 		);
 	}

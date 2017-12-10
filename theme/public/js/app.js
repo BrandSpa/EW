@@ -21027,8 +21027,9 @@ var ProjectsSection = function (_Component) {
 
 
       return _react2.default.createElement(
-        'div',
-        { className: 'row', 'data-jsx': 1331015501
+        'section',
+        {
+          'data-jsx': 1331015501
         },
         _react2.default.createElement(_filters2.default, _extends({
           onChange: this.handleFilters
@@ -21902,11 +21903,11 @@ var ProjectsFilters = function (_Component) {
 
       return _react2.default.createElement(
         'section',
-        { className: 'filters', 'data-jsx': 311862839
+        { className: 'filters', 'data-jsx': 3027035067
         },
         _react2.default.createElement(
           'div',
-          { className: 'select-container', 'data-jsx': 311862839
+          { className: 'select-container', 'data-jsx': 3027035067
           },
           _react2.default.createElement(
             'select',
@@ -21915,18 +21916,18 @@ var ProjectsFilters = function (_Component) {
               name: 'country',
               onChange: this.handleMetaChange,
               value: country,
-              'data-jsx': 311862839
+              'data-jsx': 3027035067
             },
             _react2.default.createElement(
               'option',
-              { value: '', 'data-jsx': 311862839
+              { value: '', 'data-jsx': 3027035067
               },
               'Country'
             ),
             countries.map(function (country) {
               return _react2.default.createElement(
                 'option',
-                { key: country, value: country, 'data-jsx': 311862839
+                { key: country, value: country, 'data-jsx': 3027035067
                 },
                 country
               );
@@ -21936,7 +21937,7 @@ var ProjectsFilters = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'select-container', 'data-jsx': 311862839
+          { className: 'select-container', 'data-jsx': 3027035067
           },
           _react2.default.createElement(
             'select',
@@ -21945,18 +21946,18 @@ var ProjectsFilters = function (_Component) {
               name: 'city',
               onChange: this.handleMetaChange,
               value: city,
-              'data-jsx': 311862839
+              'data-jsx': 3027035067
             },
             _react2.default.createElement(
               'option',
-              { value: '', 'data-jsx': 311862839
+              { value: '', 'data-jsx': 3027035067
               },
               'City '
             ),
             cities.map(function (city) {
               return _react2.default.createElement(
                 'option',
-                { key: city, value: city, 'data-jsx': 311862839
+                { key: city, value: city, 'data-jsx': 3027035067
                 },
                 city
               );
@@ -21966,7 +21967,7 @@ var ProjectsFilters = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'select-container', 'data-jsx': 311862839
+          { className: 'select-container', 'data-jsx': 3027035067
           },
           _react2.default.createElement(
             'select',
@@ -21975,18 +21976,18 @@ var ProjectsFilters = function (_Component) {
               name: 'state',
               onChange: this.handleMetaChange,
               value: state,
-              'data-jsx': 311862839
+              'data-jsx': 3027035067
             },
             _react2.default.createElement(
               'option',
-              { value: '', 'data-jsx': 311862839
+              { value: '', 'data-jsx': 3027035067
               },
               'State'
             ),
             states.map(function (state) {
               return _react2.default.createElement(
                 'option',
-                { key: state, value: state, 'data-jsx': 311862839
+                { key: state, value: state, 'data-jsx': 3027035067
                 },
                 state
               );
@@ -21995,8 +21996,8 @@ var ProjectsFilters = function (_Component) {
           _react2.default.createElement(_selectArrow2.default, { style: { position: 'absolute', right: 0 } })
         ),
         _react2.default.createElement(_style2.default, {
-          styleId: 311862839,
-          css: '.filters[data-jsx="311862839"]{margin-bottom:40px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.select-container[data-jsx="311862839"]{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100px;margin-right:20px}select[data-jsx="311862839"]{border:none;box-shadow:none;outline:none;-webkit-appearance:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:transparent}select[data-jsx="311862839"]:focus{box-shadow:none;outline:none}'
+          styleId: 3027035067,
+          css: '.filters[data-jsx="3027035067"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.select-container[data-jsx="3027035067"]{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100px;margin-right:20px}select[data-jsx="3027035067"]{border:none;box-shadow:none;outline:none;-webkit-appearance:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:transparent}select[data-jsx="3027035067"]:focus{box-shadow:none;outline:none}@media (min-width:1024px){.filters[data-jsx="3027035067"]{margin-bottom:40px}}'
         })
       );
     }
@@ -22062,6 +22063,10 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _style = __webpack_require__(32);
+
+var _style2 = _interopRequireDefault(_style);
+
 var _react = __webpack_require__(16);
 
 var _react2 = _interopRequireDefault(_react);
@@ -22113,23 +22118,33 @@ var FiltersProducts = function (_Component) {
 
 			return _react2.default.createElement(
 				"section",
-				null,
+				{
+					"data-jsx": 2210071992
+				},
 				Object.keys(productsOptions).map(function (key) {
 					return _react2.default.createElement(
 						"div",
-						{ className: "checkbox", key: key },
+						{ className: "checkbox", key: key, "data-jsx": 2210071992
+						},
 						_react2.default.createElement(
 							"label",
-							null,
+							{
+								"data-jsx": 2210071992
+							},
 							_react2.default.createElement("input", {
 								type: "checkbox",
 								onChange: _this2.handleChange,
-								value: productsOptions[key].term_id
+								value: productsOptions[key].term_id,
+								"data-jsx": 2210071992
 							}),
 							" ",
 							productsOptions[key].name
 						)
 					);
+				}),
+				_react2.default.createElement(_style2.default, {
+					styleId: 2210071992,
+					css: "section[data-jsx=\"2210071992\"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-self:center;-ms-flex-item-align:center;align-self:center}"
 				})
 			);
 		}
@@ -22272,49 +22287,49 @@ var HeroSlider = function (_Component) {
 
 			return _react2.default.createElement(
 				'section',
-				{ className: 'heroSlider', style: { background: 'url(' + bg + ') no-repeat' }, 'data-jsx': 4028874592
+				{ className: 'heroSlider', style: { background: 'url(' + bg + ') no-repeat' }, 'data-jsx': 2753210259
 				},
 				slides.map(function (slide, i) {
 					return _react2.default.createElement(_slide2.default, _extends({}, slide, { key: i, index: i, current: slideNum }));
 				}),
 				_react2.default.createElement(
 					'div',
-					{ className: 'heroSlider__nav', 'data-jsx': 4028874592
+					{ className: 'heroSlider__nav', 'data-jsx': 2753210259
 					},
 					slides.map(function (s, i) {
 						return _react2.default.createElement(
 							'button',
 							{ key: i, onClick: function onClick(e) {
 									return _this3.changeSlide(e, i);
-								}, 'data-jsx': 4028874592
+								}, 'data-jsx': 2753210259
 							},
 							slideNum === i && _react2.default.createElement('span', {
-								'data-jsx': 4028874592
+								'data-jsx': 2753210259
 							})
 						);
 					})
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'social', 'data-jsx': 4028874592
+					{ className: 'social', 'data-jsx': 2753210259
 					},
 					_react2.default.createElement(
 						'div',
-						{ className: 'social__icon', 'data-jsx': 4028874592
+						{ className: 'social__icon', 'data-jsx': 2753210259
 						},
 						_react2.default.createElement(_icon2.default, { iconClass: 'ion-social-twitter' })
 					),
 					_react2.default.createElement(
 						'div',
-						{ className: 'social__icon', 'data-jsx': 4028874592
+						{ className: 'social__icon', 'data-jsx': 2753210259
 						},
 						_react2.default.createElement(_icon2.default, { iconClass: 'ion-social-instagram-outline' })
 					)
 				),
 				this.props.links && _react2.default.createElement(_menu2.default, { links: this.props.links }),
 				_react2.default.createElement(_style2.default, {
-					styleId: 4028874592,
-					css: '.heroSlider[data-jsx="4028874592"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;width:100%;min-height:100vh;background-size:cover !important;background-color:#000;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-transition:all .3s;transition:all .3s}.heroSlider__nav[data-jsx="4028874592"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:40px;margin-left:60px}.heroSlider__nav[data-jsx="4028874592"] button[data-jsx="4028874592"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:transparent;width:30px;height:30px;border:solid 1px #039ed8;border-radius:0;outline:none;margin-right:10px}.heroSlider__nav[data-jsx="4028874592"] button[data-jsx="4028874592"] span[data-jsx="4028874592"]{display:block;width:10px;height:10px;background:#fff}.social[data-jsx="4028874592"]{position:absolute;bottom:60px;left:20px}.social__icon[data-jsx="4028874592"]{margin-bottom:20px}@media (min-width:1024px){.heroSlider[data-jsx="4028874592"]{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}.heroSlider__nav[data-jsx="4028874592"]{margin-left:140px}.heroSlider__nav[data-jsx="4028874592"] button[data-jsx="4028874592"]{width:40px;height:40px}}'
+					styleId: 2753210259,
+					css: '.heroSlider[data-jsx="2753210259"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;width:100%;min-height:100vh;background-size:cover !important;background-color:#000;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-transition:all .3s;transition:all .3s}.heroSlider__nav[data-jsx="2753210259"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:40px;margin-left:60px}.heroSlider__nav[data-jsx="2753210259"] button[data-jsx="2753210259"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;background:transparent;width:30px;height:30px;border:solid 1px #039ed8;border-radius:0;outline:none;margin-right:10px}.heroSlider__nav[data-jsx="2753210259"] button[data-jsx="2753210259"] span[data-jsx="2753210259"]{display:block;width:10px;height:10px;background:#fff}.social[data-jsx="2753210259"]{position:absolute;bottom:60px;left:20px;display:none}.social__icon[data-jsx="2753210259"]{margin-bottom:20px}@media (min-width:1024px){.heroSlider[data-jsx="2753210259"]{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}.heroSlider__nav[data-jsx="2753210259"]{margin-left:140px}.heroSlider__nav[data-jsx="2753210259"] button[data-jsx="2753210259"]{width:40px;height:40px}.social[data-jsx="2753210259"]{display:block}}'
 				})
 			);
 		}
@@ -22430,24 +22445,24 @@ var HeroSliderMenu = function HeroSliderMenu(_ref) {
 	return _react2.default.createElement(
 		'ul',
 		{
-			'data-jsx': 1692219875
+			'data-jsx': 2674532719
 		},
 		links.map(function (link, i) {
 			return _react2.default.createElement(
 				'li',
-				{ key: i, 'data-jsx': 1692219875
+				{ key: i, 'data-jsx': 2674532719
 				},
 				_react2.default.createElement(
 					'a',
-					{ href: link.url, 'data-jsx': 1692219875
+					{ href: link.url, 'data-jsx': 2674532719
 					},
 					link.title
 				)
 			);
 		}),
 		_react2.default.createElement(_style2.default, {
-			styleId: 1692219875,
-			css: 'ul[data-jsx="1692219875"]{position:absolute;right:0;bottom:40px}li[data-jsx="1692219875"] a[data-jsx="1692219875"]{display:block;border:solid 1px #039ed8;padding:20px 40px;font-size:20px;border-right:none;border-bottom:none;color:#fff}li[data-jsx="1692219875"] a[data-jsx="1692219875"]:last-child{border-bottom:solid 1px #039ed8}@media (min-width:1024px){ul[data-jsx="1692219875"]{bottom:20%}li[data-jsx="1692219875"] a[data-jsx="1692219875"]{font-size:30px}}'
+			styleId: 2674532719,
+			css: 'ul[data-jsx="2674532719"]{position:absolute;right:0;bottom:80px}li[data-jsx="2674532719"] a[data-jsx="2674532719"]{display:block;border:solid 1px #039ed8;padding:20px 40px;font-size:20px;border-right:none;border-bottom:none;color:#fff}li[data-jsx="2674532719"] a[data-jsx="2674532719"]:last-child{border-bottom:solid 1px #039ed8}@media (min-width:1024px){ul[data-jsx="2674532719"]{bottom:20%}li[data-jsx="2674532719"] a[data-jsx="2674532719"]{font-size:30px}}'
 		})
 	);
 };

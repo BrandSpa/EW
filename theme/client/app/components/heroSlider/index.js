@@ -97,6 +97,7 @@ class HeroSlider extends Component {
 						position: absolute;
 						bottom: 60px;
 						left: 20px;
+						display: none;
 					}
 
 					.social__icon {
@@ -116,6 +117,10 @@ class HeroSlider extends Component {
 						.heroSlider__nav button {
 							width: 40px;
 							height: 40px;
+						}
+
+						.social {
+							display: block;
 						}
 					}
 				`}

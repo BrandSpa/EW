@@ -7,7 +7,7 @@ const HeroSliderMenu = ({ links }) => (
 				ul {
 					position: absolute;
 					right: 0;
-					bottom: 40px;
+					bottom: 80px;
 				}
 
 				li a {
