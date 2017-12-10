@@ -39,6 +39,7 @@
   }
 
   #menu-main > li > a {
+    display: block;
     font-size: 15px;
     color: #fff;
     margin-bottom: 40px;
@@ -49,6 +50,17 @@
     display: flex;
     flex-direction: column;
   }
+
+  #menu-main > li ul li a {
+    display: block;
+    font-size: 15px;
+    color:  #039ED8;
+    padding-bottom: 7px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid  #039ED8;
+  }
+
+
 
   .footer h4 {
     color: #fff;
