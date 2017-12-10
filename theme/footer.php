@@ -29,10 +29,25 @@
     flex-direction: column;
   }
 
+  #menu-main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   #menu-main > li {
+    margin: 0 40px 40px 0;
+  }
+
+  #menu-main > li > a {
     font-size: 15px;
     color: #fff;
     margin-bottom: 40px;
+  }
+
+  #menu-main > li ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .footer h4 {
