@@ -53,6 +53,7 @@ class HeroSlider extends Component {
 				{this.props.links &&
 					<Menu links={this.props.links} />
 				}
+
 				<style jsx>{`
 					.heroSlider {
 						display: flex;
@@ -60,7 +61,7 @@ class HeroSlider extends Component {
 						width: 100%;
 						min-height: 100vh;
 						background-size: cover !important;
-						backgroundColor: '#333';
+						background-color: #000;
 						justify-content: flex-start;
     				flex-direction: column;
 						transition: all .3s;

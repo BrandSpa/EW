@@ -24,7 +24,8 @@
     "react": "^15.6.1",
     "react-beautiful-dnd": "^3.0.0",
     "react-dom": "^15.6.1",
-    "react-multiple-render": "^1.1.0"
+    "react-multiple-render": "^1.1.0",
+    "react-transition-group": "^2.2.1"
   },
   "devDependencies": {
     "babel": "^6.23.0",

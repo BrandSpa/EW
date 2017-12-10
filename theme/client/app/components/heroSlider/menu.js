@@ -26,7 +26,7 @@ const HeroSliderMenu = ({ links }) => (
 
 				@media (min-width: 1024px) {
 					ul {
-						bottom: auto;
+						bottom: 20%;
 					}
 
 					li a {
