@@ -20860,13 +20860,9 @@ var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _qs = __webpack_require__(257);
+var _apolloFetch = __webpack_require__(677);
 
-var _qs2 = _interopRequireDefault(_qs);
-
-var _axios = __webpack_require__(251);
-
-var _axios2 = _interopRequireDefault(_axios);
+var _lodash = __webpack_require__(669);
 
 var _item = __webpack_require__(674);
 
@@ -20880,13 +20876,9 @@ var _filtersProducts = __webpack_require__(676);
 
 var _filtersProducts2 = _interopRequireDefault(_filtersProducts);
 
-var _apolloFetch = __webpack_require__(677);
-
 var _loading = __webpack_require__(681);
 
 var _loading2 = _interopRequireDefault(_loading);
-
-var _lodash = __webpack_require__(669);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20966,7 +20958,7 @@ var ProjectsSection = function (_Component) {
       };
     }(), _this.updateOrAdd = function (filter, metaQuery) {
       var q = [];
-      console.log(filter);
+
       if ((0, _lodash.findIndex)(metaQuery, { key: filter.key }) !== -1) {
         q = metaQuery.map(function (query) {
           if (query.key !== filter.key) return query;
@@ -21018,10 +21010,9 @@ var ProjectsSection = function (_Component) {
         taxQuery = [tax];
       }
 
-      _this.setState({
-        taxQuery: taxQuery
+      _this.setState({ taxQuery: taxQuery }, function () {
+        _this.getProjects({ taxQuery: taxQuery, metaQuery: _this.state.metaQuery });
       });
-      _this.getProjects({ taxQuery: taxQuery, metaQuery: _this.state.metaQuery });
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -21058,9 +21049,9 @@ var ProjectsSection = function (_Component) {
             projects.map(function (project) {
               return _react2.default.createElement(
                 'div',
-                { className: 'col-lg-4 col-md-6 project-item', 'data-jsx': 1331015501
+                { key: project.ID, className: 'col-lg-4 col-md-6 project-item', 'data-jsx': 1331015501
                 },
-                _react2.default.createElement(_item2.default, { key: project.ID, project: project })
+                _react2.default.createElement(_item2.default, { project: project })
               );
             })
           )
@@ -21167,6 +21158,10 @@ var _react = __webpack_require__(17);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _selectArrow = __webpack_require__(687);
+
+var _selectArrow2 = _interopRequireDefault(_selectArrow);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -21219,11 +21214,11 @@ var ProjectsFilters = function (_Component) {
 
       return _react2.default.createElement(
         'section',
-        { className: 'filters', 'data-jsx': 1287414929
+        { className: 'filters', 'data-jsx': 311862839
         },
         _react2.default.createElement(
-          'form',
-          { className: 'form-inline', 'data-jsx': 1287414929
+          'div',
+          { className: 'select-container', 'data-jsx': 311862839
           },
           _react2.default.createElement(
             'select',
@@ -21232,23 +21227,29 @@ var ProjectsFilters = function (_Component) {
               name: 'country',
               onChange: this.handleMetaChange,
               value: country,
-              'data-jsx': 1287414929
+              'data-jsx': 311862839
             },
             _react2.default.createElement(
               'option',
-              { value: '', 'data-jsx': 1287414929
+              { value: '', 'data-jsx': 311862839
               },
               'Country'
             ),
             countries.map(function (country) {
               return _react2.default.createElement(
                 'option',
-                { key: country, value: country, 'data-jsx': 1287414929
+                { key: country, value: country, 'data-jsx': 311862839
                 },
                 country
               );
             })
           ),
+          _react2.default.createElement(_selectArrow2.default, { style: { position: 'absolute', right: 0 } })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'select-container', 'data-jsx': 311862839
+          },
           _react2.default.createElement(
             'select',
             {
@@ -21256,23 +21257,29 @@ var ProjectsFilters = function (_Component) {
               name: 'city',
               onChange: this.handleMetaChange,
               value: city,
-              'data-jsx': 1287414929
+              'data-jsx': 311862839
             },
             _react2.default.createElement(
               'option',
-              { value: '', 'data-jsx': 1287414929
+              { value: '', 'data-jsx': 311862839
               },
-              'City'
+              'City '
             ),
             cities.map(function (city) {
               return _react2.default.createElement(
                 'option',
-                { key: city, value: city, 'data-jsx': 1287414929
+                { key: city, value: city, 'data-jsx': 311862839
                 },
                 city
               );
             })
           ),
+          _react2.default.createElement(_selectArrow2.default, { style: { position: 'absolute', right: 0 } })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'select-container', 'data-jsx': 311862839
+          },
           _react2.default.createElement(
             'select',
             {
@@ -21280,27 +21287,28 @@ var ProjectsFilters = function (_Component) {
               name: 'state',
               onChange: this.handleMetaChange,
               value: state,
-              'data-jsx': 1287414929
+              'data-jsx': 311862839
             },
             _react2.default.createElement(
               'option',
-              { value: '', 'data-jsx': 1287414929
+              { value: '', 'data-jsx': 311862839
               },
               'State'
             ),
             states.map(function (state) {
               return _react2.default.createElement(
                 'option',
-                { key: state, value: state, 'data-jsx': 1287414929
+                { key: state, value: state, 'data-jsx': 311862839
                 },
                 state
               );
             })
-          )
+          ),
+          _react2.default.createElement(_selectArrow2.default, { style: { position: 'absolute', right: 0 } })
         ),
         _react2.default.createElement(_style2.default, {
-          styleId: 1287414929,
-          css: '.filters[data-jsx="1287414929"]{margin-bottom:40px}select[data-jsx="1287414929"]{border:none;box-shadow:none;outline:none;-webkit-appearance:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:transparent}select[data-jsx="1287414929"]:focus{box-shadow:none;outline:none}'
+          styleId: 311862839,
+          css: '.filters[data-jsx="311862839"]{margin-bottom:40px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.select-container[data-jsx="311862839"]{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100px;margin-right:20px}select[data-jsx="311862839"]{border:none;box-shadow:none;outline:none;-webkit-appearance:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;background:transparent}select[data-jsx="311862839"]:focus{box-shadow:none;outline:none}'
         })
       );
     }
@@ -22660,6 +22668,48 @@ var contactUs = function (_Component) {
 }(_react.Component);
 
 exports.default = contactUs;
+
+/***/ }),
+/* 687 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__(17);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var selectArrow = function selectArrow(_ref) {
+	var _ref$style = _ref.style,
+	    style = _ref$style === undefined ? {} : _ref$style;
+	return _react2.default.createElement(
+		"svg",
+		{ width: "11px", height: "5px", viewBox: "0 0 11 5", version: "1.1", xmlns: "http://www.w3.org/2000/svg", style: style },
+		_react2.default.createElement("defs", null),
+		_react2.default.createElement(
+			"g",
+			{ id: "Symbols", stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", strokeLinecap: "round", strokeLinejoin: "round" },
+			_react2.default.createElement(
+				"g",
+				{ id: "Projects", transform: "translate(-292.000000, -7.000000)", stroke: "#039ED8" },
+				_react2.default.createElement(
+					"g",
+					{ id: "Group" },
+					_react2.default.createElement("polyline", { id: "Path-2-Copy-5", points: "293 7 297.558914 12 302 7.12922766" })
+				)
+			)
+		)
+	);
+};
+
+exports.default = selectArrow;
 
 /***/ })
 ]),[604]);

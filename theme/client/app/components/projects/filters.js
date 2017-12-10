@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SelectArrow from '../selectArrow';
 
 class ProjectsFilters extends Component {
   state = {
@@ -26,47 +27,60 @@ class ProjectsFilters extends Component {
 
   	return (
   		<section className="filters">
-  			<form className="form-inline">
-  				<select
-  					className="form-control"
-  					name="country"
-  					onChange={this.handleMetaChange}
-  					value={country}
-  				>
-  					<option value="">Country</option>
-  					{countries.map(country =>
-  						<option key={country} value={country}>{country}</option>)}
-  				</select>
+  				<div className="select-container">
+  					<select
+  						className="form-control"
+  						name="country"
+  						onChange={this.handleMetaChange}
+  						value={country}
+  					>
+  						<option value="">Country</option>
+  						{countries.map(country =>
+  							<option key={country} value={country}>{country}</option>)}
+  					</select>
+  					<SelectArrow style={{ position: 'absolute', right: 0 }} />
+  				</div>
+  				<div className="select-container">
+  					<select
+  						className="form-control"
+  						name="city"
+  						onChange={this.handleMetaChange}
+  						value={city}
+  					>
+  						<option value="">City </option>
+  						{cities.map(city =>
+  							<option key={city} value={city}>{city}</option>)}
+  					</select>
+  				<SelectArrow style={{ position: 'absolute', right: 0 }} />
+  				</div>
+  				<div className="select-container">
+  					<select
+  						className="form-control"
+  						name="state"
+  						onChange={this.handleMetaChange}
+  						value={state}
+  					>
+  						<option value="">State</option>
+  						{states.map(state => (
+  							<option key={state} value={state}>{state}</option>
+  						))}
 
-  				<select
-  					className="form-control"
-  					name="city"
-  					onChange={this.handleMetaChange}
-  					value={city}
-  				>
-  					<option value="">City</option>
-  					{cities.map(city =>
-  						<option key={city} value={city}>{city}</option>)}
-  				</select>
-
-  				<select
-  					className="form-control"
-  					name="state"
-  					onChange={this.handleMetaChange}
-  					value={state}
-  				>
-  					<option value="">State</option>
-  					{states.map(state => (
-  						<option key={state} value={state}>{state}</option>
-  					))}
-
-  				</select>
-
-  			</form>
+  					</select>
+  					<SelectArrow style={{ position: 'absolute', right: 0 }} />
+  				</div>
   			<style jsx>{`
           .filters {
-            margin-bottom: 40px;
-          }
+						margin-bottom: 40px;
+						display: flex;
+					}
+
+					.select-container {
+						position: relative;
+						display: flex;
+						align-items: center;
+						width: 100px;
+						margin-right: 20px;
+					}
 
           select {
             border: none;
@@ -75,7 +89,7 @@ class ProjectsFilters extends Component {
             -webkit-appearance: none;
             appearance: none;
             background: transparent;
-          }
+					}
 
           select:focus {
             box-shadow: none;

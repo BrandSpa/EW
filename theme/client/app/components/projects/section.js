@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import qs from 'qs';
-import request from 'axios';
+import { createApolloFetch } from 'apollo-fetch';
+import { findIndex } from 'lodash';
 import Project from './item';
 import Filters from './filters';
 import FiltersProducts from './filters-products';
-import { createApolloFetch } from 'apollo-fetch';
 import Loading from '../loading';
-import { findIndex } from 'lodash';
-
 
 const uri = '/wp-content/themes/theme/graphql/index.php';
 const apolloFetch = createApolloFetch({ uri });
@@ -49,7 +46,7 @@ class ProjectsSection extends Component {
 
 	updateOrAdd = (filter, metaQuery) => {
 		let q = [];
-		console.log(filter);
+
 		if (findIndex(metaQuery, { key: filter.key }) !== -1) {
 			q = metaQuery.map((query) => {
 				if (query.key !== filter.key) return query;
@@ -69,7 +66,6 @@ class ProjectsSection extends Component {
 
   handleFilters = (filters) => {
   	let { metaQuery } = this.state;
-
 
   	if (filters.country.length > 0) {
   		const country = { key: 'country_key', value: filters.country };
@@ -92,7 +88,6 @@ class ProjectsSection extends Component {
   		metaQuery = this.removeFilter('state_key', metaQuery);
   	}
 
-
   	this.setState({ metaQuery }, () => {
   		this.getProjects({ metaQuery, taxQuery: this.state.taxQuery });
   	});
@@ -106,10 +101,9 @@ class ProjectsSection extends Component {
   		taxQuery = [tax];
   	}
 
-  	this.setState({
-  		taxQuery,
+  	this.setState({ taxQuery }, () => {
+  		this.getProjects({ taxQuery, metaQuery: this.state.metaQuery });
   	});
-  	this.getProjects({ taxQuery, metaQuery: this.state.metaQuery });
   }
 
   render() {
@@ -130,10 +124,11 @@ class ProjectsSection extends Component {
   			<div className="col-lg-9">
   				{/* <Loading /> */}
   				<div className="projects">
-  					{projects.map(project =>
-  						(<div className="col-lg-4 col-md-6 project-item">
-  							<Project key={project.ID} project={project} />
-  						</div>))}
+  					{projects.map(project => (
+  						<div key={project.ID} className="col-lg-4 col-md-6 project-item">
+  							<Project project={project} />
+  						</div>
+  					))}
   				</div>
   			</div>
 
