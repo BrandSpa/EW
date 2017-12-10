@@ -50,6 +50,15 @@
     flex-direction: column;
   }
 
+  #menu-main > li ul li a {
+    font-size: 15px;
+    color:  #039ED8;
+    padding-bottom: 5px;
+    border-bottom: 1px solid  #039ED8;
+  }
+
+
+
   .footer h4 {
     color: #fff;
   }
