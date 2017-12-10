@@ -29,6 +29,12 @@
     flex-direction: column;
   }
 
+  #menu-main > li {
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+
   .footer h4 {
     color: #fff;
   }
