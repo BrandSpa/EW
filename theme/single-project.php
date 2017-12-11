@@ -1,15 +1,27 @@
 <?php get_header(); ?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+<?php
+  $country = get_post_meta($post->ID, 'country_key', tue);
+  $city = get_post_meta($post->ID, 'city_key', tue);
+  $state = get_post_meta($post->ID, 'state_key', tue);
+  $slider = get_post_meta($post->ID, 'slider_key', tue);
+  $architect = get_post_meta($post->ID, 'architect_key', tue);
+  $constructor = get_post_meta($post->ID, 'constructor_key', tue);
+  $brands = wp_get_post_terms( $post->ID, 'brand', array("fields" => "names"));
+  $products = wp_get_post_terms( $post->ID, 'product', array("fields" => "names"));
+?>
+
 <div class="project">
   <div class="project__header" style="background-image: url(<?php echo wp_get_attachment_url(get_post_meta($post->ID, 'header_key', tue)) ?>)">
     <div class="row">
       <div class="col-sm-1"></div>
       <div class="col-sm-5">
       <h1><?php echo $post->post_title ?></h1>
-        <span><?php echo get_post_meta($post->ID, 'country_key', tue); ?></span>
-        <span><?php echo get_post_meta($post->ID, 'city_key', tue); ?></span>
-        <span><?php echo get_post_meta($post->ID, 'state_key', tue); ?></span>
+        <span><?php echo $country ?></span>
+        <span><?php echo $city ?></span>
+        <span><?php echo $state ?></span>
       </div>
     </div>
   </div>
@@ -20,9 +32,8 @@
         <div class="col-lg-1"></div>
         <div class="col-lg-5">
           <section class="project-slider">
-            <?php $slider = get_post_meta($post->ID, 'slider_key', tue)
-              ? explode(',', get_post_meta($post->ID, 'slider_key', tue))
-              : [];
+            <?php
+              $slider = $slider ? explode(',', $slider) : [];
             ?>
             <?php foreach($slider as $imageId): ?>
               <img src="<?php echo wp_get_attachment_url($imageId) ?>" alt="">
@@ -30,17 +41,35 @@
           </section>
         </div>
         <div class="col-lg-5">
-          <?php $products = wp_get_post_terms( $post->ID, 'product', array("fields" => "names")) ?>
-          <h4>Products</h4>
-          <?php foreach($products as $product): ?>
-            <span><?php echo $product ?></span>
-          <?php endforeach; ?>
+        <?php if(is_array($architect) && count($architect) > 0): ?>
+          <section class="project__section">
+            <h4>ARCHITECT</h4>
+            <?php foreach($architect as $arch): ?>
+              <span><?php echo $arch ?></span>
+            <?php endforeach; ?>
+          </section>
+          <?php endif; ?>
 
-          <?php $brands = wp_get_post_terms( $post->ID, 'brand', array("fields" => "names")) ?>
-          <h4>Brands</h4>
-          <?php foreach($brands as $brand): ?>
-            <span><?php echo $brand ?></span>
-          <?php endforeach; ?>
+          <section class="project__section project__product-brands">
+          <?php if(is_array($brands) && count($brands) > 0): ?>
+            <section class="project__brands">
+                <h4>BRANDS</h4>
+                <?php foreach($brands as $brand): ?>
+                  <span><?php echo $brand ?></span>
+                <?php endforeach; ?>
+              </section>
+              <?php endif; ?>
+
+              <?php if(is_array($products) && count($products) > 0): ?>
+                <section class="project__products">
+                  <h4>PRODUCTS</h4>
+                  <?php foreach($products as $product): ?>
+                    <span><?php echo $product ?></span>
+                  <?php endforeach; ?>
+                </section>
+              <?php endif; ?>
+          </section>
+
         </div>
         <div class="col-lg-1"></div>
       </div>
@@ -50,6 +79,11 @@
 <style>
   .project {
     width: 100%;
+  }
+
+  .project h4 {
+    font-size: 15px;
+    color: #039ED8;
   }
 
   .project__header {
@@ -68,6 +102,41 @@
 
   .project__header span {
     display: block;
+  }
+
+  .project__content {
+    margin: 160px 0;
+  }
+
+  .project__section {
+    border-bottom: 1px solid #039ED8;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .project__product-brands {
+    display: flex;
+    align-items: space-between;
+  }
+
+  .project__products {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .project__brands {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .project__products span {
+    padding-bottom: 20px;
+  }
+
+  .project__brands span {
+    padding-bottom: 20px;
   }
 
   .slick-prev {

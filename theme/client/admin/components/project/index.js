@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import GalleryUploader from '../galleryUploader';
 import SingleUploader from '../singleUploader';
 import Location from './location';
-import Architects from './architect';
+import Fields from './fields';
 
 class ProjectMetabox extends Component {
   state = {
@@ -12,19 +12,41 @@ class ProjectMetabox extends Component {
   	header: '',
   	slider: '',
   	architect: [],
+  	constructor: [],
+  	developer: [],
+  	systems: [],
+  	aluminum: [],
+  	glass: [],
   }
 
   componentDidMount() {
-  	let state = this.state;
+  	let { state } = this;
+  	const {
+  		country,
+  		city,
+  		header,
+  		slider,
+  		architect,
+  		constructor,
+  		developer,
+  		systems,
+  		aluminum,
+  		glass,
+  	} = this.props;
 
   	state = {
   		...state,
-  		country: this.props.country,
+  		country,
+  		city,
+  		header,
+  		slider,
+  		architect,
+  		constructor,
+  		developer,
+  		systems,
+  		aluminum,
+  		glass,
   		state: this.props.state,
-  		city: this.props.city,
-  		header: this.props.header,
-  		slider: this.props.slider,
-  		architect: this.props.architect,
   	};
 
   	this.setState(state);
@@ -55,7 +77,17 @@ class ProjectMetabox extends Component {
 
   render() {
   	const {
-  		country, state, city, header, slider, architect,
+  		country,
+  		city,
+  		state,
+  		header,
+  		slider,
+  		architect,
+  		constructor,
+  		developer,
+  		systems,
+  		aluminum,
+  		glass,
   	} = this.state;
   	const { countries, states, cities } = this.props;
 
@@ -80,12 +112,59 @@ class ProjectMetabox extends Component {
   			<div className="form-group">
   				<GalleryUploader name="slider" galleryIds={slider} />
   			</div>
-  			<h4>Arquitect</h4>
-  			<Architects
+  			<h4>Architect</h4>
+  			<hr />
+  			<Fields
+  				type="architect"
   				handleField={this.handleField}
   				removeField={this.removeField}
   				addField={this.addField}
-  				architect={architect}
+  				data={architect}
+  			/>
+  			<h4>Constructor</h4>
+  			<hr />
+  			<Fields
+  				type="constructor"
+  				handleField={this.handleField}
+  				removeField={this.removeField}
+  				addField={this.addField}
+  				data={constructor}
+  			/>
+  			<h4>Developer</h4>
+  			<hr />
+  			<Fields
+  				type="developer"
+  				handleField={this.handleField}
+  				removeField={this.removeField}
+  				addField={this.addField}
+  				data={developer}
+  			/>
+  			<h4>Systems</h4>
+  			<hr />
+  			<Fields
+  				type="systems"
+  				handleField={this.handleField}
+  				removeField={this.removeField}
+  				addField={this.addField}
+  				data={systems}
+  			/>
+  			<h4>Aluminum</h4>
+  			<hr />
+  			<Fields
+  				type="aluminum"
+  				handleField={this.handleField}
+  				removeField={this.removeField}
+  				addField={this.addField}
+  				data={aluminum}
+  			/>
+  			<h4>Glass</h4>
+  			<hr />
+  			<Fields
+  				type="glass"
+  				handleField={this.handleField}
+  				removeField={this.removeField}
+  				addField={this.addField}
+  				data={glass}
   			/>
   			<style jsx>{`
         input, select {

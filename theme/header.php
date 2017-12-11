@@ -11,7 +11,7 @@
   <meta property="og:title" content="">
   <meta property="og:image" content="">
   <meta property="og:description" content="">
-  <meta property="og:site_name" content="<?php echo get_bloginfo('name'); ?>">\
+  <meta property="og:site_name" content="<?php echo get_bloginfo('name'); ?>">
 
   <!-- twitter -->
   <meta name="twitter:card" content="summary">
@@ -37,6 +37,7 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
+
     body {
       font-family: 'Arimo', sans-serif;
       font-size: 14px;

@@ -24127,9 +24127,9 @@ var _location = __webpack_require__(316);
 
 var _location2 = _interopRequireDefault(_location);
 
-var _architect = __webpack_require__(317);
+var _fields = __webpack_require__(351);
 
-var _architect2 = _interopRequireDefault(_architect);
+var _fields2 = _interopRequireDefault(_fields);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24163,7 +24163,12 @@ var ProjectMetabox = function (_Component) {
       city: '',
       header: '',
       slider: '',
-      architect: []
+      architect: [],
+      constructor: [],
+      developer: [],
+      systems: [],
+      aluminum: [],
+      glass: []
     }, _this.addField = function (type, e) {
       e.preventDefault();
       var fields = [].concat(_toConsumableArray(_this.state[type]), ['']);
@@ -24188,14 +24193,31 @@ var ProjectMetabox = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var state = this.state;
+      var _props = this.props,
+          country = _props.country,
+          city = _props.city,
+          header = _props.header,
+          slider = _props.slider,
+          architect = _props.architect,
+          constructor = _props.constructor,
+          developer = _props.developer,
+          systems = _props.systems,
+          aluminum = _props.aluminum,
+          glass = _props.glass;
+
 
       state = _extends({}, state, {
-        country: this.props.country,
-        state: this.props.state,
-        city: this.props.city,
-        header: this.props.header,
-        slider: this.props.slider,
-        architect: this.props.architect
+        country: country,
+        city: city,
+        header: header,
+        slider: slider,
+        architect: architect,
+        constructor: constructor,
+        developer: developer,
+        systems: systems,
+        aluminum: aluminum,
+        glass: glass,
+        state: this.props.state
       });
 
       this.setState(state);
@@ -24205,15 +24227,20 @@ var ProjectMetabox = function (_Component) {
     value: function render() {
       var _state = this.state,
           country = _state.country,
-          state = _state.state,
           city = _state.city,
+          state = _state.state,
           header = _state.header,
           slider = _state.slider,
-          architect = _state.architect;
-      var _props = this.props,
-          countries = _props.countries,
-          states = _props.states,
-          cities = _props.cities;
+          architect = _state.architect,
+          constructor = _state.constructor,
+          developer = _state.developer,
+          systems = _state.systems,
+          aluminum = _state.aluminum,
+          glass = _state.glass;
+      var _props2 = this.props,
+          countries = _props2.countries,
+          states = _props2.states,
+          cities = _props2.cities;
 
 
       return _react2.default.createElement(
@@ -24274,13 +24301,102 @@ var ProjectMetabox = function (_Component) {
           {
             'data-jsx': 571068820
           },
-          'Arquitect'
+          'Architect'
         ),
-        _react2.default.createElement(_architect2.default, {
+        _react2.default.createElement('hr', {
+          'data-jsx': 571068820
+        }),
+        _react2.default.createElement(_fields2.default, {
+          type: 'architect',
           handleField: this.handleField,
           removeField: this.removeField,
           addField: this.addField,
-          architect: architect
+          data: architect
+        }),
+        _react2.default.createElement(
+          'h4',
+          {
+            'data-jsx': 571068820
+          },
+          'Constructor'
+        ),
+        _react2.default.createElement('hr', {
+          'data-jsx': 571068820
+        }),
+        _react2.default.createElement(_fields2.default, {
+          type: 'constructor',
+          handleField: this.handleField,
+          removeField: this.removeField,
+          addField: this.addField,
+          data: constructor
+        }),
+        _react2.default.createElement(
+          'h4',
+          {
+            'data-jsx': 571068820
+          },
+          'Developer'
+        ),
+        _react2.default.createElement('hr', {
+          'data-jsx': 571068820
+        }),
+        _react2.default.createElement(_fields2.default, {
+          type: 'developer',
+          handleField: this.handleField,
+          removeField: this.removeField,
+          addField: this.addField,
+          data: developer
+        }),
+        _react2.default.createElement(
+          'h4',
+          {
+            'data-jsx': 571068820
+          },
+          'Systems'
+        ),
+        _react2.default.createElement('hr', {
+          'data-jsx': 571068820
+        }),
+        _react2.default.createElement(_fields2.default, {
+          type: 'systems',
+          handleField: this.handleField,
+          removeField: this.removeField,
+          addField: this.addField,
+          data: systems
+        }),
+        _react2.default.createElement(
+          'h4',
+          {
+            'data-jsx': 571068820
+          },
+          'Aluminum'
+        ),
+        _react2.default.createElement('hr', {
+          'data-jsx': 571068820
+        }),
+        _react2.default.createElement(_fields2.default, {
+          type: 'aluminum',
+          handleField: this.handleField,
+          removeField: this.removeField,
+          addField: this.addField,
+          data: aluminum
+        }),
+        _react2.default.createElement(
+          'h4',
+          {
+            'data-jsx': 571068820
+          },
+          'Glass'
+        ),
+        _react2.default.createElement('hr', {
+          'data-jsx': 571068820
+        }),
+        _react2.default.createElement(_fields2.default, {
+          type: 'glass',
+          handleField: this.handleField,
+          removeField: this.removeField,
+          addField: this.addField,
+          data: glass
         }),
         _react2.default.createElement(_style2.default, {
           styleId: 571068820,
@@ -26491,89 +26607,7 @@ var Location = function Location(_ref) {
 exports.default = Location;
 
 /***/ }),
-/* 317 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _style = __webpack_require__(39);
-
-var _style2 = _interopRequireDefault(_style);
-
-var _react = __webpack_require__(23);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Architects = function Architects(_ref) {
-	var handleField = _ref.handleField,
-	    removeField = _ref.removeField,
-	    addField = _ref.addField,
-	    architect = _ref.architect;
-	return _react2.default.createElement(
-		"section",
-		{
-			"data-jsx": 571068820
-		},
-		_react2.default.createElement(
-			"div",
-			{ className: "form-group", "data-jsx": 571068820
-			},
-			architect.length > 0 && architect.map(function (architectItem, i) {
-				return _react2.default.createElement(
-					"section",
-					{ className: "field", key: i, "data-jsx": 571068820
-					},
-					_react2.default.createElement("input", {
-						type: "text",
-						name: "architect[]",
-						onChange: function onChange(e) {
-							return handleField('architect', i, e);
-						},
-						value: architectItem,
-						"data-jsx": 571068820
-					}),
-					_react2.default.createElement(
-						"button",
-						{
-							className: "button btn-remove",
-							onClick: function onClick(e) {
-								return removeField('architect', i, e);
-							},
-							"data-jsx": 571068820
-						},
-						"Remove Arquitect"
-					)
-				);
-			})
-		),
-		_react2.default.createElement(
-			"button",
-			{
-				className: "button",
-				onClick: function onClick(e) {
-					return addField('architect', e);
-				},
-				"data-jsx": 571068820
-			},
-			"Add Arquitect"
-		),
-		_react2.default.createElement(_style2.default, {
-			styleId: 571068820,
-			css: "input[data-jsx=\"571068820\"],select[data-jsx=\"571068820\"]{display:block;width:100%;height:35px;margin-bottom:15px}.field[data-jsx=\"571068820\"]{margin-bottom:30px;float:left;width:100%}.btn-remove[data-jsx=\"571068820\"]{float:right}"
-		})
-	);
-};
-
-exports.default = Architects;
-
-/***/ }),
+/* 317 */,
 /* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28807,6 +28841,92 @@ module.exports = function (str, opts) {
     return utils.compact(obj);
 };
 
+
+/***/ }),
+/* 350 */,
+/* 351 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _style = __webpack_require__(39);
+
+var _style2 = _interopRequireDefault(_style);
+
+var _react = __webpack_require__(23);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Fields = function Fields(_ref) {
+	var type = _ref.type,
+	    handleField = _ref.handleField,
+	    removeField = _ref.removeField,
+	    addField = _ref.addField,
+	    data = _ref.data;
+	return _react2.default.createElement(
+		"section",
+		{
+			"data-jsx": 571068820
+		},
+		_react2.default.createElement(
+			"div",
+			{ className: "form-group", "data-jsx": 571068820
+			},
+			data.length > 0 && data.map(function (item, i) {
+				return _react2.default.createElement(
+					"section",
+					{ key: i, className: "field", "data-jsx": 571068820
+					},
+					_react2.default.createElement("input", {
+						type: "text",
+						name: type + "[]",
+						onChange: function onChange(e) {
+							return handleField(type, i, e);
+						},
+						value: item,
+						"data-jsx": 571068820
+					}),
+					_react2.default.createElement(
+						"button",
+						{
+							className: "button btn-remove",
+							onClick: function onClick(e) {
+								return removeField(type, i, e);
+							},
+							"data-jsx": 571068820
+						},
+						"Remove"
+					)
+				);
+			})
+		),
+		_react2.default.createElement(
+			"button",
+			{
+				className: "button",
+				onClick: function onClick(e) {
+					return addField(type, e);
+				},
+				"data-jsx": 571068820
+			},
+			"Add ",
+			type
+		),
+		_react2.default.createElement(_style2.default, {
+			styleId: 571068820,
+			css: "input[data-jsx=\"571068820\"],select[data-jsx=\"571068820\"]{display:block;width:100%;height:35px;margin-bottom:15px}.field[data-jsx=\"571068820\"]{margin-bottom:30px;float:left;width:100%}.btn-remove[data-jsx=\"571068820\"]{float:right}"
+		})
+	);
+};
+
+exports.default = Fields;
 
 /***/ })
 /******/ ]);

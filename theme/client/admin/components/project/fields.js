@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
 
-const Architects = ({
-	handleField, removeField, addField, architect,
+const Fields = ({
+	type, handleField, removeField, addField, data,
 }) => (
 	<section>
 		<div className="form-group">
-			{architect.length > 0 && architect.map((architectItem, i) => (
-				<section className="field" key={i}>
+			{data.length > 0 && data.map((item, i) => (
+				<section key={i} className="field" >
 					<input
 						type="text"
-						name="architect[]"
-						onChange={e => handleField('architect', i, e)}
-						value={architectItem}
+						name={`${type}[]`}
+						onChange={e => handleField(type, i, e)}
+						value={item}
 					/>
 					<button
 						className="button btn-remove"
-						onClick={e => removeField('architect', i, e)}
-					>Remove Architect
+						onClick={e => removeField(type, i, e)}
+					>Remove
 					</button>
 				</section>
 			))}
 		</div>
 		<button
 			className="button"
-			onClick={e => addField('architect', e)}
-		>Add Architect
+			onClick={e => addField(type, e)}
+		>Add {type}
 		</button>
 
 		<style jsx>{`
@@ -49,4 +49,4 @@ const Architects = ({
 	</section>
 );
 
-export default Architects;
+export default Fields;
