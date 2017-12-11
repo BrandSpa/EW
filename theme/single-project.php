@@ -9,6 +9,11 @@
   $slider = get_post_meta($post->ID, 'slider_key', tue);
   $architect = get_post_meta($post->ID, 'architect_key', tue);
   $constructor = get_post_meta($post->ID, 'constructor_key', tue);
+  $developer = get_post_meta($post->ID, 'developer_key', tue);
+  $constructor = get_post_meta($post->ID, 'constructor_key', tue);
+  $systems = get_post_meta($post->ID, 'systems_key', tue);
+  $aluminum = get_post_meta($post->ID, 'aluminum_key', tue);
+  $glass = get_post_meta($post->ID, 'glass_key', tue);
   $brands = wp_get_post_terms( $post->ID, 'brand', array("fields" => "names"));
   $products = wp_get_post_terms( $post->ID, 'product', array("fields" => "names"));
 ?>
@@ -44,8 +49,53 @@
         <?php if(is_array($architect) && count($architect) > 0): ?>
           <section class="project__section">
             <h4>ARCHITECT</h4>
-            <?php foreach($architect as $arch): ?>
-              <span><?php echo $arch ?></span>
+            <?php foreach($architect as $item): ?>
+              <span><?php echo $item ?></span>
+            <?php endforeach; ?>
+          </section>
+          <?php endif; ?>
+
+          <?php if(is_array($constructor) && count($constructor) > 0): ?>
+          <section class="project__section">
+            <h4>constructor</h4>
+            <?php foreach($constructor as $item): ?>
+              <span><?php echo $item ?></span>
+            <?php endforeach; ?>
+          </section>
+          <?php endif; ?>
+
+          <?php if(is_array($developer) && count($developer) > 0): ?>
+          <section class="project__section">
+            <h4>developer</h4>
+            <?php foreach($developer as $item): ?>
+              <span><?php echo $item ?></span>
+            <?php endforeach; ?>
+          </section>
+          <?php endif; ?>
+
+          <?php if(is_array($systems) && count($systems) > 0): ?>
+          <section class="project__section">
+            <h4>systems</h4>
+            <?php foreach($systems as $item): ?>
+              <span><?php echo $item ?></span>
+            <?php endforeach; ?>
+          </section>
+          <?php endif; ?>
+
+          <?php if(is_array($aluminum) && count($aluminum) > 0): ?>
+          <section class="project__section">
+            <h4>aluminum</h4>
+            <?php foreach($aluminum as $item): ?>
+              <span><?php echo $item ?></span>
+            <?php endforeach; ?>
+          </section>
+          <?php endif; ?>
+
+          <?php if(is_array($glass) && count($glass) > 0): ?>
+          <section class="project__section">
+            <h4>glass</h4>
+            <?php foreach($glass as $item): ?>
+              <span><?php echo $item ?></span>
             <?php endforeach; ?>
           </section>
           <?php endif; ?>
@@ -84,6 +134,7 @@
   .project h4 {
     font-size: 15px;
     color: #039ED8;
+    text-transform: uppercase;
   }
 
   .project__header {
@@ -109,8 +160,15 @@
   }
 
   .project__section {
+    display: flex;
+    flex-direction: column;
     border-bottom: 1px solid #039ED8;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
+    margin-bottom: 20px;
+  }
+
+  .project__section span {
+    display: block;
     margin-bottom: 20px;
   }
 
@@ -132,11 +190,11 @@
   }
 
   .project__products span {
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
   }
 
   .project__brands span {
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
   }
 
   .slick-prev {
