@@ -21781,42 +21781,42 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var ProjectItem = function ProjectItem(_ref) {
   var project = _ref.project;
   return _react2.default.createElement(
-    "a",
-    { href: decodeURI(project.url), className: "project", "data-jsx": 2804552418
+    'a',
+    { href: project.url.replace('#038;', '&'), className: 'project', 'data-jsx': 2804552418
     },
-    _react2.default.createElement("div", {
-      className: "project__header",
-      style: { backgroundImage: "url(" + project.thumb + ")" },
-      "data-jsx": 2804552418
+    _react2.default.createElement('div', {
+      className: 'project__header',
+      style: { backgroundImage: 'url(' + project.thumb + ')' },
+      'data-jsx': 2804552418
     }),
     _react2.default.createElement(
-      "div",
-      { className: "project__content", "data-jsx": 2804552418
+      'div',
+      { className: 'project__content', 'data-jsx': 2804552418
       },
       _react2.default.createElement(
-        "span",
-        { className: "title", "data-jsx": 2804552418
+        'span',
+        { className: 'title', 'data-jsx': 2804552418
         },
         project.name
       ),
       _react2.default.createElement(
-        "span",
-        { className: "country", "data-jsx": 2804552418
+        'span',
+        { className: 'country', 'data-jsx': 2804552418
         },
         project.country
       ),
       _react2.default.createElement(
-        "span",
-        { className: "state-city", "data-jsx": 2804552418
+        'span',
+        { className: 'state-city', 'data-jsx': 2804552418
         },
         project.state,
-        " \xB7 ",
+        ' \xB7 ',
         project.city
       )
     ),
     _react2.default.createElement(_style2.default, {
       styleId: 2804552418,
-      css: ".project[data-jsx=\"2804552418\"]{display:block;-webkit-transition:-webkit-transform .1s ease-in-out;-webkit-transition:transform .1s ease-in-out;transition:transform .1s ease-in-out;position:relative;background:#fff;width:100%}.project[data-jsx=\"2804552418\"]:hover{-webkit-transform:scale(1.150);-ms-transform:scale(1.150);transform:scale(1.150);z-index:2;box-shadow:0 0 20px rgba(0,0,0,.1)}.project__header[data-jsx=\"2804552418\"]{width:100%;height:200px;background-position:center;background-size:cover}.project__content[data-jsx=\"2804552418\"]{padding:20px;color:#1E9CC0}.project__content[data-jsx=\"2804552418\"] span[data-jsx=\"2804552418\"]{display:block}.title[data-jsx=\"2804552418\"]{font-size:19px;color:#5D5D5D;margin-bottom:30px}.country[data-jsx=\"2804552418\"],.state-city[data-jsx=\"2804552418\"]{font-size:15px;color:#039ED8}"
+      css: '.project[data-jsx="2804552418"]{display:block;-webkit-transition:-webkit-transform .1s ease-in-out;-webkit-transition:transform .1s ease-in-out;transition:transform .1s ease-in-out;position:relative;background:#fff;width:100%}.project[data-jsx="2804552418"]:hover{-webkit-transform:scale(1.150);-ms-transform:scale(1.150);transform:scale(1.150);z-index:2;box-shadow:0 0 20px rgba(0,0,0,.1)}.project__header[data-jsx="2804552418"]{width:100%;height:200px;background-position:center;background-size:cover}.project__content[data-jsx="2804552418"]{padding:20px;color:#1E9CC0}.project__content[data-jsx="2804552418"] span[data-jsx="2804552418"]{display:block}.title[data-jsx="2804552418"]{font-size:19px;color:#5D5D5D;margin-bottom:30px}.country[data-jsx="2804552418"],.state-city[data-jsx="2804552418"]{font-size:15px;color:#039ED8}'
     })
   );
 };

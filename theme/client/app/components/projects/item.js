@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const ProjectItem = ({ project }) => (
 
-	<a href={decodeURI(project.url)} className="project">
+	<a href={project.url.replace('#038;', '&')} className="project">
 		<div
 			className="project__header"
 			style={{ backgroundImage: `url(${project.thumb})` }}

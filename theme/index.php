@@ -5,6 +5,10 @@
   <div class="col-lg-1 col-md-1 col-sm-1"></div>
   <div class="col-lg-10 col-md-10 col-sm-10">
     <?php the_content() ?>
+    <?php
+      $query = new WP_Query([ 'post_type'  => 'project' ]);
+      var_dump($query->get_posts());
+    ?>
   </div>
   <div class="col-lg-1 col-md-1 col-sm-1"></div>
 </div>
