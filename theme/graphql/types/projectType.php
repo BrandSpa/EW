@@ -5,10 +5,22 @@ use GraphQL\Type\Definition\Type;
 $projectType = new ObjectType([
 	'name' => 'nea',
 	'fields' => [
+		'id' => [
+			'type' => Type::int(),
+			'resolve' => function($root) {
+				return $root->ID;
+			}
+		],
 		'name' => [
 			'type' => Type::string(),
 			'resolve' => function($root) {
 				return $root->post_title;
+			}
+		],
+		'url' => [
+			'type' => Type::string(),
+			'resolve' => function($root) {
+				return $root->guid;
 			}
 		],
 		'thumb' => [
@@ -21,13 +33,13 @@ $projectType = new ObjectType([
 			'type' => Type::string(),
 			'resolve' => function($root) {
 				return get_post_meta($root->ID, 'country_key', true);
-			} 
+			}
 		],
 		'state' => [
 			'type' => Type::string(),
 			'resolve' => function($root) {
 				return get_post_meta($root->ID, 'state_key', true);
-			} 
+			}
 		],
 		'city' => [
 			'type' => Type::string(),

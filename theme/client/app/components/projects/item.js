@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const ProjectItem = ({ project }) => (
 
-	<div className="project">
+	<a href={decodeURI(project.url)} className="project">
 		<div
 			className="project__header"
 			style={{ backgroundImage: `url(${project.thumb})` }}
@@ -15,8 +15,8 @@ const ProjectItem = ({ project }) => (
 		</div>
 
 		<style jsx>{`
-
           .project {
+            display: block;
             transition: transform .1s ease-in-out;
             position: relative;
             background: #fff;
@@ -58,7 +58,7 @@ const ProjectItem = ({ project }) => (
 
         `}
 		</style>
-	</div>
+	</a>
 );
 
 export default ProjectItem;

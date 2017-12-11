@@ -12,8 +12,10 @@ const apolloFetch = createApolloFetch({ uri });
 const projectsQuery = `
 query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery]){
   projects(posts_per_page: 9, meta_query: $metaQuery, tax_query: $taxQuery) {
+		id
     thumb
-    name
+		name
+		url
     country
     state
     city
@@ -125,7 +127,7 @@ class ProjectsSection extends Component {
   				{/* <Loading /> */}
   				<div className="projects">
   					{projects.map(project => (
-  						<div key={project.ID} className="col-lg-4 col-md-6 project-item">
+  						<div key={project.id} className="col-lg-4 col-md-6 project-item">
   							<Project project={project} />
   						</div>
   					))}

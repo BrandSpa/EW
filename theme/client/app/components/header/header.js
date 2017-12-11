@@ -54,8 +54,9 @@ class Header extends Component {
 				</div>
 				<div className="header__menu">
 					<ul>
-						{this.state.menu.map(item =>
-							<Link key={item.ID} item={item} uri={this.state.uri} />)}
+						{this.state.menu.map(item => (
+							<Link key={item.ID} item={item} uri={this.state.uri} />
+						))}
 					</ul>
 				</div>
 				<style jsx>{`
