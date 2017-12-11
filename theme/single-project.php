@@ -195,6 +195,7 @@
 
   .project__product-brands {
     display: flex;
+    flex-direction: row;
     align-items: space-between;
   }
 
