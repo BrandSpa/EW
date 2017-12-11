@@ -87,6 +87,7 @@
   .footer-bottom__content {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     width: 100%;
     border-top: 1px solid #039ED8;
     padding: 60px 0;
@@ -95,6 +96,9 @@
 
   .footer-bottom__content-left {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
   }
 
   .footer-bottom__content-left span {
@@ -108,10 +112,13 @@
 
   .footer-bottom__content-right {
     display: flex;
+    flex-direction: column;
   }
 
   .footer-bottom__content-right img {
-    margin-right: 40px;
+    display: block;
+    margin: 20px auto;
+    max-width: 140px;
   }
 
   .footer-bottom {
@@ -124,6 +131,25 @@
     .footer {
       flex-direction: row;
     }
+
+    .footer-bottom__content {
+      flex-direction: row;
+    }
+
+    .footer-bottom__content-left {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .footer-bottom__content-right {
+      flex-direction: row;
+    }
+
+    .footer-bottom__content-right img  {
+      margin: 0;
+      margin-right: 40px;
+    }
+
   }
 </style>
 <script>
