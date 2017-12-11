@@ -24,9 +24,13 @@
       <div class="col-sm-1"></div>
       <div class="col-sm-5">
       <h1><?php echo $post->post_title ?></h1>
-        <span><?php echo $country ?></span>
-        <span><?php echo $city ?></span>
+      <span class="line"></span>
+      <section class="project__location">
+        <span><?php echo $country ?> ·</span>
+        <span><?php echo $city ?> ·</span>
         <span><?php echo $state ?></span>
+      </section>
+
       </div>
     </div>
   </div>
@@ -127,6 +131,13 @@
 </div>
 
 <style>
+
+  .line {
+    width: 60px;
+    height: 1px;
+    margin: 30px 0;
+    border: solid 1px #039ed8;
+  }
   .project {
     width: 100%;
   }
@@ -148,11 +159,21 @@
   }
 
   .project__header h1 {
+    font-family: 'Yantramanav';
     display: block;
+    font-size: 40px;
   }
 
   .project__header span {
     display: block;
+  }
+
+  .project__location {
+    display: flex;
+  }
+
+  .project__location span {
+    margin-right: 5px;
   }
 
   .project__content {
@@ -222,6 +243,11 @@
 
   }
 
+  @media (min-width: 1024px) {
+    .project__header h1 {
+      font-size: 90px
+    }
+  }
 </style>
 <?php endwhile; else : ?>
   <p><?php _e( '401' ); ?></p>
