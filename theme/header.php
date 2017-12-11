@@ -70,6 +70,13 @@
       margin-left: 40px;
     }
 
+    .line {
+      width: 60px;
+      height: 1px;
+      margin: 30px 0;
+      border: solid 1px #039ed8;
+    }
+
     @media (min-width: 1024px) {
       .verticalLine {
         left: 70px;

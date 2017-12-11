@@ -98,7 +98,7 @@ class Header extends Component {
 							}
 
 							.logo-container {
-								margin-left: 140px;
+								margin-left: 115px;
 							}
 
 							.logo-container img {
