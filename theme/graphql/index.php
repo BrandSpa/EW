@@ -14,12 +14,12 @@ if ( ! defined('ABSPATH') ) {
 
 require str_replace('graphql' , '', __DIR__) . '/vendor/autoload.php';
 
-require 'queries/projectsQuery.php';
+require 'queries/postsQuery.php';
 
 $rootQuery = new ObjectType([
 	'name' => 'rootQuery',
 	'fields' => [
-		'projects' => $projectsQuery
+		'posts' => $postsQuery
 	]
 ]);
 
@@ -36,7 +36,7 @@ try {
 	// var_dump($input);
 	$query = isset($input['query']) ? $input['query'] : '';
 	$variableValues = isset($input['variables']) ? $input['variables'] : null;
-	
+
 	$rootValue = [];
 	$result = GraphQL::executeQuery($schema, $query, $rootValue, null, $variableValues);
 	$output = $result->toArray();

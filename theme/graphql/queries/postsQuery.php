@@ -2,7 +2,7 @@
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\InputObjectType;
 use GraphQL\Type\Definition\Type;
-require str_replace('queries' , '', __DIR__) . '/types/projectType.php';
+require str_replace('queries' , '', __DIR__) . '/types/postType.php';
 
 $metaFilter = new InputObjectType([
 	'name' => 'metaQuery',
@@ -38,9 +38,13 @@ $taxonomyFilter = new InputObjectType([
 	]
 ]);
 
-$projectsQuery = [
+$postsQuery = [
 	'type' => Type::listOf($projectType),
 	'args' => [
+		'post_type'  => [
+			'type'  => Type::string(),
+			'defaultValue' => 'project'
+		],
 		'posts_per_page' => [
 			'type' => Type::int()
 		],
@@ -53,14 +57,17 @@ $projectsQuery = [
 		'tax_relation' => Type::string()
 	],
 	'resolve' => function($root, $args) {
+
 		if(count($args['tax_query']) > 1) {
 			$tax_relation = ['relation' => $args['tax_relation']];
 			$tax_query = array_merge($args['tax_query'], $tax_relation);
 			$args['tax_query'] = $tax_query;
 		}
 
-		$options = array_merge([ 'post_type'  => 'project' ], $args);
-		$query = new WP_Query($options);
-		return $query->get_posts();
+		$query = new WP_Query($args);
+		$posts = $query->get_posts();
+		$total = wp_count_posts($args['post_type']);
+
+		return $posts;
 	}
 ];

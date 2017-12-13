@@ -20898,7 +20898,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var uri = '/wp-content/themes/theme/graphql/index.php';
 var apolloFetch = (0, _apolloFetch.createApolloFetch)({ uri: uri });
 
-var projectsQuery = '\nquery($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery]){\n  projects(posts_per_page: 9, meta_query: $metaQuery, tax_query: $taxQuery) {\n\t\tid\n    thumb\n\t\tname\n\t\turl\n    country\n    state\n    city\n    brands\n  }\n}\n';
+var projectsQuery = '\nquery($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery]){\n  posts(posts_per_page: 9, meta_query: $metaQuery, tax_query: $taxQuery) {\n\t\tid\n    thumb\n\t\tname\n\t\turl\n    country\n    state\n    city\n  }\n}\n';
 
 var ProjectsSection = function (_Component) {
   _inherits(ProjectsSection, _Component);
@@ -20937,7 +20937,7 @@ var ProjectsSection = function (_Component) {
                 res = _context.sent;
 
                 _this.setState({
-                  projects: res.data.projects
+                  projects: res.data.posts
                 });
                 _context.next = 10;
                 break;

@@ -11,7 +11,7 @@ const apolloFetch = createApolloFetch({ uri });
 
 const projectsQuery = `
 query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery]){
-  projects(posts_per_page: 9, meta_query: $metaQuery, tax_query: $taxQuery) {
+  posts(posts_per_page: 9, meta_query: $metaQuery, tax_query: $taxQuery) {
 		id
     thumb
 		name
@@ -19,7 +19,6 @@ query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery]){
     country
     state
     city
-    brands
   }
 }
 `;
@@ -39,7 +38,7 @@ class ProjectsSection extends Component {
   	try {
   		const res = await apolloFetch({ query: projectsQuery, variables });
   		this.setState({
-  			projects: res.data.projects,
+  			projects: res.data.posts,
   		});
   	} catch (err) {
   		console.log('get projects err: ', err);
