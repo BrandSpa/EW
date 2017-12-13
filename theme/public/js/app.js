@@ -21028,15 +21028,21 @@ var ProjectsSection = function (_Component) {
       return _react2.default.createElement(
         'section',
         {
-          'data-jsx': 1331015501
+          'data-jsx': 234129970
         },
         _react2.default.createElement(_filters2.default, _extends({
           onChange: this.handleFilters
         }, this.props)),
         _react2.default.createElement(
           'div',
-          { className: 'col-lg-3', 'data-jsx': 1331015501
+          { className: 'col-lg-3', 'data-jsx': 234129970
           },
+          _react2.default.createElement(
+            'h5',
+            { className: 'filters-title', 'data-jsx': 234129970
+            },
+            'Products'
+          ),
           _react2.default.createElement(_filtersProducts2.default, {
             onChange: this.handleFiltersProducts,
             productsOptions: this.props.productsOptions
@@ -21044,16 +21050,16 @@ var ProjectsSection = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'col-lg-9', 'data-jsx': 1331015501
+          { className: 'col-lg-9', 'data-jsx': 234129970
           },
           _react2.default.createElement(
             'div',
-            { className: 'projects', 'data-jsx': 1331015501
+            { className: 'projects', 'data-jsx': 234129970
             },
             projects.map(function (project) {
               return _react2.default.createElement(
                 'div',
-                { key: project.id, className: 'col-lg-4 col-md-6 project-item', 'data-jsx': 1331015501
+                { key: project.id, className: 'col-lg-4 col-md-6 project-item', 'data-jsx': 234129970
                 },
                 _react2.default.createElement(_item2.default, { project: project })
               );
@@ -21061,8 +21067,8 @@ var ProjectsSection = function (_Component) {
           )
         ),
         _react2.default.createElement(_style2.default, {
-          styleId: 1331015501,
-          css: '.projects[data-jsx="1331015501"]{padding:40px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.project-item[data-jsx="1331015501"]{padding:5px}@media (min-width:1024px){.projects[data-jsx="1331015501"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}'
+          styleId: 234129970,
+          css: '.projects[data-jsx="234129970"]{padding:40px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.project-item[data-jsx="234129970"]{padding:5px}.filters-title[data-jsx="234129970"]{font-size:15px;color:#039ED8}@media (min-width:1024px){.projects[data-jsx="234129970"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}'
         })
       );
     }

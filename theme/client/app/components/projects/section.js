@@ -117,11 +117,12 @@ class ProjectsSection extends Component {
   				{...this.props}
   			/>
   			<div className="col-lg-3">
+  				<h5 className="filters-title">Products</h5>
   				<FiltersProducts
   					onChange={this.handleFiltersProducts}
   					productsOptions={this.props.productsOptions}
   				/>
-  			</div>
+    	</div>
   			<div className="col-lg-9">
   				{/* <Loading /> */}
   				<div className="projects">
@@ -143,7 +144,12 @@ class ProjectsSection extends Component {
 
           .project-item {
             padding: 5px;
-          }
+					}
+
+					.filters-title {
+						font-size: 15px;
+						color: #039ED8;
+					}
 
           @media (min-width: 1024px) {
             .projects {
