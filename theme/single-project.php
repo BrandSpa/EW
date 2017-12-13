@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <?php
   $country = get_post_meta($post->ID, 'country_key', tue);
@@ -120,8 +119,8 @@
                   <?php foreach($products as $product): ?>
                     <span><?php echo $product ?></span>
                   <?php endforeach; ?>
-                </section>
-              <?php endif; ?>
+                </sction>
+              <?php enedif; ?>
           </section>
 
         </div>
@@ -129,8 +128,22 @@
       </div>
     </div>
 </div>
+<section class="projects-section">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+  <?php echo do_shortcode('[ew_projects]'); ?>
+  </div>
+  <div class="col-md-1"></div>
+</section>
 
 <style>
+
+  .projects-section {
+    padding: 90px 0;
+    display: flex;
+    width: 100%;
+    background: #F6FBFF;
+  }
 
   .line {
     width: 60px;
@@ -250,7 +263,7 @@
     }
   }
 </style>
-<?php endwhile; else : ?>
+
   <p><?php _e( '401' ); ?></p>
 <?php endif; ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

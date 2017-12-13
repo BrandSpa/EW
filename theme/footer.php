@@ -118,7 +118,7 @@
   .footer-bottom__content-right img {
     display: block;
     margin: 20px auto;
-    max-width: 140px;
+    max-width: 145px;
   }
 
   .footer-bottom {
