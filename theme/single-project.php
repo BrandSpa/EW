@@ -2,10 +2,13 @@
 
 
 <?php
+  $title = $post->post_title;
   $country = get_post_meta($post->ID, 'country_key', tue);
   $city = get_post_meta($post->ID, 'city_key', tue);
   $state = get_post_meta($post->ID, 'state_key', tue);
+  $header = get_post_meta($post->ID, 'header_key', tue);
   $slider = get_post_meta($post->ID, 'slider_key', tue);
+  $slider = $slider ? explode(',', $slider) : [];
   $architect = get_post_meta($post->ID, 'architect_key', tue);
   $constructor = get_post_meta($post->ID, 'constructor_key', tue);
   $developer = get_post_meta($post->ID, 'developer_key', tue);
@@ -13,16 +16,16 @@
   $systems = get_post_meta($post->ID, 'systems_key', tue);
   $aluminum = get_post_meta($post->ID, 'aluminum_key', tue);
   $glass = get_post_meta($post->ID, 'glass_key', tue);
-  $brands = wp_get_post_terms( $post->ID, 'brand', array("fields" => "names"));
-  $products = wp_get_post_terms( $post->ID, 'product', array("fields" => "names"));
+  $brands = wp_get_post_terms( $post->ID, 'brand', ["fields" => "names"]);
+  $products = wp_get_post_terms( $post->ID, 'product', ["fields" => "names"]);
 ?>
 
 <div class="project">
-  <div class="project__header" style="background-image: url(<?php echo wp_get_attachment_url(get_post_meta($post->ID, 'header_key', tue)) ?>)">
+  <div class="project__header" style="background-image: url(<?php echo wp_get_attachment_url($header) ?>)">
     <div class="row">
       <div class="col-sm-1"></div>
       <div class="col-sm-5">
-      <h1><?php echo $post->post_title ?></h1>
+      <h1><?php echo $title ?></h1>
       <span class="line"></span>
       <section class="project__location">
         <span><?php echo $country ?> ·</span>
@@ -40,12 +43,7 @@
         <div class="col-lg-1"></div>
         <div class="col-lg-5">
           <section class="project-slider">
-            <?php
-              $slider = $slider ? explode(',', $slider) : [];
-            ?>
-            <?php foreach($slider as $imageId): ?>
-              <img src="<?php echo wp_get_attachment_url($imageId) ?>" alt="">
-            <?php endforeach; ?>
+
           </section>
         </div>
         <div class="col-lg-5">
@@ -254,7 +252,6 @@
     font-family: "Ionicons";
     font-size: 30px;
     color: #fff;
-
   }
 
   @media (min-width: 1024px) {

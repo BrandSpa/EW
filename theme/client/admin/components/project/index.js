@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import GalleryUploader from '../galleryUploader';
 import SingleUploader from '../singleUploader';
 import Location from './location';
-import Fields from './fields';
+import Fields from '../fields';
 
 class ProjectMetabox extends Component {
   state = {
@@ -110,7 +110,10 @@ class ProjectMetabox extends Component {
   			<h4>Slider</h4>
   			<hr />
   			<div className="form-group">
-  				<GalleryUploader name="slider" galleryIds={slider} />
+  				<GalleryUploader
+  					name="slider"
+  					galleryIds={slider}
+  				/>
   			</div>
   			<h4>Architect</h4>
   			<hr />

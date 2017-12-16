@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 
+function uncamel(camelStr) {
+	return camelStr.replace(/([A-Z])/g, ' $1')
+		.replace(/^./, str => str.toUpperCase());
+}
+
 const Fields = ({
 	type, handleField, removeField, addField, data,
 }) => (
@@ -24,7 +29,7 @@ const Fields = ({
 		<button
 			className="button"
 			onClick={e => addField(type, e)}
-		>Add {type}
+		>Add {uncamel(type)}
 		</button>
 
 		<style jsx>{`

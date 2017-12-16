@@ -71,6 +71,7 @@ class SingleUploader extends Component {
 					.gallery img {
 						margin-left: 15px;
 						margin-bottom: 15px;
+						max-height: 150px;
 					}
 				`}
 				</style>

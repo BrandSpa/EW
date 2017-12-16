@@ -75,6 +75,7 @@ class GalleryUploader extends Component {
 					.gallery img {
 						margin-right: 15px;
 						margin-bottom: 15px;
+						max-height: 150px;
 					}
 				`}
 				</style>
