@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { createApolloFetch } from 'apollo-fetch';
-import { findIndex } from 'lodash';
+import { findIndex, groupBy } from 'lodash';
 import Product from './item';
-import Filters from './filters';
 import Loading from '../loading';
+import FilterTypes from './filterTypes';
 
 const uri = '/wp-content/themes/theme/graphql/index.php';
 const apolloFetch = createApolloFetch({ uri });
@@ -28,12 +28,13 @@ class ProductsSection extends Component {
 	}
 
 	componentDidMount() {
-		this.getProjects();
+		this.getProducts();
 	}
 
-	getProjects = async (variables = {}) => {
+	getProducts = async (variables = {}) => {
   	try {
-  		const res = await apolloFetch({ query: productsQuery, variables });
+			const res = await apolloFetch({ query: productsQuery, variables });
+			console.log(res.data.posts);
   		this.setState({
   			products: res.data.posts,
   		});
@@ -46,7 +47,7 @@ class ProductsSection extends Component {
 		const { products } = this.state;
 		return (
 			<section>
-				<Filters />
+				<FilterTypes typesOptions={this.props.typesOptions} />
 				{products.map(product => (
 					<Product {...product} />
 				))}
