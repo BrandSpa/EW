@@ -6,6 +6,7 @@ import Checkbox from '../checkbox';
 class FilterTypes extends Component {
 	state = {
 		types: [],
+		selected: [],
 	}
 
 	componentDidMount() {
@@ -18,7 +19,21 @@ class FilterTypes extends Component {
 			const subtypes = childTypes[type.term_id] ? childTypes[type.term_id] : [];
 			return { ...type, subtypes };
 		});
+
 		this.setState({ types });
+	}
+
+	handleChange = (e) => {
+		const { selected } = this.state;
+		const hasType = selected.indexOf(e.target.value) !== -1;
+
+		const newSelected = hasType
+			? selected.filter(type => type !== e.target.value)
+			: [...selected, e.target.value];
+
+		this.setState({ selected: newSelected }, () => {
+			this.props.onChange(newSelected);
+		});
 	}
 
 	render() {
@@ -27,18 +42,27 @@ class FilterTypes extends Component {
 		return (
 			<section>
 				{types.map(type => (
-					<section>
-						<button className="select-type">{type.name} <SelectArrow /></button>
+					<section className="filter-type">
+						<button className="select-type">
+							{type.name} {type.subtypes.length > 0 && <span><SelectArrow /></span>}
+						</button>
 						<div className="subtypes subtypes-open">
 							{type.subtypes.map(subtype => (
-								<Checkbox value={subtype.name} placeholder={subtype.name} />
+								<Checkbox
+									key={subtype.term_id}
+									value={subtype.term_id}
+									placeholder={subtype.name}
+									onChange={e => this.handleChange(e, type)}
+								/>
 							))}
-
 						</div>
 					</section>
 				))}
 
 				<style jsx>{`
+				.filter-type {
+					margin-bottom: 20px;
+				}
 					.select-type {
 						background: transparent;
 						border: none;
@@ -47,9 +71,15 @@ class FilterTypes extends Component {
 						color: #039ED8;
 					}
 
+					.select-type span {
+						display: flex;
+						padding-left: 5px;
+					}
+
 					.subtypes-open {
 						display: flex;
 						flex-direction: column;
+						margin-left: 20px;
 					}
 				`}
 				</style>

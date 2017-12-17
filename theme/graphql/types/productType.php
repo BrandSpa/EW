@@ -2,8 +2,8 @@
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\Type;
 
-$projectType = new ObjectType([
-	'name' => 'nea',
+$productType = new ObjectType([
+	'name' => 'product',
 	'fields' => [
 		'id' => [
 			'type' => Type::int(),
@@ -29,28 +29,37 @@ $projectType = new ObjectType([
 				return get_the_post_thumbnail_url($root->ID);
 			}
 		],
-		'country' => [
+		'type' => [
 			'type' => Type::string(),
 			'resolve' => function($root) {
-				return get_post_meta($root->ID, 'country_key', true);
+				$types = wp_get_post_terms( $root->ID, 'type');
+
+				$typeParent = array_filter($types, function($type) {
+					return $type->parent == 0;
+				});
+
+				$typeParent = array_values($typeParent);
+
+				return $typeParent[0]->name;
 			}
 		],
-		'state' => [
+		'subtype' => [
 			'type' => Type::string(),
 			'resolve' => function($root) {
-				return get_post_meta($root->ID, 'state_key', true);
+				$types = wp_get_post_terms( $root->ID, 'type');
+				$typeChild = array_filter($types, function($type) {
+					return $type->parent > 0;
+				});
+
+				$typeChild = array_values($typeChild);
+
+				return $typeChild[0]->name;
 			}
 		],
-		'city' => [
-			'type' => Type::string(),
-			'resolve' => function($root) {
-				return get_post_meta($root->ID, 'city_key', true);
-			}
-		],
-		'products' => [
+		'features' => [
 			'type' => Type::listOf(Type::string()),
 			'resolve' => function($project) {
-				return wp_get_post_terms( $project->ID, 'product', array("fields" => "names"));
+				return wp_get_post_terms( $project->ID, 'feature', array("fields" => "names"));
 			}
 		],
 		'brands' => [
@@ -61,3 +70,4 @@ $projectType = new ObjectType([
 		]
 	]
 ]);
+

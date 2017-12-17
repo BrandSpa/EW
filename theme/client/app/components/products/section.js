@@ -10,14 +10,13 @@ const apolloFetch = createApolloFetch({ uri });
 
 const productsQuery = `
 query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery]){
-  posts(post_type: "product", posts_per_page: 9, meta_query: $metaQuery, tax_query: $taxQuery) {
+  products(post_type: "product", posts_per_page: 9, meta_query: $metaQuery, tax_query: $taxQuery) {
 		id
     thumb
 		name
 		url
-    country
-    state
-    city
+		type
+		subtype
   }
 }
 `;
@@ -25,6 +24,8 @@ query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery]){
 class ProductsSection extends Component {
 	state = {
 		products: [],
+		metaQuery: [],
+  	taxQuery: [],
 	}
 
 	componentDidMount() {
@@ -34,23 +35,48 @@ class ProductsSection extends Component {
 	getProducts = async (variables = {}) => {
   	try {
 			const res = await apolloFetch({ query: productsQuery, variables });
-			console.log(res.data.posts);
+
   		this.setState({
-  			products: res.data.posts,
+  			products: res.data.products,
   		});
   	} catch (err) {
   		console.log('get projects err: ', err);
   	}
 	}
 
+	handleTypesFilters = (types) => {
+  	let { taxQuery, metaQuery } = this.state;
+
+  	if (types.length > 0) {
+  		const tax = { taxonomy: 'type', terms: types };
+  		taxQuery = [tax];
+		} else {
+			taxQuery = [];
+		}
+
+		console.log(taxQuery);
+  	this.setState({ taxQuery }, () => {
+  		this.getProducts({ taxQuery, metaQuery });
+  	});
+	}
+
 	render() {
 		const { products } = this.state;
 		return (
 			<section>
-				<FilterTypes typesOptions={this.props.typesOptions} />
-				{products.map(product => (
-					<Product {...product} />
-				))}
+				<div className="col-sm-3">
+					<FilterTypes
+					 typesOptions={this.props.typesOptions}
+					 onChange={this.handleTypesFilters}
+					/>
+				</div>
+				<div className="col-sm-9">
+					{products.map(product => (
+						<div className="col-sm-4">
+							<Product {...product} />
+						</div>
+					))}
+				</div>
 			</section>
 		);
 	}

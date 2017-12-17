@@ -14,12 +14,19 @@ if ( ! defined('ABSPATH') ) {
 
 require str_replace('graphql' , '', __DIR__) . '/vendor/autoload.php';
 
-require 'queries/postsQuery.php';
+
+require 'types/projectType.php';
+require 'types/productType.php';
+require 'types/metaFilterType.php';
+require 'types/taxonomyFilterType.php';
+require 'queries/projectsQuery.php';
+require 'queries/productsQuery.php';
 
 $rootQuery = new ObjectType([
 	'name' => 'rootQuery',
 	'fields' => [
-		'posts' => $postsQuery
+		'projects' => $projectsQuery,
+		'products' => $productsQuery,
 	]
 ]);
 

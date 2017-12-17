@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Checkbox from '../checkbox';
 
 class FiltersProducts extends Component {
 	state = {
@@ -12,8 +13,9 @@ class FiltersProducts extends Component {
 			? this.state.products.filter(product => product !== e.target.value)
 			: [...this.state.products, e.target.value];
 
-		this.props.onChange(products);
-		this.setState({ products });
+		this.setState({ products }, () => {
+			this.props.onChange(products);
+		});
 	}
 
 	render() {
@@ -21,15 +23,11 @@ class FiltersProducts extends Component {
 		return (
 			<section>
 				{Object.keys(productsOptions).map(key => (
-					<div className="checkbox" key={key}>
-						<label>
-							<input
-								type="checkbox"
-								onChange={this.handleChange}
-								value={productsOptions[key].term_id}
-							/> {productsOptions[key].name}
-						</label>
-					</div>
+					<Checkbox
+						onChange={this.handleChange}
+						value={productsOptions[key].term_id}
+						placeholder={productsOptions[key].name}
+					/>
 				))}
 				<style jsx>{`
 					section {

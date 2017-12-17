@@ -2,43 +2,9 @@
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\InputObjectType;
 use GraphQL\Type\Definition\Type;
-require str_replace('queries' , '', __DIR__) . '/types/postType.php';
+$root = str_replace('queries' , '', __DIR__);
 
-$metaFilter = new InputObjectType([
-	'name' => 'metaQuery',
-	'fields' => [
-		'key' => [
-			'type' => Type::string()
-		],
-		'value' => [
-			'type' => Type::listOf(Type::string())
-		],
-		'compare' => [
-			'type' => Type::string(),
-			'defaultValue' => 'IN'
-		]
-	]
-]);
-
-$taxonomyFilter = new InputObjectType([
-	'name' => 'taxonomyQuery',
-	'fields' => [
-		'taxonomy' => [
-			'type' => Type::string()
-		],
-		'field' => [
-			'type' => Type::string(),
-			'defaultValue' => 'term_id'
-		],
-		'terms'    => Type::listOf(Type::string()),
-		'operator' => [
-			'type' => Type::string(),
-			'defaultValue' => 'IN'
-		]
-	]
-]);
-
-$postsQuery = [
+$projectsQuery = [
 	'type' => Type::listOf($projectType),
 	'args' => [
 		'post_type'  => [
@@ -66,8 +32,6 @@ $postsQuery = [
 
 		$query = new WP_Query($args);
 		$posts = $query->get_posts();
-		$total = wp_count_posts($args['post_type']);
-
 		return $posts;
 	}
 ];

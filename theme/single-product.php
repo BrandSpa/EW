@@ -17,6 +17,7 @@
 	$typeChild = array_filter($types, function($type) {
 		return $type->parent > 0;
 	});
+
 	$typeChild = array_values($typeChild);
 
 	$systemDescription = get_post_meta($post->ID, 'systemDescription_key', true);
