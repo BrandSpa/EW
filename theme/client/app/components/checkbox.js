@@ -1,13 +1,15 @@
 import React from 'react';
 
-const Checkbox = ({ value, placeholder, onChange = () => {} }) => (
+const Checkbox = ({
+	value, placeholder, children, onChange = () => {},
+}) => (
 	<div className="checkbox">
 		<label>
 			<input
 				type="checkbox"
 				onChange={onChange}
 				value={value}
-			/> <span />{placeholder}
+			/> <span />{children || placeholder}
 		</label>
 		<style jsx>{`
 		input[type="checkbox"] {

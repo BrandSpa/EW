@@ -60,6 +60,9 @@ class FilterTypes extends Component {
 				))}
 
 				<style jsx>{`
+				button {
+					padding: 0;
+				}
 				.filter-type {
 					margin-bottom: 20px;
 				}

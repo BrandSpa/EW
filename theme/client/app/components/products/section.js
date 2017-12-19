@@ -4,6 +4,8 @@ import { findIndex, groupBy } from 'lodash';
 import Product from './item';
 import Loading from '../loading';
 import FilterTypes from './filterTypes';
+import FilterFeatures from './filterFeatures';
+import FilterBrands from './filterBrands';
 
 const uri = '/wp-content/themes/theme/graphql/index.php';
 const apolloFetch = createApolloFetch({ uri });
@@ -54,7 +56,36 @@ class ProductsSection extends Component {
 			taxQuery = [];
 		}
 
-		console.log(taxQuery);
+  	this.setState({ taxQuery }, () => {
+  		this.getProducts({ taxQuery, metaQuery });
+  	});
+	}
+
+	handleFeaturesFilters = (features) => {
+		let { taxQuery, metaQuery } = this.state;
+
+  	if (features.length > 0) {
+  		const tax = { taxonomy: 'feature', terms: features };
+  		taxQuery = [tax];
+		} else {
+			taxQuery = [];
+		}
+
+  	this.setState({ taxQuery }, () => {
+  		this.getProducts({ taxQuery, metaQuery });
+  	});
+	}
+
+	handleBrandsFilters = (brands) => {
+		let { taxQuery, metaQuery } = this.state;
+
+  	if (brands.length > 0) {
+  		const tax = { taxonomy: 'brand', terms: brands };
+  		taxQuery = [tax];
+		} else {
+			taxQuery = [];
+		}
+
   	this.setState({ taxQuery }, () => {
   		this.getProducts({ taxQuery, metaQuery });
   	});
@@ -69,6 +100,16 @@ class ProductsSection extends Component {
 					 typesOptions={this.props.typesOptions}
 					 onChange={this.handleTypesFilters}
 					/>
+					<h4>FEATURES</h4>
+					<FilterFeatures
+						features={this.props.featuresOptions}
+						onChange={this.handleFeaturesFilters}
+					/>
+					<h4>BRANDS</h4>
+					<FilterBrands
+						brands={this.props.brandsOptions}
+						onChange={this.handleBrandsFilters}
+					/>
 				</div>
 				<div className="col-sm-9">
 					{products.map(product => (
@@ -77,6 +118,13 @@ class ProductsSection extends Component {
 						</div>
 					))}
 				</div>
+				<style jsx>{`
+					h4 {
+						font-size: 15px;
+						color: #039ED8;
+					}
+				`}
+				</style>
 			</section>
 		);
 	}
