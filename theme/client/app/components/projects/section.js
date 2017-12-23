@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { createApolloFetch } from 'apollo-fetch';
-import { findIndex } from 'lodash';
+import { findIndex, throttle } from 'lodash';
+import classnames from 'classnames';
 import Project from './item';
 import Filters from './filters';
 import FiltersProducts from './filters-products';
@@ -28,11 +29,26 @@ class ProjectsSection extends Component {
   	projects: [],
   	metaQuery: [],
   	taxQuery: [],
+  	showFilters: false,
+  	inBound: false,
+  	inTop: false,
+  	inBottom: false,
   }
 
   componentDidMount = () => {
   	this.getProjects();
+  	if (window.matchMedia('(max-width: 1024px)').matches) {
+  		console.log('scroll');
+  		window.addEventListener('scroll', throttle(this.stickFilters, 150));
+  	}
   }
+
+  componentWillUnmount() {
+  	if (window.matchMedia('(max-width: 1024px)').matches) {
+  		window.removeEventListener('scroll', throttle(this.stickFilters, 150));
+  	}
+  }
+
 
   getProjects = async (variables = {}) => {
   	try {
@@ -45,6 +61,25 @@ class ProjectsSection extends Component {
   		console.log('get projects err: ', err);
   	}
   }
+
+	stickFilters = () => {
+		const { container, filters } = this;
+		const bound = container.getBoundingClientRect();
+		const containerHeight = container.clientHeight;
+		const h = filters.clientHeight;
+
+		if (bound.top < 0, bound.bottom > 0) {
+			this.setState({ inBound: true });
+		}
+
+		if (!(bound.top < 0 && (bound.bottom - h) - 40 > 0) && bound.y < 0) {
+			this.setState({ inBound: false });
+		}
+
+		if (!(bound.top < 0 && (bound.bottom - h) - 40 > 0) && bound.y > 0) {
+			this.setState({ inBound: false });
+		}
+	}
 
 	updateOrAdd = (filter, metaQuery) => {
 		let q = [];
@@ -110,11 +145,35 @@ class ProjectsSection extends Component {
   	});
   }
 
-  render() {
-  	const { projects } = this.state;
+	toggleFilters = (e) => {
+		e.preventDefault();
+		this.setState({ showFilters: !this.state.showFilters });
+	}
+
+	render() {
+		const { projects, showFilters, inBound } = this.state;
+
+		const filtersStyle = classnames('filters', {
+			'filters--in-bound': inBound,
+		});
+
+  	const filterContainerStyle = classnames('filters-container', {
+  		'filters-container--open': showFilters,
+		});
+
+		const filterToggleStyle = classnames('filters__toggle', {
+			'filters__toggle--open': showFilters,
+		});
 
   	return (
-  		<section>
+  		<section ref={ref => this.container = ref}>
+  			<div className={filtersStyle} ref={ref => this.filters = ref}>
+					<button
+						className={filterToggleStyle}
+						onClick={this.toggleFilters}
+					>Filters <i className="ion-plus" />
+					</button>
+  			<div className={filterContainerStyle}>
   			<Filters
   				onChange={this.handleFilters}
   				{...this.props}
@@ -125,7 +184,9 @@ class ProjectsSection extends Component {
   					onChange={this.handleFiltersProducts}
   					productsOptions={this.props.productsOptions}
   				/>
-    	</div>
+     </div>
+					</div>
+  			</div>
   			<div className="col-lg-9">
   				{/* <Loading /> */}
   				<div className="projects">
@@ -154,17 +215,78 @@ class ProjectsSection extends Component {
 						color: #039ED8;
 					}
 
-          @media (min-width: 1024px) {
-            .projects {
-              flex-direction: row;
-            }
+					.filters {
+						width: 100%;
+						background: #fff;
+						box-shadow: 0 10px 10px rgba(0,0,0,.1);
+						display: flex;
+						flex-direction: column;
+						padding-top: 20px;
+						transition: .3s ease;
+					}
 
-          }
+					.filters--in-bound {
+						position: fixed;
+						left: 0;
+						right: 0;
+						top: 80px;
+						z-index: 100;
+					}
+
+					.filters__toggle {
+						display: flex;
+						align-self: flex-end;
+						cursor: pointer;
+						border: none;
+						background: transparent;
+						font-size: 15px;
+						color: #039ED8;
+						margin-bottom: 20px;
+						align-items: center;
+						outline: none;
+					}
+
+					.filters__toggle i {
+						padding: 0 20px;
+					}
+
+					.filters__toggle--open i::before {
+						transform: rotate(45deg);
+					}
+
+					.filters-container {
+						display: none;
+					}
+
+					.filters-container--open {
+						display: block;
+						padding-bottom: 20px;
+					}
+
+					@media (min-width: 1024px) {
+						.projects {
+              flex-direction: row;
+						}
+
+						.filters {
+							display: initial;
+							box-shadow: none;
+							background: transparent;
+						}
+
+						.filters-container {
+							display: block;
+						}
+
+						.filters__toggle {
+							display: none;
+						}
+					}
         `}
   			</style>
   		</section>
   	);
-  }
+	}
 }
 
 export default ProjectsSection;
