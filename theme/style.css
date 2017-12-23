@@ -8,3 +8,92 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
+h1 {
+	font-size: 34px;
+	color: #FFFFFF;
+	letter-spacing: 0;
+	line-height: 36px;
+}
+
+h2 {
+	font-size: 21px;
+	letter-spacing: 3.39px;
+}
+
+h3 {
+	font-size: 19px;
+	letter-spacing: 0;
+	line-height: 46px;
+}
+
+h4 {
+	font-size: 17px;
+	line-height: 23px;
+}
+
+h5 {
+	font-size: 16px;
+	letter-spacing: 0;
+	line-height: 24px;
+}
+
+h6 {
+	font-size: 15px;
+	letter-spacing: 0;
+}
+
+p {
+	font-size: 14px;
+	color: #5D5D5D;
+	letter-spacing: 0;
+	line-height: 30px;
+}
+
+.list-item {
+	font-size: 13px;
+	letter-spacing: 0;
+	line-height: 30px;
+}
+
+@media (min-width: 1024px) {
+	h1 {
+		font-size: 90px;
+		letter-spacing: 0;
+		line-height: 87px;
+	}
+
+	h2 {
+		font-size: 31px;
+		letter-spacing: 5px;
+	}
+
+	h3 {
+		font-size: 30px;
+		letter-spacing: 0;
+		line-height: 46px;
+	}
+
+	h4 {
+		font-size: 24px;
+		line-height: 37px;
+	}
+
+	h5 {
+		font-size: 20px;
+		letter-spacing: 0;
+		line-height: 34px;
+	}
+
+	h6 {
+		font-size: 17px;
+		letter-spacing: 0;
+	}
+
+	p {
+		font-size: 14px;
+		color: #5D5D5D;
+		letter-spacing: 0;
+		line-height: 30px;
+	}
+}
