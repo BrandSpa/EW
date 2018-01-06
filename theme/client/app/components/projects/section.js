@@ -6,13 +6,14 @@ import Project from './item';
 import Filters from './filters';
 import FiltersProducts from './filters-products';
 import Loading from '../loading';
+import qs from 'qs';
 
 const uri = '/wp-content/themes/theme/graphql/index.php';
 const apolloFetch = createApolloFetch({ uri });
 
 const projectsQuery = `
-query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery]){
-  projects(posts_per_page: 9, meta_query: $metaQuery, tax_query: $taxQuery) {
+query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){
+  projects(posts_per_page: 2, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {
 		id
     thumb
 		name
@@ -33,12 +34,12 @@ class ProjectsSection extends Component {
   	inBound: false,
   	inTop: false,
   	inBottom: false,
+  	paged: 1,
   }
 
   componentDidMount = () => {
   	this.getProjects();
   	if (window.matchMedia('(max-width: 1024px)').matches) {
-  		console.log('scroll');
   		window.addEventListener('scroll', throttle(this.stickFilters, 150));
   	}
   }
@@ -150,6 +151,25 @@ class ProjectsSection extends Component {
 		this.setState({ showFilters: !this.state.showFilters });
 	}
 
+	handleUrl = (query) => {
+		const { pathname, search } = window.location;
+		const oldSearch = qs.parse(search.replace('?', ''));
+		const newSearch = { ...oldSearch, ...query };
+		const url = `${pathname}?${qs.stringify(newSearch)}`;
+		return url;
+	}
+
+	paginate = (e) => {
+		if (e) e.preventDefault();
+		let { taxQuery, metaQuery, paged } = this.state;
+		paged += 1;
+		const url = this.handleUrl({ paged });
+		this.setState({ paged }, () => {
+			history.replaceState('', '', url);
+			this.getProjects({ metaQuery, taxQuery, paged });
+  	});
+	}
+
 	render() {
 		const { projects, showFilters, inBound } = this.state;
 
@@ -184,7 +204,7 @@ class ProjectsSection extends Component {
   					onChange={this.handleFiltersProducts}
   					productsOptions={this.props.productsOptions}
   				/>
-     </div>
+						</div>
 					</div>
   			</div>
   			<div className="col-lg-9">
@@ -195,7 +215,8 @@ class ProjectsSection extends Component {
   							<Project project={project} />
   						</div>
   					))}
-  				</div>
+      </div>
+					<a href="#" onClick={this.paginate}>See more</a>
   			</div>
 
   			<style jsx>{`

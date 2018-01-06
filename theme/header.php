@@ -58,12 +58,12 @@
     }
 
     .verticalLine {
-      left: 15px;
+      /* left: 15px;
 			position: fixed;
 			height: 100vh;
 			width: 1px;
 			border: solid 1px #039ed8;
-      z-index: 99;
+      z-index: 99; */
 		}
 
     .line-responsive {
@@ -96,5 +96,3 @@
 ?>
 
 <section class="header-container" data-props='<?php echo wp_json_encode($props) ?>'></section>
-
-<div class="verticalLine"></div>

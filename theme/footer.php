@@ -18,7 +18,7 @@
       <div class="footer-bottom__content-left">
 
         <section>
-          <img src="<?php echo get_template_directory_uri() ?>/public/img/logo.png" />
+          <img src="<?php echo get_template_directory_uri() ?>/public/img/eswlogo.svg" />
           <span>The Power of Quality</span>
         </section>
       </div>
@@ -36,7 +36,7 @@
   .footer {
     position: relative;
     width: 100%;
-    background: #000;
+    background: #1f1f1f;
     padding-top: 150px;
     padding-bottom: 50px;
     display: flex;
@@ -91,7 +91,7 @@
     width: 100%;
     border-top: 1px solid #039ED8;
     padding: 60px 0;
-    background: #000;
+    background: #1f1f1f;
   }
 
   .footer-bottom__content-left {
@@ -99,6 +99,15 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 40px;
+  }
+
+  .footer-bottom__content-left section {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-bottom__content-left img {
+    width: 200px;
   }
 
   .footer-bottom__content-left span {
@@ -124,7 +133,7 @@
   .footer-bottom {
     float: left;
     width: 100%;
-    background: #000;
+    background: #1f1f1f;
   }
 
   @media (min-width: 1024px) {
@@ -146,7 +155,6 @@
     }
 
     .footer-bottom__content-right img  {
-      margin: 0;
       margin-right: 40px;
     }
 

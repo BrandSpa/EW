@@ -6,7 +6,7 @@ function locationData() {
 		'Panamá',
 		'USA'
 	];
-	
+
 	$states = [
 		'Florida',
 		'Maryland',
@@ -26,7 +26,7 @@ function locationData() {
 		'Cordoba',
 		'Valle del Cauca'
 	];
-	
+
 	$cities = [
 		'Washington',
 		'Akron',
@@ -67,9 +67,11 @@ function locationData() {
 		'Buenaventura',
 		'Panamá Pacífico'
 	];
+
 	sort($countries);
 	sort($states);
 	sort($cities);
+
 	return [
 		'countries' => $countries,
 		'states' => $states,

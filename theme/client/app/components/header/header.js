@@ -49,7 +49,7 @@ class Header extends Component {
 			<section className={headerClass} ref={ref => this.header = ref}>
 				<div className="logo-container">
 					<a href="/">
-						<img src={`${this.state.uri}/public/img/logo.png`} alt="" />
+						<img src={`${this.state.uri}/public/img/eswlogo.svg`} alt="" />
 					</a>
 				</div>
 				<div className="header__menu">
@@ -65,13 +65,13 @@ class Header extends Component {
 							display: flex;
 							width: 100%;
 							z-index: 900;
-							padding: 30px 0;
+							padding: 30px 0 0 0;
 							justify-content: space-between;
 							transition: all .3s;
 					}
 
 						.header--scroll {
-							background: rgba(0,0,0,.9)
+							background: rgba(31,31,31,.9)
 						}
 
 						.logo-container {
@@ -94,8 +94,8 @@ class Header extends Component {
 
 						@media (min-width: 1024px) {
 							.header {
-								padding-top: 50px;
-								padding-bottom: 10px;
+								padding-top: 30px;
+								padding-bottom: 0px;
 							}
 
 							.logo-container {
