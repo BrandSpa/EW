@@ -39,6 +39,10 @@ class FilterBands extends Component {
 					margin-bottom: 20px;
 				}
 
+				img {
+					padding: 0 5px;
+				}
+
 				`}
 				</style>
 			</section>
