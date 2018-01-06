@@ -11,6 +11,7 @@ const Product = ({
 		</div>
 		<style jsx>{`
 				.product {
+					background: #fff;
 					display: block;
 					position: relative;
 					background-size: cover !important;
