@@ -17699,7 +17699,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Checkbox = function Checkbox(_ref) {
 	var value = _ref.value,
 	    placeholder = _ref.placeholder,
-	    children = _ref.children,
+	    _ref$children = _ref.children,
+	    children = _ref$children === undefined ? false : _ref$children,
+	    checked = _ref.checked,
 	    _ref$onChange = _ref.onChange,
 	    onChange = _ref$onChange === undefined ? function () {} : _ref$onChange;
 	return _react2.default.createElement(
@@ -17715,6 +17717,7 @@ var Checkbox = function Checkbox(_ref) {
 				type: "checkbox",
 				onChange: onChange,
 				value: value,
+				checked: checked,
 				"data-jsx": 3435589092
 			}),
 			" ",
@@ -22560,6 +22563,12 @@ var ProductsSection = function (_Component) {
 	_createClass(ProductsSection, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
+			if (Object.keys(this.props.brand).length) {
+				console.log(this.props.brand);
+				this.handleBrandsFilters(['' + this.props.brand.term_id]);
+				return;
+			}
+
 			this.getProducts();
 		}
 	}, {
@@ -22600,6 +22609,7 @@ var ProductsSection = function (_Component) {
 					),
 					_react2.default.createElement(_filterBrands2.default, {
 						brands: this.props.brandsOptions,
+						brand: this.props.brand,
 						onChange: this.handleBrandsFilters
 					})
 				),
@@ -23015,11 +23025,21 @@ var FilterBands = function (_Component) {
 	}
 
 	_createClass(FilterBands, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			if (Object.keys(this.props.brand).length) {
+				this.setState({ selected: ['' + this.props.brand.term_id] });
+			}
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 			var _this2 = this;
 
-			var brands = this.props.brands;
+			var _props = this.props,
+			    brands = _props.brands,
+			    brand = _props.brand;
+			var selected = this.state.selected;
 
 
 			return _react2.default.createElement(
@@ -23027,12 +23047,13 @@ var FilterBands = function (_Component) {
 				{
 					'data-jsx': 3107466572
 				},
-				brands.map(function (brand) {
+				brands.map(function (brnd) {
 					return _react2.default.createElement(_checkbox2.default, {
-						key: brand.term_id,
-						value: brand.term_id,
-						placeholder: brand.name,
-						onChange: _this2.handleChange
+						key: brnd.term_id,
+						value: brnd.term_id,
+						placeholder: brnd.name,
+						onChange: _this2.handleChange,
+						checked: selected.indexOf('' + brnd.term_id) !== -1
 					});
 				}),
 				_react2.default.createElement(_style2.default, {

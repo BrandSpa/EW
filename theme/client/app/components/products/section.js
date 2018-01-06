@@ -31,6 +31,12 @@ class ProductsSection extends Component {
 	}
 
 	componentDidMount() {
+		if (Object.keys(this.props.brand).length) {
+			console.log(this.props.brand);
+			this.handleBrandsFilters([`${this.props.brand.term_id}`]);
+			return;
+		}
+
 		this.getProducts();
 	}
 
@@ -108,6 +114,7 @@ class ProductsSection extends Component {
 					<h4>BRANDS</h4>
 					<FilterBrands
 						brands={this.props.brandsOptions}
+						brand={this.props.brand}
 						onChange={this.handleBrandsFilters}
 					/>
 				</div>

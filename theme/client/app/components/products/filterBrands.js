@@ -6,6 +6,12 @@ class FilterBands extends Component {
 		selected: [],
 	}
 
+	componentDidMount() {
+		if (Object.keys(this.props.brand).length) {
+			this.setState({ selected: [`${this.props.brand.term_id}`] });
+		}
+	}
+
 	handleChange = (e) => {
 		const { selected } = this.state;
 		const hasType = selected.indexOf(e.target.value) !== -1;
@@ -20,16 +26,18 @@ class FilterBands extends Component {
 	}
 
 	render() {
-		const { brands } = this.props;
+		const { brands, brand } = this.props;
+		const { selected } = this.state;
 
 		return (
 			<section>
-				{brands.map(brand => (
+				{brands.map(brnd => (
 					<Checkbox
-						key={brand.term_id}
-						value={brand.term_id}
-						placeholder={brand.name}
+						key={brnd.term_id}
+						value={brnd.term_id}
+						placeholder={brnd.name}
 						onChange={this.handleChange}
+						checked={selected.indexOf(`${brnd.term_id}`) !== -1}
 					/>
 				))}
 

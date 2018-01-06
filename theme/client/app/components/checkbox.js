@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Checkbox = ({
-	value, placeholder, children, onChange = () => {},
+	value, placeholder, children = false, checked, onChange = () => {},
 }) => (
 	<div className="checkbox">
 		<label>
@@ -9,6 +9,7 @@ const Checkbox = ({
 				type="checkbox"
 				onChange={onChange}
 				value={value}
+				checked={checked}
 			/> <span />{children || placeholder}
 		</label>
 		<style jsx>{`
