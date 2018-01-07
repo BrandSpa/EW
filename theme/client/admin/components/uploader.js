@@ -43,8 +43,7 @@ class Uploader extends Component {
 	}
 
 	render() {
-		const { id, thumb } = this.state;
-		const { name, imageId, url } = this.props;
+		const { name, url } = this.props;
 
 		return (
 			<section>

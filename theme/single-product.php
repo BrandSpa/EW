@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <?php
+	$uri = get_template_directory_uri();
 	$title = $post->post_title;
 	$content = $post->post_content;
 	$slider = get_post_meta($post->ID, 'slider_key', tue);
@@ -8,6 +9,7 @@
 	$header = get_post_meta($post->ID, 'header_key', tue);
 	$types = wp_get_post_terms( $post->ID, 'type');
 	$brands = wp_get_post_terms( $post->ID, 'brand', ["fields" => "names"]);
+
 	$typeParent = array_filter($types, function($type) {
 		return $type->parent == 0;
 	});
@@ -22,7 +24,10 @@
 
 	$systemDescription = get_post_meta($post->ID, 'systemDescription_key', true);
 	$features = get_post_meta($post->ID, 'features_key', true);
-
+	$pdfBlueprints = get_post_meta($post->ID, 'pdfBlueprints_key', true);
+	$pdfInstallationGuide = get_post_meta($post->ID, 'pdfInstallationGuide_key', true);
+	$pdfEliteBrandBrochure1 = get_post_meta($post->ID, 'pdfEliteBrandBrochure1_key', true);
+	$pdfEliteBrandBrochure2 = get_post_meta($post->ID, 'pdfEliteBrandBrochure2_key', true);
 ?>
 
 <section class="product">
@@ -83,6 +88,26 @@
 						<span><?php echo $feature ?></span>
 					<?php endforeach; ?>
 				</div>
+			</section>
+			<section class="downloads">
+				<h4>Related Downloads</h4>
+
+				<a target="_blank" href="<?php echo $pdfBlueprints ?>">
+					<img src="<?php echo $uri ?>/public/img/blueprints.svg" alt="">
+					<span>Blueprints</span>
+				</a>
+				<a target="_blank" href="<?php echo $pdfInstallationGuide ?>">
+					<img src="<?php echo $uri ?>/public/img/installation_guide.svg" alt="">
+					<span>installation guide</span>
+				</a>
+				<a target="_blank" href="<?php echo $pdfEliteBrandBrochure1 ?>">
+					<img src="<?php echo $uri ?>/public/img/brand_brochure.svg" alt="">
+					<span>installation guide</span>
+				</a>
+				<a target="_blank" href="<?php echo $pdfEliteBrandBrochure2 ?>">
+					<img src="<?php echo $uri ?>/public/img/brand_brochure.svg" alt="">
+					<span>installation guide</span>
+				</a>
 			</section>
 		</div>
 		<div class="col-sm-1"></div>
@@ -157,6 +182,20 @@
 
 	.product__perks section > .list span {
 		margin-bottom: 20px;
+	}
+
+	.downloads {
+		justify-content: space-around;
+	}
+
+	.downloads a {
+		display: flex;
+		flex-direction: column;
+
+	}
+
+	.downloads span {
+		margin: 40px 0 20px 0;
 	}
 
 	.slick-prev {
