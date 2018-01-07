@@ -8,6 +8,7 @@
   $slider = $slider ? explode(',', $slider) : [];
 	$header = get_post_meta($post->ID, 'header_key', tue);
 	$types = wp_get_post_terms( $post->ID, 'type');
+	$featuresTerm = wp_get_post_terms( $post->ID, 'feature');
 	$brands = wp_get_post_terms( $post->ID, 'brand', ["fields" => "names"]);
 
 	$typeParent = array_filter($types, function($type) {
@@ -53,7 +54,13 @@
 			<div class="col-sm-5">
 				<div class="product__content-text">
 					<p><?php echo $content; ?></p>
-					<h5>FEATURES</h5>
+					<div class="product__content-features">
+						<h5>FEATURES</h5>
+						<?php foreach($featuresTerm as $feature): ?>
+						<span>
+							<img src="<?php echo $uri ?>/public/img/<?php echo str_replace(' ', '_', strtolower($feature->name)) ?>.svg" alt="<?php echo $feature->name ?>"> <?php echo $feature->name ?></span>
+						<?php endforeach; ?>
+					</div>
 				</div>
 			</div>
 			<div class="col-sm-5">
@@ -90,30 +97,42 @@
 				</div>
 			</section>
 			<section class="downloads">
-				<h4>Related Downloads</h4>
 
-				<a target="_blank" href="<?php echo $pdfBlueprints ?>">
-					<img src="<?php echo $uri ?>/public/img/blueprints.svg" alt="">
-					<span>Blueprints</span>
-				</a>
-				<a target="_blank" href="<?php echo $pdfInstallationGuide ?>">
-					<img src="<?php echo $uri ?>/public/img/installation_guide.svg" alt="">
-					<span>installation guide</span>
-				</a>
-				<a target="_blank" href="<?php echo $pdfEliteBrandBrochure1 ?>">
-					<img src="<?php echo $uri ?>/public/img/brand_brochure.svg" alt="">
-					<span>installation guide</span>
-				</a>
-				<a target="_blank" href="<?php echo $pdfEliteBrandBrochure2 ?>">
-					<img src="<?php echo $uri ?>/public/img/brand_brochure.svg" alt="">
-					<span>installation guide</span>
-				</a>
+				<h4>Related Downloads</h4>
+					<div class="downloads__links">
+						<?php if(!empty($pdfBlueprints)): ?>
+						<a target="_blank" href="<?php echo $pdfBlueprints ?>">
+							<img src="<?php echo $uri ?>/public/img/blueprints.svg" alt="">
+							<span>Blueprints</span>
+						</a>
+						<?php endif; ?>
+						<?php if(!empty($pdfInstallationGuide)): ?>
+						<a target="_blank" href="<?php echo $pdfInstallationGuide ?>">
+							<img src="<?php echo $uri ?>/public/img/installation_guide.svg" alt="">
+							<span>installation guide</span>
+						</a>
+						<?php endif; ?>
+
+						<?php if(!empty($pdfEliteBrandBrochure1)): ?>
+						<a target="_blank" href="<?php echo $pdfEliteBrandBrochure1 ?>">
+							<img src="<?php echo $uri ?>/public/img/brand_brochure.svg" alt="">
+							<span>installation guide</span>
+						</a>
+						<?php endif; ?>
+						<?php if(!empty($pdfEliteBrandBrochure2)): ?>
+						<a target="_blank" href="<?php echo $pdfEliteBrandBrochure2 ?>">
+							<img src="<?php echo $uri ?>/public/img/brand_brochure.svg" alt="">
+							<span>installation guide</span>
+						</a>
+						<?php endif; ?>
+					</div>
 			</section>
 		</div>
 		<div class="col-sm-1"></div>
 		</div>
 	</section>
 </section>
+
 <style>
 	.product__header {
 		background-size: cover;
@@ -147,7 +166,27 @@
 
 	.product__content-text {
 		background: #F7FBFF;
-		padding: 90px 40px;
+		padding: 10% 10%;
+	}
+
+	.product__content-features {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.product__content-features h5 {
+		font-size: 15px;
+		color: #039ED8;
+		letter-spacing: 0;
+		line-height: 30px;
+	}
+
+	.product__content-features span {
+		margin-bottom: 15px;
+	}
+
+	.product__content-features span img {
+		margin-right: 10px;
 	}
 
 	.product__content-slider {
@@ -185,13 +224,20 @@
 	}
 
 	.downloads {
-		justify-content: space-around;
+
 	}
 
 	.downloads a {
 		display: flex;
 		flex-direction: column;
+		text-align: center;
+	}
 
+	.downloads__links {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
 	}
 
 	.downloads span {
@@ -250,6 +296,9 @@
 			margin: 0 0 0 40px;
 		}
 
+		.downloads__links {
+			flex-direction: row;
+		}
 
 	}
 </style>
