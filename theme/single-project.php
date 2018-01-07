@@ -47,7 +47,7 @@
         <div class="col-lg-1"></div>
         <div class="col-lg-5">
         <?php if(!empty($video)): ?>
-          <video class="project-video">
+          <video class="project-video" controls>
           <source src="<?php echo $video ?>" type="video/mp4">
            Your browser does not support HTML5 video.
           </video>
