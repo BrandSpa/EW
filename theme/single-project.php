@@ -9,6 +9,7 @@
   $header = get_post_meta($post->ID, 'header_key', tue);
   $slider = get_post_meta($post->ID, 'slider_key', tue);
   $slider = $slider ? explode(',', $slider) : [];
+  $video = get_post_meta($post->ID, 'video_key', tue);
   $architect = get_post_meta($post->ID, 'architect_key', tue);
   $constructor = get_post_meta($post->ID, 'constructor_key', tue);
   $developer = get_post_meta($post->ID, 'developer_key', tue);
@@ -18,6 +19,8 @@
   $glass = get_post_meta($post->ID, 'glass_key', tue);
   $brands = wp_get_post_terms( $post->ID, 'brand', ["fields" => "names"]);
   $products = wp_get_post_terms( $post->ID, 'product', ["fields" => "names"]);
+  $month = get_post_meta($post->ID, 'year_key', tue);
+  $month = get_post_meta($post->ID, 'month_key', tue);
 ?>
 
 <div class="project">
