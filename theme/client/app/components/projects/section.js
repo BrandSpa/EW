@@ -13,7 +13,7 @@ const apolloFetch = createApolloFetch({ uri });
 
 const projectsQuery = `
 query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){
-  projects(posts_per_page: 2, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {
+  projects(posts_per_page: 3, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {
 		id
     thumb
 		name
@@ -50,14 +50,10 @@ class ProjectsSection extends Component {
   	}
   }
 
-
   getProjects = async (variables = {}) => {
   	try {
   		const res = await apolloFetch({ query: projectsQuery, variables });
-  		console.log(res);
-  		this.setState({
-  			projects: res.data.projects,
-  		});
+  		this.setState({ projects: [...this.state.projects, ...res.data.projects] });
   	} catch (err) {
   		console.log('get projects err: ', err);
   	}
@@ -126,7 +122,7 @@ class ProjectsSection extends Component {
   		metaQuery = this.removeFilter('state_key', metaQuery);
   	}
 
-  	this.setState({ metaQuery }, () => {
+  	this.setState({ projects: [], paged: 1, metaQuery }, () => {
   		this.getProjects({ metaQuery, taxQuery: this.state.taxQuery });
   	});
   }
@@ -163,9 +159,8 @@ class ProjectsSection extends Component {
 		if (e) e.preventDefault();
 		let { taxQuery, metaQuery, paged } = this.state;
 		paged += 1;
-		const url = this.handleUrl({ paged });
+
 		this.setState({ paged }, () => {
-			history.replaceState('', '', url);
 			this.getProjects({ metaQuery, taxQuery, paged });
   	});
 	}
@@ -204,7 +199,7 @@ class ProjectsSection extends Component {
   					onChange={this.handleFiltersProducts}
   					productsOptions={this.props.productsOptions}
   				/>
-						</div>
+     </div>
 					</div>
   			</div>
   			<div className="col-lg-9">
@@ -216,7 +211,7 @@ class ProjectsSection extends Component {
   						</div>
   					))}
       </div>
-					<a href="#" onClick={this.paginate}>See more</a>
+					<a href="#" onClick={this.paginate} className="pagination-btn">See more</a>
   			</div>
 
   			<style jsx>{`
@@ -225,7 +220,12 @@ class ProjectsSection extends Component {
             display: flex;
             flex-wrap: wrap;
             flex-direction: column;
-          }
+					}
+
+					.pagination-btn {
+						float: right;
+						margin: 0 40px 20px 0;
+					}
 
           .project-item {
             padding: 5px;

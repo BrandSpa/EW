@@ -29,6 +29,7 @@
 	$pdfInstallationGuide = get_post_meta($post->ID, 'pdfInstallationGuide_key', true);
 	$pdfEliteBrandBrochure1 = get_post_meta($post->ID, 'pdfEliteBrandBrochure1_key', true);
 	$pdfEliteBrandBrochure2 = get_post_meta($post->ID, 'pdfEliteBrandBrochure2_key', true);
+	$productTerm = get_term_by('name', strtolower($typeParent[0]->name), 'product');
 ?>
 
 <section class="product">
@@ -56,19 +57,23 @@
 					<p><?php echo $content; ?></p>
 					<div class="product__content-features">
 						<h5>FEATURES</h5>
-						<?php foreach($featuresTerm as $feature): ?>
-						<span>
-							<img src="<?php echo $uri ?>/public/img/<?php echo str_replace(' ', '_', strtolower($feature->name)) ?>.svg" alt="<?php echo $feature->name ?>"> <?php echo $feature->name ?></span>
-						<?php endforeach; ?>
+						<?php if(!empty($featuresTerm)): ?>
+							<?php foreach($featuresTerm as $feature): ?>
+							<span>
+								<img src="<?php echo $uri ?>/public/img/<?php echo str_replace(' ', '_', strtolower($feature->name)) ?>.svg" alt="<?php echo $feature->name ?>"> <?php echo $feature->name ?></span>
+							<?php endforeach; ?>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>
 			<div class="col-sm-5">
 				<div class="product__content-slider-wrap">
 					<div class="product__content-slider">
-						<?php foreach($slider as $imageId): ?>
-								<img src="<?php echo wp_get_attachment_url($imageId) ?>" alt="">
-						<?php endforeach; ?>
+						<?php if(!empty($slider)): ?>
+							<?php foreach($slider as $imageId): ?>
+									<img src="<?php echo wp_get_attachment_url($imageId) ?>" alt="">
+							<?php endforeach; ?>
+						<?php endif; ?>
 					</div>
 				</div>
 			</div>
@@ -80,25 +85,47 @@
 	<div class="row">
 		<div class="col-sm-1"></div>
 		<div class="col-sm-10">
+			<?php if(!empty($systemDescription)): ?>
 			<section>
-				<h2>System Description</h2>
-				<div class="list">
-					<?php foreach($systemDescription as $sd): ?>
-						<span><?php echo $sd ?></span>
-					<?php endforeach; ?>
+				<div class="row">
+					<div class="col-md-3">
+						<h4>System Description</h4>
+					</div>
+					<div class="col-md-9">
+						<div class="list">
+							<?php foreach($systemDescription as $sd): ?>
+								<span><?php echo $sd ?></span>
+							<?php endforeach; ?>
+						</div>
+					</div>
 				</div>
 			</section>
-			<section>
-				<h2>Features</h2>
-				<div class="list">
-					<?php foreach($features as $feature): ?>
-						<span><?php echo $feature ?></span>
-					<?php endforeach; ?>
-				</div>
-			</section>
-			<section class="downloads">
+			<?php endif; ?>
 
-				<h4>Related Downloads</h4>
+			<?php if(!empty($features)): ?>
+			<section>
+				<div class="row">
+					<div class="col-md-3">
+						<h4>Features</h4>
+					</div>
+					<div class="col-md-9">
+						<div class="list">
+							<?php foreach($features as $feature): ?>
+								<span><?php echo $feature ?></span>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				</div>
+			</section>
+			<?php endif; ?>
+
+			<?php if(!empty($pdfBlueprints) || !empty($pdfInstallationGuide) || !empty($pdfEliteBrandBrochure1) || !empty($pdfEliteBrandBrochure2)): ?>
+			<section class="downloads">
+				<div class="row">
+				<div class="col-md-3">
+					<h4>Related Downloads</h4>
+				</div>
+				<div class="col-md-9">
 					<div class="downloads__links">
 						<?php if(!empty($pdfBlueprints)): ?>
 						<a target="_blank" href="<?php echo $pdfBlueprints ?>">
@@ -126,13 +153,26 @@
 						</a>
 						<?php endif; ?>
 					</div>
+				</div>
+				</div>
 			</section>
+			<?php endif; ?>
 		</div>
 		<div class="col-sm-1"></div>
 		</div>
 	</section>
 </section>
+<section class="product__related-projects">
+	<div class="row">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
+			<?php echo do_shortcode('[ew_related_projects products="'. $productTerm->term_id  .'"]') ?>
+			</div>
+			<div class="col-sm-1"></div>
 
+	</div>
+
+</section>
 <style>
 	.product__header {
 		background-size: cover;
@@ -208,8 +248,20 @@
 		padding-left: 40px
 	}
 
-	.product__perks section h2 {
-		margin: 0
+	.product__perks section:last-child {
+		margin-bottom: 0;
+	}
+
+	.product__perks section > .row {
+		width: 100%;
+	}
+
+	.product__perks section h4 {
+		margin: 0;
+		font-size: 24px;
+		color: #039ED8;
+		line-height: 37px;
+		margin-bottom: 40px;
 	}
 
 	.product__perks section > .list {
@@ -241,7 +293,15 @@
 	}
 
 	.downloads span {
+		font-size: 20px;
+		color: #039ED8;
+		letter-spacing: 0;
 		margin: 40px 0 20px 0;
+	}
+
+	.product__related-projects {
+		background: #F7FBFF;
+		padding: 90px 0;
 	}
 
 	.slick-prev {

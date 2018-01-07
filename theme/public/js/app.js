@@ -18879,6 +18879,10 @@ var _section = __webpack_require__(681);
 
 var _section2 = _interopRequireDefault(_section);
 
+var _related = __webpack_require__(698);
+
+var _related2 = _interopRequireDefault(_related);
+
 var _section3 = __webpack_require__(688);
 
 var _section4 = _interopRequireDefault(_section3);
@@ -18896,6 +18900,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _reactMultipleRender2.default)(_header2.default, '.header-container');
 (0, _reactMultipleRender2.default)(_footer2.default, '.footer-container');
 (0, _reactMultipleRender2.default)(_section2.default, '.projects-container');
+(0, _reactMultipleRender2.default)(_related2.default, '.related-projects-container');
 (0, _reactMultipleRender2.default)(_section4.default, '.products-container');
 (0, _reactMultipleRender2.default)(_heroSlider2.default, '.heroSlider-container');
 (0, _reactMultipleRender2.default)(_contactUs2.default, '.contact-us-container');
@@ -21082,7 +21087,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var uri = '/wp-content/themes/theme/graphql/index.php';
 var apolloFetch = (0, _apolloFetch.createApolloFetch)({ uri: uri });
 
-var projectsQuery = '\nquery($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){\n  projects(posts_per_page: 2, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {\n\t\tid\n    thumb\n\t\tname\n\t\turl\n    country\n    state\n    city\n  }\n}\n';
+var projectsQuery = '\nquery($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){\n  projects(posts_per_page: 3, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {\n\t\tid\n    thumb\n\t\tname\n\t\turl\n    country\n    state\n    city\n  }\n}\n';
 
 var ProjectsSection = function (_Component) {
 	_inherits(ProjectsSection, _Component);
@@ -21128,25 +21133,22 @@ var ProjectsSection = function (_Component) {
 							case 3:
 								res = _context.sent;
 
-								console.log(res);
-								_this.setState({
-									projects: res.data.projects
-								});
-								_context.next = 11;
+								_this.setState({ projects: [].concat(_toConsumableArray(_this.state.projects), _toConsumableArray(res.data.projects)) });
+								_context.next = 10;
 								break;
 
-							case 8:
-								_context.prev = 8;
+							case 7:
+								_context.prev = 7;
 								_context.t0 = _context['catch'](0);
 
 								console.log('get projects err: ', _context.t0);
 
-							case 11:
+							case 10:
 							case 'end':
 								return _context.stop();
 						}
 					}
-				}, _callee, _this2, [[0, 8]]);
+				}, _callee, _this2, [[0, 7]]);
 			}));
 
 			return function () {
@@ -21215,7 +21217,7 @@ var ProjectsSection = function (_Component) {
 				metaQuery = _this.removeFilter('state_key', metaQuery);
 			}
 
-			_this.setState({ metaQuery: metaQuery }, function () {
+			_this.setState({ projects: [], paged: 1, metaQuery: metaQuery }, function () {
 				_this.getProjects({ metaQuery: metaQuery, taxQuery: _this.state.taxQuery });
 			});
 		}, _this.handleFiltersProducts = function (products) {
@@ -21251,9 +21253,8 @@ var ProjectsSection = function (_Component) {
 			    paged = _this$state.paged;
 
 			paged += 1;
-			var url = _this.handleUrl({ paged: paged });
+
 			_this.setState({ paged: paged }, function () {
-				history.replaceState('', '', url);
 				_this.getProjects({ metaQuery: metaQuery, taxQuery: taxQuery, paged: paged });
 			});
 		}, _temp), _possibleConstructorReturn(_this, _ret);
@@ -21293,39 +21294,39 @@ var ProjectsSection = function (_Component) {
 				'section',
 				{ ref: function ref(_ref4) {
 						return _this4.container = _ref4;
-					}, 'data-jsx': 1127200493
+					}, 'data-jsx': 3751818199
 				},
 				_react2.default.createElement(
 					'div',
 					{ className: filtersStyle, ref: function ref(_ref3) {
 							return _this4.filters = _ref3;
-						}, 'data-jsx': 1127200493
+						}, 'data-jsx': 3751818199
 					},
 					_react2.default.createElement(
 						'button',
 						{
 							className: filterToggleStyle,
 							onClick: this.toggleFilters,
-							'data-jsx': 1127200493
+							'data-jsx': 3751818199
 						},
 						'Filters ',
-						_react2.default.createElement('i', { className: 'ion-plus', 'data-jsx': 1127200493
+						_react2.default.createElement('i', { className: 'ion-plus', 'data-jsx': 3751818199
 						})
 					),
 					_react2.default.createElement(
 						'div',
-						{ className: filterContainerStyle, 'data-jsx': 1127200493
+						{ className: filterContainerStyle, 'data-jsx': 3751818199
 						},
 						_react2.default.createElement(_filters2.default, _extends({
 							onChange: this.handleFilters
 						}, this.props)),
 						_react2.default.createElement(
 							'div',
-							{ className: 'col-lg-3', 'data-jsx': 1127200493
+							{ className: 'col-lg-3', 'data-jsx': 3751818199
 							},
 							_react2.default.createElement(
 								'h5',
-								{ className: 'filters-title', 'data-jsx': 1127200493
+								{ className: 'filters-title', 'data-jsx': 3751818199
 								},
 								'Products'
 							),
@@ -21338,16 +21339,16 @@ var ProjectsSection = function (_Component) {
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'col-lg-9', 'data-jsx': 1127200493
+					{ className: 'col-lg-9', 'data-jsx': 3751818199
 					},
 					_react2.default.createElement(
 						'div',
-						{ className: 'projects', 'data-jsx': 1127200493
+						{ className: 'projects', 'data-jsx': 3751818199
 						},
 						projects.map(function (project) {
 							return _react2.default.createElement(
 								'div',
-								{ key: project.id, className: 'col-lg-4 col-md-6 project-item', 'data-jsx': 1127200493
+								{ key: project.id, className: 'col-lg-4 col-md-6 project-item', 'data-jsx': 3751818199
 								},
 								_react2.default.createElement(_item2.default, { project: project })
 							);
@@ -21355,14 +21356,14 @@ var ProjectsSection = function (_Component) {
 					),
 					_react2.default.createElement(
 						'a',
-						{ href: '#', onClick: this.paginate, 'data-jsx': 1127200493
+						{ href: '#', onClick: this.paginate, className: 'pagination-btn', 'data-jsx': 3751818199
 						},
 						'See more'
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 1127200493,
-					css: '.projects[data-jsx="1127200493"]{padding:40px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.project-item[data-jsx="1127200493"]{padding:5px}.filters-title[data-jsx="1127200493"]{font-size:15px;color:#039ED8}.filters[data-jsx="1127200493"]{width:100%;background:#fff;box-shadow:0 10px 10px rgba(0,0,0,.1);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-top:20px;-webkit-transition:.3s ease;transition:.3s ease}.filters--in-bound[data-jsx="1127200493"]{position:fixed;left:0;right:0;top:80px;z-index:100}.filters__toggle[data-jsx="1127200493"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end;cursor:pointer;border:none;background:transparent;font-size:15px;color:#039ED8;margin-bottom:20px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;outline:none}.filters__toggle[data-jsx="1127200493"] i[data-jsx="1127200493"]{padding:0 20px}.filters__toggle--open[data-jsx="1127200493"] i[data-jsx="1127200493"]::before{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}.filters-container[data-jsx="1127200493"]{display:none}.filters-container--open[data-jsx="1127200493"]{display:block;padding-bottom:20px}@media (min-width:1024px){.projects[data-jsx="1127200493"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}.filters[data-jsx="1127200493"]{display:initial;box-shadow:none;background:transparent}.filters-container[data-jsx="1127200493"]{display:block}.filters__toggle[data-jsx="1127200493"]{display:none}}'
+					styleId: 3751818199,
+					css: '.projects[data-jsx="3751818199"]{padding:40px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.pagination-btn[data-jsx="3751818199"]{float:right;margin:0 40px 20px 0}.project-item[data-jsx="3751818199"]{padding:5px}.filters-title[data-jsx="3751818199"]{font-size:15px;color:#039ED8}.filters[data-jsx="3751818199"]{width:100%;background:#fff;box-shadow:0 10px 10px rgba(0,0,0,.1);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-top:20px;-webkit-transition:.3s ease;transition:.3s ease}.filters--in-bound[data-jsx="3751818199"]{position:fixed;left:0;right:0;top:80px;z-index:100}.filters__toggle[data-jsx="3751818199"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end;cursor:pointer;border:none;background:transparent;font-size:15px;color:#039ED8;margin-bottom:20px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;outline:none}.filters__toggle[data-jsx="3751818199"] i[data-jsx="3751818199"]{padding:0 20px}.filters__toggle--open[data-jsx="3751818199"] i[data-jsx="3751818199"]::before{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}.filters-container[data-jsx="3751818199"]{display:none}.filters-container--open[data-jsx="3751818199"]{display:block;padding-bottom:20px}@media (min-width:1024px){.projects[data-jsx="3751818199"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}.filters[data-jsx="3751818199"]{display:initial;box-shadow:none;background:transparent}.filters-container[data-jsx="3751818199"]{display:block}.filters__toggle[data-jsx="3751818199"]{display:none}}'
 				})
 			);
 		}
@@ -23610,6 +23611,167 @@ var contactUs = function (_Component) {
 }(_react.Component);
 
 exports.default = contactUs;
+
+/***/ }),
+/* 698 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _style = __webpack_require__(16);
+
+var _style2 = _interopRequireDefault(_style);
+
+var _react = __webpack_require__(10);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _apolloFetch = __webpack_require__(282);
+
+var _item = __webpack_require__(685);
+
+var _item2 = _interopRequireDefault(_item);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var uri = '/wp-content/themes/theme/graphql/index.php';
+var apolloFetch = (0, _apolloFetch.createApolloFetch)({ uri: uri });
+
+var projectsQuery = '\nquery($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){\n  projects(posts_per_page: 3, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {\n\t\tid\n    thumb\n\t\tname\n\t\turl\n    country\n    state\n    city\n  }\n}\n';
+
+var ProjectsRelated = function (_Component) {
+	_inherits(ProjectsRelated, _Component);
+
+	function ProjectsRelated() {
+		var _ref,
+		    _this2 = this;
+
+		var _temp, _this, _ret;
+
+		_classCallCheck(this, ProjectsRelated);
+
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
+
+		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ProjectsRelated.__proto__ || Object.getPrototypeOf(ProjectsRelated)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+			projects: [],
+			taxQuery: []
+		}, _this.getProjects = function () {
+			var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+				var variables = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+				var res;
+				return regeneratorRuntime.wrap(function _callee$(_context) {
+					while (1) {
+						switch (_context.prev = _context.next) {
+							case 0:
+								_context.prev = 0;
+								_context.next = 3;
+								return apolloFetch({ query: projectsQuery, variables: variables });
+
+							case 3:
+								res = _context.sent;
+
+								_this.setState({ projects: res.data.projects });
+								_context.next = 10;
+								break;
+
+							case 7:
+								_context.prev = 7;
+								_context.t0 = _context['catch'](0);
+
+								console.log('get projects err: ', _context.t0);
+
+							case 10:
+							case 'end':
+								return _context.stop();
+						}
+					}
+				}, _callee, _this2, [[0, 7]]);
+			}));
+
+			return function () {
+				return _ref2.apply(this, arguments);
+			};
+		}(), _this.handleFiltersProducts = function (products) {
+			var taxQuery = [];
+
+			if (products.length > 0) {
+				var tax = { taxonomy: 'product', terms: products };
+				taxQuery = [tax];
+			} else {
+				taxQuery = [];
+			}
+
+			_this.setState({ taxQuery: taxQuery }, function () {
+				_this.getProjects({ taxQuery: taxQuery, metaQuery: _this.state.metaQuery });
+			});
+		}, _temp), _possibleConstructorReturn(_this, _ret);
+	}
+
+	_createClass(ProjectsRelated, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			this.handleFiltersProducts(this.props.products);
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var projects = this.state.projects;
+
+
+			return _react2.default.createElement(
+				'section',
+				{
+					'data-jsx': 3046693150
+				},
+				_react2.default.createElement(
+					'h4',
+					{
+						'data-jsx': 3046693150
+					},
+					'Related projects'
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'projects', 'data-jsx': 3046693150
+					},
+					projects.map(function (project) {
+						return _react2.default.createElement(
+							'div',
+							{ key: project.id, className: 'col-lg-4 col-md-6 project-item', 'data-jsx': 3046693150
+							},
+							_react2.default.createElement(_item2.default, { project: project })
+						);
+					})
+				),
+				_react2.default.createElement(_style2.default, {
+					styleId: 3046693150,
+					css: '.projects[data-jsx="3046693150"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;margin:90px 0}section[data-jsx="3046693150"] h4[data-jsx="3046693150"]{font-size:24px;color:#039ED8;line-height:37px}@media (min-width:1024px){.projects[data-jsx="3046693150"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}}'
+				})
+			);
+		}
+	}]);
+
+	return ProjectsRelated;
+}(_react.Component);
+
+exports.default = ProjectsRelated;
 
 /***/ })
 ],[613]);
