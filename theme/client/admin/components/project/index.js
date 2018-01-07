@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GalleryUploader from '../galleryUploader';
 import SingleUploader from '../singleUploader';
+import Uploader from '../uploader';
 import Location from './location';
 import Fields from '../fields';
 
@@ -20,35 +21,7 @@ class ProjectMetabox extends Component {
   }
 
   componentDidMount() {
-  	let { state } = this;
-  	const {
-  		country,
-  		city,
-  		header,
-  		slider,
-  		architect,
-  		constructor,
-  		developer,
-  		systems,
-  		aluminum,
-  		glass,
-  	} = this.props;
-
-  	state = {
-  		...state,
-  		country,
-  		city,
-  		header,
-  		slider,
-  		architect,
-  		constructor,
-  		developer,
-  		systems,
-  		aluminum,
-  		glass,
-  		state: this.props.state,
-  	};
-
+  	const state = { ...this.state, ...this.props };
   	this.setState(state);
   }
 
@@ -82,14 +55,19 @@ class ProjectMetabox extends Component {
   		state,
   		header,
   		slider,
+  		video,
   		architect,
   		constructor,
   		developer,
   		systems,
   		aluminum,
   		glass,
+  		year,
+  		month,
   	} = this.state;
-  	const { countries, states, cities } = this.props;
+  	const {
+  		countries, states, cities, months,
+  	} = this.props;
 
   	return (
   		<section>
@@ -115,6 +93,9 @@ class ProjectMetabox extends Component {
   					galleryIds={slider}
   				/>
   			</div>
+  			<h4>Video</h4>
+  			<hr />
+  			<Uploader name="video" url={video} />
   			<h4>Architect</h4>
   			<hr />
   			<Fields
@@ -169,6 +150,13 @@ class ProjectMetabox extends Component {
   				addField={this.addField}
   				data={glass}
   			/>
+  			<h4>Date</h4>
+  			<input type="text" name="year" placeholder="Year" onChange={this.handleChange} value={year} />
+  			<select name="month"onChange={this.handleChange} value={month}>
+  				<option value="">Month</option>
+  				{months.map(monthOpt =>
+  					<option value={monthOpt}>{monthOpt}</option>)}
+  			</select>
   			<style jsx>{`
         input, select {
           display: block;

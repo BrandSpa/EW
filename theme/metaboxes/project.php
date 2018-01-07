@@ -13,12 +13,15 @@ function esw_type_project_cb($post) {
     "city",
     "header",
     "slider",
+    "video",
     "architect",
     "constructor",
     "developer",
     "systems",
     "aluminum",
-    "glass"
+    "glass",
+    "year",
+    "month"
   ];
   $props = [];
 
@@ -27,7 +30,7 @@ function esw_type_project_cb($post) {
     $props[$field] = ${$field};
   }
 
-	$props = array_merge(locationData(), $props);
+	$props = array_merge(locationData(), ['months' => months()], $props);
 ?>
 <div class="project-metabox-container" data-props='<?php echo json_encode($props) ?>'></div>
 
@@ -43,12 +46,15 @@ function ews_project_save($post_id) {
     "city",
     "header",
     "slider",
+    "video",
     "architect",
     "constructor",
     "developer",
     "systems",
     "aluminum",
-    "glass"
+    "glass",
+    "year",
+    "month"
   ];
 
   foreach($fields as $field) {

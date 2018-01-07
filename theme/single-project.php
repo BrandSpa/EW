@@ -22,6 +22,7 @@
 
 <div class="project">
   <div class="project__header" style="background-image: url(<?php echo wp_get_attachment_url($header) ?>)">
+    <div class="project__header-overlay"></div>
     <div class="row">
       <div class="col-sm-1"></div>
       <div class="col-sm-5">
@@ -43,8 +44,18 @@
         <div class="col-lg-1"></div>
         <div class="col-lg-5">
           <section class="project-slider">
-
+          <?php if(!empty($slider)): ?>
+							<?php foreach($slider as $imageId): ?>
+									<img src="<?php echo wp_get_attachment_url($imageId) ?>" alt="">
+							<?php endforeach; ?>
+						<?php endif; ?>
           </section>
+          <?php if(!empty($video)): ?>
+          <video class="project-video">
+          <source src="<?php echo $video ?>" type="video/mp4">
+           Your browser does not support HTML5 video.
+          </video>
+          <?php endif; ?>
         </div>
         <div class="col-lg-5">
         <?php if(is_array($architect) && count($architect) > 0): ?>
@@ -167,6 +178,16 @@
     justify-content: center;
     flex-direction: column;
     color: #fff;
+    position: relative;
+  }
+
+  .project__header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .4);
   }
 
   .project__header h1 {
@@ -230,6 +251,10 @@
     /* padding-bottom: 20px; */
   }
 
+  .project-video {
+    width: 100%;
+  }
+
   .slick-prev {
     left: 30px;
     z-index: 1;
@@ -241,16 +266,16 @@
   }
 
   .slick-next::before {
-    content: "\f125"
+    content: "\f3d3"
   }
 
   .slick-prev::before {
-    content: "\f124"
+    content: "\f3d2"
   }
 
   .slick-next::before, .slick-prev::before {
     font-family: "Ionicons";
-    font-size: 30px;
+    font-size: 40px;
     color: #fff;
   }
 

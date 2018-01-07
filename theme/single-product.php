@@ -321,16 +321,16 @@
   }
 
   .slick-next::before {
-    content: "\f3d3";
+    content: "\f3d3"
   }
 
   .slick-prev::before {
-    content: "\f3d2";
+    content: "\f3d2"
   }
 
   .slick-next::before, .slick-prev::before {
     font-family: "Ionicons";
-    font-size: 30px;
+    font-size: 40px;
     color: #039ED8;
   }
 
