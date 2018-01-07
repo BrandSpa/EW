@@ -19,7 +19,7 @@
   $glass = get_post_meta($post->ID, 'glass_key', tue);
   $brands = wp_get_post_terms( $post->ID, 'brand', ["fields" => "names"]);
   $products = wp_get_post_terms( $post->ID, 'product', ["fields" => "names"]);
-  $month = get_post_meta($post->ID, 'year_key', tue);
+  $year = get_post_meta($post->ID, 'year_key', tue);
   $month = get_post_meta($post->ID, 'month_key', tue);
 ?>
 
@@ -29,6 +29,7 @@
     <div class="row">
       <div class="col-sm-1"></div>
       <div class="col-sm-5">
+      <h5 class="project-date"><?php echo $month . ' / ' . $year  ?></h5>
       <h1><?php echo $title ?></h1>
       <span class="line"></span>
       <section class="project__location">
@@ -36,7 +37,6 @@
         <span><?php echo $city ?> ·</span>
         <span><?php echo $state ?></span>
       </section>
-
       </div>
     </div>
   </div>
@@ -46,6 +46,12 @@
       <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-lg-5">
+        <?php if(!empty($video)): ?>
+          <video class="project-video">
+          <source src="<?php echo $video ?>" type="video/mp4">
+           Your browser does not support HTML5 video.
+          </video>
+          <?php endif; ?>
           <section class="project-slider">
           <?php if(!empty($slider)): ?>
 							<?php foreach($slider as $imageId): ?>
@@ -53,12 +59,7 @@
 							<?php endforeach; ?>
 						<?php endif; ?>
           </section>
-          <?php if(!empty($video)): ?>
-          <video class="project-video">
-          <source src="<?php echo $video ?>" type="video/mp4">
-           Your browser does not support HTML5 video.
-          </video>
-          <?php endif; ?>
+
         </div>
         <div class="col-lg-5">
         <?php if(is_array($architect) && count($architect) > 0): ?>
@@ -157,6 +158,13 @@
     background: #F6FBFF;
   }
 
+  .project-date {
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 34px;
+  }
+
   .line {
     width: 60px;
     height: 1px;
@@ -209,6 +217,9 @@
 
   .project__location span {
     margin-right: 5px;
+    font-size: 24px;
+    color: #FFFFFF;
+    line-height: 37px;
   }
 
   .project__content {
@@ -256,6 +267,7 @@
 
   .project-video {
     width: 100%;
+    margin-bottom: 80px;
   }
 
   .slick-prev {
