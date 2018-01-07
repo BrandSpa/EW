@@ -12,7 +12,11 @@ function esw_type_product_cb($post) {
     "header",
     "slider",
     "systemDescription",
-    "features"
+    "features",
+    'pdfBlueprints',
+  	'pdfInstallationGuide',
+  	'pdfEliteBrandBrochure1',
+  	'pdfEliteBrandBrochure2',
   ];
 
 	$props = [];
@@ -30,13 +34,16 @@ function esw_type_product_cb($post) {
 <?php
 }
 
-
 function ews_product_save($post_id) {
   $fields = [
     "header",
     "slider",
     "systemDescription",
-    "features"
+    "features",
+    'pdfBlueprints',
+  	'pdfInstallationGuide',
+  	'pdfEliteBrandBrochure1',
+  	'pdfEliteBrandBrochure2',
   ];
 
   foreach($fields as $field) {

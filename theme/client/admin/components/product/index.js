@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SingleUploader from '../singleUploader';
 import GalleryUploader from '../galleryUploader';
+import Uploader from '../uploader';
 import Fields from '../fields';
 
 class ProductMetabox extends Component {
@@ -9,6 +10,10 @@ class ProductMetabox extends Component {
 		slider: '',
 		systemDescription: [],
 		features: [],
+		pdfBlueprints: '',
+  	pdfInstallationGuide: '',
+  	pdfEliteBrandBrochure1: '',
+  	pdfEliteBrandBrochure2: '',
 	}
 
 	componentDidMount() {
@@ -37,8 +42,16 @@ class ProductMetabox extends Component {
 
   render() {
   	const {
-  		header, slider, systemDescription, features,
+  		header,
+  		slider,
+  		systemDescription,
+  		features,
+  		pdfBlueprints,
+  		pdfInstallationGuide,
+  		pdfEliteBrandBrochure1,
+  		pdfEliteBrandBrochure2,
   	} = this.state;
+
   	return (
   		<section>
   			<h4>Header</h4>
@@ -71,6 +84,14 @@ class ProductMetabox extends Component {
   				addField={this.addField}
   				data={features}
   			/>
+  			<h4>Pdf Blueprints</h4>
+  			<Uploader name="pdfBlueprints" url={pdfBlueprints} />
+  			<h4>Pdf Installation Guide</h4>
+  			<Uploader name="pdfInstallationGuide" url={pdfInstallationGuide} />
+  			<h4>Pdf Elite Brand Brochure</h4>
+  			<Uploader name="pdfEliteBrandBrochure1" url={pdfEliteBrandBrochure1} />
+  			<h4>Pdf Elite Brand Brochure</h4>
+  			<Uploader name="pdfEliteBrandBrochure2" url={pdfEliteBrandBrochure2} />
   		</section>
   	);
   }

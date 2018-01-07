@@ -22,7 +22,7 @@ const Checkbox = ({
 			width: 10px;
 			height: 10px;
 			border: 1px solid #039ED8;
-			margin-right: 5px;
+			margin-right: 10px;
 			transition: .3s ease;
 		}
 
