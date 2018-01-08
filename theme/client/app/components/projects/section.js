@@ -230,7 +230,9 @@ class ProjectsSection extends Component {
 					}
 
           .project-item {
-            padding: 5px;
+						padding: 5px;
+						display: flex;
+						flex: 1;
 					}
 
 					.filters-title {
