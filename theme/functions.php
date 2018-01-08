@@ -16,13 +16,12 @@ register_nav_menus(
 require_once 'config/db.php';
 require_once 'types/index.php';
 require_once 'api/index.php';
-
-require_once 'taxonomies/index.php';
 require_once 'lib/index.php';
+require_once 'taxonomies/index.php';
 require_once 'metaboxes/index.php';
 require_once 'shortcodes/index.php';
 require_once 'models/index.php';
-
+require_once 'lib/translations.php';
 
 function gett($text) {
 	if(function_exists('pll__') ) {

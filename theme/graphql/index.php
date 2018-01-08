@@ -14,7 +14,6 @@ if ( ! defined('ABSPATH') ) {
 
 require str_replace('graphql' , '', __DIR__) . '/vendor/autoload.php';
 
-
 require 'types/projectType.php';
 require 'types/productType.php';
 require 'types/metaFilterType.php';
