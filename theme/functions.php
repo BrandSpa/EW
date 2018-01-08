@@ -24,7 +24,6 @@ require_once 'models/index.php';
 
 set_translations();
 
-
 function gett($text) {
 	if(function_exists('pll__') ) {
 		return pll__($text);
