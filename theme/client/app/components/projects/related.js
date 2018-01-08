@@ -14,7 +14,9 @@ query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){
 		url
     country
     state
-    city
+		city
+		year
+		month
   }
 }
 `;

@@ -8,10 +8,12 @@ const ProjectItem = ({ project }) => (
 			style={{ backgroundImage: `url(${project.thumb})` }}
 		/>
 
-		<div className="project__content">
-			<span className="title">{project.name}</span>
-			<span className="country">{project.country}</span>
-			<span className="state-city">{project.state} · {project.city}</span>
+		<div className="project__info">
+			<span className="project__info-date">{project.month} {project.year}</span>
+			<div className="miniline" />
+			<span className="project__info-title">{project.name}</span>
+			<span className="project__info-country">{project.country}</span>
+			<span className="project__info-state-city">{project.state} · {project.city}</span>
 		</div>
 
 		<style jsx>{`
@@ -21,6 +23,13 @@ const ProjectItem = ({ project }) => (
             position: relative;
             background: #fff;
             width: 100%;
+          }
+
+          .miniline {
+            width: 15px;
+            height: 1px;
+            background: #039ED8;
+            margin: 10px 0;
           }
 
           .project:hover {
@@ -36,21 +45,21 @@ const ProjectItem = ({ project }) => (
             background-size: cover;
           }
 
-          .project__content {
+          .project__info {
             padding: 20px;
             color: #1E9CC0;
           }
-          .project__content span {
+          .project__info span {
             display: block;
           }
 
-          .title {
+          .project__info-title {
             font-size: 19px;
             color: #5D5D5D;
             margin-bottom: 30px;
           }
 
-          .country, .state-city {
+          .project__info-country, .project__info-state-city {
             font-size: 15px;
             color: #039ED8;
           }

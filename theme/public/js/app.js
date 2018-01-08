@@ -18473,32 +18473,42 @@ var ProjectItem = function ProjectItem(_ref) {
   var project = _ref.project;
   return _react2.default.createElement(
     'a',
-    { href: project.url.replace('#038;', '&'), className: 'project', 'data-jsx': 2804552418
+    { href: project.url.replace('#038;', '&'), className: 'project', 'data-jsx': 4098751518
     },
     _react2.default.createElement('div', {
       className: 'project__header',
       style: { backgroundImage: 'url(' + project.thumb + ')' },
-      'data-jsx': 2804552418
+      'data-jsx': 4098751518
     }),
     _react2.default.createElement(
       'div',
-      { className: 'project__content', 'data-jsx': 2804552418
+      { className: 'project__info', 'data-jsx': 4098751518
       },
       _react2.default.createElement(
         'span',
-        { className: 'title', 'data-jsx': 2804552418
+        { className: 'project__info-date', 'data-jsx': 4098751518
+        },
+        project.month,
+        ' ',
+        project.year
+      ),
+      _react2.default.createElement('div', { className: 'miniline', 'data-jsx': 4098751518
+      }),
+      _react2.default.createElement(
+        'span',
+        { className: 'project__info-title', 'data-jsx': 4098751518
         },
         project.name
       ),
       _react2.default.createElement(
         'span',
-        { className: 'country', 'data-jsx': 2804552418
+        { className: 'project__info-country', 'data-jsx': 4098751518
         },
         project.country
       ),
       _react2.default.createElement(
         'span',
-        { className: 'state-city', 'data-jsx': 2804552418
+        { className: 'project__info-state-city', 'data-jsx': 4098751518
         },
         project.state,
         ' \xB7 ',
@@ -18506,8 +18516,8 @@ var ProjectItem = function ProjectItem(_ref) {
       )
     ),
     _react2.default.createElement(_style2.default, {
-      styleId: 2804552418,
-      css: '.project[data-jsx="2804552418"]{display:block;-webkit-transition:-webkit-transform .1s ease-in-out;-webkit-transition:transform .1s ease-in-out;transition:transform .1s ease-in-out;position:relative;background:#fff;width:100%}.project[data-jsx="2804552418"]:hover{-webkit-transform:scale(1.150);-ms-transform:scale(1.150);transform:scale(1.150);z-index:2;box-shadow:0 0 20px rgba(0,0,0,.1)}.project__header[data-jsx="2804552418"]{width:100%;height:200px;background-position:center;background-size:cover}.project__content[data-jsx="2804552418"]{padding:20px;color:#1E9CC0}.project__content[data-jsx="2804552418"] span[data-jsx="2804552418"]{display:block}.title[data-jsx="2804552418"]{font-size:19px;color:#5D5D5D;margin-bottom:30px}.country[data-jsx="2804552418"],.state-city[data-jsx="2804552418"]{font-size:15px;color:#039ED8}'
+      styleId: 4098751518,
+      css: '.project[data-jsx="4098751518"]{display:block;-webkit-transition:-webkit-transform .1s ease-in-out;-webkit-transition:transform .1s ease-in-out;transition:transform .1s ease-in-out;position:relative;background:#fff;width:100%}.miniline[data-jsx="4098751518"]{width:15px;height:1px;background:#039ED8;margin:10px 0}.project[data-jsx="4098751518"]:hover{-webkit-transform:scale(1.150);-ms-transform:scale(1.150);transform:scale(1.150);z-index:2;box-shadow:0 0 20px rgba(0,0,0,.1)}.project__header[data-jsx="4098751518"]{width:100%;height:200px;background-position:center;background-size:cover}.project__info[data-jsx="4098751518"]{padding:20px;color:#1E9CC0}.project__info[data-jsx="4098751518"] span[data-jsx="4098751518"]{display:block}.project__info-title[data-jsx="4098751518"]{font-size:19px;color:#5D5D5D;margin-bottom:30px}.project__info-country[data-jsx="4098751518"],.project__info-state-city[data-jsx="4098751518"]{font-size:15px;color:#039ED8}'
     })
   );
 };
@@ -21153,7 +21163,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var uri = '/wp-content/themes/theme/graphql/index.php';
 var apolloFetch = (0, _apolloFetch.createApolloFetch)({ uri: uri });
 
-var projectsQuery = '\nquery($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){\n  projects(posts_per_page: 3, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {\n\t\tid\n    thumb\n\t\tname\n\t\turl\n    country\n    state\n    city\n  }\n}\n';
+var projectsQuery = '\nquery($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){\n  projects(posts_per_page: 3, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {\n\t\tid\n    thumb\n\t\tname\n\t\turl\n    country\n    state\n\t\tcity\n\t\tyear\n\t\tmonth\n  }\n}\n';
 
 var ProjectsSection = function (_Component) {
 	_inherits(ProjectsSection, _Component);
@@ -22432,7 +22442,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var uri = '/wp-content/themes/theme/graphql/index.php';
 var apolloFetch = (0, _apolloFetch.createApolloFetch)({ uri: uri });
 
-var projectsQuery = '\nquery($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){\n  projects(posts_per_page: 3, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {\n\t\tid\n    thumb\n\t\tname\n\t\turl\n    country\n    state\n    city\n  }\n}\n';
+var projectsQuery = '\nquery($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){\n  projects(posts_per_page: 3, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {\n\t\tid\n    thumb\n\t\tname\n\t\turl\n    country\n    state\n\t\tcity\n\t\tyear\n\t\tmonth\n  }\n}\n';
 
 var ProjectsRelated = function (_Component) {
 	_inherits(ProjectsRelated, _Component);

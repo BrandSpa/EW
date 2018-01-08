@@ -47,6 +47,18 @@ $projectType = new ObjectType([
 				return get_post_meta($root->ID, 'city_key', true);
 			}
 		],
+		'year' => [
+			'type' => Type::string(),
+			'resolve' => function($root) {
+				return get_post_meta($root->ID, 'year_key', true);
+			}
+		],
+		'month' => [
+			'type' => Type::string(),
+			'resolve' => function($root) {
+				return get_post_meta($root->ID, 'month_key', true);
+			}
+		],
 		'products' => [
 			'type' => Type::listOf(Type::string()),
 			'resolve' => function($project) {

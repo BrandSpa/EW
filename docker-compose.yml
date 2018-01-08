@@ -7,7 +7,7 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
   wp:
-    build: .
+    image: wordpress:php5.6
     ports:
       - 8080:80
     environment:
