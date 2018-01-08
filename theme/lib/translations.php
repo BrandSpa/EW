@@ -4,6 +4,13 @@ function set_key($str) {
 	return str_replace(' ', '_', strtolower($str));
 }
 
+function register_translation($name ='', $text, $group = 'EW', $multiline = true) {
+	if(function_exists('pll_register_string')) {
+		$name = str_replace(' ', '_', strtolower(substr($text, 0, 25)));
+		pll_register_string( $name, $text, $group, $multiline );
+	}
+}
+
 function set_translations() {
 	$products = get_terms('product', [ 'hide_empty' => 0 ]);
 	$brands = get_terms('brands', [ 'hide_empty' => 0 ]);
@@ -36,27 +43,27 @@ function set_translations() {
 	];
 
 	foreach($texts as $text) {
-		register_translation('ew-' . set_key($text), $text, 'texts');
+		register_translation('ew-' . $text, $text, 'texts');
 	}
 
 	foreach($products as $term) {
-		register_translation('ew-' . set_key($term->name), $term->name, 'products');
+		register_translation('ew-' . $term->name, $term->name, 'products');
 	}
 
 	foreach($brands as $term) {
-		register_translation('ew-' . set_key($term->name), $term->name, 'brands');
+		register_translation('ew-' . $term->name, $term->name, 'brands');
 	}
 
 	foreach($types as $term) {
-		register_translation('ew-' . set_key($term->name), $term->name, 'types');
+		register_translation('ew-' . $term->name, $term->name, 'types');
 	}
 
 	foreach($features as $term) {
-		register_translation('ew-' . set_key($term->name), $term->name, 'features');
+		register_translation('ew-' . $term->name, $term->name, 'features');
 	}
 
 	foreach($months as $m) {
-		register_translation('ew-' . set_key($m), $m, 'months');
+		register_translation('ew-' . $m, $m, 'months');
 	}
 
 
