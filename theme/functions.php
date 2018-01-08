@@ -22,6 +22,7 @@ require_once 'metaboxes/index.php';
 require_once 'shortcodes/index.php';
 require_once 'models/index.php';
 
+set_translations();
 
 
 function gett($text) {
