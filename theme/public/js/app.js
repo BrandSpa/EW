@@ -18473,51 +18473,56 @@ var ProjectItem = function ProjectItem(_ref) {
   var project = _ref.project;
   return _react2.default.createElement(
     'a',
-    { href: project.url.replace('#038;', '&'), className: 'project', 'data-jsx': 4098751518
+    { href: project.url.replace('#038;', '&'), className: 'project', 'data-jsx': 797503173
     },
     _react2.default.createElement('div', {
       className: 'project__header',
       style: { backgroundImage: 'url(' + project.thumb + ')' },
-      'data-jsx': 4098751518
+      'data-jsx': 797503173
     }),
     _react2.default.createElement(
       'div',
-      { className: 'project__info', 'data-jsx': 4098751518
+      { className: 'project__info', 'data-jsx': 797503173
       },
       _react2.default.createElement(
         'span',
-        { className: 'project__info-date', 'data-jsx': 4098751518
+        { className: 'project__info-date', 'data-jsx': 797503173
         },
         project.month,
         ' ',
         project.year
       ),
-      _react2.default.createElement('div', { className: 'miniline', 'data-jsx': 4098751518
+      _react2.default.createElement('div', { className: 'miniline', 'data-jsx': 797503173
       }),
       _react2.default.createElement(
         'span',
-        { className: 'project__info-title', 'data-jsx': 4098751518
+        { className: 'project__info-title', 'data-jsx': 797503173
         },
         project.name
       ),
       _react2.default.createElement(
-        'span',
-        { className: 'project__info-country', 'data-jsx': 4098751518
+        'div',
+        { className: 'project__info__bottom', 'data-jsx': 797503173
         },
-        project.country
-      ),
-      _react2.default.createElement(
-        'span',
-        { className: 'project__info-state-city', 'data-jsx': 4098751518
-        },
-        project.state,
-        ' \xB7 ',
-        project.city
+        _react2.default.createElement(
+          'span',
+          { className: 'project__info-country', 'data-jsx': 797503173
+          },
+          project.country
+        ),
+        _react2.default.createElement(
+          'span',
+          { className: 'project__info-state-city', 'data-jsx': 797503173
+          },
+          project.state,
+          ' \xB7 ',
+          project.city
+        )
       )
     ),
     _react2.default.createElement(_style2.default, {
-      styleId: 4098751518,
-      css: '.project[data-jsx="4098751518"]{display:block;-webkit-transition:-webkit-transform .1s ease-in-out;-webkit-transition:transform .1s ease-in-out;transition:transform .1s ease-in-out;position:relative;background:#fff;width:100%}.miniline[data-jsx="4098751518"]{width:15px;height:1px;background:#039ED8;margin:10px 0}.project[data-jsx="4098751518"]:hover{-webkit-transform:scale(1.150);-ms-transform:scale(1.150);transform:scale(1.150);z-index:2;box-shadow:0 0 20px rgba(0,0,0,.1)}.project__header[data-jsx="4098751518"]{width:100%;height:200px;background-position:center;background-size:cover}.project__info[data-jsx="4098751518"]{padding:20px;color:#1E9CC0}.project__info[data-jsx="4098751518"] span[data-jsx="4098751518"]{display:block}.project__info-title[data-jsx="4098751518"]{font-size:19px;color:#5D5D5D;margin-bottom:30px}.project__info-country[data-jsx="4098751518"],.project__info-state-city[data-jsx="4098751518"]{font-size:15px;color:#039ED8}'
+      styleId: 797503173,
+      css: '.project[data-jsx="797503173"]{display:block;-webkit-transition:-webkit-transform .1s ease-in-out;-webkit-transition:transform .1s ease-in-out;transition:transform .1s ease-in-out;position:relative;background:#fff;width:100%}.miniline[data-jsx="797503173"]{width:15px;height:1px;background:#039ED8;margin:10px 0}.project[data-jsx="797503173"]:hover{-webkit-transform:scale(1.150);-ms-transform:scale(1.150);transform:scale(1.150);z-index:2;box-shadow:0 0 20px rgba(0,0,0,.1)}.project__header[data-jsx="797503173"]{width:100%;height:200px;background-position:center;background-size:cover}.project__info[data-jsx="797503173"]{padding:20px;color:#1E9CC0;height:240px;position:relative}.project__info__bottom[data-jsx="797503173"]{position:absolute;bottom:20px}.project__info[data-jsx="797503173"] span[data-jsx="797503173"]{display:block}.project__info-title[data-jsx="797503173"]{font-size:19px;color:#5D5D5D;margin-bottom:30px}.project__info-country[data-jsx="797503173"],.project__info-state-city[data-jsx="797503173"]{font-size:15px;color:#039ED8}'
     })
   );
 };
@@ -21371,40 +21376,40 @@ var ProjectsSection = function (_Component) {
 				'section',
 				{ ref: function ref(_ref4) {
 						return _this4.container = _ref4;
-					}, 'data-jsx': 3711570364
+					}, 'data-jsx': 3313111031
 				},
 				_react2.default.createElement(
 					'div',
 					{ className: filtersStyle, ref: function ref(_ref3) {
 							return _this4.filters = _ref3;
-						}, 'data-jsx': 3711570364
+						}, 'data-jsx': 3313111031
 					},
 					_react2.default.createElement(
 						'button',
 						{
 							className: filterToggleStyle,
 							onClick: this.toggleFilters,
-							'data-jsx': 3711570364
+							'data-jsx': 3313111031
 						},
 						texts.filters,
 						' ',
-						_react2.default.createElement('i', { className: 'ion-plus', 'data-jsx': 3711570364
+						_react2.default.createElement('i', { className: 'ion-plus', 'data-jsx': 3313111031
 						})
 					),
 					_react2.default.createElement(
 						'div',
-						{ className: filterContainerStyle, 'data-jsx': 3711570364
+						{ className: filterContainerStyle, 'data-jsx': 3313111031
 						},
 						_react2.default.createElement(_filters2.default, _extends({
 							onChange: this.handleFilters
 						}, this.props)),
 						_react2.default.createElement(
 							'div',
-							{ className: 'col-lg-3', 'data-jsx': 3711570364
+							{ className: 'col-lg-3', 'data-jsx': 3313111031
 							},
 							_react2.default.createElement(
 								'h5',
-								{ className: 'filters-title', 'data-jsx': 3711570364
+								{ className: 'filters-title', 'data-jsx': 3313111031
 								},
 								texts.products
 							),
@@ -21418,16 +21423,16 @@ var ProjectsSection = function (_Component) {
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'col-lg-9', 'data-jsx': 3711570364
+					{ className: 'col-lg-9', 'data-jsx': 3313111031
 					},
 					_react2.default.createElement(
 						'div',
-						{ className: 'projects', 'data-jsx': 3711570364
+						{ className: 'projects', 'data-jsx': 3313111031
 						},
 						projects.map(function (project) {
 							return _react2.default.createElement(
 								'div',
-								{ key: project.id, className: 'col-lg-4 col-md-6 project-item', 'data-jsx': 3711570364
+								{ key: project.id, className: 'col-lg-4 col-md-6 project-item', 'data-jsx': 3313111031
 								},
 								_react2.default.createElement(_item2.default, { project: project })
 							);
@@ -21435,14 +21440,14 @@ var ProjectsSection = function (_Component) {
 					),
 					_react2.default.createElement(
 						'a',
-						{ href: '#', onClick: this.paginate, className: 'pagination-btn', 'data-jsx': 3711570364
+						{ href: '#', onClick: this.paginate, className: 'pagination-btn', 'data-jsx': 3313111031
 						},
 						texts.seeMore
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 3711570364,
-					css: '.projects[data-jsx="3711570364"]{padding:40px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.pagination-btn[data-jsx="3711570364"]{float:right;margin:0 40px 20px 0}.project-item[data-jsx="3711570364"]{padding:5px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex:1;-ms-flex:1;flex:1}.filters-title[data-jsx="3711570364"]{font-size:15px;color:#039ED8}.filters[data-jsx="3711570364"]{width:100%;background:#fff;box-shadow:0 10px 10px rgba(0,0,0,.1);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-top:20px;-webkit-transition:.3s ease;transition:.3s ease}.filters--in-bound[data-jsx="3711570364"]{position:fixed;left:0;right:0;top:80px;z-index:100}.filters__toggle[data-jsx="3711570364"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end;cursor:pointer;border:none;background:transparent;font-size:15px;color:#039ED8;margin-bottom:20px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;outline:none}.filters__toggle[data-jsx="3711570364"] i[data-jsx="3711570364"]{padding:0 20px}.filters__toggle--open[data-jsx="3711570364"] i[data-jsx="3711570364"]::before{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}.filters-container[data-jsx="3711570364"]{display:none}.filters-container--open[data-jsx="3711570364"]{display:block;padding-bottom:20px}@media (min-width:1024px){.projects[data-jsx="3711570364"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}.filters[data-jsx="3711570364"]{display:initial;box-shadow:none;background:transparent}.filters-container[data-jsx="3711570364"]{display:block}.filters__toggle[data-jsx="3711570364"]{display:none}}'
+					styleId: 3313111031,
+					css: '.projects[data-jsx="3313111031"]{padding:40px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.pagination-btn[data-jsx="3313111031"]{float:right;margin:0 40px 20px 0}.project-item[data-jsx="3313111031"]{padding:5px}.filters-title[data-jsx="3313111031"]{font-size:15px;color:#039ED8}.filters[data-jsx="3313111031"]{width:100%;background:#fff;box-shadow:0 10px 10px rgba(0,0,0,.1);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-top:20px;-webkit-transition:.3s ease;transition:.3s ease}.filters--in-bound[data-jsx="3313111031"]{position:fixed;left:0;right:0;top:80px;z-index:100}.filters__toggle[data-jsx="3313111031"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end;cursor:pointer;border:none;background:transparent;font-size:15px;color:#039ED8;margin-bottom:20px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;outline:none}.filters__toggle[data-jsx="3313111031"] i[data-jsx="3313111031"]{padding:0 20px}.filters__toggle--open[data-jsx="3313111031"] i[data-jsx="3313111031"]::before{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}.filters-container[data-jsx="3313111031"]{display:none}.filters-container--open[data-jsx="3313111031"]{display:block;padding-bottom:20px}@media (min-width:1024px){.projects[data-jsx="3313111031"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}.filters[data-jsx="3313111031"]{display:initial;box-shadow:none;background:transparent}.filters-container[data-jsx="3313111031"]{display:block}.filters__toggle[data-jsx="3313111031"]{display:none}}'
 				})
 			);
 		}

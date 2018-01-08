@@ -12,8 +12,10 @@ const ProjectItem = ({ project }) => (
 			<span className="project__info-date">{project.month} {project.year}</span>
 			<div className="miniline" />
 			<span className="project__info-title">{project.name}</span>
-			<span className="project__info-country">{project.country}</span>
-			<span className="project__info-state-city">{project.state} · {project.city}</span>
+			<div className="project__info__bottom">
+				<span className="project__info-country">{project.country}</span>
+				<span className="project__info-state-city">{project.state} · {project.city}</span>
+			</div>
 		</div>
 
 		<style jsx>{`
@@ -48,7 +50,15 @@ const ProjectItem = ({ project }) => (
           .project__info {
             padding: 20px;
             color: #1E9CC0;
+            height: 240px;
+            position: relative;
           }
+
+          .project__info__bottom {
+            position: absolute;
+            bottom: 20px;
+          }
+
           .project__info span {
             display: block;
           }

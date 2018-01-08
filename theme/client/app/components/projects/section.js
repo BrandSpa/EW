@@ -203,7 +203,7 @@ class ProjectsSection extends Component {
 								productsOptions={this.props.productsOptions}
 								texts={texts}
   				/>
-     </div>
+						</div>
 					</div>
   			</div>
   			<div className="col-lg-9">
@@ -214,7 +214,7 @@ class ProjectsSection extends Component {
   							<Project project={project} />
   						</div>
   					))}
-      </div>
+					</div>
 					<a href="#" onClick={this.paginate} className="pagination-btn">{texts.seeMore}</a>
   			</div>
 
@@ -233,8 +233,6 @@ class ProjectsSection extends Component {
 
           .project-item {
 						padding: 5px;
-						display: flex;
-						flex: 1;
 					}
 
 					.filters-title {
