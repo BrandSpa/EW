@@ -169,6 +169,7 @@ class ProjectsSection extends Component {
 
 	render() {
 		const { projects, showFilters, inBound } = this.state;
+		const { texts } = this.props;
 
 		const filtersStyle = classnames('filters', {
 			'filters--in-bound': inBound,
@@ -188,7 +189,7 @@ class ProjectsSection extends Component {
 					<button
 						className={filterToggleStyle}
 						onClick={this.toggleFilters}
-					>Filters <i className="ion-plus" />
+					>{texts.filters} <i className="ion-plus" />
 					</button>
   			<div className={filterContainerStyle}>
   			<Filters
@@ -196,10 +197,11 @@ class ProjectsSection extends Component {
   				{...this.props}
   			/>
   			<div className="col-lg-3">
-  				<h5 className="filters-title">Products</h5>
+  				<h5 className="filters-title">{texts.products}</h5>
   				<FiltersProducts
   					onChange={this.handleFiltersProducts}
-  					productsOptions={this.props.productsOptions}
+								productsOptions={this.props.productsOptions}
+								texts={texts}
   				/>
      </div>
 					</div>
@@ -213,7 +215,7 @@ class ProjectsSection extends Component {
   						</div>
   					))}
       </div>
-					<a href="#" onClick={this.paginate} className="pagination-btn">See more</a>
+					<a href="#" onClick={this.paginate} className="pagination-btn">{texts.seeMore}</a>
   			</div>
 
   			<style jsx>{`

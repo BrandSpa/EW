@@ -29,7 +29,7 @@
     <div class="row">
       <div class="col-sm-1"></div>
       <div class="col-sm-5">
-      <h5 class="project-date"><?php echo $month . ' / ' . $year  ?></h5>
+      <h5 class="project-date"><?php echo gett($month) . ' / ' . $year  ?></h5>
       <h1><?php echo $title ?></h1>
       <span class="line"></span>
       <section class="project__location">
@@ -64,7 +64,7 @@
         <div class="col-lg-5">
         <?php if(is_array($architect) && count($architect) > 0): ?>
           <section class="project__section">
-            <h4>ARCHITECT</h4>
+            <h4><?php echo gett('ARCHITECT') ?></h4>
             <?php foreach($architect as $item): ?>
               <span><?php echo $item ?></span>
             <?php endforeach; ?>
@@ -73,7 +73,7 @@
 
           <?php if(is_array($constructor) && count($constructor) > 0): ?>
           <section class="project__section">
-            <h4>constructor</h4>
+            <h4><?php echo gett('constructor') ?></h4>
             <?php foreach($constructor as $item): ?>
               <span><?php echo $item ?></span>
             <?php endforeach; ?>
@@ -82,7 +82,7 @@
 
           <?php if(is_array($developer) && count($developer) > 0): ?>
           <section class="project__section">
-            <h4>developer</h4>
+            <h4><?php echo gett('developer') ?></h4>
             <?php foreach($developer as $item): ?>
               <span><?php echo $item ?></span>
             <?php endforeach; ?>
@@ -91,7 +91,7 @@
 
           <?php if(is_array($systems) && count($systems) > 0): ?>
           <section class="project__section">
-            <h4>systems</h4>
+            <h4><?php echo gett('systems') ?></h4>
             <?php foreach($systems as $item): ?>
               <span><?php echo $item ?></span>
             <?php endforeach; ?>
@@ -100,7 +100,7 @@
 
           <?php if(is_array($aluminum) && count($aluminum) > 0): ?>
           <section class="project__section">
-            <h4>aluminum</h4>
+            <h4><?php echo gett('aluminum') ?></h4>
             <?php foreach($aluminum as $item): ?>
               <span><?php echo $item ?></span>
             <?php endforeach; ?>
@@ -109,7 +109,7 @@
 
           <?php if(is_array($glass) && count($glass) > 0): ?>
           <section class="project__section">
-            <h4>glass</h4>
+            <h4><?php echo gett('glass') ?></h4>
             <?php foreach($glass as $item): ?>
               <span><?php echo $item ?></span>
             <?php endforeach; ?>
@@ -119,7 +119,7 @@
           <section class="project__section project__product-brands">
           <?php if(is_array($brands) && count($brands) > 0): ?>
             <section class="project__brands">
-                <h4>BRANDS</h4>
+                <h4><?php echo gett('BRANDS') ?></h4>
                 <?php foreach($brands as $brand): ?>
                   <span><?php echo $brand ?></span>
                 <?php endforeach; ?>
@@ -128,7 +128,7 @@
 
               <?php if(is_array($products) && count($products) > 0): ?>
                 <section class="project__products">
-                  <h4>PRODUCTS</h4>
+                  <h4><?php echo gett('PRODUCTS') ?></h4>
                   <?php foreach($products as $product): ?>
                     <span><?php echo $product ?></span>
                   <?php endforeach; ?>

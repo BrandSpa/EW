@@ -7,23 +7,50 @@ class ProjectsFilters extends Component {
   	city: '',
   	state: '',
   	products: '',
+  	states: [],
+  	cities: [],
   }
 
-  handleMetaChange = (e) => {
-  	const state = { ...this.state, [e.target.name]: e.target.value };
+  handleChange = (name, value) => {
+  	const state = { ...this.state, [name]: value };
   	this.setState(state, () => {
   		this.props.onChange(state);
   	});
   }
 
-  render() {
+	handleCountry = (e) => {
+		const states = this.props.countries[e.target.value] || [];
+		const { name, value } = e.target;
+
+		this.setState({ states }, () => {
+			this.handleChange(name, value);
+		});
+	}
+
+	handleState = (e) => {
+		const cities = this.props.states[e.target.value] || [];
+		const { name, value } = e.target;
+
+		this.setState({ cities }, () => {
+			this.handleChange(name, value);
+		});
+	}
+
+	handleCity = (e) => {
+		const { name, value } = e.target;
+		this.handleChange(name, value);
+	}
+
+	render() {
   	const {
   		country,
   		state,
-  		city,
+			city,
+			cities,
+			states,
   	} = this.state;
 
-  	const { countries, cities, states } = this.props;
+  	const { countries, texts } = this.props;
 
   	return (
   		<section className="filters">
@@ -31,43 +58,47 @@ class ProjectsFilters extends Component {
   					<select
   						className="form-control"
   						name="country"
-  						onChange={this.handleMetaChange}
+  						onChange={this.handleCountry}
   						value={country}
   					>
-  						<option value="">Country</option>
-  						{countries.map(country =>
+  						<option value="">{texts.country}</option>
+  						{Object.keys(countries).map(country =>
   							<option key={country} value={country}>{country}</option>)}
   					</select>
   					<SelectArrow style={{ position: 'absolute', right: 0 }} />
-  				</div>
+				</div>
+				{states.length > 0 &&
+					<div className="select-container">
+						<select
+							className="form-control"
+							name="state"
+							onChange={this.handleState}
+							value={state}
+						>
+							<option value="">{texts.state}</option>
+							{states.map(state => (
+								<option key={state} value={state}>{state}</option>
+							))}
+						</select>
+						<SelectArrow style={{ position: 'absolute', right: 0 }} />
+					</div>
+				}
+				{cities.length > 0 &&
   				<div className="select-container">
   					<select
   						className="form-control"
   						name="city"
-  						onChange={this.handleMetaChange}
+  						onChange={this.handleCity}
   						value={city}
   					>
-  						<option value="">City </option>
+  						<option value="">{texts.city}</option>
   						{cities.map(city =>
   							<option key={city} value={city}>{city}</option>)}
   					</select>
   				<SelectArrow style={{ position: 'absolute', right: 0 }} />
   				</div>
-  				<div className="select-container">
-  					<select
-  						className="form-control"
-  						name="state"
-  						onChange={this.handleMetaChange}
-  						value={state}
-  					>
-  						<option value="">State</option>
-  						{states.map(state => (
-  							<option key={state} value={state}>{state}</option>
-  						))}
+				}
 
-  					</select>
-  					<SelectArrow style={{ position: 'absolute', right: 0 }} />
-  				</div>
   			<style jsx>{`
           .filters {
 						display: flex;
@@ -104,7 +135,7 @@ class ProjectsFilters extends Component {
   			</style>
   		</section>
   	);
-  }
+	}
 }
 
 export default ProjectsFilters;

@@ -1,3 +1,6 @@
+<?php
+$current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']));
+?>
 
 <section class="footer">
   <div class="col-lg-1"></div>
@@ -5,7 +8,7 @@
     <?php wp_nav_menu(['name' => 'header', 'menu_id' => 'menu-footer']); ?>
   </div>
   <div class="col-lg-5 col-xs-10 footer-contact">
-        <h4>CONTACT US</h4>
+        <h4><?php echo gett('CONTACT US') ?></h4>
         <?php echo do_shortcode('[ew_contact_us]') ?>
   </div>
   <div class="col-xs-1 col-sm-1"></div>
@@ -16,7 +19,14 @@
   <div class="col-lg-10">
     <div class="footer-bottom__content">
       <div class="footer-bottom__content-left">
-
+      <section>
+        <a class="social-icon" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $current_url ?>" target="_blank" rel="noopener">
+		      <i class="ion-social-facebook"></i>
+        </a>
+        <a class="social-icon" href="https://twitter.com/share?url=<?php echo $current_url ?>" target="_blank" rel="noopener">
+		      <i class="ion-social-twitter"></i>
+        </a>
+      </section>
         <section>
           <img src="<?php echo get_template_directory_uri() ?>/public/img/eswlogo.svg" />
           <span>The Power of Quality</span>
@@ -136,6 +146,22 @@
     background: #1f1f1f;
   }
 
+  .social-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		border-radius: 40px;
+		background: #fff;
+    margin: 0 20px 20px 0;
+	}
+
+	.social-icon i {
+		font-size: 27px;
+		color: #5D5D5D;
+	}
+
   @media (min-width: 1024px) {
     .footer {
       flex-direction: row;
@@ -156,6 +182,10 @@
 
     .footer-bottom__content-right img  {
       margin-right: 40px;
+    }
+
+    .social-icon  {
+      margin: 0 20px 0 0;
     }
 
   }

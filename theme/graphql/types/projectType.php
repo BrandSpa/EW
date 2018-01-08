@@ -56,7 +56,7 @@ $projectType = new ObjectType([
 		'month' => [
 			'type' => Type::string(),
 			'resolve' => function($root) {
-				return get_post_meta($root->ID, 'month_key', true);
+				return gett(get_post_meta($root->ID, 'month_key', true));
 			}
 		],
 		'products' => [

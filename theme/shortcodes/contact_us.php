@@ -10,10 +10,10 @@ function contact_us_sc( $atts ){
 
 	$props = [
 		"placeholders" => [
-			"name" => $at["placeholder-name"],
-			"email" =>  $at["placeholder-email"],
-			"message" =>  $at["placeholder-message"],
-			"send" =>  $at["placeholder-send"]
+			"name" => gett($at["placeholder-name"]),
+			"email" =>  gett($at["placeholder-email"]),
+			"message" => gett($at["placeholder-message"]),
+			"send" => gett($at["placeholder-send"])
 		]
 	];
 

@@ -21,3 +21,13 @@ require_once 'taxonomies/index.php';
 require_once 'metaboxes/index.php';
 require_once 'shortcodes/index.php';
 require_once 'models/index.php';
+
+
+
+function gett($text) {
+	if(function_exists('pll__') ) {
+		return pll__($text);
+  }
+
+	return $text;
+}

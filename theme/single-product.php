@@ -40,9 +40,9 @@
 					<span class="type"><?php echo $typeParent[0]->name ?></span>
 					<h1><?php echo $title; ?></h1>
 					<div class="line"></div>
-					<span><h5>TYPE</h5> <?php echo $typeChild[0]->name ?></span>
+					<span><h5><?php echo gett('TYPE') ?></h5> <?php echo $typeChild[0]->name ?></span>
 					<div class="line"></div>
-					<span><h5>BRAND</h5> <?php echo $brands[0] ?></span>
+					<span><h5><?php echo gett('BRAND') ?></h5> <?php echo $brands[0] ?></span>
 					</div>
 				</div>
 				<div class="col-sm-1"></div>
@@ -56,7 +56,7 @@
 				<div class="product__content-text">
 					<p><?php echo $content; ?></p>
 					<div class="product__content-features">
-						<h5>FEATURES</h5>
+						<h5><?php echo gett('FEATURES') ?></h5>
 						<?php if(!empty($featuresTerm)): ?>
 							<?php foreach($featuresTerm as $feature): ?>
 							<span>
@@ -89,7 +89,7 @@
 			<section>
 				<div class="row">
 					<div class="col-md-3">
-						<h4>System Description</h4>
+						<h4><?php echo gett('System Description') ?></h4>
 					</div>
 					<div class="col-md-9">
 						<div class="list">
@@ -106,7 +106,7 @@
 			<section>
 				<div class="row">
 					<div class="col-md-3">
-						<h4>Features</h4>
+						<h4><?php echo gett('Features') ?></h4>
 					</div>
 					<div class="col-md-9">
 						<div class="list">
@@ -123,33 +123,33 @@
 			<section class="downloads">
 				<div class="row">
 				<div class="col-md-3">
-					<h4>Related Downloads</h4>
+					<h4><?php echo gett('Related Downloads') ?></h4>
 				</div>
 				<div class="col-md-9">
 					<div class="downloads__links">
 						<?php if(!empty($pdfBlueprints)): ?>
 						<a target="_blank" href="<?php echo $pdfBlueprints ?>">
 							<img src="<?php echo $uri ?>/public/img/blueprints.svg" alt="">
-							<span>Blueprints</span>
+							<span><?php echo gett('Blueprints') ?></span>
 						</a>
 						<?php endif; ?>
 						<?php if(!empty($pdfInstallationGuide)): ?>
 						<a target="_blank" href="<?php echo $pdfInstallationGuide ?>">
 							<img src="<?php echo $uri ?>/public/img/installation_guide.svg" alt="">
-							<span>installation guide</span>
+							<span><?php echo gett('installation guide'); ?></span>
 						</a>
 						<?php endif; ?>
 
 						<?php if(!empty($pdfEliteBrandBrochure1)): ?>
 						<a target="_blank" href="<?php echo $pdfEliteBrandBrochure1 ?>">
 							<img src="<?php echo $uri ?>/public/img/brand_brochure.svg" alt="">
-							<span>installation guide</span>
+							<span><?php echo gett('Elite Brand Brochure') ?></span>
 						</a>
 						<?php endif; ?>
 						<?php if(!empty($pdfEliteBrandBrochure2)): ?>
 						<a target="_blank" href="<?php echo $pdfEliteBrandBrochure2 ?>">
 							<img src="<?php echo $uri ?>/public/img/brand_brochure.svg" alt="">
-							<span>installation guide</span>
+							<span><?php echo gett('Elite Brand Brochure') ?></span>
 						</a>
 						<?php endif; ?>
 					</div>

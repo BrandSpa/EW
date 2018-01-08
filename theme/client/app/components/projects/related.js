@@ -57,10 +57,11 @@ class ProjectsRelated extends Component {
 
 	render() {
 		const { projects } = this.state;
+		const { texts } = this.props;
 
 		return (
 			<section >
-				<h4>Related projects</h4>
+				<h4>{texts.relatedProjects}</h4>
 				<div className="projects">
 
   					{projects.map(project => (

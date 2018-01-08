@@ -41,7 +41,7 @@ class HeroSlider extends Component {
 						</button>
 					))}
 				</div>
-				<div className="social">
+				{/* <div className="social">
 					<div className="social__icon">
 						<SocialIcon iconClass="ion-social-twitter" />
 					</div>
@@ -49,6 +49,7 @@ class HeroSlider extends Component {
 						<SocialIcon iconClass="ion-social-instagram-outline" />
 					</div>
 				</div>
+				*/}
 
 				{this.props.links &&
 					<Menu links={this.props.links} />

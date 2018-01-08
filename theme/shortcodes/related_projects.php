@@ -6,7 +6,10 @@ function related_projects_sc( $atts ){
 	], $atts);
 
 	$props = [
-		'products' => explode(',', $at['products'])
+		'products' => explode(',', $at['products']),
+		"texts" => [
+			'relatedProjects' => gett('Related projects')
+		]
 	];
 
 	ob_start();
