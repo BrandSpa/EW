@@ -7,6 +7,7 @@ class Uploader extends Component {
 	}
 
 	componentDidMount() {
+		console.log(this.props);
 		this.setState({ ...this.state, ...this.props });
 	}
 

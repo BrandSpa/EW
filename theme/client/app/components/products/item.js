@@ -13,7 +13,6 @@ const Product = ({
 		</a>
 		<style jsx>{`
 		.product {
-
 			display: block;
 			position: relative;
 			background-position: center;
