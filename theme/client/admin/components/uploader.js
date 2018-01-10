@@ -6,9 +6,8 @@ class Uploader extends Component {
 		url: '',
 	}
 
-	componentDidMount() {
-		console.log(this.props);
-		this.setState({ ...this.state, ...this.props });
+	componentWillReceiveProps(props) {
+		this.setState({ url: props.url });
 	}
 
 	openMediaUploader = () => {
