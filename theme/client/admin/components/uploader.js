@@ -6,6 +6,10 @@ class Uploader extends Component {
 		url: this.props.url,
 	}
 
+	componentDidMount() {
+		this.setState({ ...this.state, ...this.props });
+	}
+
 	openMediaUploader = () => {
 		const id = this.state.id;
 
@@ -44,12 +48,12 @@ class Uploader extends Component {
 	}
 
 	render() {
-		const { name, url } = this.props;
+		const { name } = this.props;
 
 		return (
 			<section>
 				<p>
-					<input name={name} onClick={this.handleClick} value={this.state.url || url} />
+					<input name={name} onClick={this.handleClick} value={this.state.url} />
 					<button className="button" onClick={this.clean}>Remove</button>
 				</p>
 
