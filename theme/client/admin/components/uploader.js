@@ -3,7 +3,7 @@ import fetchwp from '../../lib/fetchwp';
 
 class Uploader extends Component {
 	state = {
-		url: this.props.url,
+		url: '',
 	}
 
 	componentDidMount() {
@@ -44,6 +44,7 @@ class Uploader extends Component {
 
 	clean = (e) => {
 		e.preventDefault();
+		console.log(this.state, 'clean');
 		this.setState({ url: '' });
 	}
 
