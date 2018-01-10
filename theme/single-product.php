@@ -271,7 +271,8 @@
 
 	}
 
-	.product__perks section > .list span {
+	.product__perks section .list span {
+		display: block;
 		margin-bottom: 20px;
 	}
 

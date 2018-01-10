@@ -59,7 +59,7 @@ class GalleryUploader extends Component {
 		return (
 			<section>
 				<p>
-					<button className="button" ref={ref => this.btn = ref}>Add images</button>
+					<button className="button" ref={ref => this.btn = ref}>Add/Remove images</button>
 				</p>
 				<input type="hidden" name={name} value={ids} />
 				<div className="gallery">

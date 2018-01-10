@@ -4,7 +4,7 @@ const Product = ({
 	name, type, subtype, thumb, url,
 }) => (
 	<div className="product-container">
-		<a href={url.replace('#038;', '&')} className="product" style={{ background: `url(${thumb}) no-repeat` }}>
+		<a href={url.replace('#038;', '&')} className="product" style={{ backgroundImage: `url(${thumb})` }}>
 			<div className="product__details">
 				<span className="product-name">{name}</span>
 				<span className="product-type">{type}</span>
@@ -16,6 +16,7 @@ const Product = ({
 
 			display: block;
 			position: relative;
+			background-position: center;
 			background-size: cover !important;
 			min-height: 350px;
 			color: #5D5D5D;

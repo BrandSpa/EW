@@ -38,7 +38,8 @@ class Uploader extends Component {
 			});
 	}
 
-	clean = () => {
+	clean = (e) => {
+		e.preventDefault();
 		this.setState({ url: '' });
 	}
 
@@ -49,7 +50,7 @@ class Uploader extends Component {
 			<section>
 				<p>
 					<input name={name} onClick={this.handleClick} value={this.state.url || url} />
-					<button className="button" onClick={this.clean}>Clean</button>
+					<button className="button" onClick={this.clean}>Remove</button>
 				</p>
 
 				<style jsx> {`
