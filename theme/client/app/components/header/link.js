@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 class HeaderLink extends Component {
 	state = {
-		hover: false
+		hover: false,
 	}
 
 	handleHover = () => {
@@ -17,24 +17,22 @@ class HeaderLink extends Component {
 	render() {
 		const { item } = this.props;
 		const submenuClass = classNames('header__submenu', {
-			'header__submenu--show': this.state.hover
+			'header__submenu--show': this.state.hover,
 		});
 
 		return (
-			<li 
+			<li
 				className="header__menu-link"
-				onMouseEnter={this.handleHover} 
+				onMouseEnter={this.handleHover}
 				onMouseLeave={this.handleOut}
 			>
-				<a href="#">{item.title} {item.sub && item.sub.length > 0 && <img src={`${this.props.uri}/public/img/arrow.svg`}/>}</a>
-					{item.sub &&
+				<a href={item.guid}>{item.title} {item.sub && item.sub.length > 0 && <img src={`${this.props.uri}/public/img/arrow.svg`} />}</a>
+				{item.sub &&
 						<ul className={submenuClass}>
-							{item.sub.map((subItem, i) => {
-								return <li key={subItem.ID}><a href="#">{subItem.title}</a></li>
-								})
+							{item.sub.map((subItem, i) => <li key={subItem.ID}><a href={subItem.guid}>{subItem.title}</a></li>)
 							}
 						</ul>
-					}
+				}
 				<style jsx>{`
 					.header__menu-link {
 						margin-right: 40px;
@@ -44,7 +42,7 @@ class HeaderLink extends Component {
 
 					.header__menu-link > a {
 						color: #fff;
-						
+
 						padding-bottom: 20px;
 					}
 
@@ -86,9 +84,10 @@ class HeaderLink extends Component {
 						.header__submenu li:last-child a {
 							border: none;
 						}
-				`}</style>
+				`}
+				</style>
 			</li>
-		)
+		);
 	}
 }
 
