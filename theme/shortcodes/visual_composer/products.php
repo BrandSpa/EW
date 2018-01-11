@@ -7,8 +7,22 @@ function ew_products_vc() {
       "type" => "textfield",
       "heading" => "Brand pre-select",
       "param_name" => "brand",
+      "value" => "",
+      "description" => "Example: Prestige"
+    ],
+    [
+      "type" => "textfield",
+      "heading" => "Type pre-select",
+      "param_name" => "type",
       "value" => $brands,
-      "description" => "It must have the same name"
+      "description" => "Example: WINDOWS"
+    ],
+    [
+      "type" => "textfield",
+      "heading" => "feature pre-select",
+      "param_name" => "feature",
+      "value" => $brands,
+      "description" => "Example: Hurricane Resistant"
     ],
   ];
 

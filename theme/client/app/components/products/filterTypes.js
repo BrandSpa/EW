@@ -9,8 +9,18 @@ class FilterTypes extends Component {
 		selected: [],
 	}
 
-	componentDidMount() {
+	componentWillMount() {
 		this.setFilters();
+	}
+
+	componentDidMount() {
+		this.setSelected();
+	}
+
+	setSelected = () => {
+		if (Object.keys(this.props.brand).length) {
+			this.setState({ selected: [`${this.props.brand.term_id}`] });
+		}
 	}
 
 	setFilters = () => {
@@ -37,7 +47,7 @@ class FilterTypes extends Component {
 	}
 
 	render() {
-		const { types } = this.state;
+		const { types, selected } = this.state;
 
 		return (
 			<section>
@@ -53,6 +63,7 @@ class FilterTypes extends Component {
 									value={subtype.term_id}
 									placeholder={subtype.name}
 									onChange={e => this.handleChange(e, type)}
+									checked={selected.indexOf(`${subtype.term_id}`) !== -1}
 								/>
 							))}
 						</div>

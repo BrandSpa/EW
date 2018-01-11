@@ -22,7 +22,7 @@ class ProjectsFilters extends Component {
 		const states = this.props.countries[e.target.value] || [];
 		const { name, value } = e.target;
 
-		this.setState({ states }, () => {
+		this.setState({ states, city: '' }, () => {
 			this.handleChange(name, value);
 		});
 	}
@@ -66,7 +66,7 @@ class ProjectsFilters extends Component {
   							<option key={country} value={country}>{country}</option>)}
   					</select>
   					<SelectArrow style={{ position: 'absolute', right: 0 }} />
-				</div>
+      </div>
 				{states.length > 0 &&
 					<div className="select-container">
 						<select

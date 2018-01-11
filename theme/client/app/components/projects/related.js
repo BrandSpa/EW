@@ -58,9 +58,11 @@ class ProjectsRelated extends Component {
 	render() {
 		const { projects } = this.state;
 		const { texts } = this.props;
+		console.log(projects, projects.length > 0);
+		if (projects.length == 0) return null;
 
 		return (
-			<section >
+			<section>
 				<h4>{texts.relatedProjects}</h4>
 				<div className="projects">
 
@@ -93,6 +95,7 @@ class ProjectsRelated extends Component {
 				`}
 				</style>
 			</section>
+
 		);
 	}
 }

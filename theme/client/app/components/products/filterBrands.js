@@ -7,6 +7,10 @@ class FilterBands extends Component {
 	}
 
 	componentDidMount() {
+		this.setSelected();
+	}
+
+	setSelected = () => {
 		if (Object.keys(this.props.brand).length) {
 			this.setState({ selected: [`${this.props.brand.term_id}`] });
 		}

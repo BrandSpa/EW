@@ -166,6 +166,7 @@
 	<div class="row">
 			<div class="col-sm-1"></div>
 			<div class="col-sm-10">
+			<?php var_dump($productTerm) ?>
 			<?php echo do_shortcode('[ew_related_projects products="'. $productTerm->term_id  .'"]') ?>
 			</div>
 			<div class="col-sm-1"></div>

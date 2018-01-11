@@ -69,6 +69,8 @@ class ProjectMetabox extends Component {
   		countries, states, cities, months,
   	} = this.props;
 
+  	console.log(countries);
+
   	return (
   		<section>
   			<h4>Location</h4>

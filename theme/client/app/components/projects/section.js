@@ -139,7 +139,7 @@ class ProjectsSection extends Component {
   		taxQuery = [];
   	}
 
-  	this.setState({ taxQuery }, () => {
+  	this.setState({ projects: [], taxQuery }, () => {
   		this.getProjects({ taxQuery, metaQuery: this.state.metaQuery });
   	});
   }
@@ -203,7 +203,7 @@ class ProjectsSection extends Component {
 								productsOptions={this.props.productsOptions}
 								texts={texts}
   				/>
-						</div>
+     </div>
 					</div>
   			</div>
   			<div className="col-lg-9">
@@ -214,8 +214,8 @@ class ProjectsSection extends Component {
   							<Project project={project} />
   						</div>
   					))}
-					</div>
-					<a href="#" onClick={this.paginate} className="pagination-btn">{texts.seeMore}</a>
+      </div>
+					{projects.length > 0 && <a href="#" onClick={this.paginate} className="pagination-btn">{texts.seeMore}</a>}
   			</div>
 
   			<style jsx>{`

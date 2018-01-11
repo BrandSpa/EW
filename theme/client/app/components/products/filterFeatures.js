@@ -6,6 +6,16 @@ class FilterBands extends Component {
 		selected: [],
 	}
 
+	componentDidMount() {
+		this.setSelected();
+	}
+
+	setSelected = () => {
+		if (Object.keys(this.props.feature).length) {
+			this.setState({ selected: [`${this.props.feature.term_id}`] });
+		}
+	}
+
 	handleChange = (e) => {
 		const { selected } = this.state;
 		const hasType = selected.indexOf(e.target.value) !== -1;
@@ -29,6 +39,7 @@ class FilterBands extends Component {
 						key={item.term_id}
 						value={item.term_id}
 						onChange={this.handleChange}
+						checked={selected.indexOf(`${item.term_id}`) !== -1}
 					>
 						<img src={`${window.templateUri}/public/img/${item.name.toLowerCase().replace(' ', '_')}.svg`} alt="" /> {item.name}
 					</Checkbox>
