@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Checkbox from '../checkbox';
 
-class FilterBands extends Component {
+class FilterFeatures extends Component {
 	state = {
 		selected: [],
 	}
@@ -31,6 +31,7 @@ class FilterBands extends Component {
 
 	render() {
 		const { features } = this.props;
+		const { selected } = this.state;
 
 		return (
 			<section>
@@ -62,4 +63,4 @@ class FilterBands extends Component {
 }
 
 
-export default FilterBands;
+export default FilterFeatures;

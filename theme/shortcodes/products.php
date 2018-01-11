@@ -17,6 +17,8 @@ function products_sc( $atts ){
 	]);
 
 	ob_start();
+
+	var_dump(get_term_by('name', $at['type'], 'type'));
 	?>
 
   <section class="products-container" data-props='<?php echo json_encode($props) ?>'></section>

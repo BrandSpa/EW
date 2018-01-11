@@ -22799,6 +22799,7 @@ var ProductsSection = function (_Component) {
 					},
 					_react2.default.createElement(_filterTypes2.default, {
 						typesOptions: this.props.typesOptions,
+						type: this.props.type,
 						onChange: this.handleTypesFilters
 					}),
 					_react2.default.createElement(
@@ -22810,6 +22811,7 @@ var ProductsSection = function (_Component) {
 					),
 					_react2.default.createElement(_filterFeatures2.default, {
 						features: this.props.featuresOptions,
+						feature: this.props.feature,
 						onChange: this.handleFeaturesFilters
 					}),
 					_react2.default.createElement(
@@ -22980,8 +22982,8 @@ var FilterTypes = function (_Component) {
 			types: [],
 			selected: []
 		}, _this.setSelected = function () {
-			if (Object.keys(_this.props.brand).length) {
-				_this.setState({ selected: ['' + _this.props.brand.term_id] });
+			if (Object.keys(_this.props.type).length) {
+				_this.setState({ selected: ['' + _this.props.type.term_id] });
 			}
 		}, _this.setFilters = function () {
 			var childTypes = (0, _lodash.groupBy)(_this.props.typesOptions, 'parent');
@@ -23116,21 +23118,21 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var FilterBands = function (_Component) {
-	_inherits(FilterBands, _Component);
+var FilterFeatures = function (_Component) {
+	_inherits(FilterFeatures, _Component);
 
-	function FilterBands() {
+	function FilterFeatures() {
 		var _ref;
 
 		var _temp, _this, _ret;
 
-		_classCallCheck(this, FilterBands);
+		_classCallCheck(this, FilterFeatures);
 
 		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
 			args[_key] = arguments[_key];
 		}
 
-		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FilterBands.__proto__ || Object.getPrototypeOf(FilterBands)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FilterFeatures.__proto__ || Object.getPrototypeOf(FilterFeatures)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
 			selected: []
 		}, _this.setSelected = function () {
 			if (Object.keys(_this.props.feature).length) {
@@ -23151,7 +23153,7 @@ var FilterBands = function (_Component) {
 		}, _temp), _possibleConstructorReturn(_this, _ret);
 	}
 
-	_createClass(FilterBands, [{
+	_createClass(FilterFeatures, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
 			this.setSelected();
@@ -23162,6 +23164,7 @@ var FilterBands = function (_Component) {
 			var _this2 = this;
 
 			var features = this.props.features;
+			var selected = this.state.selected;
 
 
 			return _react2.default.createElement(
@@ -23192,10 +23195,10 @@ var FilterBands = function (_Component) {
 		}
 	}]);
 
-	return FilterBands;
+	return FilterFeatures;
 }(_react.Component);
 
-exports.default = FilterBands;
+exports.default = FilterFeatures;
 
 /***/ }),
 /* 693 */
@@ -23232,21 +23235,21 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var FilterBands = function (_Component) {
-	_inherits(FilterBands, _Component);
+var FilterBrands = function (_Component) {
+	_inherits(FilterBrands, _Component);
 
-	function FilterBands() {
+	function FilterBrands() {
 		var _ref;
 
 		var _temp, _this, _ret;
 
-		_classCallCheck(this, FilterBands);
+		_classCallCheck(this, FilterBrands);
 
 		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
 			args[_key] = arguments[_key];
 		}
 
-		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FilterBands.__proto__ || Object.getPrototypeOf(FilterBands)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FilterBrands.__proto__ || Object.getPrototypeOf(FilterBrands)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
 			selected: []
 		}, _this.setSelected = function () {
 			if (Object.keys(_this.props.brand).length) {
@@ -23267,9 +23270,10 @@ var FilterBands = function (_Component) {
 		}, _temp), _possibleConstructorReturn(_this, _ret);
 	}
 
-	_createClass(FilterBands, [{
+	_createClass(FilterBrands, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
+			console.log('mount filter brands');
 			this.setSelected();
 		}
 	}, {
@@ -23282,6 +23286,8 @@ var FilterBands = function (_Component) {
 			    brand = _props.brand;
 			var selected = this.state.selected;
 
+
+			console.log('selected', selected);
 
 			return _react2.default.createElement(
 				'section',
@@ -23305,10 +23311,10 @@ var FilterBands = function (_Component) {
 		}
 	}]);
 
-	return FilterBands;
+	return FilterBrands;
 }(_react.Component);
 
-exports.default = FilterBands;
+exports.default = FilterBrands;
 
 /***/ }),
 /* 694 */

@@ -104,11 +104,13 @@ class ProductsSection extends Component {
 				<div className="col-sm-3">
 					<FilterTypes
 					 typesOptions={this.props.typesOptions}
+					 type={this.props.type}
 					 onChange={this.handleTypesFilters}
 					/>
 					<h4>FEATURES</h4>
 					<FilterFeatures
 						features={this.props.featuresOptions}
+						feature={this.props.feature}
 						onChange={this.handleFeaturesFilters}
 					/>
 					<h4>BRANDS</h4>

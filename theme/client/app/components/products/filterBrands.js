@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Checkbox from '../checkbox';
 
-class FilterBands extends Component {
+class FilterBrands extends Component {
 	state = {
 		selected: [],
 	}
 
 	componentDidMount() {
+		console.log('mount filter brands');
 		this.setSelected();
 	}
 
@@ -33,6 +34,8 @@ class FilterBands extends Component {
 		const { brands, brand } = this.props;
 		const { selected } = this.state;
 
+		console.log('selected', selected);
+
 		return (
 			<section>
 				{brands.map(brnd => (
@@ -58,4 +61,4 @@ class FilterBands extends Component {
 }
 
 
-export default FilterBands;
+export default FilterBrands;

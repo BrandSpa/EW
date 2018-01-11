@@ -18,8 +18,8 @@ class FilterTypes extends Component {
 	}
 
 	setSelected = () => {
-		if (Object.keys(this.props.brand).length) {
-			this.setState({ selected: [`${this.props.brand.term_id}`] });
+		if (Object.keys(this.props.type).length) {
+			this.setState({ selected: [`${this.props.type.term_id}`] });
 		}
 	}
 
