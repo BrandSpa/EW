@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { createApolloFetch } from 'apollo-fetch';
 import { findIndex, groupBy } from 'lodash';
 import Product from './item';
-import Loading from '../loading';
+import Points from '../points';
 import FilterTypes from './filterTypes';
 import FilterFeatures from './filterFeatures';
 import FilterBrands from './filterBrands';
@@ -11,8 +11,8 @@ const uri = '/wp-content/themes/theme/graphql/index.php';
 const apolloFetch = createApolloFetch({ uri });
 
 const productsQuery = `
-query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery]){
-  products(post_type: "product", posts_per_page: 12, meta_query: $metaQuery, tax_query: $taxQuery) {
+query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){
+  products(post_type: "product", paged: $paged, posts_per_page: 12, meta_query: $metaQuery, tax_query: $taxQuery) {
 		id
     thumb
 		name
@@ -27,7 +27,8 @@ class ProductsSection extends Component {
 	state = {
 		products: [],
 		metaQuery: [],
-  	taxQuery: [],
+		taxQuery: [],
+		paged: 1,
 	}
 
 	componentDidMount() {
@@ -39,7 +40,7 @@ class ProductsSection extends Component {
 			const res = await apolloFetch({ query: productsQuery, variables });
 
   		this.setState({
-  			products: res.data.products,
+  			products: [...this.state.products, ...res.data.products],
   		});
   	} catch (err) {
   		console.log('get projects err: ', err);
@@ -90,7 +91,7 @@ class ProductsSection extends Component {
 		}
 
 		const p = new Promise((resolve) => {
-			this.setState({ taxQuery }, () => {
+			this.setState({ taxQuery, products: [], paged: 1 }, () => {
 				if (fetch) this.getProducts({ taxQuery, metaQuery });
 				return resolve();
 			});
@@ -110,7 +111,7 @@ class ProductsSection extends Component {
 		}
 
   	const p = new Promise((resolve) => {
-			this.setState({ taxQuery }, () => {
+			this.setState({ taxQuery, products: [], paged: 1 }, () => {
 				if (fetch) this.getProducts({ taxQuery, metaQuery });
 				return resolve();
 			});
@@ -130,13 +131,23 @@ class ProductsSection extends Component {
 		}
 
   	const p = new Promise((resolve) => {
-			this.setState({ taxQuery }, () => {
+			this.setState({ taxQuery, products: [], paged: 1 }, () => {
 				if (fetch) this.getProducts({ taxQuery, metaQuery });
 				return resolve();
 			});
 		});
 
 		return p;
+	}
+
+	paginate = (e) => {
+		if (e) e.preventDefault();
+		let { taxQuery, metaQuery, paged } = this.state;
+		paged += 1;
+
+		this.setState({ paged }, () => {
+			this.getProducts({ metaQuery, taxQuery, paged });
+  	});
 	}
 
 	render() {
@@ -165,18 +176,33 @@ class ProductsSection extends Component {
 					/>
 				</div>
 				<div className="col-sm-9">
-					{products.length > 0 ? products.map(product => (
-						<div className="col-sm-4">
-							<Product {...product} />
-						</div>
-					))
-						:
-						<div className="empty-value">
-							<h4>{texts.emptyResult}</h4>
-						</div>
+					<div className="products">
+						{products.length > 0 ? products.map(product => (
+							<div className="col-sm-4">
+								<Product {...product} />
+							</div>
+						))
+							:
+							<div className="empty-value">
+								<h4>{texts.emptyResult}</h4>
+							</div>
+						}
+					</div>
+					{products.length > 0 &&
+						<a href="#" onClick={this.paginate} className="pagination-btn">
+							<span>{texts.seeMore}</span>
+							<Points style={{ float: 'right' }} />
+						</a>
 					}
 				</div>
 				<style jsx>{`
+
+				.products {
+					padding: 40px;
+					display: flex;
+					flex-wrap: wrap;
+					flex-direction: column;
+				}
 					.empty-value {
 						height: 200px;
 						display: flex;
@@ -192,6 +218,17 @@ class ProductsSection extends Component {
 					h4 {
 						font-size: 15px;
 						color: #039ED8;
+					}
+
+					.pagination-btn {
+						float: right;
+						margin: 0 40px 20px 0;
+						color: #039ED8;
+						font-size: 20px;
+					}
+
+					.pagination-btn span {
+						display: block;
 					}
 				`}
 				</style>

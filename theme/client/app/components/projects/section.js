@@ -5,8 +5,7 @@ import classnames from 'classnames';
 import Project from './item';
 import Filters from './filters';
 import FiltersProducts from './filters-products';
-import Loading from '../loading';
-import qs from 'qs';
+import Points from '../points';
 
 const uri = '/wp-content/themes/theme/graphql/index.php';
 const apolloFetch = createApolloFetch({ uri });
@@ -220,7 +219,12 @@ class ProjectsSection extends Component {
 							</div>
 						}
       </div>
-					{projects.length > 0 && <a href="#" onClick={this.paginate} className="pagination-btn">{texts.seeMore}</a>}
+					{projects.length > 0 &&
+						<a href="#" onClick={this.paginate} className="pagination-btn">
+							<span>{texts.seeMore}</span>
+							<Points style={{ float: 'right' }} />
+						</a>
+					}
   			</div>
 
 				<style jsx>{`
@@ -247,7 +251,14 @@ class ProjectsSection extends Component {
 					.pagination-btn {
 						float: right;
 						margin: 0 40px 20px 0;
+						color: #039ED8;
+						font-size: 20px;
 					}
+
+					.pagination-btn span {
+						display: block;
+					}
+
 
           .project-item {
 						padding: 5px;

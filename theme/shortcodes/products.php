@@ -11,7 +11,8 @@ function products_sc( $atts ){
 		"texts" => [
 			"emptyResult" => gett('No results found for this search'),
 			"features" => gett('FEATURES'),
-			"brands" => gett('BRANDS')
+			"brands" => gett('BRANDS'),
+			'seeMore' => gett('See more'),
 		],
 		"brandsOptions" => get_terms('brand', [ 'hide_empty' => 0 ]),
 		"typesOptions" => get_terms('type', [ 'hide_empty' => 0 ]),

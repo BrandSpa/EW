@@ -16,6 +16,10 @@ $productsQuery = [
 		'posts_per_page' => [
 			'type' => Type::int()
 		],
+		'paged' => [
+			'type' => Type::int(),
+			'defaultValue' => 1
+		],
 		'meta_query' => [
 			'type' => Type::listOf($metaFilter),
 		],
