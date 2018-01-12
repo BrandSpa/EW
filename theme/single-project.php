@@ -34,8 +34,8 @@
       <span class="line"></span>
       <section class="project__location">
         <span><?php echo $country ?> ·</span>
-        <span><?php echo $city ?> ·</span>
-        <span><?php echo $state ?></span>
+        <span><?php echo $state ?> ·</span>
+        <span><?php echo $city ?></span>
       </section>
       </div>
     </div>

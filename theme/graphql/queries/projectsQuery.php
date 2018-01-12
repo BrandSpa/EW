@@ -24,7 +24,10 @@ $projectsQuery = [
 		'tax_query' => [
 			'type' => Type::listOf($taxonomyFilter),
 		],
-		'tax_relation' => Type::string()
+		'tax_relation' => [
+			'type' => Type::string(),
+			'defaultValue' => 'OR'
+		]
 	],
 	'resolve' => function($root, $args) {
 

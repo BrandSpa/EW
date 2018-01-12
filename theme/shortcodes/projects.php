@@ -15,7 +15,8 @@ function projects_sc( $atts ){
 			'relatedProjects' => gett('Related projects'),
 			'seeMore' => gett('See more'),
 			'products' => gett('Products'),
-			'filters' => gett('Filters')
+			'filters' => gett('Filters'),
+			"emptyResult" => gett('No results found for this search')
 		]
 	]);
 

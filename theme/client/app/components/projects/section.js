@@ -13,7 +13,7 @@ const apolloFetch = createApolloFetch({ uri });
 
 const projectsQuery = `
 query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){
-  projects(posts_per_page: 3, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {
+  projects(posts_per_page: 12, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {
 		id
     thumb
 		name
@@ -209,16 +209,34 @@ class ProjectsSection extends Component {
   			<div className="col-lg-9">
   				{/* <Loading /> */}
   				<div className="projects">
-  					{projects.map(project => (
+  					{projects.length > 0 ? projects.map(project => (
   						<div key={project.id} className="col-lg-4 col-md-6 project-item">
   							<Project project={project} />
   						</div>
-  					))}
+						))
+							:
+							<div className="empty-value">
+								<h4>{texts.emptyResult}</h4>
+							</div>
+						}
       </div>
 					{projects.length > 0 && <a href="#" onClick={this.paginate} className="pagination-btn">{texts.seeMore}</a>}
   			</div>
 
-  			<style jsx>{`
+				<style jsx>{`
+
+				.empty-value {
+					height: 100px;
+					display: flex;
+					flex: 1;
+					align-items: center;
+				}
+
+				.empty-value h4 {
+					font-size: 17px;
+					color: #039ED8;
+				}
+
           .projects {
             padding: 40px;
             display: flex;
@@ -308,7 +326,7 @@ class ProjectsSection extends Component {
 						}
 					}
         `}
-  			</style>
+				</style>
   		</section>
   	);
 	}

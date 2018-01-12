@@ -21168,7 +21168,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var uri = '/wp-content/themes/theme/graphql/index.php';
 var apolloFetch = (0, _apolloFetch.createApolloFetch)({ uri: uri });
 
-var projectsQuery = '\nquery($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){\n  projects(posts_per_page: 3, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {\n\t\tid\n    thumb\n\t\tname\n\t\turl\n    country\n    state\n\t\tcity\n\t\tyear\n\t\tmonth\n  }\n}\n';
+var projectsQuery = '\nquery($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){\n  projects(posts_per_page: 12, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {\n\t\tid\n    thumb\n\t\tname\n\t\turl\n    country\n    state\n\t\tcity\n\t\tyear\n\t\tmonth\n  }\n}\n';
 
 var ProjectsSection = function (_Component) {
 	_inherits(ProjectsSection, _Component);
@@ -21376,40 +21376,40 @@ var ProjectsSection = function (_Component) {
 				'section',
 				{ ref: function ref(_ref4) {
 						return _this4.container = _ref4;
-					}, 'data-jsx': 3313111031
+					}, 'data-jsx': 1972221257
 				},
 				_react2.default.createElement(
 					'div',
 					{ className: filtersStyle, ref: function ref(_ref3) {
 							return _this4.filters = _ref3;
-						}, 'data-jsx': 3313111031
+						}, 'data-jsx': 1972221257
 					},
 					_react2.default.createElement(
 						'button',
 						{
 							className: filterToggleStyle,
 							onClick: this.toggleFilters,
-							'data-jsx': 3313111031
+							'data-jsx': 1972221257
 						},
 						texts.filters,
 						' ',
-						_react2.default.createElement('i', { className: 'ion-plus', 'data-jsx': 3313111031
+						_react2.default.createElement('i', { className: 'ion-plus', 'data-jsx': 1972221257
 						})
 					),
 					_react2.default.createElement(
 						'div',
-						{ className: filterContainerStyle, 'data-jsx': 3313111031
+						{ className: filterContainerStyle, 'data-jsx': 1972221257
 						},
 						_react2.default.createElement(_filters2.default, _extends({
 							onChange: this.handleFilters
 						}, this.props)),
 						_react2.default.createElement(
 							'div',
-							{ className: 'col-lg-3', 'data-jsx': 3313111031
+							{ className: 'col-lg-3', 'data-jsx': 1972221257
 							},
 							_react2.default.createElement(
 								'h5',
-								{ className: 'filters-title', 'data-jsx': 3313111031
+								{ className: 'filters-title', 'data-jsx': 1972221257
 								},
 								texts.products
 							),
@@ -21423,31 +21423,42 @@ var ProjectsSection = function (_Component) {
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'col-lg-9', 'data-jsx': 3313111031
+					{ className: 'col-lg-9', 'data-jsx': 1972221257
 					},
 					_react2.default.createElement(
 						'div',
-						{ className: 'projects', 'data-jsx': 3313111031
+						{ className: 'projects', 'data-jsx': 1972221257
 						},
-						projects.map(function (project) {
+						projects.length > 0 ? projects.map(function (project) {
 							return _react2.default.createElement(
 								'div',
-								{ key: project.id, className: 'col-lg-4 col-md-6 project-item', 'data-jsx': 3313111031
+								{ key: project.id, className: 'col-lg-4 col-md-6 project-item', 'data-jsx': 1972221257
 								},
 								_react2.default.createElement(_item2.default, { project: project })
 							);
-						})
+						}) : _react2.default.createElement(
+							'div',
+							{ className: 'empty-value', 'data-jsx': 1972221257
+							},
+							_react2.default.createElement(
+								'h4',
+								{
+									'data-jsx': 1972221257
+								},
+								texts.emptyResult
+							)
+						)
 					),
 					projects.length > 0 && _react2.default.createElement(
 						'a',
-						{ href: '#', onClick: this.paginate, className: 'pagination-btn', 'data-jsx': 3313111031
+						{ href: '#', onClick: this.paginate, className: 'pagination-btn', 'data-jsx': 1972221257
 						},
 						texts.seeMore
 					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 3313111031,
-					css: '.projects[data-jsx="3313111031"]{padding:40px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.pagination-btn[data-jsx="3313111031"]{float:right;margin:0 40px 20px 0}.project-item[data-jsx="3313111031"]{padding:5px}.filters-title[data-jsx="3313111031"]{font-size:15px;color:#039ED8}.filters[data-jsx="3313111031"]{width:100%;background:#fff;box-shadow:0 10px 10px rgba(0,0,0,.1);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-top:20px;-webkit-transition:.3s ease;transition:.3s ease}.filters--in-bound[data-jsx="3313111031"]{position:fixed;left:0;right:0;top:80px;z-index:100}.filters__toggle[data-jsx="3313111031"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end;cursor:pointer;border:none;background:transparent;font-size:15px;color:#039ED8;margin-bottom:20px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;outline:none}.filters__toggle[data-jsx="3313111031"] i[data-jsx="3313111031"]{padding:0 20px}.filters__toggle--open[data-jsx="3313111031"] i[data-jsx="3313111031"]::before{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}.filters-container[data-jsx="3313111031"]{display:none}.filters-container--open[data-jsx="3313111031"]{display:block;padding-bottom:20px}@media (min-width:1024px){.projects[data-jsx="3313111031"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}.filters[data-jsx="3313111031"]{display:initial;box-shadow:none;background:transparent}.filters-container[data-jsx="3313111031"]{display:block}.filters__toggle[data-jsx="3313111031"]{display:none}}'
+					styleId: 1972221257,
+					css: '.empty-value[data-jsx="1972221257"]{height:100px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex:1;-ms-flex:1;flex:1;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.empty-value[data-jsx="1972221257"] h4[data-jsx="1972221257"]{font-size:17px;color:#039ED8}.projects[data-jsx="1972221257"]{padding:40px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.pagination-btn[data-jsx="1972221257"]{float:right;margin:0 40px 20px 0}.project-item[data-jsx="1972221257"]{padding:5px}.filters-title[data-jsx="1972221257"]{font-size:15px;color:#039ED8}.filters[data-jsx="1972221257"]{width:100%;background:#fff;box-shadow:0 10px 10px rgba(0,0,0,.1);display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;padding-top:20px;-webkit-transition:.3s ease;transition:.3s ease}.filters--in-bound[data-jsx="1972221257"]{position:fixed;left:0;right:0;top:80px;z-index:100}.filters__toggle[data-jsx="1972221257"]{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end;cursor:pointer;border:none;background:transparent;font-size:15px;color:#039ED8;margin-bottom:20px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;outline:none}.filters__toggle[data-jsx="1972221257"] i[data-jsx="1972221257"]{padding:0 20px}.filters__toggle--open[data-jsx="1972221257"] i[data-jsx="1972221257"]::before{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}.filters-container[data-jsx="1972221257"]{display:none}.filters-container--open[data-jsx="1972221257"]{display:block;padding-bottom:20px}@media (min-width:1024px){.projects[data-jsx="1972221257"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}.filters[data-jsx="1972221257"]{display:initial;box-shadow:none;background:transparent}.filters-container[data-jsx="1972221257"]{display:block}.filters__toggle[data-jsx="1972221257"]{display:none}}'
 				})
 			);
 		}
@@ -22614,6 +22625,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _style = __webpack_require__(16);
@@ -22650,6 +22663,10 @@ var _filterBrands2 = _interopRequireDefault(_filterBrands);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22661,7 +22678,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var uri = '/wp-content/themes/theme/graphql/index.php';
 var apolloFetch = (0, _apolloFetch.createApolloFetch)({ uri: uri });
 
-var productsQuery = '\nquery($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery]){\n  products(post_type: "product", posts_per_page: 9, meta_query: $metaQuery, tax_query: $taxQuery) {\n\t\tid\n    thumb\n\t\tname\n\t\turl\n\t\ttype\n\t\tsubtype\n  }\n}\n';
+var productsQuery = '\nquery($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery]){\n  products(post_type: "product", posts_per_page: 12, meta_query: $metaQuery, tax_query: $taxQuery) {\n\t\tid\n    thumb\n\t\tname\n\t\turl\n\t\ttype\n\t\tsubtype\n  }\n}\n';
 
 var ProductsSection = function (_Component) {
 	_inherits(ProductsSection, _Component);
@@ -22721,81 +22738,159 @@ var ProductsSection = function (_Component) {
 			return function () {
 				return _ref2.apply(this, arguments);
 			};
-		}(), _this.handleTypesFilters = function (types) {
-			var _this$state = _this.state,
-			    taxQuery = _this$state.taxQuery,
-			    metaQuery = _this$state.metaQuery;
+		}(), _this.prefilter = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+			var _this$state, taxQuery, metaQuery;
+
+			return regeneratorRuntime.wrap(function _callee2$(_context2) {
+				while (1) {
+					switch (_context2.prev = _context2.next) {
+						case 0:
+							if (!(_this.props.type && Object.keys(_this.props.type).length)) {
+								_context2.next = 3;
+								break;
+							}
+
+							_context2.next = 3;
+							return _this.handleTypesFilters(['' + _this.props.type.term_id]);
+
+						case 3:
+							if (!(_this.props.feature && Object.keys(_this.props.feature).length)) {
+								_context2.next = 6;
+								break;
+							}
+
+							_context2.next = 6;
+							return _this.handleFeaturesFilters(['' + _this.props.feature.term_id]);
+
+						case 6:
+							if (!(_this.props.brand && Object.keys(_this.props.brand).length)) {
+								_context2.next = 9;
+								break;
+							}
+
+							_context2.next = 9;
+							return _this.handleBrandsFilters(['' + _this.props.brand.term_id]);
+
+						case 9:
+							_this$state = _this.state, taxQuery = _this$state.taxQuery, metaQuery = _this$state.metaQuery;
 
 
-			if (types.length > 0) {
-				var tax = { taxonomy: 'type', terms: types };
-				taxQuery = [tax];
+							_this.getProducts({ taxQuery: taxQuery, metaQuery: metaQuery });
+
+						case 11:
+						case 'end':
+							return _context2.stop();
+					}
+				}
+			}, _callee2, _this2);
+		})), _this.addOrUpdate = function (arr, key, obj) {
+			var q = [];
+
+			if ((0, _lodash.findIndex)(arr, _defineProperty({}, key, obj[key])) !== -1) {
+				q = arr.map(function (item) {
+					if (item[key] !== obj[key]) return item;
+					return _extends({}, item, obj);
+				});
 			} else {
-				taxQuery = [];
+				q = [].concat(_toConsumableArray(arr), [obj]);
 			}
 
-			_this.setState({ taxQuery: taxQuery }, function () {
-				_this.getProducts({ taxQuery: taxQuery, metaQuery: metaQuery });
-			});
-		}, _this.handleFeaturesFilters = function (features) {
+			return q;
+		}, _this.handleTypesFilters = function (types) {
+			var fetch = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 			var _this$state2 = _this.state,
 			    taxQuery = _this$state2.taxQuery,
 			    metaQuery = _this$state2.metaQuery;
 
 
-			if (features.length > 0) {
-				var tax = { taxonomy: 'feature', terms: features };
-				taxQuery = [tax];
+			if (types.length > 0) {
+				var tax = { taxonomy: 'type', terms: types };
+				taxQuery = _this.addOrUpdate(taxQuery, 'taxonomy', tax);
 			} else {
-				taxQuery = [];
+				taxQuery = taxQuery.filter(function (tax) {
+					return tax.taxonomy !== 'type';
+				});
 			}
 
-			_this.setState({ taxQuery: taxQuery }, function () {
-				_this.getProducts({ taxQuery: taxQuery, metaQuery: metaQuery });
+			var p = new Promise(function (resolve) {
+				_this.setState({ taxQuery: taxQuery }, function () {
+					if (fetch) _this.getProducts({ taxQuery: taxQuery, metaQuery: metaQuery });
+					return resolve();
+				});
 			});
-		}, _this.handleBrandsFilters = function (brands) {
+
+			return p;
+		}, _this.handleFeaturesFilters = function (features) {
+			var fetch = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 			var _this$state3 = _this.state,
 			    taxQuery = _this$state3.taxQuery,
 			    metaQuery = _this$state3.metaQuery;
 
 
-			if (brands.length > 0) {
-				var tax = { taxonomy: 'brand', terms: brands };
-				taxQuery = [tax];
+			if (features.length > 0) {
+				var tax = { taxonomy: 'feature', terms: features };
+				taxQuery = _this.addOrUpdate(taxQuery, 'taxonomy', tax);
 			} else {
-				taxQuery = [];
+				taxQuery = taxQuery.filter(function (tax) {
+					return tax.taxonomy !== 'feature';
+				});
 			}
 
-			_this.setState({ taxQuery: taxQuery }, function () {
-				_this.getProducts({ taxQuery: taxQuery, metaQuery: metaQuery });
+			var p = new Promise(function (resolve) {
+				_this.setState({ taxQuery: taxQuery }, function () {
+					if (fetch) _this.getProducts({ taxQuery: taxQuery, metaQuery: metaQuery });
+					return resolve();
+				});
 			});
+
+			return p;
+		}, _this.handleBrandsFilters = function (brands) {
+			var fetch = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+			var _this$state4 = _this.state,
+			    taxQuery = _this$state4.taxQuery,
+			    metaQuery = _this$state4.metaQuery;
+
+
+			if (brands.length > 0) {
+				var tax = { taxonomy: 'brand', terms: brands };
+				taxQuery = _this.addOrUpdate(taxQuery, 'taxonomy', tax);
+			} else {
+				taxQuery = taxQuery.filter(function (tax) {
+					return tax.taxonomy !== 'brand';
+				});
+			}
+
+			var p = new Promise(function (resolve) {
+				_this.setState({ taxQuery: taxQuery }, function () {
+					if (fetch) _this.getProducts({ taxQuery: taxQuery, metaQuery: metaQuery });
+					return resolve();
+				});
+			});
+
+			return p;
 		}, _temp), _possibleConstructorReturn(_this, _ret);
 	}
 
 	_createClass(ProductsSection, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			if (Object.keys(this.props.brand).length) {
-				console.log(this.props.brand);
-				this.handleBrandsFilters(['' + this.props.brand.term_id]);
-				return;
-			}
-
-			this.getProducts();
+			this.prefilter();
 		}
 	}, {
 		key: 'render',
 		value: function render() {
 			var products = this.state.products;
+			var texts = this.props.texts;
+
 
 			return _react2.default.createElement(
 				'section',
 				{
-					'data-jsx': 3250842367
+					'data-jsx': 3797546248
 				},
 				_react2.default.createElement(
 					'div',
-					{ className: 'col-sm-3', 'data-jsx': 3250842367
+					{ className: 'col-sm-3', 'data-jsx': 3797546248
 					},
 					_react2.default.createElement(_filterTypes2.default, {
 						typesOptions: this.props.typesOptions,
@@ -22805,9 +22900,9 @@ var ProductsSection = function (_Component) {
 					_react2.default.createElement(
 						'h4',
 						{
-							'data-jsx': 3250842367
+							'data-jsx': 3797546248
 						},
-						'FEATURES'
+						texts.features
 					),
 					_react2.default.createElement(_filterFeatures2.default, {
 						features: this.props.featuresOptions,
@@ -22817,9 +22912,9 @@ var ProductsSection = function (_Component) {
 					_react2.default.createElement(
 						'h4',
 						{
-							'data-jsx': 3250842367
+							'data-jsx': 3797546248
 						},
-						'BRANDS'
+						texts.brands
 					),
 					_react2.default.createElement(_filterBrands2.default, {
 						brands: this.props.brandsOptions,
@@ -22829,20 +22924,31 @@ var ProductsSection = function (_Component) {
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'col-sm-9', 'data-jsx': 3250842367
+					{ className: 'col-sm-9', 'data-jsx': 3797546248
 					},
-					products.map(function (product) {
+					products.length > 0 ? products.map(function (product) {
 						return _react2.default.createElement(
 							'div',
-							{ className: 'col-sm-4', 'data-jsx': 3250842367
+							{ className: 'col-sm-4', 'data-jsx': 3797546248
 							},
 							_react2.default.createElement(_item2.default, product)
 						);
-					})
+					}) : _react2.default.createElement(
+						'div',
+						{ className: 'empty-value', 'data-jsx': 3797546248
+						},
+						_react2.default.createElement(
+							'h4',
+							{
+								'data-jsx': 3797546248
+							},
+							texts.emptyResult
+						)
+					)
 				),
 				_react2.default.createElement(_style2.default, {
-					styleId: 3250842367,
-					css: 'h4[data-jsx="3250842367"]{font-size:15px;color:#039ED8}'
+					styleId: 3797546248,
+					css: '.empty-value[data-jsx="3797546248"]{height:200px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex:1;-ms-flex:1;flex:1;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.empty-value[data-jsx="3797546248"] h4[data-jsx="3797546248"]{font-size:17px;color:#039ED8}h4[data-jsx="3797546248"]{font-size:15px;color:#039ED8}'
 				})
 			);
 		}
@@ -23003,7 +23109,7 @@ var FilterTypes = function (_Component) {
 			}) : [].concat(_toConsumableArray(selected), [e.target.value]);
 
 			_this.setState({ selected: newSelected }, function () {
-				_this.props.onChange(newSelected);
+				_this.props.onChange(newSelected, true);
 			});
 		}, _temp), _possibleConstructorReturn(_this, _ret);
 	}
@@ -23148,7 +23254,7 @@ var FilterFeatures = function (_Component) {
 			}) : [].concat(_toConsumableArray(selected), [e.target.value]);
 
 			_this.setState({ selected: newSelected }, function () {
-				_this.props.onChange(newSelected);
+				_this.props.onChange(newSelected, true);
 			});
 		}, _temp), _possibleConstructorReturn(_this, _ret);
 	}
@@ -23265,7 +23371,7 @@ var FilterBrands = function (_Component) {
 			}) : [].concat(_toConsumableArray(selected), [e.target.value]);
 
 			_this.setState({ selected: newSelected }, function () {
-				_this.props.onChange(newSelected);
+				_this.props.onChange(newSelected, true);
 			});
 		}, _temp), _possibleConstructorReturn(_this, _ret);
 	}

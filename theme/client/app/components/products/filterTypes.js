@@ -42,7 +42,7 @@ class FilterTypes extends Component {
 			: [...selected, e.target.value];
 
 		this.setState({ selected: newSelected }, () => {
-			this.props.onChange(newSelected);
+			this.props.onChange(newSelected, true);
 		});
 	}
 
