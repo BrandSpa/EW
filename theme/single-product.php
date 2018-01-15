@@ -71,7 +71,9 @@
 					<div class="product__content-slider">
 						<?php if(!empty($slider)): ?>
 							<?php foreach($slider as $imageId): ?>
+								<div>
 									<img src="<?php echo wp_get_attachment_url($imageId) ?>">
+								</div>
 							<?php endforeach; ?>
 						<?php endif; ?>
 					</div>
@@ -366,15 +368,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script>
 	$(document).ready(function() {
-
-		$('.product__content-slider img').first().load(function() {
 			$('.product__content-slider').slick({
 				slidesToShow: 1,
 				adaptiveHeight: true,
 				autoplay: true
 			});
-		});
-
 	});
 </script>
 
