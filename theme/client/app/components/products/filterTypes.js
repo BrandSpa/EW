@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { findIndex, groupBy } from 'lodash';
-import SelectArrow from '../selectArrow';
-import Checkbox from '../checkbox';
+import FilterType from './filterType';
 
 class FilterTypes extends Component {
 	state = {
@@ -52,51 +51,14 @@ class FilterTypes extends Component {
 		return (
 			<section>
 				{types.map(type => (
-					<section className="filter-type">
-						<button className="select-type">
-							{type.name} {type.subtypes.length > 0 && <span><SelectArrow /></span>}
-						</button>
-						<div className="subtypes subtypes-open">
-							{type.subtypes.map(subtype => (
-								<Checkbox
-									key={subtype.term_id}
-									value={subtype.term_id}
-									placeholder={subtype.name}
-									onChange={e => this.handleChange(e, type)}
-									checked={selected.indexOf(`${subtype.term_id}`) !== -1}
-								/>
-							))}
-						</div>
-					</section>
+					<FilterType
+						type={type}
+						selected={selected}
+						onChange={this.handleChange}
+					/>
 				))}
 
-				<style jsx>{`
-				button {
-					padding: 0;
-				}
-				.filter-type {
-					margin-bottom: 20px;
-				}
-					.select-type {
-						background: transparent;
-						border: none;
-						display: flex;
-						align-items:center;
-						color: #039ED8;
-					}
 
-					.select-type span {
-						display: flex;
-						padding-left: 5px;
-					}
-
-					.subtypes-open {
-						display: flex;
-						flex-direction: column;
-						margin-left: 20px;
-					}
-				`}
-				</style>
 			</section>
 		);
 	}

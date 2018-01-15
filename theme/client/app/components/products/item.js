@@ -17,7 +17,7 @@ const Product = ({
 			position: relative;
 			background-position: center;
 			background-size: cover !important;
-			min-height: 350px;
+			min-height: 260px;
 			color: #5D5D5D;
 			margin-bottom: 30px;
 		}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const selectArrow = ({ style = {} }) => (
+const selectArrow = ({ style = {}, open = false }) => (
 	<svg width="11px" height="5px" viewBox="0 0 11 5" version="1.1" xmlns="http://www.w3.org/2000/svg" style={style}>
 		<defs />
 		<g id="Symbols" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round">

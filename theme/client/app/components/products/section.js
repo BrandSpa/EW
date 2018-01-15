@@ -201,8 +201,8 @@ class ProductsSection extends Component {
 					padding: 40px;
 					display: flex;
 					flex-wrap: wrap;
-					flex-direction: column;
-				}
+					}
+
 					.empty-value {
 						height: 200px;
 						display: flex;
