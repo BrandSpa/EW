@@ -307,7 +307,8 @@
 	$(function() {
     $('.project-slider').slick({
       slidesToShow: 1,
-      adaptiveHeight: true
+			adaptiveHeight: true,
+			autoplay: true
     });
   });
 </script>
