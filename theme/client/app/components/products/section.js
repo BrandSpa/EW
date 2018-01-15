@@ -29,6 +29,7 @@ class ProductsSection extends Component {
 		metaQuery: [],
 		taxQuery: [],
 		paged: 1,
+		empty: false,
 	}
 
 	componentDidMount() {
@@ -40,7 +41,8 @@ class ProductsSection extends Component {
 			const res = await apolloFetch({ query: productsQuery, variables });
 
   		this.setState({
-  			products: [...this.state.products, ...res.data.products],
+				products: [...this.state.products, ...res.data.products],
+				empty: !(res.data.products.length > 0),
   		});
   	} catch (err) {
   		console.log('get projects err: ', err);
@@ -151,7 +153,7 @@ class ProductsSection extends Component {
 	}
 
 	render() {
-		const { products } = this.state;
+		const { products, empty } = this.state;
 		const { texts } = this.props;
 
 		return (
@@ -188,7 +190,7 @@ class ProductsSection extends Component {
 							</div>
 						}
 					</div>
-					{products.length > 0 &&
+					{products.length > 0 && !empty &&
 						<a href="#" onClick={this.paginate} className="pagination-btn">
 							<span>{texts.seeMore}</span>
 							<Points style={{ float: 'right' }} />
