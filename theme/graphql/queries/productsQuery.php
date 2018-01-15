@@ -28,7 +28,7 @@ $productsQuery = [
 		],
 		'tax_relation' => [
 			'type' => Type::string(),
-			'defaultValue' => 'OR'
+			'defaultValue' => 'AND'
 		]
 	],
 	'resolve' => function($root, $args) {
