@@ -72,7 +72,7 @@
 						<?php if(!empty($slider)): ?>
 							<?php foreach($slider as $imageId): ?>
 								<div>
-									<img src="<?php echo wp_get_attachment_url($imageId) ?>">
+									<img src="<?php echo wp_get_attachment_url($imageId) ?>" style="width: 100%">
 								</div>
 							<?php endforeach; ?>
 						<?php endif; ?>
