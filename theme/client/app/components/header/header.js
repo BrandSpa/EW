@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { find, throttle } from 'lodash';
 import classNames from 'classnames';
 import Link from './link';
+import MenuMobile from './menuMobile';
 
 class Header extends Component {
 	state = {
@@ -52,7 +53,9 @@ class Header extends Component {
 						<img src={`${this.state.uri}/public/img/eswlogo.svg`} alt="" />
 					</a>
 				</div>
+				<MenuMobile menu={this.state.menu} uri={this.state.uri} />
 				<div className="header__menu">
+
 					<ul>
 						{this.state.menu.map(item => (
 							<Link key={item.ID} item={item} uri={this.state.uri} />
@@ -80,6 +83,8 @@ class Header extends Component {
 
 						.logo-container img {
 							width: 120px;
+							position: relative;
+							z-index: 1000;
 						}
 
 						.header__menu {
