@@ -8,7 +8,7 @@ class MenuLinkMobile extends Component {
 
 	handleClick = (e, item) => {
 		e.preventDefault();
-		if(item.sub.length > 0) {
+		if(item.sub && item.sub.length > 0) {
 			this.setState({ hover: !this.state.hover });
 		} else {
 			window.location = item.url;
