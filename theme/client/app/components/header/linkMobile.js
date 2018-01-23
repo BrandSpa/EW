@@ -6,7 +6,7 @@ class MenuLinkMobile extends Component {
 		hover: false,
 	}
 
-	handleClick = (e) => {
+	handleClick = (e, item) => {
 		e.preventDefault();
 		if(item.sub.length > 0) {
 			this.setState({ hover: !this.state.hover });
