@@ -8,8 +8,12 @@ class MenuLinkMobile extends Component {
 
 	handleClick = (e) => {
 		e.preventDefault();
+		if(item.sub.length > 0) {
+			this.setState({ hover: !this.state.hover });
+		} else {
+			window.location = item.url;
+		}
 
-		this.setState({ hover: !this.state.hover });
 	}
 
 	render() {
@@ -24,10 +28,9 @@ class MenuLinkMobile extends Component {
 
 		return (
 			<li
-				onClick={this.handleClick}
 				className="header__menu-link"
 			>
-				<a href={item.url}>{item.title} {item.sub && item.sub.length > 0 && <img className={imgClass} src={`${this.props.uri}/public/img/arrow.svg`} />}</a>
+				<a href={item.url} onClick={(e) => this.handleClick(e, item)}>{item.title} {item.sub && item.sub.length > 0 && <img className={imgClass} src={`${this.props.uri}/public/img/arrow.svg`} />}</a>
 				{item.sub &&
 						<ul className={submenuClass}>
 							{item.sub.map((subItem, i) => <li key={subItem.ID}><a href={subItem.url}>{subItem.title}</a></li>)

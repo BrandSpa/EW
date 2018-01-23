@@ -45,6 +45,10 @@
       overflow-x: hidden;
     }
 
+    .menu-open {
+      overflow: hidden;
+    }
+
     li {
       list-style: none;
     }

@@ -9,7 +9,7 @@ class MenuMobile extends Component {
 
 	toggleMenu = (e) => {
 		if(e) e.preventDefault();
-		this.setState({ show: !this.state.show });
+		this.setState({ show: !this.state.show }, () => document.body.classList.toggle("menu-open"));
 	}
 
 	render() {
