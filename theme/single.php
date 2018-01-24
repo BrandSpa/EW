@@ -6,7 +6,7 @@
 	$content = $post->post_content;
 ?>
 <article class="post">
-	<header style="background: url(<?php echo $featured; ?>)">
+	<header style="background-image: url(<?php echo $featured; ?>)">
 
 		<div class="post__header-container">
 			<span class="post__date"><?php echo $date->format('d M, Y') ?></span>
@@ -38,6 +38,8 @@
 		justify-content: center;
 		position: relative;
 		padding: 90px 0;
+		background-position: center;
+		background-size: cover;
 	}
 
 	.post__header-overlay {
