@@ -28,8 +28,10 @@
 		<div class="post__header-overlay"></div>
 	</header>
 	<section>
+	<?php if( $intro && $header): ?>
 	<div class="post__header-intro">
 		<div class="col-md-1"></div>
+
 		<div class="col-md-5 post__header-intro-text">
 			<?php echo $intro; ?>
 		</div>
@@ -38,7 +40,8 @@
 		</div>
 		<div class="col-md-1"></div>
 
-				</div>
+		</div>
+<?php endif; ?>
 	</section>
 	<section>
 		<div class="col-md-1"></div>
