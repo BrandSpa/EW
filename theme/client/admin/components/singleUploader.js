@@ -46,8 +46,12 @@ class SingleUploader extends Component {
 	}
 
 	componentWillReceiveProps(props) {
-		fetchwp('get_image_url', { id: props.imageId })
+		console.log(this.state.thumb && this.state.thumb.length == 0);
+		if(this.state.thumb.length == 0) {
+			console.log('get image');
+			fetchwp('get_image_url', { id: props.imageId })
 			.then(res => this.setState({ thumb: res.data.url }));
+		}
 	}
 
 	render() {

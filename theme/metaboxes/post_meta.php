@@ -1,6 +1,6 @@
 <?php
 function esw_type_post_metabox() {
-	add_meta_box('esw_project', 'ESW Product', 'esw_type_post_cb', 'post', 'normal', 'high', null);
+	add_meta_box('esw_post', 'ESW Post', 'esw_type_post_cb', 'post', 'normal', 'high', null);
 }
 
 add_action('add_meta_boxes', 'esw_type_post_metabox');
@@ -10,9 +10,6 @@ function esw_type_post_cb($post) {
 
   $fields = [
     "header",
-		 "day",
-		 "month",
-		 "year",
 		 "intro"
   ];
 
@@ -31,12 +28,9 @@ function esw_type_post_cb($post) {
 <?php
 }
 
-function ews_product_save($post_id) {
+function ews_post_save($post_id) {
   $fields = [
     "header",
-		 "day",
-		 "month",
-		 "year",
 		 "intro"
   ];
 
@@ -50,4 +44,4 @@ function ews_product_save($post_id) {
 
 }
 
-add_action( 'save_post', 'ews_product_save');
+add_action( 'save_post', 'ews_post_save');

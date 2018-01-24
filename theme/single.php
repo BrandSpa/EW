@@ -4,28 +4,51 @@
 	$date = new DateTime($post->post_date);
 	$featured = get_the_post_thumbnail_url($post->ID);
 	$content = $post->post_content;
+	$header = get_post_meta($post->ID, 'header_key', tue);
+	$intro = get_post_meta($post->ID, 'intro_key', tue);
 ?>
+
 <article class="post">
 	<header style="background-image: url(<?php echo $featured; ?>)">
-
-		<div class="post__header-container">
-			<span class="post__date"><?php echo $date->format('d M, Y') ?></span>
-			<div class="line"></div>
-			<div class="post__title">
-				<h2><?php echo $title ?></h2>
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+			<div class="post__header-container">
+				<span class="post__date"><?php echo $date->format('d M, Y') ?></span>
+				<div class="line"></div>
+				<div class="post__title">
+					<h2><?php echo $title ?></h2>
+				</div>
 			</div>
+
+			</div>
+			<div class="col-md-1"></div>
 		</div>
+
 		<div class="post__header-overlay"></div>
 	</header>
 	<section>
-		<div class="col-lg-1"></div>
-		<div class="col-lg-10">
+	<div class="post__header-intro">
+		<div class="col-md-1"></div>
+		<div class="col-md-5 post__header-intro-text">
+			<?php echo $intro; ?>
+		</div>
+		<div class="col-md-5" >
+		<img src="<?php echo wp_get_attachment_url($header) ?>" />
+		</div>
+		<div class="col-md-1"></div>
+
+				</div>
+	</section>
+	<section>
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
 			<div class="post__content">
 			<?php echo $content ?>
 			</div>
 
 		</div>
-		<div class="col-lg-1"></div>
+		<div class="col-md-1"></div>
 
 	</section>
 </article>
@@ -59,6 +82,7 @@
 		z-index: 2;
 		padding: 40px
 	}
+
 	.post header h2 {
 		color: #fff;
 	}
@@ -74,7 +98,6 @@
 		line-height: 30px;
 	}
 
-
 	.post__content {
 		font-family: Helvetica;
 		font-size: 15px;
@@ -82,6 +105,17 @@
 		letter-spacing: 0;
 		line-height: 30px;
 		padding: 40px 20px;
+	}
+
+	.post__header-intro img {
+		margin-top: 0;
+		width: 100%;
+	}
+
+	.post__header-intro-text {
+		background: #F7FBFF;
+		padding: 40px;
+		color: #039ED8
 	}
 
 
@@ -92,8 +126,27 @@
 
 		.post__header-container {
 			width: 40%;
-			padding: 90px
+			padding: 0
 		}
+
+		.post__header-intro {
+			display: flex;
+			flex: 1;
+			font-size: 20px;
+		}
+
+		.post__header-intro img {
+			width: 100%;
+			margin-top: -40%;
+			position: relative;
+			z-index: 2;
+		}
+
+		.post__header-intro-text {
+
+		padding: 40px 90px 40px 40px;
+		color: #039ED8
+	}
 
 		.post__content {
 			padding: 90px;
