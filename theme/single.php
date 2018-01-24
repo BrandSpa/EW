@@ -140,7 +140,7 @@
 
 		.post__header-intro img {
 			width: 100%;
-			margin-top: -40%;
+			margin-top: -60%;
 			position: relative;
 			z-index: 2;
 		}
