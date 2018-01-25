@@ -2,9 +2,9 @@ import React from 'react';
 
 const ProjectItem = ({ project }) => (
 
-	<a href={project.url.replace('#038;', '&')} className="project">
+	<a href={project.url.replace('#038;', '&')} className="project-item">
 		<div
-			className="project__header"
+			className="project-item__header"
 			style={{ backgroundImage: `url(${project.thumb})` }}
 		/>
 
@@ -19,7 +19,7 @@ const ProjectItem = ({ project }) => (
 		</div>
 
 		<style jsx>{`
-        .project {
+        .project-item {
             display: flex;
             flex: 1;
             transition: transform .1s ease-in-out;
@@ -42,7 +42,7 @@ const ProjectItem = ({ project }) => (
             box-shadow: 0 0 20px rgba(0,0,0,.1)
           }
 
-          .project__header {
+          .project-item__header {
             width: 40%;
             min-height: 140px;
             background-position: center;
@@ -50,11 +50,6 @@ const ProjectItem = ({ project }) => (
             position: relative
           }
 
-          .project__header:after {
-            content: "";
-            display: block;
-            padding-bottom: 100%;
-          }
 
           .project__info {
             padding: 10px 20px;

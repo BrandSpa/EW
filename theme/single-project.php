@@ -154,7 +154,7 @@
 <style>
 
   .projects-section {
-    padding: 90px 0;
+    padding: 20px 0;
     display: flex;
     width: 100%;
     background: #F6FBFF;
@@ -225,7 +225,8 @@
   }
 
   .project__content {
-    margin: 160px 0;
+    margin: 40px 0;
+    padding: 0 20px;
   }
 
   .project__section {
@@ -269,7 +270,7 @@
 
   .project-video {
     width: 100%;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
   }
 
   .slick-prev {
@@ -299,6 +300,19 @@
   @media (min-width: 1024px) {
     .project__header h1 {
       font-size: 90px
+    }
+
+    .project__content {
+      margin: 160px 0;
+      padding: 0;
+    }
+
+    .project-video {
+      margin-bottom: 80px;
+    }
+
+    .projects-section {
+      padding: 20px 0;
     }
   }
 </style>
