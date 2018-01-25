@@ -186,7 +186,8 @@
   .project__header {
     width: 100%;
     background-size: cover;
-    height: 100vh;
+    height: auto;
+    padding: 90px 40px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -298,6 +299,11 @@
   }
 
   @media (min-width: 1024px) {
+
+    .project__header {
+      height: 100vh;
+    }
+
     .project__header h1 {
       font-size: 90px
     }
