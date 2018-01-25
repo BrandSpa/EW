@@ -26,6 +26,7 @@ const ProjectItem = ({ project }) => (
             position: relative;
             background: #fff;
             width: 100%;
+            margin-bottom: 20px;
           }
 
           .miniline {
@@ -58,7 +59,7 @@ const ProjectItem = ({ project }) => (
           .project__info {
             padding: 10px 20px;
             color: #1E9CC0;
-
+            width: 70%;
             position: relative;
           }
 
@@ -75,7 +76,6 @@ const ProjectItem = ({ project }) => (
             font-size: 15px;
             color: #5D5D5D;
             margin-bottom: 10px;
-            width: 70%;
           }
 
           .project__info-date {
@@ -89,8 +89,10 @@ const ProjectItem = ({ project }) => (
 
           @media (min-width: 1024px) {
             .project {
-              display: block
+              display: block;
+              margin-bottom: 2px;
             }
+
             .project__header {
               height: 200px;
               width: 100%;
