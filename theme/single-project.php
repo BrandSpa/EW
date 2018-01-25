@@ -155,7 +155,6 @@
 
   .projects-section {
     padding: 20px 0;
-    display: flex;
     width: 100%;
     background: #F6FBFF;
   }
