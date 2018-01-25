@@ -32,7 +32,7 @@ const ProjectItem = ({ project }) => (
             width: 15px;
             height: 1px;
             background: #039ED8;
-            margin: 10px 0;
+            margin: 5px 0;
           }
 
           .project:hover {
@@ -46,17 +46,25 @@ const ProjectItem = ({ project }) => (
             min-height: 140px;
             background-position: center;
             background-size: cover;
+            position: relative
+          }
+
+          .project__header:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
           }
 
           .project__info {
-            padding: 10px;
+            padding: 10px 20px;
             color: #1E9CC0;
 
             position: relative;
           }
 
           .project__info__bottom {
-            position: relative;
+            position: absolute;
+            bottom: 10px;
           }
 
           .project__info span {
@@ -64,13 +72,18 @@ const ProjectItem = ({ project }) => (
           }
 
           .project__info-title {
-            font-size: 19px;
+            font-size: 15px;
             color: #5D5D5D;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
+            width: 70%;
+          }
+
+          .project__info-date {
+            font-size: 13px;
           }
 
           .project__info-country, .project__info-state-city {
-            font-size: 15px;
+            font-size: 13px;
             color: #039ED8;
           }
 
@@ -84,13 +97,31 @@ const ProjectItem = ({ project }) => (
             }
 
             .project__info {
-              height: 240px;
+              height: 200px;
               padding: 20px;
             }
 
             .project__info__bottom {
               position: absolute;
               bottom: 20px;
+            }
+
+            .project__info-title {
+              font-size: 19px;
+              margin-bottom: 30px;
+              width: 100%;
+            }
+
+            .miniline {
+              margin: 10px 0;
+            }
+
+            .project__info-date {
+              font-size: 15px;
+            }
+
+            .project__info-country, .project__info-state-city {
+              font-size: 15px;
             }
 
           }
