@@ -83,12 +83,12 @@ const ProjectItem = ({ project }) => (
           }
 
           @media (min-width: 1024px) {
-            .project {
+            .project-item {
               display: block;
               margin-bottom: 2px;
             }
 
-            .project__header {
+            .project-item__header {
               height: 200px;
               width: 100%;
             }
