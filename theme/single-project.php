@@ -157,6 +157,7 @@
     padding: 20px 0;
     width: 100%;
     background: #F6FBFF;
+    float: left;
   }
 
   .project-date {
