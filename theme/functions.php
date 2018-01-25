@@ -31,4 +31,4 @@ function gett($text) {
 	return $text;
 }
 
-add_theme_support( 'post-thumbnails', ['post'] );
+add_theme_support( 'post-thumbnails', ['post', 'project', 'product'] );

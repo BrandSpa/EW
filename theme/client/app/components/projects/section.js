@@ -228,21 +228,9 @@ class ProjectsSection extends Component {
   			</div>
 
 				<style jsx>{`
-
-				.empty-value {
-					height: 100px;
-					display: flex;
-					flex: 1;
-					align-items: center;
-				}
-
-				.empty-value h4 {
-					font-size: 17px;
-					color: #039ED8;
-				}
-
           .projects {
-            padding: 40px;
+						padding: 0;
+						margin: 20px 0;
             display: flex;
             flex-wrap: wrap;
             flex-direction: column;
@@ -262,6 +250,18 @@ class ProjectsSection extends Component {
 
           .project-item {
 						padding: 5px;
+					}
+
+					.empty-value {
+						height: 100px;
+						display: flex;
+						flex: 1;
+						align-items: center;
+					}
+
+					.empty-value h4 {
+						font-size: 17px;
+						color: #039ED8;
 					}
 
 					.filters-title {
@@ -319,7 +319,8 @@ class ProjectsSection extends Component {
 
 					@media (min-width: 1024px) {
 						.projects {
-              flex-direction: row;
+							flex-direction: row;
+							padding: 40px;
 						}
 
 						.filters {

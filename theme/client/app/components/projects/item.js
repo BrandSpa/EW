@@ -19,8 +19,9 @@ const ProjectItem = ({ project }) => (
 		</div>
 
 		<style jsx>{`
-          .project {
-            display: block;
+        .project {
+            display: flex;
+            flex: 1;
             transition: transform .1s ease-in-out;
             position: relative;
             background: #fff;
@@ -41,22 +42,21 @@ const ProjectItem = ({ project }) => (
           }
 
           .project__header {
-            width: 100%;
-            height: 200px;
+            width: 40%;
+            min-height: 140px;
             background-position: center;
             background-size: cover;
           }
 
           .project__info {
-            padding: 20px;
+            padding: 10px;
             color: #1E9CC0;
-            height: 240px;
+
             position: relative;
           }
 
           .project__info__bottom {
-            position: absolute;
-            bottom: 20px;
+            position: relative;
           }
 
           .project__info span {
@@ -72,6 +72,27 @@ const ProjectItem = ({ project }) => (
           .project__info-country, .project__info-state-city {
             font-size: 15px;
             color: #039ED8;
+          }
+
+          @media (min-width: 1024px) {
+            .project {
+              display: block
+            }
+            .project__header {
+              height: 200px;
+              width: 100%;
+            }
+
+            .project__info {
+              height: 240px;
+              padding: 20px;
+            }
+
+            .project__info__bottom {
+              position: absolute;
+              bottom: 20px;
+            }
+
           }
 
 
