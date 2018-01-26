@@ -190,19 +190,19 @@ class ProjectsSection extends Component {
 						onClick={this.toggleFilters}
 					>{texts.filters} <i className="ion-plus" />
 					</button>
-  			<div className={filterContainerStyle}>
-  			<Filters
-  				onChange={this.handleFilters}
-  				{...this.props}
-  			/>
-  			<div className="col-lg-3">
-  				<h5 className="filters-title">{texts.products}</h5>
-  				<FiltersProducts
-  					onChange={this.handleFiltersProducts}
-								productsOptions={this.props.productsOptions}
-								texts={texts}
-  				/>
-     </div>
+					<div className={filterContainerStyle}>
+						<Filters
+							onChange={this.handleFilters}
+							{...this.props}
+						/>
+						<div className="col-lg-3">
+							<h5 className="filters-title">{texts.products}</h5>
+							<FiltersProducts
+								onChange={this.handleFiltersProducts}
+										productsOptions={this.props.productsOptions}
+										texts={texts}
+							/>
+						</div>
 					</div>
   			</div>
   			<div className="col-lg-9">

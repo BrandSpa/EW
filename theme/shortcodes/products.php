@@ -13,6 +13,7 @@ function products_sc( $atts ){
 			"features" => gett('FEATURES'),
 			"brands" => gett('BRANDS'),
 			'seeMore' => gett('See more'),
+			'filters' => gett('Filters'),
 		],
 		"brandsOptions" => get_terms('brand', [ 'hide_empty' => 0 ]),
 		"typesOptions" => get_terms('type', [ 'hide_empty' => 0 ]),

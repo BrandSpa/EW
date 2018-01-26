@@ -4,7 +4,8 @@ const Product = ({
 	name, type, subtype, thumb, url,
 }) => (
 	<div className="product-container">
-		<a href={url.replace('#038;', '&')} className="product" style={{ backgroundImage: `url(${thumb})` }}>
+		<a href={url.replace('#038;', '&')} className="product-item" style={{ backgroundImage: `url(${thumb})` }}>
+			<div	className="product-img" style={{ backgroundImage: `url(${thumb})` }}></div>
 			<div className="product__details">
 				<span className="product-name">{name}</span>
 				<span className="product-type">{type}</span>
@@ -12,8 +13,8 @@ const Product = ({
 			</div>
 		</a>
 		<style jsx>{`
-		.product {
-			display: block;
+		.product-item {
+			display: flex;
 			position: relative;
 			background-position: center;
 			background-size: cover !important;
@@ -34,16 +35,28 @@ const Product = ({
 			bottom: 0;
 			display: flex;
 			flex-direction: column;
+			min-height: 110px;
 		}
 
 		.product-name {
 			font-size: 19px;
 			margin-bottom: 20px;
+			color: #039ED8;
 		}
 
 		.product-type, .product-subtype {
 			font-size: 15px;
 			color: #039ED8;
+		}
+
+		@media (min-width: 1024px) {
+			.product-item {
+
+			}
+
+			.product-img {
+				display: none
+			}
 		}
 
 	`}

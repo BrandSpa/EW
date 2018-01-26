@@ -6,7 +6,8 @@ import Points from '../points';
 import FilterTypes from './filterTypes';
 import FilterFeatures from './filterFeatures';
 import FilterBrands from './filterBrands';
-
+import classnames from 'classnames';
+import {throttle} from 'lodash';
 const uri = '/wp-content/themes/theme/graphql/index.php';
 const apolloFetch = createApolloFetch({ uri });
 
@@ -30,10 +31,36 @@ class ProductsSection extends Component {
 		taxQuery: [],
 		paged: 1,
 		empty: false,
+		inBound: false,
+  	inTop: false,
+  	inBottom: false,
+		showFilters: false
 	}
 
 	componentDidMount() {
 		this.prefilter();
+		if (window.matchMedia('(max-width: 1024px)').matches) {
+  		window.addEventListener('scroll', throttle(this.stickFilters, 150));
+  	}
+	}
+
+	stickFilters = () => {
+		const { container, filters } = this;
+		const bound = container.getBoundingClientRect();
+		const containerHeight = container.clientHeight;
+		const h = filters.clientHeight;
+
+		if (bound.top < 0, bound.bottom > 0) {
+			this.setState({ inBound: true });
+		}
+
+		if (!(bound.top < 0 && (bound.bottom - h) - 40 > 0) && bound.y < 0) {
+			this.setState({ inBound: false });
+		}
+
+		if (!(bound.top < 0 && (bound.bottom - h) - 40 > 0) && bound.y > 0) {
+			this.setState({ inBound: false });
+		}
 	}
 
 	getProducts = async (variables = {}) => {
@@ -152,13 +179,36 @@ class ProductsSection extends Component {
   	});
 	}
 
+	toggleFilters = (e) => {
+		this.setState({ showFilters: !this.state.showFilters });
+	}
+
 	render() {
-		const { products, empty } = this.state;
+		const { products, empty, showFilters, inBound } = this.state;
 		const { texts } = this.props;
 
+		const filtersStyle = classnames('filters', {
+			'filters--in-bound': inBound,
+		});
+
+  	const filterContainerStyle = classnames('filters-container', {
+  		'filters-container--open': showFilters,
+		});
+
+		const filterToggleStyle = classnames('filters__toggle', {
+			'filters__toggle--open': showFilters,
+		});
+
 		return (
-			<section>
-				<div className="col-sm-3">
+			<section  ref={ref => this.container = ref}>
+				<div className={filtersStyle} ref={ref => this.filters = ref}>
+				<button
+					className={filterToggleStyle}
+					onClick={this.toggleFilters}
+				>{texts.filters} <i className="ion-plus" />
+				</button>
+				<div className={filterContainerStyle}>
+				<div className="col-md-3">
 					<FilterTypes
 					 typesOptions={this.props.typesOptions}
 					 type={this.props.type}
@@ -176,11 +226,13 @@ class ProductsSection extends Component {
 						brand={this.props.brand}
 						onChange={this.handleBrandsFilters}
 					/>
+					</div>
+				</div>
 				</div>
 				<div className="col-sm-9">
 					<div className="products">
 						{products.length > 0 ? products.map(product => (
-							<div className="col-sm-4">
+							<div className="col-md-4 product-item" >
 								<Product {...product} />
 							</div>
 						))
@@ -199,10 +251,60 @@ class ProductsSection extends Component {
 				</div>
 				<style jsx>{`
 
-				.products {
-					padding: 40px;
-					display: flex;
-					flex-wrap: wrap;
+					.products {
+						padding: 0px;
+					}
+
+					.filters {
+						width: 100%;
+						background: #fff;
+						box-shadow: 0 10px 10px rgba(0,0,0,.1);
+						display: flex;
+						flex-direction: column;
+						padding-top: 20px;
+						transition: .3s ease;
+					}
+
+					.filters--in-bound {
+						position: fixed;
+						left: 0;
+						right: 0;
+						top: 80px;
+						z-index: 100;
+					}
+
+					.filters__toggle {
+						display: flex;
+						align-self: flex-end;
+						cursor: pointer;
+						border: none;
+						background: transparent;
+						font-size: 15px;
+						color: #039ED8;
+						margin-bottom: 20px;
+						align-items: center;
+						outline: none;
+					}
+
+					.filters__toggle i {
+						padding: 0 20px;
+					}
+
+					.filters__toggle--open i::before {
+						transform: rotate(45deg);
+					}
+
+					.filters-container {
+						display: none;
+					}
+
+					.filters-container--open {
+						display: block;
+						padding-bottom: 20px;
+					}
+
+					.product-item {
+						padding: 5px;
 					}
 
 					.empty-value {
@@ -231,6 +333,29 @@ class ProductsSection extends Component {
 
 					.pagination-btn span {
 						display: block;
+					}
+
+					@media (min-width: 1024px) {
+						.products {
+							padding: 40px;
+							display: flex;
+							flex-wrap: wrap;
+							}
+
+							.filters {
+								display: initial;
+								box-shadow: none;
+								background: transparent;
+							}
+
+							.filters-container {
+								display: block;
+							}
+
+							.filters__toggle {
+								display: none;
+							}
+
 					}
 				`}
 				</style>
