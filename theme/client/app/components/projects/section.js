@@ -270,12 +270,13 @@ class ProjectsSection extends Component {
 					}
 
 					.filters {
-						width: 100%;
+						width: 90%;
 						background: #fff;
 						box-shadow: 0 10px 10px rgba(0,0,0,.1);
 						display: flex;
 						flex-direction: column;
 						padding-top: 20px;
+						margin-left: 20px;
 						transition: .3s ease;
 					}
 
@@ -326,6 +327,8 @@ class ProjectsSection extends Component {
 							display: initial;
 							box-shadow: none;
 							background: transparent;
+							padding: 0;
+							margin: 0;
 						}
 
 						.filters-container {

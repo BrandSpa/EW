@@ -20,7 +20,7 @@ const Product = ({
 			background-size: cover !important;
 			min-height: 260px;
 			color: #5D5D5D;
-			margin-bottom: 30px;
+			margin-bottom: 2px;
 		}
 
 		.product-container {
