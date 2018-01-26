@@ -36,7 +36,7 @@ const ProjectItem = ({ project }) => (
             margin: 5px 0;
           }
 
-          .project:hover {
+          .project-item:hover {
             transform: scale(1.150);
             z-index: 2;
             box-shadow: 0 0 20px rgba(0,0,0,.1)
@@ -105,7 +105,7 @@ const ProjectItem = ({ project }) => (
             }
 
             .project__info-title {
-              font-size: 19px;
+              font-size: 17px;
               margin-bottom: 30px;
               width: 100%;
             }
