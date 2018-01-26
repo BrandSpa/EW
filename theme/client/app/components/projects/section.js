@@ -283,7 +283,7 @@ class ProjectsSection extends Component {
 						position: fixed;
 						left: 0;
 						right: 0;
-						top: 80px;
+						top: 60px;
 						z-index: 100;
 					}
 

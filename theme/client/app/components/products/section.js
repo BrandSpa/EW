@@ -256,12 +256,13 @@ class ProductsSection extends Component {
 					}
 
 					.filters {
-						width: 100%;
+						width: 90%;
 						background: #fff;
 						box-shadow: 0 10px 10px rgba(0,0,0,.1);
 						display: flex;
 						flex-direction: column;
 						padding-top: 20px;
+						margin-left: 20px;
 						transition: .3s ease;
 					}
 
@@ -269,7 +270,7 @@ class ProductsSection extends Component {
 						position: fixed;
 						left: 0;
 						right: 0;
-						top: 80px;
+						top: 60px;
 						z-index: 100;
 					}
 
