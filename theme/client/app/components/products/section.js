@@ -263,6 +263,7 @@ class ProductsSection extends Component {
 						flex-direction: column;
 						padding-top: 20px;
 						margin-left: 20px;
+						margin-bottom: 20px;
 						transition: .3s ease;
 					}
 
@@ -340,7 +341,7 @@ class ProductsSection extends Component {
 
 					@media (min-width: 1024px) {
 						.products {
-							padding: 40px;
+							padding: 0;
 							display: flex;
 							flex-wrap: wrap;
 							}
@@ -349,10 +350,14 @@ class ProductsSection extends Component {
 								display: initial;
 								box-shadow: none;
 								background: transparent;
+								margin: 0;
+								padding: 0;
 							}
 
 							.filters-container {
 								display: block;
+								height: auto;
+								overflow: initial;
 							}
 
 							.filters__toggle {
