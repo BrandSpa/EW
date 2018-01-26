@@ -276,7 +276,7 @@ class ProjectsSection extends Component {
 						display: flex;
 						flex-direction: column;
 						padding-top: 20px;
-						margin-left: 20px;
+						margin-left: 15px;
 						transition: .3s ease;
 					}
 
