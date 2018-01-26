@@ -296,6 +296,8 @@ class ProductsSection extends Component {
 
 					.filters-container {
 						display: none;
+						overflow: scroll;
+						height: 50vh;
 					}
 
 					.filters-container--open {
