@@ -320,7 +320,6 @@ class ProjectsSection extends Component {
 					@media (min-width: 1024px) {
 						.projects {
 							flex-direction: row;
-							padding: 40px;
 						}
 
 						.filters {

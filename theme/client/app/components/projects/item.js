@@ -96,6 +96,7 @@ const ProjectItem = ({ project }) => (
             .project__info {
               height: 200px;
               padding: 20px;
+              width: 100%;
             }
 
             .project__info__bottom {
