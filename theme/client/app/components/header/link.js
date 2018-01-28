@@ -26,10 +26,16 @@ class HeaderLink extends Component {
 				onMouseEnter={this.handleHover}
 				onMouseLeave={this.handleOut}
 			>
-				<a href={item.url}>{item.title} {item.sub && item.sub.length > 0 && <img src={`${this.props.uri}/public/img/arrow.svg`} />}</a>
+				<a href={item.url}><div dangerouslySetInnerHTML={{__html: item.title}} /> {item.sub && item.sub.length > 0 && <img src={`${this.props.uri}/public/img/arrow.svg`} />}</a>
 				{item.sub &&
 						<ul className={submenuClass}>
-							{item.sub.map((subItem, i) => <li key={subItem.ID}><a href={subItem.url}>{subItem.title}</a></li>)
+							{item.sub.map((subItem, i) =>
+								<li key={subItem.ID}>
+									<a href={subItem.url}>
+									<div dangerouslySetInnerHTML={{__html: subItem.title}} />
+									</a>
+								</li>
+							)
 							}
 						</ul>
 				}
