@@ -16,7 +16,10 @@ function products_sc( $atts ){
 			'filters' => gett('Filters'),
 		],
 		"brandsOptions" => get_terms('brand', [ 'hide_empty' => 0 ]),
-		"typesOptions" => get_terms('type', [ 'hide_empty' => 0 ]),
+		"typesOptions" => array_map(function($type) {
+			$type->position = get_option( "taxonomy_" . $type->$term_id );
+			return $type;
+		}, get_terms('type', [ 'hide_empty' => 0 ])),
 		"featuresOptions" => get_terms('feature', [ 'hide_empty' => 0 ]),
 		"brand" => get_term_by('name', $at['brand'], 'brand'),
 		"type" => get_term_by('name', $at['type'], 'type'),
