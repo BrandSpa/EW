@@ -51,7 +51,6 @@ add_action( 'type_add_form_fields', 'category_position_add', 10, 2 );
 function category_position_edit( $term ) {
 	$termid = $term->term_id;
 	$term_meta = get_option( "taxonomy_" . $termid );
-	var_dump( $term_meta);
 	?>
 	<div class="form-field">
 		<label for="position">Position</label>
@@ -78,7 +77,7 @@ function save_taxonomy_custom_meta( $term_id ) {
 		update_option( "taxonomy_" . $t_id, $term_meta );
 	}
 }
-add_action( 'edited_category', 'save_taxonomy_custom_meta', 10, 2 );
-add_action( 'create_category', 'save_taxonomy_custom_meta', 10, 2 );
+add_action( 'edited_type', 'save_taxonomy_custom_meta', 10, 2 );
+add_action( 'create_type', 'save_taxonomy_custom_meta', 10, 2 );
 
 
