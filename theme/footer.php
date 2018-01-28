@@ -43,7 +43,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     position: relative;
     width: 100%;
     background: #1f1f1f;
-    padding-top: 150px;
+    padding-top: 50px;
     padding-bottom: 50px;
     display: flex;
     flex-direction: column;
@@ -59,7 +59,8 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
   }
 
   #menu-footer > li {
-    margin: 0 80px 40px 0;
+    margin: 20px auto;
+    width: 100%;
   }
 
   #menu-footer > li > a {
@@ -161,6 +162,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
   @media (min-width: 1024px) {
     .footer {
       flex-direction: row;
+      padding-top: 150px;
     }
 
     .footer-bottom__content {
@@ -186,6 +188,10 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
 
     #menu-footer {
       justify-content: space-between;
+    }
+
+    #menu-footer > li {
+      margin: 0 80px 40px 0;
     }
 
   }
