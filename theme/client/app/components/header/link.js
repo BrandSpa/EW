@@ -27,7 +27,7 @@ class HeaderLink extends Component {
 				onMouseLeave={this.handleOut}
 			>
 				<a href={item.url}>
-					<div style={{display: 'inline-block'}} dangerouslySetInnerHTML={{__html: item.title}} />
+					<div style={{display: 'inline-block', textTransform: 'uppercase'}} dangerouslySetInnerHTML={{__html: item.title}} />
 					{item.sub && item.sub.length > 0 && <img src={`${this.props.uri}/public/img/arrow.svg`} />}
 				</a>
 				{item.sub &&
