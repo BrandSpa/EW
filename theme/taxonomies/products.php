@@ -45,4 +45,4 @@ function category_position_add( $term ) {
 <?php
 }
 
-add_action( 'types_add_form_fields', 'category_position_add', 10, 2 );
+add_action( 'type_add_form_fields', 'category_position_add', 10, 2 );
