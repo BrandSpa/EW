@@ -34,3 +34,15 @@ function products_taxononies() {
 }
 
 add_action('init', 'products_taxononies');
+
+
+function category_position_add( $term ) {
+	?>
+	<div class="form-field">
+		<label for="taxImage">Position</label>
+		<input type="text" name="taxImage" id="taxImage" value="">
+	</div>
+<?php
+}
+
+add_action( 'types_add_form_fields', 'category_position_add', 10, 2 );

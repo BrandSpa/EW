@@ -11,3 +11,4 @@ require_once 'visual_composer/hero_slider.php';
 require_once 'visual_composer/projects.php';
 require_once 'visual_composer/related_projects.php';
 require_once 'visual_composer/products.php';
+require_once 'visual_composer/contact_us.php';
