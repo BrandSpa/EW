@@ -17,7 +17,7 @@ function products_sc( $atts ){
 		],
 		"brandsOptions" => get_terms('brand', [ 'hide_empty' => 0 ]),
 		"typesOptions" => array_map(function($type) {
-			$type->position = get_option( "taxonomy_" . $type->$term_id );
+			$type->position = get_option( "taxonomy_" . $type->$term_id )['position'];
 			return $type;
 		}, get_terms('type', [ 'hide_empty' => 0 ])),
 		"featuresOptions" => get_terms('feature', [ 'hide_empty' => 0 ]),
