@@ -10,10 +10,13 @@ function esw_type_post_cb($post) {
 
   $fields = [
     "header",
-		 "intro"
+     "intro",
+     "year",
+     "month",
+     "day"
   ];
 
-	$props = [];
+	$props = ['months' => months()];
 
   foreach($fields as $field) {
     ${$field} = get_post_meta($post->ID, $field . '_key', true);
@@ -22,7 +25,10 @@ function esw_type_post_cb($post) {
 
 ?>
 
-<div class="post-metabox-container" data-props='<?php echo json_encode($props) ?>'></div>
+  <div
+    class="post-metabox-container"
+    data-props='<?php echo json_encode($props) ?>'
+  ></div>
 
 <script src="<?php echo get_template_directory_uri() ?>/public/js/admin.js"></script>
 <?php
@@ -31,7 +37,10 @@ function esw_type_post_cb($post) {
 function ews_post_save($post_id) {
   $fields = [
     "header",
-		 "intro"
+     "intro",
+     "year",
+     "month",
+     "day"
   ];
 
   foreach($fields as $field) {

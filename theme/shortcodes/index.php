@@ -5,6 +5,7 @@ require_once 'projects.php';
 require_once 'related_projects.php';
 require_once 'products.php';
 require_once 'contact_us.php';
+require_once 'posts.php';
 
 //VISUALCOMPOSER
 require_once 'visual_composer/hero_slider.php';
