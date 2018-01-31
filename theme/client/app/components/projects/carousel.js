@@ -1,16 +1,49 @@
 import React, { Component } from 'react';
-import Post from './post_slide';
+import { createApolloFetch } from 'apollo-fetch';
+import Post from './carousel-item';
 
-class PostsCarousel extends Component {
+const uri = '/wp-content/themes/theme/graphql/index.php';
+const apolloFetch = createApolloFetch({ uri });
+
+const projectsQuery = `
+query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){
+  projects(posts_per_page: 12, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {
+		id
+    thumb
+		name
+		url
+    country
+    state
+		city
+		year
+		month
+  }
+}
+`;
+
+class ProjectsCarousel extends Component {
   state = {
 		slide: 0,
-    mobile: false
+		mobile: false,
+		projects: []
 	}
 
   componentDidMount = () => {
+		this.getProjects();
     this.isMobile();
     window.addEventListener('resize', this.isMobile);
+	}
+
+
+  getProjects = async (variables = {}) => {
+  	try {
+  		const res = await apolloFetch({ query: projectsQuery });
+  		this.setState({ projects: [...this.state.projects, ...res.data.projects] });
+  	} catch (err) {
+  		console.log('get projects err: ', err);
+  	}
   }
+
 
   componentWillUnmount = () => {
     window.removeEventListener('resize', this.isMobile);
@@ -26,10 +59,10 @@ class PostsCarousel extends Component {
 
 	next = e => {
 		if(e) e.preventDefault();
-	  let total = (this.props.posts.length / 3) - 1;
+	  let total = (this.state.projects.length / 3) - 1;
 
     if(this.state.mobile) {
-      total = this.props.posts.length - 1;
+      total = this.state.projects.length - 1;
     }
 
 		const current = this.state.slide;
@@ -39,10 +72,10 @@ class PostsCarousel extends Component {
 
 	prev = e => {
 		if(e) e.preventDefault();
-    let total = (this.props.posts.length / 3) - 1;
+    let total = (this.state.projects.length / 3) - 1;
 
     if(this.state.mobile) {
-      total = this.props.posts.length - 1;
+      total = this.state.projects.length - 1;
     }
 
 		const current = this.state.slide;
@@ -51,8 +84,8 @@ class PostsCarousel extends Component {
 	}
 
   render() {
-    const { posts } = this.props;
-    let total = posts.length;
+    const { projects } = this.state;
+    let total = projects.length;
     let viewportWidth = `${total / 2 * 100}%`;
     let viewportLeft = `-${this.state.slide * 100}%`;
 
@@ -64,8 +97,8 @@ class PostsCarousel extends Component {
       <div className="posts-slider">
         <div className="posts-slider__container">
           <div className="posts-slider__viewport" style={{width: viewportWidth,  left: viewportLeft}}>
-            {posts.map(post =>
-              <Post key={post.ID} post={post} total={posts.length} mobile={this.state.mobile} />
+            {projects.map(project =>
+              <Post key={project.ID} post={project} total={projects.length} mobile={this.state.mobile} />
             )}
           </div>
         </div>
@@ -140,4 +173,4 @@ class PostsCarousel extends Component {
   }
 }
 
-export default PostsCarousel;
+export default ProjectsCarousel;
