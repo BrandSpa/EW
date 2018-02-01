@@ -184,6 +184,9 @@
     width: auto;
     text-align: center;
   }
+  .arrow svg{
+    cursor: pointer;
+  }
   .line {
     width: 60px;
     height: 1px;
