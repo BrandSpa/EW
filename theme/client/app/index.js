@@ -8,6 +8,7 @@ import HeroSlider from './components/heroSlider';
 import ContactUs from './components/contactUs';
 import PostsCarousel from './components/posts/carousel';
 import ProjectsCarousel from './components/projects/carousel';
+import arrowAction from './../lib/arrow';
 
 multipleRender(Header, '.header-container');
 multipleRender(Footer, '.footer-container');
@@ -18,3 +19,5 @@ multipleRender(HeroSlider, '.heroSlider-container');
 multipleRender(ContactUs, '.contact-us-container');
 multipleRender(PostsCarousel, '.posts-container');
 multipleRender(ProjectsCarousel, '.projects-carousel-container');
+
+arrowAction();
