@@ -4,12 +4,8 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
 
 <section class="footer">
   <div class="col-lg-1"></div>
-  <div class="col-lg-5 col-xs-10">
+  <div class="col-lg-10 col-xs-10">
     <?php wp_nav_menu(['name' => 'header', 'menu_id' => 'menu-footer']); ?>
-  </div>
-  <div class="col-lg-5 col-xs-10 footer-contact">
-        <h4><?php echo gett('CONTACT US') ?></h4>
-        <?php echo do_shortcode('[ew_contact_us]') ?>
   </div>
   <div class="col-xs-1 col-sm-1"></div>
 </section>
@@ -47,7 +43,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     position: relative;
     width: 100%;
     background: #1f1f1f;
-    padding-top: 150px;
+    padding-top: 50px;
     padding-bottom: 50px;
     display: flex;
     flex-direction: column;
@@ -63,7 +59,8 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
   }
 
   #menu-footer > li {
-    margin: 0 80px 40px 0;
+    margin: 20px auto;
+    width: 100%;
   }
 
   #menu-footer > li > a {
@@ -165,6 +162,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
   @media (min-width: 1024px) {
     .footer {
       flex-direction: row;
+      padding-top: 150px;
     }
 
     .footer-bottom__content {
@@ -186,6 +184,15 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
 
     .social-icon  {
       margin: 0 20px 0 0;
+    }
+
+    #menu-footer {
+      justify-content: space-between;
+    }
+
+    #menu-footer > li {
+      margin: 0 80px 40px 0;
+      width: auto;
     }
 
   }

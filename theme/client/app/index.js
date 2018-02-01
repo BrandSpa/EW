@@ -6,6 +6,8 @@ import RelatedProjects from './components/projects/related';
 import Products from './components/products/section';
 import HeroSlider from './components/heroSlider';
 import ContactUs from './components/contactUs';
+import PostsCarousel from './components/posts/carousel';
+import ProjectsCarousel from './components/projects/carousel';
 
 multipleRender(Header, '.header-container');
 multipleRender(Footer, '.footer-container');
@@ -14,3 +16,5 @@ multipleRender(RelatedProjects, '.related-projects-container');
 multipleRender(Products, '.products-container');
 multipleRender(HeroSlider, '.heroSlider-container');
 multipleRender(ContactUs, '.contact-us-container');
+multipleRender(PostsCarousel, '.posts-container');
+multipleRender(ProjectsCarousel, '.projects-carousel-container');

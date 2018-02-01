@@ -29294,7 +29294,7 @@ exports.default = ProductMetabox;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -29332,70 +29332,121 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var PostMetabox = function (_Component) {
-  _inherits(PostMetabox, _Component);
+	_inherits(PostMetabox, _Component);
 
-  function PostMetabox() {
-    var _ref;
+	function PostMetabox() {
+		var _ref;
 
-    var _temp, _this, _ret;
+		var _temp, _this, _ret;
 
-    _classCallCheck(this, PostMetabox);
+		_classCallCheck(this, PostMetabox);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+			args[_key] = arguments[_key];
+		}
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = PostMetabox.__proto__ || Object.getPrototypeOf(PostMetabox)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      header: '',
-      intro: ''
-    }, _this.handleChange = function (e) {
-      console.log('handle change', e.target.name);
-      _this.setState(_defineProperty({}, e.target.name, e.target.value));
-    }, _temp), _possibleConstructorReturn(_this, _ret);
-  }
+		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = PostMetabox.__proto__ || Object.getPrototypeOf(PostMetabox)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+			header: '',
+			intro: '',
+			year: '',
+			month: '',
+			day: ''
+		}, _this.handleChange = function (e) {
+			_this.setState(_defineProperty({}, e.target.name, e.target.value));
+		}, _temp), _possibleConstructorReturn(_this, _ret);
+	}
 
-  _createClass(PostMetabox, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var state = _extends({}, this.state, this.props);
-      this.setState(state);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _state = this.state,
-          header = _state.header,
-          intro = _state.intro;
+	_createClass(PostMetabox, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			var state = _extends({}, this.state, this.props);
+			this.setState(state);
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _state = this.state,
+			    header = _state.header,
+			    intro = _state.intro,
+			    day = _state.day,
+			    month = _state.month,
+			    year = _state.year;
+			var months = this.props.months;
 
 
-      return _react2.default.createElement(
-        'section',
-        null,
-        _react2.default.createElement(
-          'h4',
-          null,
-          'Header'
-        ),
-        _react2.default.createElement('hr', null),
-        _react2.default.createElement(
-          'div',
-          { className: 'form-group' },
-          _react2.default.createElement(_singleUploader2.default, {
-            name: 'header',
-            imageId: header
-          })
-        ),
-        _react2.default.createElement(
-          'h4',
-          null,
-          'Intro'
-        ),
-        _react2.default.createElement('textarea', { style: { width: '100%' }, rows: '3', name: 'intro', placeholder: 'Intro', onChange: this.handleChange, value: intro })
-      );
-    }
-  }]);
+			return _react2.default.createElement(
+				'section',
+				{ style: { padding: '10px' } },
+				_react2.default.createElement(
+					'h4',
+					null,
+					'Header'
+				),
+				_react2.default.createElement('hr', null),
+				_react2.default.createElement(
+					'div',
+					{ className: 'form-group' },
+					_react2.default.createElement(_singleUploader2.default, {
+						name: 'header',
+						imageId: header
+					})
+				),
+				_react2.default.createElement(
+					'h4',
+					null,
+					'Intro'
+				),
+				_react2.default.createElement('textarea', { style: { width: '100%' }, rows: '3', name: 'intro', placeholder: 'Intro', onChange: this.handleChange, value: intro }),
+				_react2.default.createElement(
+					'h4',
+					null,
+					'Date'
+				),
+				_react2.default.createElement(
+					'div',
+					{ style: { justifyContent: 'space-between', display: 'flex' } },
+					_react2.default.createElement('input', {
+						type: 'text',
+						name: 'day',
+						onChange: this.handleChange,
+						placeholder: 'Day',
+						style: { width: '32%', height: '40px' },
+						value: day
+					}),
+					_react2.default.createElement(
+						'select',
+						{
+							name: 'month',
+							onChange: this.handleChange,
+							style: { width: '32%', height: '40px' },
+							value: month
+						},
+						_react2.default.createElement(
+							'option',
+							{ value: '' },
+							'Month'
+						),
+						months.map(function (monthOpt) {
+							return _react2.default.createElement(
+								'option',
+								{ value: monthOpt },
+								monthOpt
+							);
+						})
+					),
+					_react2.default.createElement('input', {
+						type: 'text',
+						name: 'year',
+						onChange: this.handleChange,
+						placeholder: 'Year',
+						style: { width: '32%', height: '40px' },
+						value: year })
+				)
+			);
+		}
+	}]);
 
-  return PostMetabox;
+	return PostMetabox;
 }(_react.Component);
 
 exports.default = PostMetabox;

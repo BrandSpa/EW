@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { findIndex, groupBy } from 'lodash';
+import { findIndex, groupBy, sortBy } from 'lodash';
 import FilterType from './filterType';
 
 class FilterTypes extends Component {
@@ -47,10 +47,12 @@ class FilterTypes extends Component {
 
 	render() {
 		const { types, selected } = this.state;
+		const typesByPosition = sortBy(types, ['position']);
+		console.log(types, typesByPosition);
 
 		return (
 			<section>
-				{types.map(type => (
+				{typesByPosition.map(type => (
 					<FilterType
 						type={type}
 						selected={selected}

@@ -34,3 +34,50 @@ function products_taxononies() {
 }
 
 add_action('init', 'products_taxononies');
+
+
+function category_position_add() {
+	?>
+	<div class="form-field">
+		<label for="position">Position</label>
+		<input type="text" name="term_meta[position]" id="position">
+	</div>
+<?php
+}
+
+add_action( 'type_add_form_fields', 'category_position_add', 10, 2 );
+
+
+function category_position_edit( $term ) {
+	$termid = $term->term_id;
+	$term_meta = get_option( "taxonomy_" . $termid );
+	?>
+	<div class="form-field">
+		<label for="position">Position</label>
+		<input type="text" name="term_meta[position]"  value="<?php echo $term_meta['position'] ?>">
+	</div>
+<?php
+}
+
+add_action( 'type_edit_form_fields', 'category_position_edit', 10, 2 );
+
+
+function save_taxonomy_custom_meta( $term_id ) {
+
+	if ( isset( $_POST['term_meta'] ) ) {
+		$t_id = $term_id;
+		$term_meta = get_option( "taxonomy_$t_id" );
+		$cat_keys = array_keys( $_POST['term_meta'] );
+		foreach ( $cat_keys as $key ) {
+			if ( isset ( $_POST['term_meta'][$key] ) ) {
+				$term_meta[$key] = $_POST['term_meta'][$key];
+			}
+		}
+		// Save the option array.
+		update_option( "taxonomy_" . $t_id, $term_meta );
+	}
+}
+add_action( 'edited_type', 'save_taxonomy_custom_meta', 10, 2 );
+add_action( 'create_type', 'save_taxonomy_custom_meta', 10, 2 );
+
+

@@ -273,7 +273,7 @@
 
 	.product__perks section .list span {
 		display: block;
-		margin-bottom: 20px;
+		margin-bottom: 4px;
 	}
 
 	.downloads {

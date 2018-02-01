@@ -53,7 +53,12 @@
       list-style: none;
     }
 
+    button {
+      outline: none;
+    }
+
     a:hover {
+      outline: none;
       text-decoration: none;
     }
 

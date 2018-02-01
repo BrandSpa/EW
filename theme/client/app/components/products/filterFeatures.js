@@ -53,6 +53,7 @@ class FilterFeatures extends Component {
 
 				img {
 					padding: 0 5px;
+					width: 30px;
 				}
 
 				`}
