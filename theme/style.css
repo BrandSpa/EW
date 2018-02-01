@@ -13,7 +13,7 @@ h1 {
 	font-size: 34px;
 	color: #FFFFFF;
 	letter-spacing: 0;
-	line-height: 36px;
+	line-height: 38px;
 }
 
 h2 {
@@ -47,7 +47,7 @@ p {
 	font-size: 14px;
 	color: #5D5D5D;
 	letter-spacing: 0;
-	line-height: 30px;
+	line-height: 20px;
 }
 
 .list-item {
@@ -96,6 +96,6 @@ p {
 		font-size: 14px;
 		color: #5D5D5D;
 		letter-spacing: 0;
-		line-height: 30px;
+		line-height: 22px;
 	}
 }
