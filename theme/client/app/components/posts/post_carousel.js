@@ -54,7 +54,7 @@ class PostSlide extends Component {
             display: block;
             color: #039ED8;
             font-size: 15px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
           }
 
           .post-slide__content {
