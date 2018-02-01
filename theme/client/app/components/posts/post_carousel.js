@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class PostSlide extends Component {
 
-  openPost = () => {
+  handleClick = () => {
     setTimeout(() => {
       window.location = this.props.post.guid;
     });
@@ -17,7 +17,10 @@ class PostSlide extends Component {
     }
 
     return (
-      <div className="post-slide" style={{width: postWidth, float: 'left'}}>
+      <div className="post-slide"
+        style={{width: postWidth, float: 'left'}}
+        onClick={this.handleClick}
+        >
         <div className="post-slide__header" style={{minHeight: '250px', backgroundImage: `url(${post.image})`}}></div>
         <div className="post-slide__content">
           <a href={post.guid}>
@@ -30,6 +33,7 @@ class PostSlide extends Component {
           .post-slide {
             padding: 0 10px;
             transition: all .3s;
+            cursor: pointer;
           }
 
           .post-slide__media {

@@ -17,7 +17,11 @@ class ProjectCarousel extends Component {
     }
 
     return (
-      <div className="post-slide" style={{width: postWidth, float: 'left'}}>
+      <div
+        className="post-slide"
+        onClick={this.openPost}
+        style={{width: postWidth, float: 'left'}}
+      >
         <div className="post-slide__header" style={{minHeight: '250px', backgroundImage: `url(${post.thumb})`}}></div>
         <div className="post-slide__content">
           <a href={post.guid}>
@@ -30,6 +34,7 @@ class ProjectCarousel extends Component {
           .post-slide {
             padding: 0 20px;
             transition: all .3s;
+            cursor: pointer;
           }
 
           .post-slide__media {
@@ -37,7 +42,6 @@ class ProjectCarousel extends Component {
             background-position: center;
             background-size: cover;
             min-height: 250px;
-            cursor: pointer;
           }
 
           .post-slide__header {
