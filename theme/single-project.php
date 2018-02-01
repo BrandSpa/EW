@@ -45,7 +45,7 @@
 
       <div class="row">
         <div class="col-lg-1"></div>
-        <div class="col-lg-5">
+        <div class="col-lg-6">
         <?php if(!empty($video)): ?>
           <video class="project-video" controls>
           <source src="<?php echo $video ?>" type="video/mp4">
@@ -63,7 +63,8 @@
           </section>
 
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3">
         <?php if(is_array($architect) && count($architect) > 0): ?>
           <section class="project__section">
             <h4><?php echo gett('ARCHITECT') ?></h4>
