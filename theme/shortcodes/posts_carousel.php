@@ -17,7 +17,7 @@ function posts_carousel_sc( $atts ){
 		$dateDay = date_format($date ,"m");
 		$dateMonth = date_format($date ,"F");
 		$dateYear = date_format($date ,"Y");
-		$post->post_date =  $dateDay . gett($dateMonth) . $dateYear;
+		$post->post_date =  $dateDay .' '. gett($dateMonth) . ', '. $dateYear;
 		$post->image = get_the_post_thumbnail_url($post->ID);
 		$post->intro = get_post_meta($post->ID, 'intro_key', true);
 		return $post;
