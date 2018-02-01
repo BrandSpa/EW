@@ -1,6 +1,6 @@
 
 const arrowAction = () =>{
-    window.load(function(){
+    window.onload(function(){
         (function($){
             $(document).on('click', '.arrow svg', function(){
                 $('html,body').animate({
