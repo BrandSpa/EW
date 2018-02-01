@@ -8,7 +8,7 @@ function ew_posts_carousel_vc() {
 
 	vc_map(
     [
-      "name" =>  "Products",
+      "name" =>  "Posts Carousel",
       "base" => "ew_posts_carousel",
       "category" =>  "EW",
       'params' => $params

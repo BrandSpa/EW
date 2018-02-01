@@ -2,13 +2,11 @@
 
 function ew_projects_carousel_vc() {
 
-  $params = [
-
-  ];
+  $params = [];
 
 	vc_map(
     [
-      "name" =>  "Products",
+      "name" =>  "Projects Carousel",
       "base" => "ew_projects_carousel",
       "category" =>  "EW",
       'params' => $params
