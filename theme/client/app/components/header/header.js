@@ -63,6 +63,9 @@ class Header extends Component {
 					</ul>
 				</div>
 				<style jsx>{`
+					a{
+						text-decoration: none !important;
+					}
 					.header {
 							position: fixed;
 							display: flex;
