@@ -47,10 +47,7 @@ class FilterFeatures extends Component {
 				))}
 
 				<style jsx>{`
-				.filter-type {
-					margin-bottom: 20px;
-				}
-
+				
 				img {
 					padding: 0 5px;
 					width: 30px;

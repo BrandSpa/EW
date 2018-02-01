@@ -84,7 +84,7 @@ class Header extends Component {
 
 						.logo-container img {
 							width: 120px;
-							margin-top: -8px;
+							margin-top: -3px;
 							position: relative;
 							z-index: 1000;
 						}

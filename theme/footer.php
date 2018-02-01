@@ -162,7 +162,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
   @media (min-width: 1024px) {
     .footer {
       flex-direction: row;
-      padding-top: 150px;
+      padding-top: 75px;
     }
 
     .footer-bottom__content {

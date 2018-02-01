@@ -47,14 +47,6 @@ class FilterBrands extends Component {
 						checked={selected.indexOf(`${brnd.term_id}`) !== -1}
 					/>
 				))}
-
-				<style jsx>{`
-				.filter-type {
-					margin-bottom: 20px;
-				}
-
-				`}
-				</style>
 			</section>
 		);
 	}

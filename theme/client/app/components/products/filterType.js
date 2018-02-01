@@ -48,9 +48,7 @@ class FilterType extends Component {
 				button {
 					padding: 0;
 				}
-				.filter-type {
-					margin-bottom: 20px;
-				}
+				
 					.select-type {
 						background: transparent;
 						border: none;
