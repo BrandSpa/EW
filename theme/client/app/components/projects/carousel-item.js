@@ -4,7 +4,7 @@ class ProjectCarousel extends Component {
 
   openPost = () => {
     setTimeout(() => {
-      window.location = this.props.post.guid;
+      window.location = this.props.post.url.replace('#038;', '&');
     });
   }
 
