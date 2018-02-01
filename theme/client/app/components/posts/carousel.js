@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Post from './post_slide';
+import Post from './post_carousel';
 
 class PostsCarousel extends Component {
   state = {
@@ -26,7 +26,7 @@ class PostsCarousel extends Component {
 
 	next = e => {
 		if(e) e.preventDefault();
-	  let total = (this.props.posts.length / 3) - 1;
+	  let total = (this.props.posts.length / 2) - 1;
 
     if(this.state.mobile) {
       total = this.props.posts.length - 1;
@@ -39,7 +39,7 @@ class PostsCarousel extends Component {
 
 	prev = e => {
 		if(e) e.preventDefault();
-    let total = (this.props.posts.length / 3) - 1;
+    let total = (this.props.posts.length / 2) - 1;
 
     if(this.state.mobile) {
       total = this.props.posts.length - 1;
