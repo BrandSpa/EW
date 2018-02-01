@@ -111,6 +111,7 @@ class Header extends Component {
 
 							.logo-container img {
 								width: 170px;
+								margin-top: -5px;
 							}
 
 							.header__menu  {
