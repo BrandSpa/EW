@@ -1,6 +1,6 @@
 
 const arrowAction = () =>{
-    window.onload(function(){
+    window.onload = function(){
         (function($){
             $(document).on('click', '.arrow svg', function(){
                 $('html,body').animate({
@@ -8,7 +8,7 @@ const arrowAction = () =>{
                 'slow');
             })
         })(jQuery);
-    })
+    }
     
 
 }
