@@ -39,6 +39,14 @@
       </section>
       </div>
     </div>
+    <div class="arrow">
+      <svg width="67px" height="34px" viewBox="0 0 67 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs></defs>
+          <g id="ESW-Project-view" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-689.000000, -803.000000)" stroke-linecap="round" stroke-linejoin="round">
+              <polyline id="Path-2-Copy-4" stroke="#039ED8" stroke-width="2" points="690 804 722.925488 836 755 804.827057"></polyline>
+          </g>
+      </svg>
+    </div>
   </div>
 
   <div class="project__content">
