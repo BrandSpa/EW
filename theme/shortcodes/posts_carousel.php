@@ -14,6 +14,7 @@ function posts_carousel_sc( $atts ){
 
 	$posts = array_map(function($post) {
 		$post->date = get_post_meta($post->ID, 'day_key', true) . ' ' . gett(get_post_meta($post->ID, 'month_key', true)) . ', ' . get_post_meta($post->ID, 'year_key', true);
+		$post->post_date = date_format(date_create($post->post_date ),"m F, Y");
 		$post->image = get_the_post_thumbnail_url($post->ID);
 		$post->intro = get_post_meta($post->ID, 'intro_key', true);
 		return $post;
