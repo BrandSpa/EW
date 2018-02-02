@@ -6,15 +6,14 @@ function news_sc( $atts ){
 	], $atts);
 
 	$props = array_merge(locationData(),[
-		"brandsOptions" => get_terms('brand', [ 'hide_empty' => 0 ]),
-		"productsOptions" => get_terms('product', [ 'hide_empty' => 0 ]),
+		"newsOptions" => get_terms('new', [ 'hide_empty' => 0 ]),
 		"texts" => [
 			'country' => gett('Country'),
 			'state' => gett('State'),
 			'city' => gett('City'),
 			'relatednews' => gett('Related news'),
 			'seeMore' => gett('See more'),
-			'products' => gett('Products'),
+			'news' => gett('News'),
 			'filters' => gett('Filters'),
 			"emptyResult" => gett('No results found for this search')
 		]
