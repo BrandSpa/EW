@@ -7,9 +7,9 @@ import New from './item';
 const uri = '/wp-content/themes/theme/graphql/index.php';
 const apolloFetch = createApolloFetch({ uri });
 
-const projectsQuery = `
+const newsQuery = `
 query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){
-  projects(posts_per_page: 12, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {
+  news(posts_per_page: 12, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {
 		id
     thumb
 		name
@@ -23,9 +23,9 @@ query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){
 }
 `;
 
-class ProjectsSection extends Component {
+class NewsSection extends Component {
   state = {
-  	projects: [],
+  	news: [],
   	metaQuery: [],
   	taxQuery: [],
   	showFilters: false,
@@ -36,7 +36,7 @@ class ProjectsSection extends Component {
   }
 
   componentDidMount = () => {
-  	this.getProjects();
+  	this.getNews();
   	if (window.matchMedia('(max-width: 1024px)').matches) {
   		window.addEventListener('scroll', throttle(this.stickFilters, 150));
   	}
@@ -48,12 +48,12 @@ class ProjectsSection extends Component {
   	}
   }
 
-  getProjects = async (variables = {}) => {
+  getNews = async (variables = {}) => {
   	try {
-  		const res = await apolloFetch({ query: projectsQuery, variables });
-  		this.setState({ projects: [...this.state.projects, ...res.data.projects] });
+  		const res = await apolloFetch({ query: newsQuery, variables });
+  		this.setState({ news: [...this.state.news, ...res.data.news] });
   	} catch (err) {
-  		console.log('get projects err: ', err);
+  		console.log('get news err: ', err);
   	}
   }
 
@@ -120,8 +120,8 @@ class ProjectsSection extends Component {
   		metaQuery = this.removeFilter('state_key', metaQuery);
   	}
 
-  	this.setState({ projects: [], paged: 1, metaQuery }, () => {
-  		this.getProjects({ metaQuery, taxQuery: this.state.taxQuery });
+  	this.setState({ news: [], paged: 1, metaQuery }, () => {
+  		this.getNews({ metaQuery, taxQuery: this.state.taxQuery });
   	});
   }
 
@@ -135,8 +135,8 @@ class ProjectsSection extends Component {
   		taxQuery = [];
   	}
 
-  	this.setState({ projects: [], taxQuery }, () => {
-  		this.getProjects({ taxQuery, metaQuery: this.state.metaQuery });
+  	this.setState({ news: [], taxQuery }, () => {
+  		this.getNews({ taxQuery, metaQuery: this.state.metaQuery });
   	});
   }
 
@@ -159,12 +159,12 @@ class ProjectsSection extends Component {
 		paged += 1;
 
 		this.setState({ paged }, () => {
-			this.getProjects({ metaQuery, taxQuery, paged });
+			this.getNews({ metaQuery, taxQuery, paged });
   	});
 	}
 
 	render() {
-		const { projects, showFilters, inBound } = this.state;
+		const { news, showFilters, inBound } = this.state;
 		const { texts } = this.props;
 
 		const filtersStyle = classnames('filters', {
@@ -322,4 +322,4 @@ class ProjectsSection extends Component {
 	}
 }
 
-export default ProjectsSection;
+export default NewsSection;
