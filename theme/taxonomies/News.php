@@ -1,6 +1,6 @@
 <?php
 
-function news_taxononies() {
+function news_taxonomies() {
 	$newsArgs = [
 		'hierarchical' => true,
 		'label' => 'News',
@@ -13,4 +13,4 @@ function news_taxononies() {
 	register_taxonomy( 'news', ['new'], $newsArgs );
 }
 
-add_action('init', 'news_taxononies');
+add_action('init', 'news_taxonomies');
