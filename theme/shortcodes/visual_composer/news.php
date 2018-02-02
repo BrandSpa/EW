@@ -1,6 +1,6 @@
 <?php
 
-function ew_projects_vc() {
+function ew_news_vc() {
 	vc_map(
     [
       "name" =>  "news",
