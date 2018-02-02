@@ -1,7 +1,7 @@
 <?php
 
 function news_taxononies() {
-	$productArgs = [
+	$newsArgs = [
 		'hierarchical' => true,
 		'label' => 'News',
 		'show_ui' => true,
@@ -10,7 +10,7 @@ function news_taxononies() {
 		'rewrite' => ['slug' => 'new']
 	];
 
-	register_taxonomy( 'news', ['new'], $productArgs );
+	register_taxonomy( 'news', ['new'], $newsArgs );
 }
 
 add_action('init', 'news_taxononies');
