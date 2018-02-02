@@ -11,15 +11,12 @@ const apolloFetch = createApolloFetch({ uri });
 const newsQuery = `
 query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){
   news(posts_per_page: 12, paged: $paged, meta_query: $metaQuery, tax_query: $taxQuery) {
-		id
+    id
     thumb
-		name
-		url
-    country
-    state
-		city
-		year
-		month
+    name
+    url
+	year
+	month
   }
 }
 `;
