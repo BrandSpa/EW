@@ -29,24 +29,6 @@ $newsType = new ObjectType([
 				return get_the_post_thumbnail_url($root->ID);
 			}
 		],
-		'country' => [
-			'type' => Type::string(),
-			'resolve' => function($root) {
-				return get_post_meta($root->ID, 'country_key', true);
-			}
-		],
-		'state' => [
-			'type' => Type::string(),
-			'resolve' => function($root) {
-				return get_post_meta($root->ID, 'state_key', true);
-			}
-		],
-		'city' => [
-			'type' => Type::string(),
-			'resolve' => function($root) {
-				return get_post_meta($root->ID, 'city_key', true);
-			}
-		],
 		'year' => [
 			'type' => Type::string(),
 			'resolve' => function($root) {
