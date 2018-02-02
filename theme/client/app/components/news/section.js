@@ -50,10 +50,12 @@ class NewsSection extends Component {
   }
 
   getNews = async (variables = {}) => {
-  
+  	try {
         const res = await apolloFetch({ query: newsQuery, variables });
         this.setState({ news: [...this.state.news, ...res.data.news] });
-  	
+  	} catch (err) {
+  		console.log('get news err: ', err);
+  	}
   }
 
 	stickFilters = () => {
@@ -128,7 +130,7 @@ class NewsSection extends Component {
   	let taxQuery = [];
 
   	if (products.length > 0) {
-  		const tax = { taxonomy: 'product', terms: products };
+  		const tax = { taxonomy: 'news', terms: news };
   		taxQuery = [tax];
   	} else {
   		taxQuery = [];
