@@ -14,7 +14,6 @@ query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){
 		id
     thumb
 		name
-		url
     country
     state
 		city
@@ -144,14 +143,6 @@ class NewsSection extends Component {
 	toggleFilters = (e) => {
 		e.preventDefault();
 		this.setState({ showFilters: !this.state.showFilters });
-	}
-
-	handleUrl = (query) => {
-		const { pathname, search } = window.location;
-		const oldSearch = qs.parse(search.replace('?', ''));
-		const newSearch = { ...oldSearch, ...query };
-		const url = `${pathname}?${qs.stringify(newSearch)}`;
-		return url;
 	}
 
 	paginate = (e) => {
