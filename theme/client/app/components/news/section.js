@@ -3,6 +3,7 @@ import { createApolloFetch } from 'apollo-fetch';
 import { findIndex, throttle } from 'lodash';
 import classnames from 'classnames';
 import New from './item';
+import Points from '../points';
 
 const uri = '/wp-content/themes/theme/graphql/index.php';
 const apolloFetch = createApolloFetch({ uri });
@@ -51,8 +52,8 @@ class NewsSection extends Component {
   getNews = async (variables = {}) => {
   	try {
         const res = await apolloFetch({ query: newsQuery, variables });
-          this.setState({ news: [...this.state.news, ...res.data.news] });
-          console.log(this.state);
+        this.setState({ news: [...this.state.news, ...res.data.news] });
+        console.log(this.state);
   	} catch (err) {
   		console.log('get news err: ', err);
   	}
