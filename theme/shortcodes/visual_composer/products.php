@@ -14,14 +14,14 @@ function ew_products_vc() {
       "type" => "textfield",
       "heading" => "Type pre-select",
       "param_name" => "type",
-      "value" => $brands,
+      "value" => isset($brands)?$brands:array(),
       "description" => "Example: WINDOWS"
     ],
     [
       "type" => "textfield",
       "heading" => "feature pre-select",
       "param_name" => "feature",
-      "value" => $brands,
+      "value" => isset($brands)?$brands:array(),
       "description" => "Example: Hurricane Resistant"
     ],
   ];
