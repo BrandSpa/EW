@@ -1,20 +1,20 @@
 import React from 'react';
 
-const NewItem = ({ news }) => (
+const NewItem = ({ item }) => (
 
-	<a href={news.url.replace('#038;', '&')} className="project-item">
+	<a href={item.url.replace('#038;', '&')} className="project-item">
 		<div
 			className="project-item__header"
-			style={{ backgroundImage: `url(${news.thumb})` }}
+			style={{ backgroundImage: `url(${item.thumb})` }}
 		/>
 
 		<div className="project__info">
-			<span className="project__info-date">{news.month} {news.year}</span>
+			<span className="project__info-date">{item.month} {item.year}</span>
 			<div className="miniline" />
-			<span className="project__info-title">{news.name}</span>
+			<span className="project__info-title">{item.name}</span>
 			<div className="project__info__bottom">
-				<span className="project__info-country">{news.country}</span>
-				<span className="project__info-state-city">{news.state} · {news.city}</span>
+				<span className="project__info-country">{item.country}</span>
+				<span className="project__info-state-city">{item.state} · {item.city}</span>
 			</div>
 		</div>
 
