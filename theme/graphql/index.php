@@ -16,16 +16,19 @@ require str_replace('graphql' , '', __DIR__) . '/vendor/autoload.php';
 
 require 'types/projectType.php';
 require 'types/productType.php';
+require 'types/newsType.php';
 require 'types/metaFilterType.php';
 require 'types/taxonomyFilterType.php';
 require 'queries/projectsQuery.php';
 require 'queries/productsQuery.php';
+require 'queries/newsQuery.php';
 
 $rootQuery = new ObjectType([
 	'name' => 'rootQuery',
 	'fields' => [
 		'projects' => $projectsQuery,
 		'products' => $productsQuery,
+		'news' => $newsQuery
 	]
 ]);
 
