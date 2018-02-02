@@ -32,13 +32,13 @@ $newsType = new ObjectType([
 		'year' => [
 			'type' => Type::string(),
 			'resolve' => function($root) {
-				return get_post_meta($root->ID, 'year_key', true);
+				return get_the_date( 'Y', $root->ID );
 			}
 		],
 		'month' => [
 			'type' => Type::string(),
 			'resolve' => function($root) {
-				return gett(get_post_meta($root->ID, 'month_key', true));
+				return get_the_date( 'm', $root->ID );
 			}
 		],
 		'news' => [
