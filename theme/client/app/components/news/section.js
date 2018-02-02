@@ -50,13 +50,10 @@ class NewsSection extends Component {
   }
 
   getNews = async (variables = {}) => {
-  	try {
+  
         const res = await apolloFetch({ query: newsQuery, variables });
         this.setState({ news: [...this.state.news, ...res.data.news] });
-        console.log(this.state);
-  	} catch (err) {
-  		console.log('get news err: ', err);
-  	}
+  	
   }
 
 	stickFilters = () => {
