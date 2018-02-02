@@ -40,7 +40,13 @@ $newsType = new ObjectType([
 			'resolve' => function($root) {
 				return get_the_date( 'm', $root->ID );
 			}
-		],
+        ],
+        'readMore' => [
+			'type' => Type::string(),
+			'resolve' => function($root) {
+				return __("Read More");
+			}
+        ],
 		'news' => [
 			'type' => Type::listOf(Type::string()),
 			'resolve' => function($project) {

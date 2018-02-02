@@ -13,8 +13,7 @@ const NewItem = ({ item }) => (
 			<div className="miniline" />
 			<span className="project__info-title">{item.name}</span>
 			<div className="project__info__bottom">
-				<span className="project__info-country">{item.country}</span>
-				<span className="project__info-state-city">{item.state} · {item.city}</span>
+				<a href={item.url.replace('#038;', '&')}>{item.readMore}</a>
 			</div>
 		</div>
 

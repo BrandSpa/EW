@@ -16,7 +16,8 @@ query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){
     name
     url
 	year
-	month
+    month
+    readMore
   }
 }
 `;
