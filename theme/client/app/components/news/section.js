@@ -50,9 +50,9 @@ class NewsSection extends Component {
 
   getNews = async (variables = {}) => {
   	try {
-          const res = await apolloFetch({ query: newsQuery, variables });
-          console.log(res);
-  		this.setState({ news: [...this.state.news, ...res.data.news] });
+        const res = await apolloFetch({ query: newsQuery, variables });
+          this.setState({ news: [...this.state.news, ...res.data.news] });
+          console.log(this.state);
   	} catch (err) {
   		console.log('get news err: ', err);
   	}
@@ -172,8 +172,8 @@ class NewsSection extends Component {
 			'filters--in-bound': inBound,
 		});
 
-  	const filterContainerStyle = classnames('filters-container', {
-  		'filters-container--open': showFilters,
+  	    const filterContainerStyle = classnames('filters-container', {
+  		    'filters-container--open': showFilters,
 		});
 
 		const filterToggleStyle = classnames('filters__toggle', {
