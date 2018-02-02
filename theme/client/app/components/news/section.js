@@ -175,7 +175,7 @@ class NewsSection extends Component {
 
   	return (
   		<section ref={ref => this.container = ref}>
-  			<div className="col-lg-9">
+  			<div className="col-lg-12">
                 {/* <Loading /> */}
                 <div className="projects">
                     {news.length > 0 ? news.map(item => (
