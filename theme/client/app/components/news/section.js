@@ -177,16 +177,7 @@ class NewsSection extends Component {
   			<div className="col-lg-9">
                 {/* <Loading /> */}
                 <div className="projects">
-                    {news.length > 0 ? news.map(item => (
-                        <div key={item.id} className="col-lg-4 col-md-6 project-item">
-                            <New new={item} />
-                        </div>
-                        ))
-                            :
-                            <div className="empty-value">
-                                <h4>{texts.emptyResult}</h4>
-                            </div>
-                        }
+                   
             </div>
                 {news.length > 0 &&
                     <a href="#" onClick={this.paginate} className="pagination-btn">
