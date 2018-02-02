@@ -14,6 +14,7 @@ query($metaQuery: [metaQuery], $taxQuery: [taxonomyQuery], $paged: Int){
 		id
     thumb
 		name
+		url
     country
     state
 		city
@@ -37,15 +38,10 @@ class NewsSection extends Component {
 
   componentDidMount = () => {
   	this.getNews();
-  	if (window.matchMedia('(max-width: 1024px)').matches) {
-  		window.addEventListener('scroll', throttle(this.stickFilters, 150));
-  	}
   }
 
   componentWillUnmount() {
-  	if (window.matchMedia('(max-width: 1024px)').matches) {
-  		window.removeEventListener('scroll', throttle(this.stickFilters, 150));
-  	}
+  	
   }
 
   getNews = async (variables = {}) => {
@@ -143,6 +139,14 @@ class NewsSection extends Component {
 	toggleFilters = (e) => {
 		e.preventDefault();
 		this.setState({ showFilters: !this.state.showFilters });
+	}
+
+	handleUrl = (query) => {
+		const { pathname, search } = window.location;
+		const oldSearch = qs.parse(search.replace('?', ''));
+		const newSearch = { ...oldSearch, ...query };
+		const url = `${pathname}?${qs.stringify(newSearch)}`;
+		return url;
 	}
 
 	paginate = (e) => {
