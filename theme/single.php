@@ -87,9 +87,10 @@
 		padding: 40px
 	}
 	.image_div{
-		transform: translateY(-50%);
+		/*transform: translateY(-50%);*/
+		top: -50%;
 		z-index: 2;
-		height: 100%;
+		height: 641px;
 	}
 	.post header h1 {
 		color: #fff;
