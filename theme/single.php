@@ -102,7 +102,12 @@
 		letter-spacing: 0;
 		line-height: 30px;
 	}
-
+	.image-container{
+		position: relative;
+		top: -50%;
+		background-color: #fff;
+		box-shadow: 0px 0px 10px 0px rgba(0,0,0,.7);
+	}
 	.post__content {
 		font-family: 'Arimo', sans-serif;
 		font-size: 15px;
@@ -141,7 +146,6 @@
 
 		.post__header-intro img {
 			width: 100%;
-			margin-top: -60%;
 			position: relative;
 			z-index: 2;
 		}
