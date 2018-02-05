@@ -13,19 +13,16 @@
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-10">
-			<div class="post__header-container">
-				<span class="post__date"><?php echo $date->format('d M, Y') ?></span>
-				<div class="line"></div>
-				<div class="post__title">
-					<h2><?php echo $title ?></h2>
+				<div class="post__header-container">
+					<span class="post__date"><?php echo $date->format('d M, Y') ?></span>
+					<div class="line"></div>
+					<div class="post__title">
+						<h2><?php echo $title ?></h2>
+					</div>
 				</div>
-			</div>
-
 			</div>
 			<div class="col-md-1"></div>
 		</div>
-
-		<div class="post__header-overlay"></div>
 	</header>
 	<section>
 	<?php if( $intro && $header): ?>
