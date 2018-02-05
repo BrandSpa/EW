@@ -35,8 +35,8 @@
 		<div class="col-md-5 post__header-intro-text">
 			<?php echo $intro; ?>
 		</div>
-		<div class="col-md-5 image-container" >
-			<img src="<?php echo wp_get_attachment_url($header) ?>" />
+		<div class="col-md-5" >
+		<img src="<?php echo wp_get_attachment_url($header) ?>" />
 		</div>
 		<div class="col-md-1"></div>
 
@@ -139,6 +139,7 @@
 
 		.post__header-intro img {
 			width: 100%;
+			margin-top: -60%;
 			position: relative;
 			z-index: 2;
 		}
