@@ -102,11 +102,10 @@
 	}
 
 	.post__content {
-		font-family: Helvetica;
+		font-family: 'Arimo', sans-serif;
 		font-size: 15px;
 		color: #5D5D5D;
 		letter-spacing: 0;
-		line-height: 30px;
 		padding: 40px 20px;
 	}
 
@@ -152,9 +151,9 @@
 	}
 
 		.post__content {
-			padding: 90px;
-			font-size: 19px;
-			line-height: 34px;
+			padding: 90px 130px;
+			font-size: 1em;
+			line-height: 1.42857143;
 		}
   }
 </style>
