@@ -23,6 +23,8 @@
 			</div>
 			<div class="col-md-1"></div>
 		</div>
+
+		<div class="post__header-overlay"></div>
 	</header>
 	<section>
 	<?php if( $intro && $header): ?>
