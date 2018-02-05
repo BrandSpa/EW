@@ -36,7 +36,9 @@
 			<?php echo $intro; ?>
 		</div>
 		<div class="col-md-5" >
-		<img src="<?php echo wp_get_attachment_url($header) ?>" />
+			<div class="image-container">
+				<img src="<?php echo wp_get_attachment_url($header) ?>" />
+			</div>
 		</div>
 		<div class="col-md-1"></div>
 
