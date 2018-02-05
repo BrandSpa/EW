@@ -142,6 +142,7 @@
 			display: flex;
 			flex: 1;
 			font-size: 20px;
+			align-items: flex-start;
 		}
 
 		.post__header-intro img {
