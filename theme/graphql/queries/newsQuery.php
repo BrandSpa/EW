@@ -4,24 +4,6 @@ use GraphQL\Type\Definition\InputObjectType;
 use GraphQL\Type\Definition\Type;
 $root = str_replace('queries' , '', __DIR__);
 
-$taxonomyFilter = new InputObjectType([
-	'name' => 'taxonomyQuery',
-	'fields' => [
-		'taxonomy' => [
-			'type' => 'News'
-		],
-		'field' => [
-			'type' => Type::string(),
-			'defaultValue' => 'term_id'
-		],
-		'terms'    => Type::listOf(Type::string()),
-		'operator' => [
-			'type' => Type::string(),
-			'defaultValue' => 'IN'
-		]
-	]
-]);
-
 $newsQuery = [
 	'type' => Type::listOf($newsType),
 	'args' => [
