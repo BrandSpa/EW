@@ -10,7 +10,6 @@ $newsQuery = [
 		'post_type'  => [
 			'type'  => Type::string(),
 			'defaultValue' => 'post',
-			'category_name' => 'news'
 		],
 		'posts_per_page' => [
 			'type' => Type::int()
@@ -21,6 +20,7 @@ $newsQuery = [
 		],
 		'meta_query' => [
 			'type' => Type::listOf($metaFilter),
+			'category_name' => 'News'
 		],
 		'tax_query' => [
 			'type' => Type::listOf($taxonomyFilter),
