@@ -210,7 +210,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
   <?php wp_footer() ?>
 <!-- /wordpress files-->
 <div class="branding-logo">
-  <a href="https://brandspa.com" target="_blank"><img src="<?php echo get_template_directory_uri() ?> /public/img/gota-bs.svg" alt="The Brandspa Agencia Digital"></a>
+  <a href="https://brandspa.com" target="_blank"><img src="<?php echo get_template_directory_uri() ?>/public/img/gota-bs.svg" alt="The Brandspa Agencia Digital"></a>
 </div>
   
 </body>
