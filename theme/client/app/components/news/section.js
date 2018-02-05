@@ -43,8 +43,7 @@ class NewsSection extends Component {
   }
 
   getNews = async (variables = {}) => {
-	var lang = window.location.href;
-	console.log('url',lang);
+	var lang = this.getLang();
   	try {
         const res = await apolloFetch({ query: newsQuery, variables, lang });
         this.setState({ news: [...this.state.news, ...res.data.news] });
@@ -52,6 +51,16 @@ class NewsSection extends Component {
   		console.log('get news err: ', err);
   	}
   }
+
+  	getLang = () => {
+
+		var uri = new URl(window.location.href).pathname;
+		uri = uri.split( '/' );
+		if(uri[0].length == 2){
+			return uri[0];
+		}
+		return 'en';
+	}
 
 	stickFilters = () => {
 		const { container, filters } = this;
@@ -71,6 +80,8 @@ class NewsSection extends Component {
 			this.setState({ inBound: false });
 		}
 	}
+
+
 
 	updateOrAdd = (filter, metaQuery) => {
 		let q = [];
