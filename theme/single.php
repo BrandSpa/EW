@@ -139,7 +139,7 @@
 		}
 
 		.post__header-intro {
-			display: flex;
+			display: block;
 			flex: 1;
 			font-size: 20px;
 		}
