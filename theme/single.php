@@ -129,6 +129,7 @@
 
 	.post__header-intro {
 		display: flex;
+		flex-wrap: wrap;
 	}
 
 	@media (min-width: 1024px) {
