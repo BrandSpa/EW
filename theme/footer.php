@@ -195,6 +195,19 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
       width: auto;
     }
 
+    .branding-logo{
+      display: flex;
+      background: #1f1f1f;
+      width: 100%;
+      align-items: flex-start;
+      /* text-align: right; */
+      flex-direction: row-reverse;
+    }
+
+    .branding-logo img{
+      width:20px;
+    }
+
   }
 </style>
 <script>
