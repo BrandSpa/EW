@@ -89,7 +89,7 @@
 	.image_div{
 		transform: translateY(-50%);
 		z-index: 2;
-		height: 641px;
+		height: 100%;
 	}
 	.post header h1 {
 		color: #fff;
