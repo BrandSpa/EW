@@ -90,6 +90,7 @@
 	.image_div{
 		transform: translateY(-50%);
 		z-index: 2;
+		height: 641px;
 	}
 	.post header h2 {
 		color: #fff;
@@ -120,7 +121,6 @@
 	.post__header-intro img {
 		margin-top: 0;
 		width: 100%;
-		max-height: 350px;
 	}
 
 	.post__header-intro-text {
