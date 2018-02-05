@@ -130,6 +130,9 @@
 	.post__header-intro {
 		display: flex;
 		flex-wrap: wrap;
+	}
+
+	.row{
 		margin-left:0;
 		margin-right:0;
 	}
