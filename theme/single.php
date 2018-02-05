@@ -130,6 +130,8 @@
 	.post__header-intro {
 		display: flex;
 		flex-wrap: wrap;
+		margin-left:0;
+		margin-right:0;
 	}
 
 	@media (min-width: 1024px) {
