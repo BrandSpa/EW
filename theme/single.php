@@ -89,6 +89,7 @@
 	}
 	.image_div{
 		top:-50%;
+		z-index: 2;
 	}
 	.post header h2 {
 		color: #fff;
@@ -108,7 +109,6 @@
 		transform: translateY(-25%);
 		background-color: #fff;
 		box-shadow: 0px 0px 10px 0px rgba(0,0,0,.7);
-		z-index: 2;
 	}
 	.post__content {
 		font-family: 'Arimo', sans-serif;
