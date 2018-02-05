@@ -127,6 +127,9 @@
 		color: #039ED8
 	}
 
+	.post__header-intro {
+		display: flex;
+	}
 
 	@media (min-width: 1024px) {
 		.post header {
