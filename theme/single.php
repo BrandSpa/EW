@@ -35,7 +35,7 @@
 		<div class="col-md-5 post__header-intro-text">
 			<?php echo $intro; ?>
 		</div>
-		<div class="col-md-5" >
+		<div class="col-md-5 image_div" >
 			<div class="image-container">
 				<img src="<?php echo wp_get_attachment_url($header) ?>" />
 			</div>
@@ -87,7 +87,9 @@
 		z-index: 2;
 		padding: 40px
 	}
-
+	.image_div{
+		top:-50%;
+	}
 	.post header h2 {
 		color: #fff;
 	}
