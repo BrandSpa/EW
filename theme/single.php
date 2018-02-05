@@ -117,6 +117,10 @@
 		display:none;
 	}
 
+	.post__header-intro .image-container{
+		background-size: 100%;
+	}
+
 	.post__header-intro-text {
 		background: #F7FBFF;
 		padding: 40px;
