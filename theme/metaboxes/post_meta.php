@@ -19,7 +19,7 @@ function esw_type_post_cb($post) {
 	$props = ['months' => months()];
 
   foreach($fields as $field) {
-    ${$field} = get_post_meta($post->ID, $field . '_key', true);
+    ${$field} = esc_textarea(get_post_meta($post->ID, $field . '_key', true));
     $props[$field] = ${$field};
   }
 
