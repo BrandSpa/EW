@@ -88,7 +88,7 @@
 		padding: 40px
 	}
 	.image_div{
-		top:-50%;
+		transform: translateY(-50%);
 		z-index: 2;
 	}
 	.post header h2 {
@@ -106,7 +106,6 @@
 		line-height: 30px;
 	}
 	.image-container{
-		transform: translateY(-50%);
 		background-color: #fff;
 		box-shadow: 0px 0px 10px 0px rgba(0,0,0,.7);
 	}
@@ -160,7 +159,7 @@
 	}
 
 		.post__content {
-			padding: 90px 130px;
+			padding: 0px 130px 90px 130px;
 			font-size: 1em;
 			line-height: 1.42857143;
 		}
