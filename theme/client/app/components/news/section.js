@@ -43,10 +43,10 @@ class NewsSection extends Component {
   }
 
   getNews = async (variables = {}) => {
-	lang = window.location.href;
+	var lang = window.location.href;
 	console.log('url',lang);
   	try {
-        const res = await apolloFetch({ query: newsQuery, variables, lang: 'es' });
+        const res = await apolloFetch({ query: newsQuery, variables, lang });
         this.setState({ news: [...this.state.news, ...res.data.news] });
   	} catch (err) {
   		console.log('get news err: ', err);
