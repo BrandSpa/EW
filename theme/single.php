@@ -31,7 +31,7 @@
 	<div class="post__header-intro row">
 		<div class="col-md-1"></div>
 
-		<div class="col-md-5 col-xs-5 post__header-intro-text">
+		<div class="col-md-5 col-xs-7 post__header-intro-text">
 			<?php echo $intro; ?>
 		</div>
 		<div class="col-md-5 col-xs-5 image_div" >
