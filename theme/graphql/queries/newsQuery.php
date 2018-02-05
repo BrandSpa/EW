@@ -20,7 +20,6 @@ $newsQuery = [
 		],
 		'meta_query' => [
 			'type' => Type::listOf($metaFilter),
-			'lang' => 'es'
 		],
 		'tax_query' => [
 			'type' => Type::listOf($taxonomyFilter),
@@ -28,6 +27,10 @@ $newsQuery = [
 		'tax_relation' => [
 			'type' => Type::string(),
 			'defaultValue' => 'AND'
+		],
+		'lang' => [
+			'type' => Type::string(),
+			'defaultValue' => 'es'
 		]
 	],
 	'resolve' => function($root, $args) {
