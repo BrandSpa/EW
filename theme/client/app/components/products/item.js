@@ -39,9 +39,9 @@ const Product = ({
 		}
 
 		.product-name {
-			font-size: 19px;
+			font-size: 16px;
 			margin-bottom: 20px;
-			color: #039ED8;
+			font-weight: 600;
 		}
 
 		.product-type, .product-subtype {
