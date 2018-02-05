@@ -31,10 +31,10 @@
 	<div class="post__header-intro">
 		<div class="col-md-1"></div>
 
-		<div class="col-md-5 post__header-intro-text">
+		<div class="col-md-5 col-xs-5 post__header-intro-text">
 			<?php echo $intro; ?>
 		</div>
-		<div class="col-md-5 image_div" >
+		<div class="col-md-5 col-xs-5 image_div" >
 			<div class="image-container">
 				<img src="<?php echo wp_get_attachment_url($header) ?>" />
 			</div>
@@ -105,10 +105,7 @@
 		line-height: 30px;
 	}
 	.image-container{
-		background-color: #fff;
-		position: absolute;
-		height: 100%;
-		top: calc(100% - 320px);
+		position:relative;
 		box-shadow: 0px 0px 10px 0px rgba(0,0,0,.7);
 	}
 	.post__content {
@@ -151,6 +148,14 @@
 			width: 100%;
 			position: relative;
 			z-index: 2;
+		}
+
+		.image-container{
+			background-color: #fff;
+			position: absolute;
+			height: 100%;
+			top: calc(100% - 320px);
+			box-shadow: 0px 0px 10px 0px rgba(0,0,0,.7);
 		}
 
 		.post__header-intro-text {
