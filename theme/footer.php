@@ -16,10 +16,10 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     <div class="footer-bottom__content">
       <div class="footer-bottom__content-left">
       <section>
-        <a class="social-icon" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $current_url ?>" target="_blank" rel="noopener">
+        <a class="social-icon" href="https://www.instagram.com/eswenergiasolar/" target="_blank" rel="noopener">
 		      <i class="ion-social-facebook"></i>
         </a>
-        <a class="social-icon" href="https://twitter.com/share?url=<?php echo $current_url ?>" target="_blank" rel="noopener">
+        <a class="social-icon" href="https://twitter.com/ESWindows" target="_blank" rel="noopener">
 		      <i class="ion-social-twitter"></i>
         </a>
       </section>
@@ -29,8 +29,8 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
         </section>
       </div>
       <div class="footer-bottom__content-right">
-        <img src="<?php echo get_template_directory_uri() ?>/public/img/alutions.png" alt="">
-        <img src="<?php echo get_template_directory_uri() ?>/public/img/technoglass.png" alt="">
+        <a href="http://alutions.co" target="_blank"><img src="<?php echo get_template_directory_uri() ?>/public/img/logo-alutions.svg" alt=""></a>
+        <a href="https://www.tecnoglass.com" target="_blank"><img src="<?php echo get_template_directory_uri() ?>/public/img/logo-tgls-color.svg" alt=""></a>
 
       </div>
     </div>
