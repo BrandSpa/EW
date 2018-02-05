@@ -17,7 +17,7 @@
 					<span class="post__date"><?php echo $date->format('d M, Y') ?></span>
 					<div class="line"></div>
 					<div class="post__title">
-						<h2><?php echo $title ?></h2>
+						<h1><?php echo $title ?></h1>
 					</div>
 				</div>
 			</div>
@@ -91,7 +91,7 @@
 		z-index: 2;
 		height: 641px;
 	}
-	.post header h2 {
+	.post header h1 {
 		color: #fff;
 	}
 
