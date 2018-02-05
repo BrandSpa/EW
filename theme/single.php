@@ -35,9 +35,7 @@
 		<div class="col-md-5 post__header-intro-text">
 			<?php echo $intro; ?>
 		</div>
-		<div class="col-md-5 image-container" 
-			style="background-image:url(<?php echo wp_get_attachment_url($header) ?>)"
-		>
+		<div class="col-md-5 image-container" >
 			<img src="<?php echo wp_get_attachment_url($header) ?>" />
 		</div>
 		<div class="col-md-1"></div>
@@ -114,15 +112,6 @@
 	.post__header-intro img {
 		margin-top: 0;
 		width: 100%;
-		display:none;
-	}
-
-	.post__header-intro .image-container{
-		background-size: 100%;
-		/* max-height: 400px; */
-		position: relative;
-		top: -60px;
-		z-index: 1;
 	}
 
 	.post__header-intro-text {
