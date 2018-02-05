@@ -29,7 +29,7 @@
 	</header>
 	<section>
 	<?php if( $intro && $header): ?>
-	<div class="post__header-intro row">
+	<div class="post__header-intro">
 		<div class="col-md-1"></div>
 
 		<div class="col-md-5 post__header-intro-text">
