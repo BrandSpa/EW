@@ -7,6 +7,9 @@ $root = str_replace('queries' , '', __DIR__);
 $taxonomyFilter = new InputObjectType([
 	'name' => 'taxonomyQuery',
 	'fields' => [
+		'taxonomy' => [
+			'type' => 'News'
+		],
 		'field' => [
 			'type' => Type::string(),
 			'defaultValue' => 'term_id'
