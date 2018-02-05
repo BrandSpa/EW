@@ -20,7 +20,7 @@ function posts_carousel_sc( $atts ){
 		$post->date =  $dateDay .' '. gett($dateMonth) . ', '. $dateYear;
 		$post->image = get_the_post_thumbnail_url($post->ID);
 		$post->intro = esc_attr(get_post_meta($post->ID, 'intro_key', true));
-		$post->content = "";
+		$post->post_content = "";
 		return $post;
 	}, $query->get_posts());
 
