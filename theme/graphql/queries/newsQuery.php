@@ -30,7 +30,7 @@ $newsQuery = [
 		],
 		'lang' => [
 			'type' => Type::string(),
-			'defaultValue' => 'es'
+			'defaultValue' => $lang
 		]
 	],
 	'resolve' => function($root, $args) {
