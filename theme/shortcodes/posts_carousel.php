@@ -19,7 +19,7 @@ function posts_carousel_sc( $atts ){
 		$dateYear = date_format($date ,"Y");
 		$post->date =  $dateDay .' '. gett($dateMonth) . ', '. $dateYear;
 		$post->image = get_the_post_thumbnail_url($post->ID);
-		$post->intro = html_entities(get_post_meta($post->ID, 'intro_key', true));
+		$post->intro = htmlentities(get_post_meta($post->ID, 'intro_key', true));
 		return $post;
 	}, $query->get_posts());
 
