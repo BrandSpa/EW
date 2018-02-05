@@ -9,7 +9,7 @@ $newsQuery = [
 	'args' => [
 		'post_type'  => [
 			'type'  => Type::string(),
-			'defaultValue' => 'posts'
+			'defaultValue' => 'post'
 		],
 		'posts_per_page' => [
 			'type' => Type::int()
