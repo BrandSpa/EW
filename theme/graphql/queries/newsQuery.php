@@ -20,7 +20,7 @@ $newsQuery = [
 		],
 		'meta_query' => [
 			'type' => Type::listOf($metaFilter),
-			'category_name' => 'News'
+			'lang' => 'es'
 		],
 		'tax_query' => [
 			'type' => Type::listOf($taxonomyFilter),
