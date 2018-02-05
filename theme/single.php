@@ -119,6 +119,10 @@
 
 	.post__header-intro .image-container{
 		background-size: 100%;
+		/* max-height: 400px; */
+		position: relative;
+		top: -60px;
+		z-index: 1;
 	}
 
 	.post__header-intro-text {
