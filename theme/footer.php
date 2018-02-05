@@ -202,6 +202,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
       align-items: flex-start;
       /* text-align: right; */
       flex-direction: row-reverse;
+      padding:15px;
     }
 
     .branding-logo img{
