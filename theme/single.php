@@ -107,6 +107,8 @@
 	.image-container{
 		background-color: #fff;
 		position: absolute;
+		height: 100%;
+		top: calc(100% - 320px);
 		box-shadow: 0px 0px 10px 0px rgba(0,0,0,.7);
 	}
 	.post__content {
@@ -158,7 +160,7 @@
 	}
 
 		.post__content {
-			padding: 0px 130px 90px 130px;
+			padding: 90px 130px 90px 130px;
 			font-size: 1em;
 			line-height: 1.42857143;
 		}
