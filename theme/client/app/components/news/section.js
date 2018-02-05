@@ -57,8 +57,8 @@ class NewsSection extends Component {
 		var uri = new URL(window.location.href).pathname;
 		uri = uri.split( '/' );
 		console.log(uri);
-		if(uri[0].length == 2){
-			return uri[0];
+		if(uri[1].length == 2){
+			return uri[1];
 		}
 		return 'en';
 	}
