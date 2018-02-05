@@ -54,7 +54,7 @@ class NewsSection extends Component {
 
   	getLang = () => {
 
-		var uri = new URl(window.location.href).pathname;
+		var uri = new URL(window.location.href).pathname;
 		uri = uri.split( '/' );
 		if(uri[0].length == 2){
 			return uri[0];
