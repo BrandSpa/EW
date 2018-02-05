@@ -105,9 +105,7 @@
 		line-height: 30px;
 	}
 	.image-container{
-		position: absolute;
-		margin-top: -50%;
-		transform: translateY(25%);
+		transform: translateY(-25%);
 		background-color: #fff;
 		box-shadow: 0px 0px 10px 0px rgba(0,0,0,.7);
 		z-index: 2;
