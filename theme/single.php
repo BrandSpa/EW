@@ -87,10 +87,8 @@
 		padding: 40px
 	}
 	.image_div{
-		/*transform: translateY(-50%);*/
-		top: -320px;
+		position: relative;
 		z-index: 2;
-		height: 641px;
 	}
 	.post header h1 {
 		color: #fff;
@@ -108,6 +106,7 @@
 	}
 	.image-container{
 		background-color: #fff;
+		position: absolute;
 		box-shadow: 0px 0px 10px 0px rgba(0,0,0,.7);
 	}
 	.post__content {
