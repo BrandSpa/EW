@@ -88,7 +88,7 @@
 	}
 	.image_div{
 		/*transform: translateY(-50%);*/
-		top: -50%;
+		top: -320px;
 		z-index: 2;
 		height: 641px;
 	}
