@@ -13,13 +13,13 @@ function esw_type_product_cb($post) {
     "slider",
     "systemDescription",
     "features",
-    'titleBlueprints'
+    'titleBlueprints',
     'pdfBlueprints',
-    'titleInstallationGuide'
+    'titleInstallationGuide',
     'pdfInstallationGuide',
-    'titleEliteBrandBrochure1'
+    'titleEliteBrandBrochure1',
     'pdfEliteBrandBrochure1',
-    'titleEliteBrandBrochure2'
+    'titleEliteBrandBrochure2',
   	'pdfEliteBrandBrochure2',
   ];
 
@@ -44,13 +44,13 @@ function ews_product_save($post_id) {
     "slider",
     "systemDescription",
     "features",
-    'titleBlueprints'
+    'titleBlueprints',
     'pdfBlueprints',
-    'titleInstallationGuide'
+    'titleInstallationGuide',
     'pdfInstallationGuide',
-    'titleEliteBrandBrochure1'
+    'titleEliteBrandBrochure1',
     'pdfEliteBrandBrochure1',
-    'titleEliteBrandBrochure2'
+    'titleEliteBrandBrochure2',
   	'pdfEliteBrandBrochure2',
   ];
 
