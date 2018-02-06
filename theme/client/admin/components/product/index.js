@@ -96,13 +96,13 @@ class ProductMetabox extends Component {
   				addField={this.addField}
   				data={features}
   			/>
-  			<input type="text" name="titleBlueprints" onchange={e => this.handleTitles(e)} defaultValue={titleBlueprints}/>
+  			<input type="text" name="titleBlueprints" onchange={e => this.handleTitles(e)} defaultValue={this.props.titleBlueprints!=""?this.props.titleBlueprints:"Pdf Blueprints"}/>
   			<Uploader name="pdfBlueprints" url={pdfBlueprints} />
-			<input type="text" name="titleInstallationGuide" onchange={e => this.handleTitles(e)}  defaultValue={titleInstallationGuide}/>
+			<input type="text" name="titleInstallationGuide" onchange={e => this.handleTitles(e)}  defaultValue={this.props.titleInstallationGuide!=""?this.props.titleInstallationGuide:"Pdf Installation Guide"}/>
   			<Uploader name="pdfInstallationGuide" url={pdfInstallationGuide} />
-			<input type="text" name="titleEliteBrandBrochure1"  onchange={e => this.handleTitles(e)}  defaultValue={titleEliteBrandBrochure1}/>
+			<input type="text" name="titleEliteBrandBrochure1"  onchange={e => this.handleTitles(e)}  defaultValue={this.props.titleEliteBrandBrochure1!=""?this.props.titleEliteBrandBrochure1:"Pdf Elite Brand Brochure"}/>
   			<Uploader name="pdfEliteBrandBrochure1" url={pdfEliteBrandBrochure1} />
-			<input type="text" name="titleEliteBrandBrochure2" onchange={e => this.handleTitles(e)}  defaultValue={titleEliteBrandBrochure2}/>
+			<input type="text" name="titleEliteBrandBrochure2" onchange={e => this.handleTitles(e)}  defaultValue={this.props.titleEliteBrandBrochure2!=""?this.props.titleEliteBrandBrochure2:"Pdf Elite Brand Brochure"}/>
   			<Uploader name="pdfEliteBrandBrochure2" url={pdfEliteBrandBrochure2} />
   		</section>
   	);
