@@ -25,9 +25,13 @@
 
 	$systemDescription = get_post_meta($post->ID, 'systemDescription_key', true);
 	$features = get_post_meta($post->ID, 'features_key', true);
+	$titleBlueprints = get_post_meta($post->ID, 'titleBlueprints_key', true);
 	$pdfBlueprints = get_post_meta($post->ID, 'pdfBlueprints_key', true);
+	$titleInstallationGuide = get_post_meta($post->ID, 'titleInstallationGuide_key', true);
 	$pdfInstallationGuide = get_post_meta($post->ID, 'pdfInstallationGuide_key', true);
+	$titleEliteBrandBrochure1 = get_post_meta($post->ID, 'titleEliteBrandBrochure1_key', true);
 	$pdfEliteBrandBrochure1 = get_post_meta($post->ID, 'pdfEliteBrandBrochure1_key', true);
+	$titleEliteBrandBrochure2 = get_post_meta($post->ID, 'titleEliteBrandBrochure2_key', true);
 	$pdfEliteBrandBrochure2 = get_post_meta($post->ID, 'pdfEliteBrandBrochure2_key', true);
 	$productTerm = get_term_by('name', strtolower($typeParent[0]->name), 'product');
 ?>
@@ -132,26 +136,26 @@
 						<?php if(!empty($pdfBlueprints)): ?>
 						<a target="_blank" href="<?php echo $pdfBlueprints ?>">
 							<img src="<?php echo $uri ?>/public/img/blueprints.svg" alt="">
-							<span><?php echo gett('Blueprints') ?></span>
+							<span><?php echo gett($titleBlueprints); ?></span>
 						</a>
 						<?php endif; ?>
 						<?php if(!empty($pdfInstallationGuide)): ?>
 						<a target="_blank" href="<?php echo $pdfInstallationGuide ?>">
 							<img src="<?php echo $uri ?>/public/img/installation_guide.svg" alt="">
-							<span><?php echo gett('installation guide'); ?></span>
+							<span><?php echo gett($titleInstallationGuide); ?></span>
 						</a>
 						<?php endif; ?>
 
 						<?php if(!empty($pdfEliteBrandBrochure1)): ?>
 						<a target="_blank" href="<?php echo $pdfEliteBrandBrochure1 ?>">
 							<img src="<?php echo $uri ?>/public/img/brand_brochure.svg" alt="">
-							<span><?php echo gett('Elite Brand Brochure') ?></span>
+							<span><?php echo gett($titleEliteBrandBrochure1) ?></span>
 						</a>
 						<?php endif; ?>
 						<?php if(!empty($pdfEliteBrandBrochure2)): ?>
 						<a target="_blank" href="<?php echo $pdfEliteBrandBrochure2 ?>">
 							<img src="<?php echo $uri ?>/public/img/brand_brochure.svg" alt="">
-							<span><?php echo gett('Elite Brand Brochure') ?></span>
+							<span><?php echo gett($titleEliteBrandBrochure2) ?></span>
 						</a>
 						<?php endif; ?>
 					</div>
