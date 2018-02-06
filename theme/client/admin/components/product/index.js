@@ -91,13 +91,13 @@ class ProductMetabox extends Component {
   				addField={this.addField}
   				data={features}
   			/>
-  			<input type="text" name="titleBlueprints" onchange={this.handleTitles(e)} defaultValue="Pdf Blueprints"/>
+  			<input type="text" name="titleBlueprints" onchange={e => this.handleTitles(e)} defaultValue="Pdf Blueprints"/>
   			<Uploader name="pdfBlueprints" url={pdfBlueprints} />
-			<input type="text" name="titleInstallationGuide" onchange={this.handleTitles(e)}  defaultValue="Pdf Installation Guide"/>
+			<input type="text" name="titleInstallationGuide" onchange={e => this.handleTitles(e)}  defaultValue="Pdf Installation Guide"/>
   			<Uploader name="pdfInstallationGuide" url={pdfInstallationGuide} />
-			<input type="text" name="titleEliteBrandBrochure1"  onchange={this.handleTitles(e)}  defaultValue="Pdf Elite Brand Brochure"/>
+			<input type="text" name="titleEliteBrandBrochure1"  onchange={e => this.handleTitles(e)}  defaultValue="Pdf Elite Brand Brochure"/>
   			<Uploader name="pdfEliteBrandBrochure1" url={pdfEliteBrandBrochure1} />
-			<input type="text" name="titleEliteBrandBrochure2" onchange={this.handleTitles(e)}  defaultValue="Pdf Elite Brand Brochure"/>
+			<input type="text" name="titleEliteBrandBrochure2" onchange={e => this.handleTitles(e)}  defaultValue="Pdf Elite Brand Brochure"/>
   			<Uploader name="pdfEliteBrandBrochure2" url={pdfEliteBrandBrochure2} />
   		</section>
   	);
