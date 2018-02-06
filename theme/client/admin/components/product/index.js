@@ -21,6 +21,7 @@ class ProductMetabox extends Component {
 	}
 
 	componentDidMount() {
+		console.log(this.props);
 		const state = { ...this.state, ...this.props };
 		this.setState(state);
 	}
