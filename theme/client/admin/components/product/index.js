@@ -84,13 +84,13 @@ class ProductMetabox extends Component {
   				addField={this.addField}
   				data={features}
   			/>
-  			<h4>Pdf Blueprints</h4>
+  			<input type="text" name="titleBlueprints" defaultValue="Pdf Blueprints"/>
   			<Uploader name="pdfBlueprints" url={pdfBlueprints} />
-  			<h4>Pdf Installation Guide</h4>
+			<input type="text" name="titleInstallationGuide" defaultValue="Pdf Installation Guide"/>
   			<Uploader name="pdfInstallationGuide" url={pdfInstallationGuide} />
-  			<h4>Pdf Elite Brand Brochure</h4>
+			<input type="text" name="titleEliteBrandBrochure1" defaultValue="Pdf Elite Brand Brochure"/>
   			<Uploader name="pdfEliteBrandBrochure1" url={pdfEliteBrandBrochure1} />
-  			<h4>Pdf Elite Brand Brochure</h4>
+			<input type="text" name="titleEliteBrandBrochure2" defaultValue="Pdf Elite Brand Brochure"/>
   			<Uploader name="pdfEliteBrandBrochure2" url={pdfEliteBrandBrochure2} />
   		</section>
   	);
