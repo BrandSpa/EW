@@ -10,10 +10,14 @@ class ProductMetabox extends Component {
 		slider: '',
 		systemDescription: [],
 		features: [],
+		titleBlueprints: '',
 		pdfBlueprints: '',
-  	pdfInstallationGuide: '',
-  	pdfEliteBrandBrochure1: '',
-  	pdfEliteBrandBrochure2: '',
+		titleInstallationGuide: '',
+		pdfInstallationGuide: '',
+		titleEliteBrandBrochure1: '',
+		pdfEliteBrandBrochure1: '',
+		titleEliteBrandBrochure2: '',
+		pdfEliteBrandBrochure2: '',
 	}
 
 	componentDidMount() {
@@ -39,6 +43,9 @@ class ProductMetabox extends Component {
   	this.setState({ [type]: fields });
   }
 
+  handleTitles = ( e ) => {
+	  this.setState({ [e.target.name] : e.target.value });
+  }
 
   render() {
   	const {
@@ -84,13 +91,13 @@ class ProductMetabox extends Component {
   				addField={this.addField}
   				data={features}
   			/>
-  			<input type="text" name="titleBlueprints" defaultValue="Pdf Blueprints"/>
+  			<input type="text" name="titleBlueprints" onchange={this.handleTitles(e)} defaultValue="Pdf Blueprints"/>
   			<Uploader name="pdfBlueprints" url={pdfBlueprints} />
-			<input type="text" name="titleInstallationGuide" defaultValue="Pdf Installation Guide"/>
+			<input type="text" name="titleInstallationGuide" onchange={this.handleTitles(e)}  defaultValue="Pdf Installation Guide"/>
   			<Uploader name="pdfInstallationGuide" url={pdfInstallationGuide} />
-			<input type="text" name="titleEliteBrandBrochure1" defaultValue="Pdf Elite Brand Brochure"/>
+			<input type="text" name="titleEliteBrandBrochure1"  onchange={this.handleTitles(e)}  defaultValue="Pdf Elite Brand Brochure"/>
   			<Uploader name="pdfEliteBrandBrochure1" url={pdfEliteBrandBrochure1} />
-			<input type="text" name="titleEliteBrandBrochure2" defaultValue="Pdf Elite Brand Brochure"/>
+			<input type="text" name="titleEliteBrandBrochure2" onchange={this.handleTitles(e)}  defaultValue="Pdf Elite Brand Brochure"/>
   			<Uploader name="pdfEliteBrandBrochure2" url={pdfEliteBrandBrochure2} />
   		</section>
   	);
