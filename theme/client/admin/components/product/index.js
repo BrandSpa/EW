@@ -63,7 +63,7 @@ class ProductMetabox extends Component {
 		titleEliteBrandBrochure2,
   		pdfEliteBrandBrochure2,
   	} = this.state;
-
+	console.log(titleInstallationGuide, titleEliteBrandBrochure1, titleEliteBrandBrochure2, titleBlueprints);
   	return (
   		<section>
   			<h4>Header</h4>
@@ -96,13 +96,13 @@ class ProductMetabox extends Component {
   				addField={this.addField}
   				data={features}
   			/>
-  			<input type="text" name="titleBlueprints" onchange={e => this.handleTitles(e)} defaultValue={titleBlueprints?titleBlueprints:"Pdf Blueprints"}/>
+  			<input type="text" name="titleBlueprints" onchange={e => this.handleTitles(e)} defaultValue={titleBlueprints!=""?titleBlueprints:"Pdf Blueprints"}/>
   			<Uploader name="pdfBlueprints" url={pdfBlueprints} />
-			<input type="text" name="titleInstallationGuide" onchange={e => this.handleTitles(e)}  defaultValue={titleInstallationGuide?titleInstallationGuide:"Pdf Installation Guide"}/>
+			<input type="text" name="titleInstallationGuide" onchange={e => this.handleTitles(e)}  defaultValue={titleInstallationGuide!=""?titleInstallationGuide:"Pdf Installation Guide"}/>
   			<Uploader name="pdfInstallationGuide" url={pdfInstallationGuide} />
-			<input type="text" name="titleEliteBrandBrochure1"  onchange={e => this.handleTitles(e)}  defaultValue={titleEliteBrandBrochure1?titleEliteBrandBrochure1:"Pdf Elite Brand Brochure"}/>
+			<input type="text" name="titleEliteBrandBrochure1"  onchange={e => this.handleTitles(e)}  defaultValue={titleEliteBrandBrochure1!=""?titleEliteBrandBrochure1:"Pdf Elite Brand Brochure"}/>
   			<Uploader name="pdfEliteBrandBrochure1" url={pdfEliteBrandBrochure1} />
-			<input type="text" name="titleEliteBrandBrochure2" onchange={e => this.handleTitles(e)}  defaultValue={titleEliteBrandBrochure2?titleEliteBrandBrochure2:"Pdf Elite Brand Brochure"}/>
+			<input type="text" name="titleEliteBrandBrochure2" onchange={e => this.handleTitles(e)}  defaultValue={titleEliteBrandBrochure2!=""?titleEliteBrandBrochure2:"Pdf Elite Brand Brochure"}/>
   			<Uploader name="pdfEliteBrandBrochure2" url={pdfEliteBrandBrochure2} />
   		</section>
   	);
