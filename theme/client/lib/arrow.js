@@ -16,6 +16,14 @@ const arrowAction = () =>{
                 }, 500);
             });
 
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('#backtotop:hidden').stop(true, true).fadeIn();
+                } else {
+                    $('#backtotop').stop(true, true).fadeOut();
+                }
+            });
+
         })(jQuery);
     }
     
