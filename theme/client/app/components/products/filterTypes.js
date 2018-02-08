@@ -24,7 +24,7 @@ class FilterTypes extends Component {
 		typesByPos.map(type => {
 			if(type.term_id == this.props.type.term_id){
 				type.subtypes.map( subtype => {
-					selected.push(subtype.term_id); 
+					selected.push( `${subtype.term_id}` ); 
 				})
 			}
 		});
