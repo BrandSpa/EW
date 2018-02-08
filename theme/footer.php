@@ -2,6 +2,11 @@
 $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']));
 ?>
 
+<div id="backtotop">
+  <img src="<?php echo get_template_directory_uri() ?>/public/img/up.svg" alt="back to top" >
+</div>
+
+
 <section class="footer">
   <div class="col-lg-1"></div>
   <div class="col-lg-10 col-xs-10">
