@@ -19,7 +19,7 @@ class FilterTypes extends Component {
 
 	setSelected = () => {
 		let typesByPos = sortBy(this.state.types, ['position']);
-		console.log('typesPos', typesByPos, 'Selected',this.state.selected);
+		console.log('typesPos', typesByPos, 'Selected',this.props.selected);
 		if (Object.keys(this.props.type).length) {
 			this.setState({ selected: [`${this.props.type.term_id}`] });
 		}
