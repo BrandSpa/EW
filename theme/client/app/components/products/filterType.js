@@ -24,10 +24,6 @@ class FilterType extends Component {
 		this.someSelected();
 	}
 
-	isChecked( selected, subtype ){
-		return selected.indexOf(`${subtype.term_id}`) !== -1 || selected.indexOf(`${subtype.parent}`) !== -1
-	}
-
 	render() {
 		const { type, selected } = this.props;
 		const { open } = this.state;
@@ -44,7 +40,7 @@ class FilterType extends Component {
 							value={subtype.term_id}
 							placeholder={subtype.name}
 							onChange={e => this.props.onChange(e, type)}
-							checked={this.isChecked(selected, subtype)}
+							checked={selected.indexOf(`${subtype.term_id}`) !== -1}
 						/>
 					))}
 				</div>
