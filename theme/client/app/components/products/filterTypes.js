@@ -19,9 +19,17 @@ class FilterTypes extends Component {
 
 	setSelected = () => {
 		let typesByPos = sortBy(this.state.types, ['position']);
-		console.log('typesPos', typesByPos, 'Selected',this.props.selected);
+		let selected = [`${this.props.type.term_id}`];
+		console.log('typesPos', typesByPos);
+		typesByPos.map(type => {
+			if(type.term_id == this.props.type.term_id){
+				type.subtypes.map( subtype => {
+					selected.push(subtype.term_id); 
+				})
+			}
+		});
 		if (Object.keys(this.props.type).length) {
-			this.setState({ selected: [`${this.props.type.term_id}`] });
+			this.setState({ selected });
 		}
 	}
 
