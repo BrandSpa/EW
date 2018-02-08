@@ -55,6 +55,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     right: 5%;
     display: none;
     cursor: pointer;
+    z-index: 10;
   }
   #backtotop img{
     width:50px;
@@ -161,8 +162,6 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     float: left;
     width: 100%;
     background: #1f1f1f;
-    position: relative;
-    z-index: 2;
   }
 
   .social-icon {
@@ -189,8 +188,6 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
       /* text-align: right; */
       flex-direction: row-reverse;
       padding:15px;
-      position: relative;
-      z-index: 2;
     }
 
     .branding-logo img{
