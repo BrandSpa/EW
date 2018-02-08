@@ -43,6 +43,14 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
 </section>
 
 <style>
+  #backtotop{
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+  }
+  #backtotop img{
+    width:50px;
+  }
   .footer {
     position: relative;
     width: 100%;
