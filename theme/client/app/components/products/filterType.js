@@ -40,7 +40,7 @@ class FilterType extends Component {
 							value={subtype.term_id}
 							placeholder={subtype.name}
 							onChange={e => this.props.onChange(e, type)}
-							checked={selected.indexOf(`${subtype.parent}`) !== -1}
+							checked={selected.indexOf(`${subtype.term_id}`) !== -1 || selected.indexOf(`${subtype.parent}`) !== -1}
 						/>
 					))}
 				</div>
