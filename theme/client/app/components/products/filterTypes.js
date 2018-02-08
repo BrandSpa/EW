@@ -6,6 +6,7 @@ class FilterTypes extends Component {
 	state = {
 		types: [],
 		selected: [],
+		type: null
 	}
 
 	componentWillMount() {
@@ -49,7 +50,7 @@ class FilterTypes extends Component {
 		const { types, selected } = this.state;
 		const typesByPosition = sortBy(types, ['position']);
 		console.log(types, typesByPosition);
-
+		console.log('props', this.props);
 		return (
 			<section>
 				{typesByPosition.map(type => (
