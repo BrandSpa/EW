@@ -49,7 +49,7 @@ class FilterTypes extends Component {
 	render() {
 		const { types, selected } = this.state;
 		const typesByPosition = sortBy(types, ['position']);
-		console.log(types, typesByPosition);
+		console.log(types, selected, typesByPosition);
 		console.log('props', this.props);
 		return (
 			<section>
