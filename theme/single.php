@@ -119,6 +119,7 @@
 	.post__header-intro img {
 		margin-top: 0;
 		width: 100%;
+		max-height: 510px;
 	}
 
 	.post__header-intro-text {
