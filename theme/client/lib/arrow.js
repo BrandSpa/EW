@@ -17,13 +17,18 @@ const arrowAction = () =>{
             });
 
             $(window).on('scroll', function() {
-                console.log($(this).scrollTop());
                 if ($(this).scrollTop() > 300) {
-                    $('#backtotop:hidden').fadeIn();
+                    $('#backtotop:hidden').stop(true, true).fadeIn();
                 } else {
-                    $('#backtotop').fadeOut();
+                    $('#backtotop').stop(true, true).fadeOut();
                 }
             });
+
+            $(document).on('click', '#backtotop', function(){
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 500);
+            })
 
         })(jQuery);
     }

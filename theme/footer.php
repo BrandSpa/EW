@@ -47,7 +47,8 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     position: fixed;
     bottom: 5%;
     right: 5%;
-    visibility: hidden;
+    display: none;
+    cursor: pointer;
   }
   #backtotop img{
     width:50px;
