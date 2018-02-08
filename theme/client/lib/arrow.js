@@ -16,7 +16,7 @@ const arrowAction = () =>{
                 }, 500);
             });
 
-            $(window).scroll(function() {
+            $(window).on('scroll', function() {
                 if ($(this).scrollTop() > 300) {
                     $('#backtotop:hidden').stop(true, true).fadeIn();
                 } else {
