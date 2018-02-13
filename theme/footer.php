@@ -22,10 +22,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
       <?php wp_nav_menu(['name' => 'footer_right', 'menu_id' => 'menu-footer', "theme_location" => "footer_right"]); ?>
     </div>
     <div class="col-md-5">
-
-    </div>
-  </div>
-      <section>
+    <section>
         <img src="<?php echo get_template_directory_uri() ?>/public/img/eswlogo.svg" />
         <span>The Power of Quality</span>
       </section>
@@ -43,6 +40,9 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
         <a href="http://alutions.co" target="_blank"><img style="height:40px" src="<?php echo get_template_directory_uri() ?>/public/img/logo-alutions.svg" alt=""></a>
         <a href="https://www.tecnoglass.com" target="_blank"><img src="<?php echo get_template_directory_uri() ?>/public/img/logo-tgls-color.svg" alt=""></a>
       </div>
+    </div>
+  </div>
+      
   </div>
   
   <div class="col-xs-1 col-sm-1"></div>
