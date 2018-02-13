@@ -260,7 +260,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     }
 
     .social-icon  {
-      margin: 0 20px 0 0;
+      margin: 0 0px 0 0;
     }
 
     #menu-footer {
