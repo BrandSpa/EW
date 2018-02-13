@@ -228,6 +228,8 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     .footer_social_logos{
       text-align: right;
       display: flex;
+      align-items: flex-end;
+      flex-direction: row-reverse;
     }
 
     .footer_social_logos a {
