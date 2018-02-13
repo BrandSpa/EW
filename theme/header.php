@@ -101,7 +101,10 @@
 </head>
 <body>
 <?php
-  $props = ["menu" => menu_to_array('header')];
+  $props = ["menu" => menu_to_array('header'), 
+            "menu-footer-right" => menu_to_array('footer'),
+            "menu-footer-left" => menu_to_array('footer_left')
+           ];
 ?>
 
 <section class="header-container" data-props='<?php echo wp_json_encode($props) ?>'></section>
