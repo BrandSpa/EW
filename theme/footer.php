@@ -12,7 +12,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
         </g>
     </svg>
 </div>
-
+<?php wp_nav_menu(['name' => 'footer_right', 'menu_id' => 'menu-footer']); ?>
 <section class="footer">
   <div class="col-lg-1"></div>
   <div class="col-lg-10 col-xs-10">
