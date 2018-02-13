@@ -102,8 +102,8 @@
 <body>
 <?php
   $props = ["menu" => menu_to_array('header'), 
-            "menu-footer-right" => menu_to_array('footer'),
-            "menu-footer-left" => menu_to_array('footer_left')
+            "menu_right" => menu_to_array('footer'),
+            "menu_left" => menu_to_array('footer_left')
            ];
 ?>
 
