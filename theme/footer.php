@@ -22,7 +22,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
       <?php wp_nav_menu(['name' => 'footer_right', 'menu_id' => 'menu-footer', "theme_location" => "footer_right"]); ?>
     </div>
     <div class="col-md-5">
-      <section class="text-right">
+      <section class="text-right es_footer_logo">
         <img src="<?php echo get_template_directory_uri() ?>/public/img/eswlogo.svg" />
         <p>The Power of Quality</p>
       </section>
@@ -219,6 +219,10 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
 
     .branding-logo img{
       width:20px;
+    }
+
+    .es_footer_logo img{
+      width: 200px;
     }
 
   @media (min-width: 1024px) {
