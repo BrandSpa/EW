@@ -237,6 +237,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
 
     .menu-footer-right-container ul li{
       margin: 0 !important;
+      width: 100% !important;
       display:block;
     }
     .menu-footer-right-container ul li a{
