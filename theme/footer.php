@@ -46,7 +46,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
   </div>
   
   <div class="col-xs-1 col-sm-1"></div>
-  <div class="branding-logo">
+  <div class="branding-logo col-xs-12">
     <a href="https://brandspa.com" target="_blank"><img src="<?php echo get_template_directory_uri() ?>/public/img/gota-bs.svg" alt="The Brandspa Agencia Digital"></a>
   </div>
 </section>
