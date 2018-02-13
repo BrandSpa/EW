@@ -22,9 +22,9 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
       <?php wp_nav_menu(['name' => 'footer_right', 'menu_id' => 'menu-footer', "theme_location" => "footer_right"]); ?>
     </div>
     <div class="col-md-5">
-    <section>
+      <section class="text-right">
         <img src="<?php echo get_template_directory_uri() ?>/public/img/eswlogo.svg" />
-        <span>The Power of Quality</span>
+        <p>The Power of Quality</p>
       </section>
 
       <section>
