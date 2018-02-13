@@ -251,7 +251,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     }
 
     #menu-footer > li {
-      margin: 0 0 40px 0;
+      margin: 0;
       width: auto;
       min-width: 150px;
     }
