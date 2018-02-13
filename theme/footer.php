@@ -162,7 +162,10 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     margin: 20px auto;
     max-width: 145px;
   }
-
+  .menu-footer-right-container ul li{
+    margin: 0;
+    display:block;
+  }
   .footer-bottom {
     float: left;
     width: 100%;
