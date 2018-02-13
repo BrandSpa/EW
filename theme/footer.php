@@ -15,14 +15,34 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
 <section class="footer">
   <div class="container-fliud">
   <div class="col-xs-12">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <?php wp_nav_menu(['name' => 'footer_left', 'menu_id' => 'menu-footer', "theme_location" => "footer_left"]); ?>
     </div>
     <div class="col-md-3">
       <?php wp_nav_menu(['name' => 'footer_right', 'menu_id' => 'menu-footer', "theme_location" => "footer_right"]); ?>
     </div>
+    <div class="col-md-5">
+
+    </div>
   </div>
-  
+      <section>
+        <img src="<?php echo get_template_directory_uri() ?>/public/img/eswlogo.svg" />
+        <span>The Power of Quality</span>
+      </section>
+
+      <section>
+        <a class="social-icon" href="https://www.instagram.com/eswenergiasolar/" target="_blank" rel="noopener">
+		      <i class="ion-social-instagram"></i>
+        </a>
+        <a class="social-icon" href="https://twitter.com/ESWindows" target="_blank" rel="noopener">
+		      <i class="ion-social-twitter"></i>
+        </a>
+      </section>
+
+      <div class="footer-bottom__content-right">
+        <a href="http://alutions.co" target="_blank"><img style="height:40px" src="<?php echo get_template_directory_uri() ?>/public/img/logo-alutions.svg" alt=""></a>
+        <a href="https://www.tecnoglass.com" target="_blank"><img src="<?php echo get_template_directory_uri() ?>/public/img/logo-tgls-color.svg" alt=""></a>
+      </div>
   </div>
   
   <div class="col-xs-1 col-sm-1"></div>
@@ -229,12 +249,13 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     }
 
     #menu-footer {
-      justify-content: flex-start;
+      justify-content: space-evenly;
     }
 
     #menu-footer > li {
-      margin: 0 80px 40px 0;
+      margin: 0 0 40px 0;
       width: auto;
+      min-width: 150px;
     }
 
     .menu-footer-right-container ul li{
