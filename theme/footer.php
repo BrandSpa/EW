@@ -162,10 +162,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     margin: 20px auto;
     max-width: 145px;
   }
-  .menu-footer-right-container ul li{
-    margin: 0;
-    display:block;
-  }
+  
   .footer-bottom {
     float: left;
     width: 100%;
@@ -237,7 +234,14 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
       margin: 0 80px 40px 0;
       width: auto;
     }
+
+    .menu-footer-right-container ul li{
+      margin: 0;
+      display:block;
+    }
   }
+
+  
 </style>
 <script>
   window.templateUri = '<?php echo get_template_directory_uri() ?>';
