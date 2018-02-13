@@ -196,7 +196,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
 
     .es_footer_logo img{
       width: 200px;
-      margin:0;padding:0; display:block;
+      margin:0;padding:0;
     }
     .es_footer_logo a{
       color: #fff;
