@@ -27,7 +27,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
         <p>The Power of Quality</p>
       </section>
 
-      <section>
+      <section class="footer_social_logos">
         <a class="social-icon" href="https://www.instagram.com/eswenergiasolar/" target="_blank" rel="noopener">
 		      <i class="ion-social-instagram"></i>
         </a>
@@ -223,6 +223,15 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
 
     .es_footer_logo img{
       width: 200px;
+    }
+
+    .footer_social_logos{
+      text-align: right;
+      display: flex;
+    }
+
+    .footer_social_logos a {
+      
     }
 
   @media (min-width: 1024px) {
