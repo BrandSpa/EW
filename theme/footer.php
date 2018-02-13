@@ -13,7 +13,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     </svg>
 </div>
 <section class="footer">
-  <div class="col-lg-1"></div>
+  <div class="container">
   <div class="col-lg-10 col-xs-10">
     <div class="col-md-6">
       <?php wp_nav_menu(['name' => 'footer_left', 'menu_id' => 'menu-footer', "theme_location" => "footer_left"]); ?>
@@ -21,8 +21,10 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     <div class="col-md-3">
       <?php wp_nav_menu(['name' => 'footer_right', 'menu_id' => 'menu-footer', "theme_location" => "footer_right"]); ?>
     </div>
-    
   </div>
+  
+  </div>
+  
   <div class="col-xs-1 col-sm-1"></div>
 </section>
 
