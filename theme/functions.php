@@ -9,7 +9,8 @@ register_nav_menus(
     array(
       'header' => 'Header menu',
       'mobile' => 'Mobile menu',
-      'footer' => 'Footer menu'
+      'footer' => 'Footer menu Right',
+      'footer_left' => 'Footer Left'
     )
   );
 
