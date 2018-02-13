@@ -16,7 +16,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
 <section class="footer">
   <div class="col-lg-1"></div>
   <div class="col-lg-10 col-xs-10">
-    <?php wp_nav_menu(['name' => 'header', 'menu_id' => 'menu-footer']); ?>
+    <?php wp_nav_menu(['name' => 'footer', 'menu_id' => 'menu-footer']); ?>
   </div>
   <div class="col-xs-1 col-sm-1"></div>
 </section>
