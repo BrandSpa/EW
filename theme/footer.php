@@ -48,33 +48,6 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
   <div class="col-xs-1 col-sm-1"></div>
 </section>
 
-<section class="footer-bottom">
-  <div class="col-lg-1"></div>
-  <div class="col-lg-10">
-    <div class="footer-bottom__content">
-      <div class="footer-bottom__content-left">
-      <section>
-        <a class="social-icon" href="https://www.instagram.com/eswenergiasolar/" target="_blank" rel="noopener">
-		      <i class="ion-social-instagram"></i>
-        </a>
-        <a class="social-icon" href="https://twitter.com/ESWindows" target="_blank" rel="noopener">
-		      <i class="ion-social-twitter"></i>
-        </a>
-      </section>
-        <section>
-          <img src="<?php echo get_template_directory_uri() ?>/public/img/eswlogo.svg" />
-          <span>The Power of Quality</span>
-        </section>
-      </div>
-      <div class="footer-bottom__content-right">
-        <a href="http://alutions.co" target="_blank"><img style="height:40px" src="<?php echo get_template_directory_uri() ?>/public/img/logo-alutions.svg" alt=""></a>
-        <a href="https://www.tecnoglass.com" target="_blank"><img src="<?php echo get_template_directory_uri() ?>/public/img/logo-tgls-color.svg" alt=""></a>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-1"></div>
-</section>
-
 <style>
   #backtotop{
     position: fixed;
