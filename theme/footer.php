@@ -225,11 +225,11 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     }
 
     .footer-bottom__content-right {
-      flex-direction: row;
+      flex-direction: row-reverse;
     }
 
     .footer-bottom__content-right img  {
-      margin-right: 40px;
+      margin-left: 40px;
     }
 
     .social-icon  {
