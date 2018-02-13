@@ -42,10 +42,9 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
       </div>
     </div>
   </div>
-      
-  </div>
   
-  <div class="col-xs-1 col-sm-1"></div>
+    <div class="col-xs-1 col-sm-1"></div>
+  </div>
   
 </section>
 <div class="branding-logo">
