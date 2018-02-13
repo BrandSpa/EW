@@ -226,6 +226,8 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
 
     .footer-bottom__content-right {
       flex-direction: row-reverse;
+      margin-top: 30px;
+      border-top: 1px solid #039ED8;
     }
 
     .footer-bottom__content-right img  {
