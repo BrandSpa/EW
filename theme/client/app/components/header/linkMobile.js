@@ -30,7 +30,9 @@ class MenuLinkMobile extends Component {
 			<li
 				className="header__menu-link"
 			>
-				<a href={item.url} onClick={(e) => this.handleClick(e, item)}>{item.title} {item.sub && item.sub.length > 0 && <img className={imgClass} src={`${this.props.uri}/public/img/arrow.svg`} />}</a>
+				<a href={item.url} onClick={(e) => this.handleClick(e, item)}>
+				<div style={{display: 'inline-block', textTransform: 'uppercase'}} dangerouslySetInnerHTML={{__html: item.title}} /> 
+				{item.sub && item.sub.length > 0 && <img className={imgClass} src={`${this.props.uri}/public/img/arrow.svg`} />}</a>
 				{item.sub &&
 						<ul className={submenuClass}>
 							{item.sub.map((subItem, i) => <li key={subItem.ID}><a href={subItem.url}><div dangerouslySetInnerHTML={{__html: subItem.title}} /></a></li>)
