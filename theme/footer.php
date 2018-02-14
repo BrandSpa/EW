@@ -61,6 +61,11 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     cursor: pointer;
     z-index: 10;
   }
+
+  .container-fliud {
+      width: 95%;
+      margin: 0 auto;
+  }
   #backtotop img{
     width:50px;
   }
@@ -276,7 +281,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     }
     .footer-bottom__content-right {
       display: flex;
-      flex-direction: column;
+      flex-direction: row-reverse;
     }
     .menu-footer-right-container ul li{
       margin: 0 !important;
