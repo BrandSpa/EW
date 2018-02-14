@@ -59,6 +59,11 @@ p {
 	line-height: 30px;
 }
 
+.content{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
 @media (min-width: 1024px) {
 	h1 {
 		font-size: 90px;
