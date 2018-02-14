@@ -16,7 +16,7 @@
 	padding-left: 15px !important;
   padding-right: 15px !important;
 }
-.accesories{
+#accesories{
   left: 0 !important;
 }
 </style>
