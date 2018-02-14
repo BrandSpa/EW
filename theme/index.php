@@ -16,9 +16,12 @@
 	padding-left: 15px !important;
   padding-right: 15px !important;
 }
-#accesories{
-  left: 0 !important;
+@media and (max-width: 550px){
+  #accesories{
+    left: 0 !important;
+  }
 }
+
 </style>
 
 <?php get_footer(); ?>
