@@ -59,10 +59,11 @@ p {
 	line-height: 30px;
 }
 
-.content{
+.separate_content{
 	padding-left: 15px;
 	padding-right: 15px;
 }
+
 
 @media (min-width: 1024px) {
 	h1 {
