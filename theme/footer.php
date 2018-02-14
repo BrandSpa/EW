@@ -22,7 +22,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     <div class="col-md-3">
       <?php wp_nav_menu(['name' => 'footer_right', 'menu_id' => 'menu-footer', "theme_location" => "footer_right"]); ?>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-5 footer_logos">
       <section class="text-right es_footer_logo">
         <img src="<?php echo get_template_directory_uri() ?>/public/img/eswlogo.svg" />
         <p>The Power of Quality</p>
@@ -150,11 +150,6 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     margin: 0 10px;
   }
 
-  .footer-bottom__content-right {
-    display: flex;
-    flex-direction: column;
-  }
-
   .footer-bottom__content-right img {
     display: block;
     margin: 20px auto;
@@ -224,6 +219,17 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
       margin: 0 !important;
       width: auto !important;
     }
+
+    .footer_logos{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .footer-bottom__content-right{
+      display: flex;
+      flex-direction: row-reverse; 
+    }
+
   @media (min-width: 1024px) {
     .footer {
       flex-direction: row;
@@ -263,7 +269,10 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
       width: auto;
       min-width: 150px;
     }
-
+    .footer-bottom__content-right {
+      display: flex;
+      flex-direction: column;
+    }
     .menu-footer-right-container ul li{
       margin: 0 !important;
       width: 100% !important;
