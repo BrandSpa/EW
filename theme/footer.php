@@ -263,6 +263,11 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     #menu-footer {
       justify-content: space-between;
     }
+    
+    .footer_logos {
+        display: inherit;
+        justify-content: normal;
+    }
 
     #menu-footer > li {
       margin: 0;
