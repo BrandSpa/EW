@@ -215,7 +215,15 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     .footer_social_logos a {
       
     }
-
+    .menu-footer-right-container ul{
+      display: flex;
+      padding: 0;
+      justify-content: space-between;
+    }
+    .menu-footer-right-container ul li{
+      margin: 0 !important;
+      width: auto !important;
+    }
   @media (min-width: 1024px) {
     .footer {
       flex-direction: row;
