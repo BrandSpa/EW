@@ -175,7 +175,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
 		height: 40px;
 		border-radius: 40px;
 		background: #fff;
-    margin: 0 20px 20px 0;
+    margin: 0 20px 0 0;
 	}
 
 	.social-icon i {
@@ -235,6 +235,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
       width: 100%;
       justify-content: center;
       text-align: center;
+      margin-top: 10px;
     }
 
     .footer-bottom__content-right{
