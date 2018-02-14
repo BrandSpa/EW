@@ -37,10 +37,10 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
         </a>
       </section>
 
-      <div class="footer-bottom__content-right">
+      <section class="footer-bottom__content-right">
         <a href="https://www.tecnoglass.com" target="_blank"><img src="<?php echo get_template_directory_uri() ?>/public/img/logo-tgls-color.svg" alt=""></a>
         <a href="http://alutions.co" target="_blank"><img style="height:40px" src="<?php echo get_template_directory_uri() ?>/public/img/logo-alutions.svg" alt=""></a>
-      </div>
+      </section>
     </div>
   </div>
   
@@ -229,6 +229,12 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+    }
+
+    .footer_logos section{
+      width: 100%;
+      justify-content: center;
+      text-align: center;
     }
 
     .footer-bottom__content-right{
