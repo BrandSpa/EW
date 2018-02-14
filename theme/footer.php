@@ -283,6 +283,9 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
       display: flex;
       flex-direction: row-reverse;
     }
+    .menu-footer-right-container ul{
+      padding-left: 40px;
+    }
     .menu-footer-right-container ul li{
       margin: 0 !important;
       width: 100% !important;
