@@ -301,6 +301,12 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     .menu-footer-right-container ul li a{
       margin-bottom: 15px !important;
     }
+
+    .footer_logos section {
+        width: 100%;
+        justify-content: right;
+        text-align: right;
+    }
   }
 
   .menu-footer-left-container ul{
