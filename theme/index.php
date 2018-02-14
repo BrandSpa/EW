@@ -11,5 +11,12 @@
 <?php endwhile; else : ?>
   <p><?php _e( '401' ); ?></p>
 <?php endif; ?>
+<style>
+.separate_content{
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+}
+</style>
 
 <?php get_footer(); ?>
+
