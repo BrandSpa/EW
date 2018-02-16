@@ -165,6 +165,15 @@ class ProjectsCarousel extends Component {
 						}
 					}
 
+					@media (min-width: 768px) {
+						.posts-slider__btns__left {
+							left: 10px;
+						}
+
+						.posts-slider__btns__right {
+							right: 10px;
+						}
+					}
 
 
 				`}</style>
