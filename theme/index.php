@@ -16,6 +16,10 @@
 	padding-left: 15px !important;
   padding-right: 15px !important;
 }
+.row{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 @media and (max-width: 550px){
   #accesories{
     left: 0 !important;
