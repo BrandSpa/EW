@@ -165,7 +165,7 @@ class ProjectsCarousel extends Component {
 						}
 					}
 
-					@media (min-width: 768px) {
+					@media (max-width: 768px) {
 						.posts-slider__btns__left {
 							left: 10px;
 						}
