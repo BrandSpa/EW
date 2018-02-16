@@ -19,6 +19,7 @@
 .row{
   padding-left: 0 !important;
   padding-right: 0 !important;
+  margin-right: 0 !important;
 }
 @media and (max-width: 550px){
   #accesories{
