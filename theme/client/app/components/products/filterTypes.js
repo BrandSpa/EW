@@ -33,10 +33,19 @@ class FilterTypes extends Component {
 		}
 	}
 
-	sortObj = ( array ) => {
-		return array.sort((a, b) => {
-			return a.name.localeCompare(b.name)
-		});
+	sortObj = ( array, order, key ) => {
+		array.sort( function (a, b) {
+			var A = a[key], B = b[key];
+			
+			if (order.indexOf(A) > order.indexOf(B)) {
+			  return 1;
+			} else {
+			  return -1;
+			}
+			
+		  });
+		  
+		  return array;
 	}
 	
 	setFilters = () => {
@@ -65,7 +74,8 @@ class FilterTypes extends Component {
 	render() {
 		const { types, selected } = this.state;
 		const typesByPosition = sortBy(types, ['position']);
-		console.log(types, selected, this.sortObj(typesByPosition));
+		typesByPosition = this.sortObj(typesByPosition, ['WINDOWS', 'CURTAIN WALLS', 'STOREFRONTS', 'DOORS', 'RAILINGS', 'INTERIORS'], name);
+		console.log(types, selected, typesByPosition);
 		console.log('props', this.props);
 		return (
 			<section>
