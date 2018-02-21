@@ -34,7 +34,7 @@ class FilterTypes extends Component {
 	}
 
 	sortObj = ( array ) => {
-		return rray.sort((a, b) => {
+		return array.sort((a, b) => {
 			return a.name.localeCompare(b.name)
 		});
 	}
