@@ -33,6 +33,12 @@ class FilterTypes extends Component {
 		}
 	}
 
+	sortObj = ( array ) => {
+		return rray.sort((a, b) => {
+			return a.name.localeCompare(b.name)
+		});
+	}
+	
 	setFilters = () => {
 		const childTypes = groupBy(this.props.typesOptions, 'parent');
 		const types = childTypes[0].map((type) => {
@@ -59,7 +65,7 @@ class FilterTypes extends Component {
 	render() {
 		const { types, selected } = this.state;
 		const typesByPosition = sortBy(types, ['position']);
-		console.log(types, selected, typesByPosition);
+		console.log(types, selected, this.sortObj(typesByPosition));
 		console.log('props', this.props);
 		return (
 			<section>
