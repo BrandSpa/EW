@@ -338,7 +338,10 @@
     font-size: 40px;
     color: #039ED8;
   }
-
+  	.row {
+		margin-right: 0 !important;
+		 margin-left: 0 !important;
+	}
 	@media (min-width: 1024px) {
 		.product__header {
 			height: 600px;
