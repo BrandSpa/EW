@@ -116,6 +116,10 @@
 		padding: 40px 20px;
 	}
 
+	.post__content img {
+		max-width: 100%;
+	}
+
 	.post__header-intro img {
 		margin-top: 0;
 		width: 100%;
