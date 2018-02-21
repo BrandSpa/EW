@@ -16,13 +16,13 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
   <div class="container-fliud">
   <div class="col-xs-1 col-sm-1"></div>
   <div class="col-xs-10">
-    <div class="col-md-6">
+    <div class="col-lg-6 col-md-8">
       <?php wp_nav_menu(['name' => 'footer_left', 'menu_id' => 'menu-footer', "theme_location" => "footer_left"]); ?>
     </div>
-    <div class="col-md-2">
+    <div class="col-lg-2 col-md-4">
       <?php wp_nav_menu(['name' => 'footer_right', 'menu_id' => 'menu-footer', "theme_location" => "footer_right"]); ?>
     </div>
-    <div class="col-md-4 footer_logos">
+    <div class="col-lg-4  col-md-12 footer_logos">
       <section class="text-right es_footer_logo">
         <img src="<?php echo get_template_directory_uri() ?>/public/img/eswlogo.svg" />
         <p>The Power of Quality</p>
