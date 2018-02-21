@@ -34,8 +34,9 @@ class FiltersProducts extends Component {
 	}
 
 	render() {
-		const { productsOptions } = this.props;
-		console.log('options', productsOptions);
+		var { productsOptions } = this.props;
+		productsOptions = this.sortObj(productsOptions, [19, 14, 18, 16, 17]);
+
 		return (
 			<section>
 				{Object.keys(productsOptions).map(key => (
