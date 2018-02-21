@@ -18,8 +18,24 @@ class FiltersProducts extends Component {
 		});
 	}
 
+	sortObj = ( array, order, key ) => {
+		array.sort( function (a, b) {
+			var A = a[key], B = b[key];
+			
+			if (order.indexOf(A) > order.indexOf(B)) {
+			  return 1;
+			} else {
+			  return -1;
+			}
+			
+		  });
+		  
+		  return array;
+	}
+
 	render() {
 		const { productsOptions } = this.props;
+		console.log('options', productsOptions);
 		return (
 			<section>
 				{Object.keys(productsOptions).map(key => (
