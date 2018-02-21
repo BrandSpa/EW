@@ -122,6 +122,14 @@ class PostsCarousel extends Component {
 						left: -40px;
 					}
 
+					.posts-slider__btns__left {
+						left: 10px;
+					}
+
+					.posts-slider__btns__right {
+						right: 10px;
+					}
+
 					@media (min-width: 1024px) {
 						.posts-slider__btns__left {
 							left: -40px;
@@ -129,16 +137,6 @@ class PostsCarousel extends Component {
 
 						.posts-slider__btns__right {
 							right: -40px;
-						}
-					}
-
-					@media (max-width: 768px) {
-						.posts-slider__btns__left {
-							left: 10px;
-						}
-
-						.posts-slider__btns__right {
-							right: 10px;
 						}
 					}
 
