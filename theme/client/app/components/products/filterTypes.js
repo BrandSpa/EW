@@ -74,7 +74,7 @@ class FilterTypes extends Component {
 	render() {
 		const { types, selected } = this.state;
 		var typesByPosition = sortBy(types, ['position']);
-		typesByPosition = this.sortObj(typesByPosition, ['WINDOWS', 'CURTAIN WALLS', 'STOREFRONTS', 'DOORS', 'RAILINGS', 'INTERIORS'], name);
+		typesByPosition = this.sortObj(typesByPosition, [41, 51, 50, 36, 53, 66], "term_id");
 		console.log(types, selected, typesByPosition);
 		console.log('props', this.props);
 		return (
