@@ -39,7 +39,8 @@ function set_translations() {
 		'Blueprints',
 		'installation guide',
 		'Elite Brand Brochure',
-		'Related projects'
+		'Related projects',
+		'No results found for this search'
 	];
 
 	foreach($texts as $text) {
