@@ -26,7 +26,7 @@
   <link href="https://fonts.googleapis.com/css?family=Yantramanav:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
   <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" />
-  <link href="<?php echo get_template_directory() . '/public/bootstrap.min.css' ?>" rel="stylesheet" />
+  <link href="<?php echo get_template_directory_uri()() . '/public/bootstrap.min.css' ?>" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
   <!--wordpress files-->
