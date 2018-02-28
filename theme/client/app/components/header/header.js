@@ -9,10 +9,12 @@ class Header extends Component {
 		uri: window.templateUri,
 		onTop: true,
 		menu: [],
+		logo: ""
 	}
 
 	componentDidMount() {
 		this.getMenu();
+		this.getLogo();
 		this.handleScroll();
 	}
 
@@ -20,6 +22,12 @@ class Header extends Component {
 		window.addEventListener('scroll', throttle((e) => {
 			this.setState({ onTop: window.scrollY === 0 });
 		}, 100));
+	}
+
+	getLogo = () => {
+
+		this.setState({logo: this.props.logo});
+
 	}
 
 	getMenu = () => {
@@ -50,7 +58,7 @@ class Header extends Component {
 			<section className={headerClass} ref={ref => this.header = ref}>
 				<div className="logo-container">
 					<a href="/">
-						<img src={`${this.state.uri}/public/img/eswlogo.svg`} alt="" />
+						<img src={this.props.logo} alt="" />
 					</a>
 				</div>
 				<MenuMobile menu={this.state.menu} uri={this.state.uri} />
