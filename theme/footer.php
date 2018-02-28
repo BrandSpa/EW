@@ -215,12 +215,12 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     .footer_social_logos a {
       
     }
-    .menu-footer-right-container ul{
+    .menu-footer-right-es-container ul, .menu-footer-right-container ul{
       display: flex;
       padding: 0;
       justify-content: space-around;
     }
-    .menu-footer-right-container ul li{
+    .menu-footer-right-es-container ul li,.menu-footer-right-container ul li{
       margin: 0 !important;
       width: auto !important;
     }
@@ -291,16 +291,16 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
       display: flex;
       flex-direction: row-reverse;
     }
-    .menu-footer-right-container ul{
+    .menu-footer-right-es-container ul,.menu-footer-right-container ul{
       padding-left: 40px;
       justify-content: space-between;
     }
-    .menu-footer-right-container ul li{
+    .menu-footer-right-es-container ul li,.menu-footer-right-container ul li{
       margin: 0 !important;
       width: 100% !important;
       display:block;
     }
-    .menu-footer-right-container ul li a{
+    .menu-footer-right-es-container ul li a,.menu-footer-right-container ul li a{
       margin-bottom: 15px !important;
     }
 
