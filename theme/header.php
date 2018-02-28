@@ -102,7 +102,8 @@
 <?php
   $props = ["menu" => menu_to_array('header'), 
             "menu_right" => menu_to_array('footer'),
-            "menu_left" => menu_to_array('footer_left')
+            "menu_left" => menu_to_array('footer_left'),
+            "logo" => theme_mod_image_logo()
            ];
 ?>
 
