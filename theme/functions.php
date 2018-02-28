@@ -35,7 +35,7 @@ function gett($text) {
 add_theme_support( 'post-thumbnails', ['post', 'project', 'product'] );
 
 
-function pojo_polylang_get_multilang_logo( $value ) {
+function multilanguaje_logo( $value = "" ) {
 	if ( function_exists( 'pll_current_language' ) ) {
 		
 		$current_lang = pll_current_language();
@@ -44,4 +44,3 @@ function pojo_polylang_get_multilang_logo( $value ) {
 	}
 	return $value;
 }
-add_filter( 'theme_mod_image_logo', 'pojo_polylang_get_multilang_logo' );
