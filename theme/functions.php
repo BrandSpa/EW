@@ -33,14 +33,3 @@ function gett($text) {
 }
 
 add_theme_support( 'post-thumbnails', ['post', 'project', 'product'] );
-
-
-function multilanguaje_logo( $value = "" ) {
-	if ( function_exists( 'pll_current_language' ) ) {
-		
-		$current_lang = pll_current_language();
-		$value = get_stylesheet_directory_uri() . '/public/img/logo_'. $current_lang . '.svg';
-
-	}
-	return $value;
-}
