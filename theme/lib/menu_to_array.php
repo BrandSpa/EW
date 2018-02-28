@@ -12,7 +12,7 @@ function menu_to_array($locationName) {
 
 
 function multilanguaje_logo(  ) {
-  $value = ""
+  $value = "";
 	if ( function_exists( 'pll_current_language' ) ) {
 		
 		$current_lang = pll_current_language();
