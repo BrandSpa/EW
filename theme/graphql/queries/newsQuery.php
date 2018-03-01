@@ -35,7 +35,7 @@ $newsQuery = [
 	],
 	'resolve' => function($root, $args) {
 
-		if(count($args['tax_query']) > 1) {
+		if(isset($args['tax_query']) && count($args['tax_query']) > 1) {
 			$tax_relation = ['relation' => $args['tax_relation']];
 			$tax_query = array_merge($args['tax_query'], $tax_relation);
 			$args['tax_query'] = $tax_query;
