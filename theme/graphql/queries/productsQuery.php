@@ -40,8 +40,7 @@ $productsQuery = [
 		}
 		
 		$query = new WP_Query($args);
-		return print_r($query); 
 		$posts = $query->get_posts();
-		return $posts;
+		return print_r($posts);  ;
 	}
 ];
