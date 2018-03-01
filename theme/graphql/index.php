@@ -16,7 +16,7 @@ $postcontent = file_get_contents('php://input');
 $postcontent = str_replace('\n', '', $postcontent);
 $postcontent = json_decode($postcontent, true);
 $lang = isset($postcontent['lang'])? $postcontent['lang']:'en';
-
+print_r($lang); exit;
 
 require str_replace('graphql' , '', __DIR__) . '/vendor/autoload.php';
 
