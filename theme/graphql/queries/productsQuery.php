@@ -41,6 +41,6 @@ $productsQuery = [
 		
 		$query = new WP_Query($args);
 		$posts = $query->get_posts();
-		return print_r($posts);  ;
+		return $posts;
 	}
 ];
