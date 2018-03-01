@@ -52,7 +52,7 @@ try {
 	$variableValues = isset($input['variables']) ? $input['variables'] : null;
 
 	$rootValue = [];
-	print_r($query); 
+	print_r($schema); exit
 	$result = GraphQL::executeQuery($schema, $query, $rootValue, null, $variableValues);
 	$output = $result->toArray();
 
