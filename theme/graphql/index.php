@@ -52,9 +52,9 @@ try {
 	$rawInput = file_get_contents('php://input');
 	$json = new JSON();
 	$j = str_replace('\n', '', $rawInput) ;
-	// var_dump($j);
+	 var_dump($j);
 	$input = json_decode($rawInput, true);
-	// var_dump($input);
+	 var_dump($input);
 	$query = isset($input['query']) ? $input['query'] : '';
 	$variableValues = isset($input['variables']) ? $input['variables'] : null;
 
