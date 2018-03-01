@@ -36,8 +36,6 @@ require 'queries/projectsQuery.php';
 require 'queries/productsQuery.php';
 require 'queries/newsQuery.php';
 
-print_r($productsQuery); exit; 
-
 $rootQuery = new ObjectType([
 	'name' => 'rootQuery',
 	'fields' => [
