@@ -39,7 +39,7 @@ $productType = new ObjectType([
 				});
 
 				$typeParent = array_values($typeParent);
-
+				return print_r($typeParent); 
 				return $typeParent[0]->name;
 			}
 		],
