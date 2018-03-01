@@ -22,7 +22,6 @@ require str_replace('graphql' , '', __DIR__) . '/vendor/autoload.php';
 
 require 'types/projectType.php';
 require 'types/productType.php';
-print_r($productType); exit;
 require 'types/newsType.php';
 require 'types/metaFilterType.php';
 require 'types/taxonomyFilterType.php';
