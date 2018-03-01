@@ -24,6 +24,8 @@ require 'types/projectType.php';
 require 'types/productType.php';
 require 'types/newsType.php';
 require 'types/metaFilterType.php';
+
+print_r($metaFilter);exit;
 require 'types/taxonomyFilterType.php';
 require 'queries/projectsQuery.php';
 require 'queries/productsQuery.php';

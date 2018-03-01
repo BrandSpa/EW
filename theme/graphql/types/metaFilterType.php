@@ -17,5 +17,3 @@ $metaFilter = new InputObjectType([
 		]
 	]
 ]);
-
-print_r($metaFilter);exit;
