@@ -38,6 +38,7 @@ $rootQuery = new ObjectType([
 		'news' => $newsQuery
 	]
 ]);
+print_r($rootQuery); exit;
 $schema = new Schema([
 	'query' => $rootQuery
 ]);
