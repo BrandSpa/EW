@@ -26,13 +26,13 @@ $productsQuery = [
 		'tax_query' => [
 			'type' => Type::listOf($taxonomyFilter),
 		],
-		'tax_relation' => [
-			'type' => Type::string(),
-			'defaultValue' => 'AND'
-		],
 		'lang' => [
 			'type' => Type::string(),
 			'defaultValue' => $lang
+		],
+		'tax_relation' => [
+			'type' => Type::string(),
+			'defaultValue' => 'AND'
 		]
 	],
 	'resolve' => function($root, $args) {
