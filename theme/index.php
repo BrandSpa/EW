@@ -8,9 +8,36 @@
   // ]);
 
 
-  // echo "<pre>";
-  // print_r($posts);
-  // echo "</pre>";
+  $query = array(
+      "post_type" => 'product',
+      "posts_per_page" => 12,
+      "paged" => 1,
+      "meta_query" => array(),
+      "tax_query" => array
+          (
+              array
+                  (
+                      "taxonomy" => 'type',
+                      "field" => 'term_id',
+                      "terms" => array
+                          (
+                              156
+                          ),
+  
+                      "operator" => "IN"
+                  )
+  
+        ),
+      "tax_relation" => "AND",
+      "lang" => "es"
+  );
+
+  $query = new WP_Query($query);
+  $posts = $query->get_posts();
+
+  echo "<pre>";
+  print_r($posts);
+  echo "</pre>";
 
 ?>
 
