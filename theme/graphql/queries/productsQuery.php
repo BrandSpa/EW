@@ -29,13 +29,18 @@ $productsQuery = [
 		'tax_relation' => [
 			'type' => Type::string(),
 			'defaultValue' => 'AND'
-		]
+		],
+		'lang' => [
+			'type' => Type::string(),
+			'defaultValue' => $lang
+		],
 	],
 	'resolve' => function($root, $args) {
 
 		if(count($args['tax_query']) > 1) {
 			$tax_relation = ['relation' => $args['tax_relation']];
 			$tax_query = array_merge($args['tax_query'], $tax_relation);
+			print_r($tax_query);
 			$args['tax_query'] = $tax_query;
 		}
 		
