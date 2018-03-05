@@ -36,8 +36,9 @@ $projectsQuery = [
 			$tax_query = array_merge($args['tax_query'], $tax_relation);
 			$args['tax_query'] = $tax_query;
 		}
-		error_log(print_r($args));
+		
 		$query = new WP_Query($args);
+		error_log(print_r($query));
 		$posts = $query->get_posts();
 		return $posts;
 	}
