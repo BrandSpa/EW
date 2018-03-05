@@ -8,30 +8,33 @@ $root = str_replace('queries' , '', __DIR__);
 
 $productsQuery = [
 	'type' => Type::listOf($productType),
-	'args' => array(
-		'post_type'  => array(
+	'args' => [
+		'post_type'  => [
+			'type'  => Type::string(),
 			'defaultValue' => 'product'
-		),
-		'posts_per_page' => array(
+		],
+		'posts_per_page' => [
 			'type' => Type::int()
-		),
-		'paged' => array(
+		],
+		'paged' => [
 			'type' => Type::int(),
 			'defaultValue' => 1
-		),
-		'meta_query' => array(
+		],
+		'meta_query' => [
 			'type' => Type::listOf($metaFilter),
-		),
-		'tax_query' => array(
+		],
+		'tax_query' => [
 			'type' => Type::listOf($taxonomyFilter),
-		),
-		'tax_relation' => array(
+		],
+		'tax_relation' => [
+			'type' => Type::string(),
 			'defaultValue' => 'AND'
-		),
-		'lang' => array(
+		],
+		'lang' => [
+			'type' => Type::string(),
 			'defaultValue' => $lang
-		),
-	),
+		],
+	],
 	'resolve' => function($root, $args) {
 		if(count($args['tax_query']) > 1) {
 			$tax_relation = ['relation' => $args['tax_relation']];
