@@ -8,7 +8,7 @@ import FilterFeatures from './filterFeatures';
 import FilterBrands from './filterBrands';
 import classnames from 'classnames';
 import {throttle} from 'lodash';
-const uri = '/wp-content/themes/theme/graphql/index.php';
+const uri = '/wp-content/themes/theme/graphql/index.php?lang=es';
 const apolloFetch = createApolloFetch({ uri });
 
 const productsQuery = `
