@@ -36,7 +36,6 @@ $productsQuery = [
 		],
 	],
 	'resolve' => function($root, $args) {
-		return $args;
 		if(count($args['tax_query']) > 1) {
 			$tax_relation = ['relation' => $args['tax_relation']];
 			$tax_query = array_merge($args['tax_query'], $tax_relation);
@@ -44,6 +43,8 @@ $productsQuery = [
 			$args['tax_query'] = $tax_query;
 		}
 		
+		error_log(print_r($args));
+
 		$query = new WP_Query($args);
 		$posts = $query->get_posts();
 		return $posts ;
