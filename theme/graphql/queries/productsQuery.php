@@ -43,7 +43,7 @@ $productsQuery = [
 		//error_log(print_r($args));
 
 		$query = new WP_Query($args);
-		error_log(print_r($query)); 
+		//error_log(print_r($query)); 
 		$posts = $query->get_posts();
 		//error_log(print_r($posts));
 		return $posts ;
