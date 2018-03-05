@@ -38,7 +38,7 @@ $projectsQuery = [
 		}
 		
 		$query = new WP_Query($args);
-		error_log(print_r($query));
+		//error_log(print_r($query));
 		$posts = $query->get_posts();
 		return $posts;
 	}
