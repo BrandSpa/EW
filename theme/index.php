@@ -1,4 +1,18 @@
-<?php get_header(); ?>
+<?php get_header(); 
+
+  $posts = get_posts([
+    'post_type' => 'product',
+    'post_status' => 'publish',
+    'numberposts' => 1
+    // 'order'    => 'ASC'
+  ]);
+
+
+  echo "<pre>";
+  print_r($posts);
+  echo "</pre>";
+
+?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <div class="row">
