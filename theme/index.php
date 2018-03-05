@@ -3,7 +3,7 @@
   $posts = get_posts([
     'post_type' => 'product',
     'post_status' => 'publish',
-    'numberposts' => 1
+    'numberposts' => -1
     // 'order'    => 'ASC'
   ]);
 
