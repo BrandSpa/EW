@@ -43,10 +43,11 @@ $productsQuery = [
 			$args['tax_query'] = $tax_query;
 		}
 		
-		//error_log(print_r($args));
+		error_log(print_r($args));
 
 		$query = new WP_Query($args);
 		$posts = $query->get_posts();
+		error_log(print_r($posts));
 		return $posts ;
 	}
 ];

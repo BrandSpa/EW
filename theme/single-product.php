@@ -5,7 +5,7 @@
 	$title = $post->post_title;
 	$content = $post->post_content;
 	$slider = get_post_meta($post->ID, 'slider_key', tue);
-  $slider = $slider ? explode(',', $slider) : [];
+  	$slider = $slider ? explode(',', $slider) : [];
 	$header = get_post_meta($post->ID, 'header_key', tue);
 	$types = wp_get_post_terms( $post->ID, 'type');
 	$featuresTerm = wp_get_post_terms( $post->ID, 'feature');
