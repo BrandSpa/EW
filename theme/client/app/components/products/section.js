@@ -44,6 +44,17 @@ class ProductsSection extends Component {
   	}
 	}
 
+	getLang = () => {
+
+		var uri = new URL(window.location.href).pathname;
+		uri = uri.split( '/' );
+		console.log(uri);
+		if(uri[1].length == 2){
+			return uri[1];
+		}
+		return 'en';
+	}
+
 	stickFilters = () => {
 		const { container, filters } = this;
 		const bound = container.getBoundingClientRect();
@@ -65,7 +76,8 @@ class ProductsSection extends Component {
 
 	getProducts = async (variables = {}) => {
   	try {
-			const res = await apolloFetch({ query: productsQuery, variables });
+		  	var lang = this.getLang();
+			const res = await apolloFetch({ query: productsQuery, variables, lang });
 
   		this.setState({
 				products: [...this.state.products, ...res.data.products],
