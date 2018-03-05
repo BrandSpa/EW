@@ -29,7 +29,7 @@
   
         ),
       "tax_relation" => "AND",
-      "lang" => "es"
+      "lang" => "es, en"
   );
 
   $query = new WP_Query($query);
