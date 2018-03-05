@@ -90,13 +90,23 @@ class Header extends Component {
 
 						.logo-container {
 							margin-left: 40px;
-							margin-top: -15px;
+							position: absolute;
+							height: 100%;
+							top: 0;
+						}
+
+						.logo-container a{
+							display: block;
+							position: relative;
+							top: 0;
+							width: 100%;
+							height: 100%;
 						}
 
 						.logo-container img {
 							width: 120px;
-							margin-top: -3px;
-							position: relative;
+							top: 50%;
+							transform: translateY(-50%);
 							z-index: 1000;
 						}
 
@@ -118,12 +128,10 @@ class Header extends Component {
 
 							.logo-container {
 								margin-left: 115px;
-								margin-top: -15px;
 							}
 
 							.logo-container img {
 								width: 170px;
-								margin-top: -2px;
 							}
 
 							.header__menu  {
