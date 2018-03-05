@@ -75,17 +75,17 @@ class ProductsSection extends Component {
 	}
 
 	getProducts = async (variables = {}) => {
-  	try {
-		  	var lang = this.getLang();
-			const res = await apolloFetch({ query: productsQuery, variables, lang });
+		var lang = this.getLang();
+		try {
+				const res = await apolloFetch({ query: productsQuery, variables, lang });
 
-  		this.setState({
-				products: [...this.state.products, ...res.data.products],
-				empty: !(res.data.products.length > 0),
-  		});
-  	} catch (err) {
-  		console.log('get projects err: ', err);
-  	}
+			this.setState({
+					products: [...this.state.products, ...res.data.products],
+					empty: !(res.data.products.length > 0),
+			});
+		} catch (err) {
+			console.log('get projects err: ', err);
+		}
 	}
 
 	prefilter = async () => {
