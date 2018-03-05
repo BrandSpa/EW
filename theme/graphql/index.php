@@ -38,7 +38,7 @@ $rootQuery = new ObjectType([
 		'news' => $newsQuery
 	]
 ]);
-print_r($productsQuery); exit;
+exit;
 $schema = new Schema([
 	'query' => $rootQuery
 ]);
