@@ -4,7 +4,7 @@ use GraphQL\Type\Definition\InputObjectType;
 use GraphQL\Type\Definition\Type;
 $root = str_replace('queries' , '', __DIR__);
 
-print_r($lang); exit();
+//print_r($lang); exit();
 
 $productsQuery = [
 	'type' => Type::listOf($productType),
