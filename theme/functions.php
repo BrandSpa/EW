@@ -24,6 +24,15 @@ require_once 'shortcodes/index.php';
 require_once 'models/index.php';
 require_once 'lib/translations.php';
 
+
+add_filter('pre_get_posts', function (\WP_Query $query) {
+  if ($query->is_tax('products') || $query->is_tax('projects')) {
+      $query->set('post_status', 'any');
+  }
+  return $query;
+}, 10, 1);
+
+
 function gett($text) {
 	if(function_exists('pll__') ) {
 		return pll__($text);
