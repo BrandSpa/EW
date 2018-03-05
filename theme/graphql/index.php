@@ -15,7 +15,7 @@ if ( ! defined('ABSPATH') ) {
 $postcontent = file_get_contents('php://input');
 $postcontent = str_replace('\n', '', $postcontent);
 $postcontent = json_decode($postcontent, true);
-
+print_r(pll_current_language());exit();
 if(function_exists( pll_current_language() )){
 	$lang = pll_current_language();
 }else{
