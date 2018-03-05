@@ -1,16 +1,16 @@
 <?php get_header(); 
 
-  $posts = get_posts([
-    'post_type' => 'product',
-    'post_status' => 'publish',
-    'numberposts' => -1
-    // 'order'    => 'ASC'
-  ]);
+  // $posts = get_posts([
+  //   'post_type' => 'product',
+  //   'post_status' => 'publish',
+  //   'numberposts' => -1
+  //   // 'order'    => 'ASC'
+  // ]);
 
 
-  echo "<pre>";
-  print_r($posts);
-  echo "</pre>";
+  // echo "<pre>";
+  // print_r($posts);
+  // echo "</pre>";
 
 ?>
 
