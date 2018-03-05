@@ -13,6 +13,7 @@ $taxonomyFilter = new InputObjectType([
 			'defaultValue' => 'term_id'
 		],
 		'terms'    => Type::listOf(Type::string()),
+		'lang'     => $lang,
 		'operator' => [
 			'type' => Type::string(),
 			'defaultValue' => 'IN'
