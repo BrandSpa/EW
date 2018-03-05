@@ -31,6 +31,10 @@ $newsQuery = [
 		'lang' => [
 			'type' => Type::string(),
 			'defaultValue' => $lang
+		],
+		'suppress_filters' => [
+			'type' => Type::boolean(),
+			'defaultvalue' => true
 		]
 	],
 	'resolve' => function($root, $args) {
