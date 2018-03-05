@@ -65,11 +65,11 @@ try {
 
 } catch (\Exception $e) {
 	$output = [
-			'errors' => [
-					[
-						'message' => $e->getMessage()
-					]
+		'errors' => [
+			[
+				'message' => $e->getMessage()
 			]
+		]
 	];
 }
 
