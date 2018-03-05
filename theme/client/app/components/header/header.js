@@ -108,6 +108,7 @@ class Header extends Component {
 							top: 50%;
 							transform: translateY(-50%);
 							z-index: 1000;
+							position: absolute;
 						}
 
 						.header__menu {
