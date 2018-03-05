@@ -33,7 +33,7 @@ $productType = new ObjectType([
 			'type' => Type::string(),
 			'resolve' => function($root) {
 				$types = wp_get_post_terms( $root->ID, 'type');
-
+				print_r($types); exit;
 				$typeParent = array_filter($types, function($type) {
 					return $type->parent == 0;
 				});
