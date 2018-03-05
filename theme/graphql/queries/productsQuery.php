@@ -36,6 +36,8 @@ $productsQuery = [
 		],
 	],
 	'resolve' => function($root, $args) {
+
+		error_log(print_r($args));
 		if(count($args['tax_query']) > 1) {
 			$tax_relation = ['relation' => $args['tax_relation']];
 			$tax_query = array_merge($args['tax_query'], $tax_relation);
