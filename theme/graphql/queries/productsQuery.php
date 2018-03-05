@@ -26,10 +26,6 @@ $productsQuery = [
 		'tax_query' => [
 			'type' => Type::listOf($taxonomyFilter),
 		],
-		'lang' => [
-			'type' => Type::string(),
-			'defaultValue' => $lang
-		],
 		'tax_relation' => [
 			'type' => Type::string(),
 			'defaultValue' => 'AND'
