@@ -24,7 +24,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
     </div>
     <div class="col-lg-4  col-md-12 footer_logos">
       <section class="text-right es_footer_logo">
-        <img src="<?php echo get_template_directory_uri() ?>/public/img/eswlogo.svg" />
+        <img src="<?php  echo multilanguaje_logo()?>" />
         <p>The Power of Quality</p>
       </section>
 
