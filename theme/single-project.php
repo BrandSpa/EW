@@ -3,24 +3,24 @@
 
 <?php
   $title = $post->post_title;
-  $country = get_post_meta($post->ID, 'country_key', tue);
-  $city = get_post_meta($post->ID, 'city_key', tue);
-  $state = get_post_meta($post->ID, 'state_key', tue);
-  $header = get_post_meta($post->ID, 'header_key', tue);
-  $slider = get_post_meta($post->ID, 'slider_key', tue);
+  $country = get_post_meta($post->ID, 'country_key', true);
+  $city = get_post_meta($post->ID, 'city_key', true);
+  $state = get_post_meta($post->ID, 'state_key', true);
+  $header = get_post_meta($post->ID, 'header_key', true);
+  $slider = get_post_meta($post->ID, 'slider_key', true);
   $slider = $slider ? explode(',', $slider) : [];
-  $video = get_post_meta($post->ID, 'video_key', tue);
-  $architect = get_post_meta($post->ID, 'architect_key', tue);
-  $constructor = get_post_meta($post->ID, 'constructor_key', tue);
-  $developer = get_post_meta($post->ID, 'developer_key', tue);
-  $constructor = get_post_meta($post->ID, 'constructor_key', tue);
-  $systems = get_post_meta($post->ID, 'systems_key', tue);
-  $aluminum = get_post_meta($post->ID, 'aluminum_key', tue);
-  $glass = get_post_meta($post->ID, 'glass_key', tue);
+  $video = get_post_meta($post->ID, 'video_key', true);
+  $architect = get_post_meta($post->ID, 'architect_key', true);
+  $constructor = get_post_meta($post->ID, 'constructor_key', true);
+  $developer = get_post_meta($post->ID, 'developer_key', true);
+  $constructor = get_post_meta($post->ID, 'constructor_key', true);
+  $systems = get_post_meta($post->ID, 'systems_key', true);
+  $aluminum = get_post_meta($post->ID, 'aluminum_key', true);
+  $glass = get_post_meta($post->ID, 'glass_key', true);
   $brands = wp_get_post_terms( $post->ID, 'brand', ["fields" => "names"]);
   $products = wp_get_post_terms( $post->ID, 'product', ["fields" => "names"]);
-  $year = get_post_meta($post->ID, 'year_key', tue);
-  $month = get_post_meta($post->ID, 'month_key', tue);
+  $year = get_post_meta($post->ID, 'year_key', true);
+  $month = get_post_meta($post->ID, 'month_key', true);
 ?>
 
 <div class="project">

@@ -4,9 +4,9 @@
 	$uri = get_template_directory_uri();
 	$title = $post->post_title;
 	$content = $post->post_content;
-	$slider = get_post_meta($post->ID, 'slider_key', tue);
+	$slider = get_post_meta($post->ID, 'slider_key', true);
   	$slider = $slider ? explode(',', $slider) : [];
-	$header = get_post_meta($post->ID, 'header_key', tue);
+	$header = get_post_meta($post->ID, 'header_key', true);
 	$types = wp_get_post_terms( $post->ID, 'type');
 	$featuresTerm = wp_get_post_terms( $post->ID, 'feature');
 	$brands = wp_get_post_terms( $post->ID, 'brand', ["fields" => "names"]);

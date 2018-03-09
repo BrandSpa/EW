@@ -4,8 +4,8 @@
 	$date = new DateTime($post->post_date);
 	$featured = get_the_post_thumbnail_url($post->ID);
 	$content = $post->post_content;
-	$header = get_post_meta($post->ID, 'header_key', tue);
-	$intro = get_post_meta($post->ID, 'intro_key', tue);
+	$header = get_post_meta($post->ID, 'header_key', true);
+	$intro = get_post_meta($post->ID, 'intro_key', true);
 ?>
 
 <article class="post">
