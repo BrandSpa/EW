@@ -75,7 +75,7 @@ const arrowAction = () =>{
             $('.show_terms').click(function(e){
                 e.preventDefault();e.stopPropagation();
                 var terms = getCookie("esw_terms");
-                var url = $(this).attr('href');
+                var url = $(this).data('href');
                 _targetURL = url;
                 if( !terms ){
                     $('.terms_and_conditions').modal('show');
