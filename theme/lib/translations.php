@@ -40,7 +40,7 @@ function set_translations() {
 		'installation guide',
 		'Elite Brand Brochure',
 		'Related projects',
-		'No results found for this search'
+		'No results found for this search',
 	];
 
 	foreach($texts as $text) {

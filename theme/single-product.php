@@ -134,7 +134,7 @@
 				<div class="col-md-9">
 					<div class="downloads__links">
 						<?php if(!empty($pdfBlueprints)): ?>
-						<a target="_blank" href="<?php echo $pdfBlueprints ?>">
+						<a target="_blank" href="<?php echo $pdfBlueprints ?>" class="show_terms">
 							<img src="<?php echo $uri ?>/public/img/blueprints.svg" alt="">
 							<span><?php echo gett($titleBlueprints); ?></span>
 						</a>
