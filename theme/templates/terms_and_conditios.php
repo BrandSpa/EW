@@ -1,13 +1,13 @@
 <div class="terms_and_conditions">
     
-    <div class="tmodal">
-        <div class="tmodal_header">
+    <div class="modal-content">
+        <div class="modal-header">
             <span class="close">X</span>
         </div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, architecto distinctio. Nobis eius debitis explicabo unde excepturi voluptatum, eaque, porro dolores obcaecati sunt sit adipisci beatae delectus itaque? Officiis, culpa.
 
-        <div class="tmodal_footer">
-            <button class="accept"><?php echo gett('Aceptar y Descargar') ?></button>
+        <div class="modal-footer">
+            <button class="btn btn-default"><?php echo gett('Aceptar y Descargar') ?></button>
         </div>
     </div>
 
