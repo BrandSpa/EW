@@ -12,7 +12,7 @@
             </div>
 
             <div class="modal-footer">
-                <button class="btn btn-default"><?php echo gett('Aceptar y Descargar') ?></button>
+                <button class="btn btn-default pull-left"><?php echo gett('Aceptar y Descargar') ?></button>
             </div>
         </div>
 
@@ -25,5 +25,8 @@
     }
     .terms_and_conditions .modal-header h4{
         color: #039ED8
+    }
+    .terms_and_conditions .modal-footer{
+        border-top: none;
     }
 </style>
