@@ -81,7 +81,7 @@ const arrowAction = () =>{
                 }
             });
 
-            $('.tmodal_footer .accept').click(function(e){
+            $('.modal-footer .accept').click(function(e){
                 setCookie('esw_terms', 'true', 60);
                 
                 var url = $('.show_terms').attr('href');
