@@ -1,4 +1,4 @@
-<div  class="modal terms_and_conditions" role="dialog">
+<div  class="modal terms_and_conditions fade" role="dialog">
     <div class="modal-dialog">
         
         <div class="modal-content">
