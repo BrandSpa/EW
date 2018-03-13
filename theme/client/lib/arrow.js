@@ -71,14 +71,14 @@ const arrowAction = () =>{
             });
 
             var _targetURL = "",
-                _target ="";
+                _target ="_self";
 
             $('.show_terms').click(function(e){
                 e.preventDefault();e.stopPropagation();
                 var terms = getCookie("esw_terms");
                 var url = $(this).data('href');
                 _targetURL = url;
-                _target = $(this).attr('target');
+                _target = $(this).attr('target')?$(this).attr('target'):'_self';
                 if( !terms ){
                     $('.terms_and_conditions').modal('show');
                 }else{
