@@ -7,7 +7,7 @@
 </div>
 
 <style>
-    .term_and_conditions{
+    .terms_and_conditions{
         position: fixed;
         width: 100%;
         height: 100%;
@@ -18,7 +18,7 @@
         display: none;
     }
 
-    .term_and_conditions .tmodal{
+    .terms_and_conditions .tmodal{
         width: 60%;
         left: 0;
         right: 0;
