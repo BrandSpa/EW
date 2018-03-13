@@ -177,7 +177,9 @@
 			<div class="col-sm-1"></div>
 	</div>
 </section>
-<?php include_once('templates/terms_and_conditios.php') ?>
+<?php
+$ModalType = "product";
+include_once('templates/terms_and_conditios.php') ?>
 <style>
 	.product__header {
 		background-size: cover;

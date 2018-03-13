@@ -42,6 +42,7 @@ function set_translations() {
 		'Related projects',
 		'No results found for this search',
 		'Aceptar y Descargar',
+		'Aceptar',
 		'Terms and Conditions'
 	];
 

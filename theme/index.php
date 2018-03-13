@@ -53,6 +53,10 @@
 <?php endwhile; else : ?>
   <p><?php _e( '401' ); ?></p>
 <?php endif; ?>
+
+<?php
+$ModalType = "others";
+include_once('templates/terms_and_conditios.php') ?>
 <style>
 .separate_content, #colorsFinishes .colors{
 	padding-left: 15px !important;
