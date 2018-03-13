@@ -39,4 +39,9 @@
         padding: 15px 0px;
         text-align: center;
     }
+
+    .terms_and_conditions .tmodal .tmodal_footer .accept{
+        height: 4rem;
+        border-radius: .3rem;
+    }
 </style>
