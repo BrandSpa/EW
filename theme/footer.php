@@ -319,7 +319,7 @@ $current_url = str_replace('//', 'https://', esc_url($_SERVER['HTTP_HOST'].$_SER
 <script>
   window.templateUri = '<?php echo get_template_directory_uri() ?>';
 </script>
-
+<script src="<?php echo get_template_directory_uri() ?>/public/js/bootstrap.min.js"></script>
 <script
   src="<?php echo get_template_directory_uri() ?>/public/js/vendor.js?v=<?php echo filemtime(get_template_directory() . '/public/js/vendor.js') ?>"></script>
 <script
