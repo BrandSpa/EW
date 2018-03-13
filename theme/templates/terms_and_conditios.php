@@ -1,4 +1,4 @@
-<div class="terms_and_conditions modal-dialog">
+<div class="modal-dialog">
     
     <div class="modal-content">
         <div class="modal-header">
@@ -12,7 +12,3 @@
     </div>
 
 </div>
-
-<style>
-   
-</style>

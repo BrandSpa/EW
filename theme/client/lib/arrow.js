@@ -75,7 +75,7 @@ const arrowAction = () =>{
                 var terms = getCookie("esw_terms");
                 var url = $(this).attr('href');
                 if( !terms ){
-                    $('.terms_and_conditions').fadeIn();
+                    $('.terms_and_conditions').modal('show');
                 }else{
                     window.open(url, '_blank');
                 }
@@ -86,7 +86,7 @@ const arrowAction = () =>{
                 
                 var url = $('.show_terms').attr('href');
                 window.open(url, '_blank');
-                $('.terms_and_conditions').fadeOut();
+                $('.terms_and_conditions').modal('hide');
 
             })
 
