@@ -4,7 +4,7 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, architecto distinctio. Nobis eius debitis explicabo unde excepturi voluptatum, eaque, porro dolores obcaecati sunt sit adipisci beatae delectus itaque? Officiis, culpa.
 
         <div class="tmodal_footer">
-            <button class="accept"><?php gett('Aceptar y Descargar') ?></button>
+            <button class="accept"><?php echo gett('Aceptar y Descargar') ?></button>
         </div>
     </div>
 
