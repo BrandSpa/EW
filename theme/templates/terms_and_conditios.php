@@ -11,8 +11,8 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, architecto distinctio. Nobis eius debitis explicabo unde excepturi voluptatum, eaque, porro dolores obcaecati sunt sit adipisci beatae delectus itaque? Officiis, culpa.
             </div>
 
-            <div class="modal-footer">
-                <button class="btn btn-default pull-left"><?php echo gett('Aceptar y Descargar') ?></button>
+            <div class="modal-footer text-center">
+                <button class="btn btn-default"><?php echo gett('Aceptar y Descargar') ?></button>
             </div>
         </div>
 
