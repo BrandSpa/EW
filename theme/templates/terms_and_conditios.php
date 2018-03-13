@@ -3,7 +3,7 @@
         
         <div class="modal-content">
             <div class="modal-header">
-                <?php echo gett("Terms And Conditions") ?>
+                <h2><?php echo gett("Terms And Conditions") ?></h2>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
