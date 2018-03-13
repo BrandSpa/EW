@@ -2,7 +2,7 @@
     
     <div class="tmodal">
         <div class="tmodal_header">
-            <span class="caret">X</span>
+            <span class="close">X</span>
         </div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, architecto distinctio. Nobis eius debitis explicabo unde excepturi voluptatum, eaque, porro dolores obcaecati sunt sit adipisci beatae delectus itaque? Officiis, culpa.
 
