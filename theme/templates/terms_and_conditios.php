@@ -12,7 +12,7 @@
             </div>
 
             <div class="modal-footer text-center">
-                <button class="btn btn-default"><?php echo gett('Aceptar y Descargar') ?></button>
+                <button class="btn btn-default center-block"><?php echo gett('Aceptar y Descargar') ?></button>
             </div>
         </div>
 
