@@ -41,7 +41,8 @@ function set_translations() {
 		'Elite Brand Brochure',
 		'Related projects',
 		'No results found for this search',
-		'Aceptar y Descargar'
+		'Aceptar y Descargar',
+		'Terms And Conditions'
 	];
 
 	foreach($texts as $text) {
