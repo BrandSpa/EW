@@ -140,20 +140,20 @@
 						</a>
 						<?php endif; ?>
 						<?php if(!empty($pdfInstallationGuide)): ?>
-						<a target="_blank" href="<?php echo $pdfInstallationGuide ?>">
+						<a target="_blank" href="<?php echo $pdfInstallationGuide ?>" class="show_terms">
 							<img src="<?php echo $uri ?>/public/img/installation_guide.svg" alt="">
 							<span><?php echo gett($titleInstallationGuide); ?></span>
 						</a>
 						<?php endif; ?>
 
 						<?php if(!empty($pdfEliteBrandBrochure1)): ?>
-						<a target="_blank" href="<?php echo $pdfEliteBrandBrochure1 ?>">
+						<a target="_blank" href="<?php echo $pdfEliteBrandBrochure1 ?>" class="show_terms">
 							<img src="<?php echo $uri ?>/public/img/brand_brochure.svg" alt="">
 							<span><?php echo gett($titleEliteBrandBrochure1) ?></span>
 						</a>
 						<?php endif; ?>
 						<?php if(!empty($pdfEliteBrandBrochure2)): ?>
-						<a target="_blank" href="<?php echo $pdfEliteBrandBrochure2 ?>">
+						<a target="_blank" href="<?php echo $pdfEliteBrandBrochure2 ?>" class="show_terms">
 							<img src="<?php echo $uri ?>/public/img/brand_brochure.svg" alt="">
 							<span><?php echo gett($titleEliteBrandBrochure2) ?></span>
 						</a>
