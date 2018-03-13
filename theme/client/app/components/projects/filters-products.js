@@ -37,7 +37,7 @@ class FiltersProducts extends Component {
 		var { productsOptions } = this.props;
 		console.log(productsOptions);
 		productsOptions = this.sortObj(productsOptions, [19, 14, 18, 16, 17]);
-
+		console.log('after',productsOptions);
 		return (
 			<section>
 				{Object.keys(productsOptions).map(key => (
