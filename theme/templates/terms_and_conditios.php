@@ -35,4 +35,8 @@
         border-radius: .3em;
         box-shadow: 0px 0px 2px 1px rgba(0,0,0,.2);
     }
+    .terms_and_conditions .tmodal .tmodal_footer{
+        padding: 15px 0px;
+        text-align: center;
+    }
 </style>
