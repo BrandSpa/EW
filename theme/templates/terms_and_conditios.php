@@ -23,7 +23,4 @@
     .terms_and_conditions .modal-header {
         border-bottom: 1px solid #039ED8;
     }
-    .terms_and_conditions .modal-footer{
-        border-top: 1px solid #039ED8;
-    }
 </style>
