@@ -11,7 +11,7 @@
         position: fixed;
         width: 100%;
         height: 100%;
-        background: rgba(255,255,255,.8);
+        background: rgba(0,0,0,.3);
         top: 0;
         left: 0;
         z-index: 999;
@@ -29,5 +29,6 @@
         background: #fff;
         padding: 30px;
         border-radius: .3em;
+        box-shadow: 0px 0px 2px 1px rgba(0,0,0,.2);
     }
 </style>
