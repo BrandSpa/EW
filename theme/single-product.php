@@ -134,26 +134,26 @@
 				<div class="col-md-9">
 					<div class="downloads__links">
 						<?php if(!empty($pdfBlueprints)): ?>
-						<a href="#" data-href="<?php echo $pdfBlueprints ?>" class="show_terms">
+						<a href="#" data-href="<?php echo $pdfBlueprints ?>" class="show_terms" target="_blank">
 							<img src="<?php echo $uri ?>/public/img/blueprints.svg" alt="">
 							<span><?php echo gett($titleBlueprints); ?></span>
 						</a>
 						<?php endif; ?>
 						<?php if(!empty($pdfInstallationGuide)): ?>
-						<a href="#" data-href="<?php echo $pdfInstallationGuide ?>" class="show_terms">
+						<a href="#" data-href="<?php echo $pdfInstallationGuide ?>" class="show_terms" target="_blank">
 							<img src="<?php echo $uri ?>/public/img/installation_guide.svg" alt="">
 							<span><?php echo gett($titleInstallationGuide); ?></span>
 						</a>
 						<?php endif; ?>
 
 						<?php if(!empty($pdfEliteBrandBrochure1)): ?>
-						<a href="#" data-href="<?php echo $pdfEliteBrandBrochure1 ?>" class="show_terms">
+						<a href="#" data-href="<?php echo $pdfEliteBrandBrochure1 ?>" class="show_terms" target="_blank">
 							<img src="<?php echo $uri ?>/public/img/brand_brochure.svg" alt="">
 							<span><?php echo gett($titleEliteBrandBrochure1) ?></span>
 						</a>
 						<?php endif; ?>
 						<?php if(!empty($pdfEliteBrandBrochure2)): ?>
-						<a href="#" data-href="<?php echo $pdfEliteBrandBrochure2 ?>" class="show_terms">
+						<a href="#" data-href="<?php echo $pdfEliteBrandBrochure2 ?>" class="show_terms" target="_blank">
 							<img src="<?php echo $uri ?>/public/img/brand_brochure.svg" alt="">
 							<span><?php echo gett($titleEliteBrandBrochure2) ?></span>
 						</a>

@@ -70,17 +70,19 @@ const arrowAction = () =>{
                 }, 500);
             });
 
-            var _targetURL = "";
+            var _targetURL = "",
+                _target ="";
 
             $('.show_terms').click(function(e){
                 e.preventDefault();e.stopPropagation();
                 var terms = getCookie("esw_terms");
                 var url = $(this).data('href');
                 _targetURL = url;
+                _target = $(this).attr('target');
                 if( !terms ){
                     $('.terms_and_conditions').modal('show');
                 }else{
-                    window.open(url, '_blank');
+                    window.open(url, _target);
                 }
             });
 
@@ -88,7 +90,7 @@ const arrowAction = () =>{
                 setCookie('esw_terms', 'true', 60);
                 
                 var url = _targetURL;
-                window.open(url, '_blank');
+                window.open(url, _target);
                 $('.terms_and_conditions').modal('hide');
 
             })
