@@ -23,4 +23,7 @@
     .terms_and_conditions .modal-header {
         border-bottom: 1px solid #039ED8;
     }
+    .terms_and_conditions .modal-header h4{
+        color: #039ED8
+    }
 </style>
