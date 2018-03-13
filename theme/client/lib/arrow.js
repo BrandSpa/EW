@@ -81,6 +81,15 @@ const arrowAction = () =>{
                 }
             });
 
+            $('.tmodal_footer .accept').click(function(e){
+                setCookie('esw_terms', 'true', 60);
+                
+                var url = $('.show_terms').attr('href');
+                window.open(url, '_blank');
+                $('.terms_and_conditions').fadeOut();
+
+            })
+
         })(jQuery);
     }
     
