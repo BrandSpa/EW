@@ -209,7 +209,7 @@ class ProjectsSection extends Component {
   				{/* <Loading /> */}
   				<div className="projects">
   					{projects.length > 0 ? projects.map(project => (
-  						<div key={project.id} className="col-lg-4 col-md-6 project-item">
+  						<div key={project.id} className="col-lg-4 col-md-12 project-item">
   							<Project project={project} />
   						</div>
 						))
