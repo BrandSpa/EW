@@ -48,8 +48,8 @@ const Loader = () => (
                             transform-origin: center center;
                     width: 100%;
                     position: absolute;
-                    top: 0;
-                    bottom: 0;
+                    top: 50%;
+                    bottom: transform(translateY(-50%));
                     left: 0;
                     right: 0;
                     margin: auto;
