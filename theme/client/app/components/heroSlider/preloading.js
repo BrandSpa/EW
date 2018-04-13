@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 
-
-export default class Loader extends Component{
-
-    render(){
-        <div className="loading">
+const Loader = () => (
+	<div className="loading">
 
             <div className="showbox">
                 <div className="loader">
@@ -19,8 +16,10 @@ export default class Loader extends Component{
                     display: flex;
                     position: relative;
                     width: 100%;
-                    min-height: 100vh;
+                    min-height: 200vh;
+                    background: #edf7ff;
                 }
+            
                 .showbox {
                     position: absolute;
                     top: 0;
@@ -141,7 +140,6 @@ export default class Loader extends Component{
             `}
             </style>
         </div>
-    }
+);
 
-}
-
+export default Loader;
