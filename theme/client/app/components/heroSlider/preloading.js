@@ -107,7 +107,7 @@ const Loader = () => (
                   @-webkit-keyframes color {
                     100%,
                     0% {
-                      stroke: #d62d20;
+                      stroke: #039ed8;
                     }
                     40% {
                       stroke: #0057e7;
@@ -123,7 +123,7 @@ const Loader = () => (
                   @keyframes color {
                     100%,
                     0% {
-                      stroke: #d62d20;
+                      stroke: #039ed8;
                     }
                     40% {
                       stroke: #0057e7;
