@@ -31,9 +31,13 @@ class HeroSlider extends Component {
 		const slide = slides[slideNum];
 		const { bg } = slide;
 
+		var loadingIndicator = (<div className="heroSlider">Loading...</div>)
+
 		return (
 			<Prelaod
+				loadingIndicator={loadingIndicator}
 				images={[bg]}
+				autoResolveDelay={3000}
 				mountChildren
                 resolveOnError
 			>
