@@ -25,6 +25,7 @@
     "react-beautiful-dnd": "^3.0.0",
     "react-dom": "^15.6.1",
     "react-multiple-render": "^1.1.0",
+    "react-preload": "^0.5.1",
     "react-transition-group": "^2.2.1"
   },
   "devDependencies": {
@@ -61,7 +62,9 @@
       [
         "styled-jsx/babel",
         {
-          "plugins": ["styled-jsx-plugin-sass"]
+          "plugins": [
+            "styled-jsx-plugin-sass"
+          ]
         }
       ]
     ]

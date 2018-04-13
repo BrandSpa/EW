@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Slide from './slide';
 import Menu from './menu';
 import SocialIcon from '../social/icon';
+import Prelaod from 'react-preload';
 
 class HeroSlider extends Component {
 	state = {
@@ -31,6 +32,11 @@ class HeroSlider extends Component {
 		const { bg } = slide;
 
 		return (
+			<Prelaod
+				images={[bg]}
+				mountChildren
+                resolveOnError
+			>
 			<section className="heroSlider" style={{ background: `url(${bg}) no-repeat` }}>
 				{slides.map((slide, i) => <Slide {...slide} key={i} index={i} current={slideNum} />)}
 
@@ -127,6 +133,7 @@ class HeroSlider extends Component {
 				`}
 				</style>
 			</section>
+			</Prelaod>
 		);
 	}
 }
