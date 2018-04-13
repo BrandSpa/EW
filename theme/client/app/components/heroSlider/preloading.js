@@ -141,8 +141,6 @@ export default class Loading extends Component{
             `}
             </style>
         </div>
-
-        
     }
 
 }
