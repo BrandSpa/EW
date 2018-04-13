@@ -104,43 +104,44 @@ export default class Loader extends Component{
                       stroke-dasharray: 89, 200;
                       stroke-dashoffset: -124px;
                     }
+                  }
+                  @-webkit-keyframes color {
+                    100%,
+                    0% {
+                      stroke: #d62d20;
                     }
-                    @-webkit-keyframes color {
-                        100%,
-                        0% {
-                        stroke: #d62d20;
-                        }
-                        40% {
-                        stroke: #0057e7;
-                        }
-                        66% {
-                        stroke: #008744;
-                        }
-                        80%,
-                        90% {
-                        stroke: #ffa700;
-                        }
+                    40% {
+                      stroke: #0057e7;
                     }
-                    @keyframes color {
-                        100%,
-                        0% {
-                        stroke: #d62d20;
-                        }
-                        40% {
-                        stroke: #0057e7;
-                        }
-                        66% {
-                        stroke: #008744;
-                        }
-                        80%,
-                        90% {
-                        stroke: #ffa700;
-                        }
+                    66% {
+                      stroke: #008744;
                     }
-
+                    80%,
+                    90% {
+                      stroke: #ffa700;
+                    }
+                  }
+                  @keyframes color {
+                    100%,
+                    0% {
+                      stroke: #d62d20;
+                    }
+                    40% {
+                      stroke: #0057e7;
+                    }
+                    66% {
+                      stroke: #008744;
+                    }
+                    80%,
+                    90% {
+                      stroke: #ffa700;
+                    }
+                }
+                  
             `}
             </style>
         </div>
     }
 
 }
+
