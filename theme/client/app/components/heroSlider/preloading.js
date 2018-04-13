@@ -21,7 +21,7 @@ export default class Loading extends Component{
                     width: 100%;
                     min-height: 100vh;
                 }
-                showbox {
+                .showbox {
                     position: absolute;
                     top: 0;
                     bottom: 0;
