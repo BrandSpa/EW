@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-export default class Loading extends Component{
+export default class Loader extends Component{
 
     render(){
         <div className="loading">
