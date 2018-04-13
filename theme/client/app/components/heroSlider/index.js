@@ -32,7 +32,7 @@ class HeroSlider extends Component {
 		const slide = slides[slideNum];
 		const { bg } = slide;
 
-		var loadingIndicator = (<Loading />)
+		var loadingIndicator = (<div />)
 
 		return (
 			<Prelaod
