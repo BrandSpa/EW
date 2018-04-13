@@ -17,7 +17,7 @@ const Loader = () => (
                     position: relative;
                     width: 100%;
                     min-height: 200vh;
-                    background: #000;
+                    background: #383838;
                 }
             
                 .showbox {

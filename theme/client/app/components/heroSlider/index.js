@@ -37,8 +37,8 @@ class HeroSlider extends Component {
 		return (
 			<Prelaod
 				loadingIndicator={loadingIndicator}
-				images={bg}
-				autoResolveDelay={3000}
+				images={[bg]}
+				autoResolveDelay={4000}
 				mountChildren
                 resolveOnError
 			>
