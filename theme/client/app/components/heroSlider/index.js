@@ -3,6 +3,7 @@ import Slide from './slide';
 import Menu from './menu';
 import SocialIcon from '../social/icon';
 import Prelaod from 'react-preload';
+import Loading from './preloading';
 
 class HeroSlider extends Component {
 	state = {
@@ -31,7 +32,7 @@ class HeroSlider extends Component {
 		const slide = slides[slideNum];
 		const { bg } = slide;
 
-		var loadingIndicator = (<div className="heroSlider">Loading...</div>)
+		var loadingIndicator = (<Loading />)
 
 		return (
 			<Prelaod
