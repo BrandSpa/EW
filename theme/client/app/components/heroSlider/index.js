@@ -34,10 +34,16 @@ class HeroSlider extends Component {
 
 		var loadingIndicator = (<div><Loader /></div>);
 
+		var preloadImages = [];
+		
+		slides.map( (s, i) => {
+			preloadImages.push(s.bg);
+		});
+
 		return (
 			<Prelaod
 				loadingIndicator={loadingIndicator}
-				images={[bg]}
+				images={preloadImages}
 				autoResolveDelay={4000}
 				mountChildren
                 resolveOnError
