@@ -26,6 +26,7 @@ class FilterType extends Component {
 
 	render() {
 		const { type, selected } = this.props;
+		console.log('selected 2', selected);
 		const { open } = this.state;
 
 		return (

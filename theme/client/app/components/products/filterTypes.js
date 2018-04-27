@@ -77,7 +77,6 @@ class FilterTypes extends Component {
 		typesByPosition = this.sortObj(typesByPosition, [203,41, 51, 207, 82, 50, 36, 53, 66, 210, 127, 120,  
 			124, 133, 154, 160], "term_id");
 		console.log(types, selected, typesByPosition);
-		console.log('props', this.props);
 		return (
 			<section>
 				{typesByPosition.map(type => (
