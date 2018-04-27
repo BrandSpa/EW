@@ -20,7 +20,7 @@ class FilterTypes extends Component {
 	setSelected = () => {
 		let typesByPos = sortBy(this.state.types, ['position']);
 		let selected = [`${this.props.type.term_id}`];
-		console.log('typesPos', typesByPos);
+
 		typesByPos.map(type => {
 			if(type.term_id == this.props.type.term_id){
 				type.subtypes.map( subtype => {
@@ -60,13 +60,12 @@ class FilterTypes extends Component {
 
 	handleChange = (e) => {
 		const { selected } = this.state;
-		console.log(selected);
 		const hasType = selected.indexOf(e.target.value) !== -1;
-
+		console.log('Seleccionado : ',e.target.value);
 		const newSelected = hasType
 			? selected.filter(type => type !== e.target.value)
 			: [...selected, e.target.value];
-
+		console.log('newSelected', e.target.value);
 		this.setState({ selected: newSelected }, () => {
 			this.props.onChange(newSelected, true);
 		});
