@@ -60,6 +60,7 @@ class FilterTypes extends Component {
 
 	handleChange = (e) => {
 		const { selected } = this.state;
+		console.log('selected change', selected);
 		const hasType = selected.indexOf(e.target.value) !== -1;
 		console.log('Seleccionado : ',e.target.value);
 		const newSelected = hasType
