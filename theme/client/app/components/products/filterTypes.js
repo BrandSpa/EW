@@ -28,6 +28,7 @@ class FilterTypes extends Component {
 				})
 			}
 		});
+		console.log('first filter', selected);
 		if (Object.keys(this.props.type).length) {
 			this.setState({ selected });
 		}
