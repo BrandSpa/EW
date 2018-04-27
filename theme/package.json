@@ -48,7 +48,7 @@
     "sass-loader": "^6.0.6",
     "styled-jsx": "^1.0.10",
     "styled-jsx-plugin-sass": "^0.2.2",
-    "webpack": "^3.5.6",
+    "webpack": "^3.11.0",
     "webpack-cli": "^2.0.14"
   },
   "babel": {
