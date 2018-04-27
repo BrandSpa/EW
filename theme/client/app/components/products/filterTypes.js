@@ -60,13 +60,13 @@ class FilterTypes extends Component {
 
 	handleChange = (e) => {
 		const { selected } = this.state;
-		console.log('selected change', selected);
+
 		const hasType = selected.indexOf(e.target.value) !== -1;
-		console.log('Seleccionado : ',e.target.value);
+
 		const newSelected = hasType
 			? selected.filter(type => type !== e.target.value)
 			: [...selected, e.target.value];
-		console.log('newSelected', e.target.value);
+
 		this.setState({ selected: newSelected }, () => {
 			this.props.onChange(newSelected, true);
 		});
@@ -77,7 +77,6 @@ class FilterTypes extends Component {
 		var typesByPosition = sortBy(types, ['position']);
 		typesByPosition = this.sortObj(typesByPosition, [203,41, 51, 207, 82, 50, 36, 53, 66, 210, 127, 120,  
 			124, 133, 154, 160], "term_id");
-		console.log(types, selected, typesByPosition);
 		return (
 			<section>
 				{typesByPosition.map(type => (
