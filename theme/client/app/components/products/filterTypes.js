@@ -19,7 +19,7 @@ class FilterTypes extends Component {
 
 	setSelected = () => {
 		let typesByPos = sortBy(this.state.types, ['position']);
-		let selected = [`${this.props.type.term_id}`];
+		let selected = [];
 
 		typesByPos.map(type => {
 			if(type.term_id == this.props.type.term_id){
@@ -28,7 +28,6 @@ class FilterTypes extends Component {
 				})
 			}
 		});
-		console.log('first filter', selected);
 		if (Object.keys(this.props.type).length) {
 			this.setState({ selected });
 		}
